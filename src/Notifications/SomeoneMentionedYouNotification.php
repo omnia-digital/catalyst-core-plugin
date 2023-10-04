@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Notifications;
 
-use App\Notifications\BaseNotification;
+use OmniaDigital\CatalystCore\Notifications\BaseNotification;
 use App\Support\Notification\NotificationCenter;
 use Illuminate\Support\Str;
 use OmniaDigital\CatalystCore\Enums\PostType;

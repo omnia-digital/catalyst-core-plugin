@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Lenses\Teams;
+namespace OmniaDigital\CatalystCore\Lenses\Teams;
 
-use App\Lenses\BaseLens;
 use Illuminate\Database\Eloquent\Builder;
+use OmniaDigital\CatalystCore\Lenses\BaseLens;
 
 class ByUserTagTeamsLens extends BaseLens
 {

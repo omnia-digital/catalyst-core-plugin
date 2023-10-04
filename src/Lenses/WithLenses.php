@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Lenses;
+namespace OmniaDigital\CatalystCore\Lenses;
 
 use Illuminate\Database\Eloquent\Builder;
 use RuntimeException;

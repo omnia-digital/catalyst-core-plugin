@@ -2,14 +2,14 @@
 
 namespace App\Providers;
 
-use App\Lenses\Teams\ByUserTagTeamsLens;
-use App\Lenses\Teams\IndiesTeamsLens;
-use App\Lenses\Teams\NewReleaseTeamsLens;
-use App\Lenses\Teams\PopularIndiesTeamsLens;
-use App\Lenses\Teams\PopularLocationTeamsLens;
-use App\Lenses\Teams\PopularUpcomingTeamsLens;
-use App\Lenses\Teams\SpecialTeamsLens;
-use App\Lenses\Teams\UpcomingTeamsLens;
+use OmniaDigital\CatalystCore\Lenses\Teams\ByUserTagTeamsLens;
+use OmniaDigital\CatalystCore\Lenses\Teams\IndiesTeamsLens;
+use OmniaDigital\CatalystCore\Lenses\Teams\NewReleaseTeamsLens;
+use OmniaDigital\CatalystCore\Lenses\Teams\PopularIndiesTeamsLens;
+use OmniaDigital\CatalystCore\Lenses\Teams\PopularLocationTeamsLens;
+use OmniaDigital\CatalystCore\Lenses\Teams\PopularUpcomingTeamsLens;
+use OmniaDigital\CatalystCore\Lenses\Teams\SpecialTeamsLens;
+use OmniaDigital\CatalystCore\Lenses\Teams\UpcomingTeamsLens;
 
 class TeamLensesServiceProvider extends LensesServiceProvider
 {

@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Notifications;
 
-use App\Notifications\BaseNotification;
+use OmniaDigital\CatalystCore\Notifications\BaseNotification;
 use App\Support\Notification\NotificationCenter;
 use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Models\Team;
