@@ -67,8 +67,10 @@ class Mention extends Model
                     return $matches[0];
                 }
 
-                return "<a x-data x-on:click.stop='' class='hover:underline hover:text-secondary' href='" . route('social.profile.show',
-                    $matches[1]) . "'>" . $matches[0] . '</a>';
+                return "<a x-data x-on:click.stop='' class='hover:underline hover:text-secondary' href='" . route(
+                    'social.profile.show',
+                    $matches[1]
+                ) . "'>" . $matches[0] . '</a>';
             },
             $content
         );
@@ -89,8 +91,10 @@ class Mention extends Model
                     return $matches[0];
                 }
 
-                return "<a x-data x-on:click.stop='' class='hover:underline hover:text-secondary' href='" . route('social.teams.show',
-                    $matches[1]) . "'>" . $matches[0] . '</a>';
+                return "<a x-data x-on:click.stop='' class='hover:underline hover:text-secondary' href='" . route(
+                    'social.teams.show',
+                    $matches[1]
+                ) . "'>" . $matches[0] . '</a>';
             },
             $content
         );

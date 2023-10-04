@@ -9,10 +9,10 @@ class Index extends Component
 {
     public function getMediaItemsProperty()
     {
-//        $media = Media::all();
-//        $postImages = Post::whereNotNull('image')->get('image');
+        //        $media = Media::all();
+        //        $postImages = Post::whereNotNull('image')->get('image');
 
-//        return $media->merge($postImages);
+        //        return $media->merge($postImages);
 
         return Post::withAnyTags(['art'])->get();
     }

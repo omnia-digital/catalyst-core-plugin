@@ -11,7 +11,8 @@ use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 
 class Trending extends Component
 {
-    use WithPagination, WithCachedRows;
+    use WithCachedRows;
+    use WithPagination;
 
     public $type;
 

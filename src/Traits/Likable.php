@@ -3,8 +3,9 @@
 namespace OmniaDigital\CatalystCore\Traits;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use OmniaDigital\CatalystCore\Models\Like;
 use OmniaDigital\CatalystCore\Events\LikedModel;
+use OmniaDigital\CatalystCore\Models\Like;
+
 use function auth;
 
 trait Likable
@@ -30,8 +31,10 @@ trait Likable
      */
     public function getWasLikedAttribute(): bool
     {
-        return (bool) $this->likes()->withTrashed()->where('user_id', auth()->id())->where('liked',
-            true)->whereNotNull('deleted_at')->count();
+        return (bool) $this->likes()->withTrashed()->where('user_id', auth()->id())->where(
+            'liked',
+            true
+        )->whereNotNull('deleted_at')->count();
     }
 
     /**
@@ -47,8 +50,10 @@ trait Likable
      */
     public function getWasDislikedAttribute(): bool
     {
-        return (bool) $this->likes()->withTrashed()->where('user_id', auth()->id())->where('liked',
-            false)->whereNotNull('deleted_at')->count();
+        return (bool) $this->likes()->withTrashed()->where('user_id', auth()->id())->where(
+            'liked',
+            false
+        )->whereNotNull('deleted_at')->count();
     }
 
     /**

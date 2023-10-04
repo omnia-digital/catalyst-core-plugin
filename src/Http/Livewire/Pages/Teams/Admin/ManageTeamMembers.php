@@ -13,9 +13,11 @@ class ManageTeamMembers extends Component
     use WithTeamManagement;
 
     public $team;
+
     public $roleName;
 
     public $applicationsCount = 0;
+
     public $invitationsCount = 0;
 
     protected $listeners = [
@@ -35,8 +37,10 @@ class ManageTeamMembers extends Component
             'roleName' => [
                 'required',
                 'string',
-                Rule::unique(config('permission.table_names.roles'), 'name')->where(fn ($q) => $q->where('team_id',
-                    $this->team->id)),
+                Rule::unique(config('permission.table_names.roles'), 'name')->where(fn ($q) => $q->where(
+                    'team_id',
+                    $this->team->id
+                )),
             ],
         ]);
 

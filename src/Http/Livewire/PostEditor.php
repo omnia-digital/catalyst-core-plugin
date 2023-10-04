@@ -22,7 +22,7 @@ class PostEditor extends Component
 
     public bool $openState = false;
 
-    public function mount(?string $editorId = null, array $config = [])
+    public function mount(string $editorId = null, array $config = [])
     {
         $this->editorId = $editorId ?? uniqid();
         $this->config = $config;
@@ -30,8 +30,11 @@ class PostEditor extends Component
 
     public function submit()
     {
-        $this->dispatch('post-editor:submitted',
-            editorId: $this->editorId, content: $this->content, images: $this->images
+        $this->dispatch(
+            'post-editor:submitted',
+            editorId: $this->editorId,
+            content: $this->content,
+            images: $this->images
         );
     }
 
@@ -78,7 +81,8 @@ class PostEditor extends Component
 
     private function emitImagesSet(): void
     {
-        $this->dispatch('post-editor:image-set',
+        $this->dispatch(
+            'post-editor:image-set',
             id: $this->editorId,
             images: $this->images
         );

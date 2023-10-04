@@ -4,8 +4,8 @@ namespace OmniaDigital\CatalystCore\Http\Livewire\Components;
 
 use App\Models\User;
 use Carbon\Carbon;
-use OmniaDigital\CatalystCore\Support\Livewire\InteractsWithCalendarTeams;
 use Omnia\LivewireCalendar\LivewireCalendar;
+use OmniaDigital\CatalystCore\Support\Livewire\InteractsWithCalendarTeams;
 
 class CurrentWeekTeamCalendar extends LivewireCalendar
 {

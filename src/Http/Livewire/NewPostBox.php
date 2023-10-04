@@ -9,11 +9,17 @@ use OmniaDigital\CatalystCore\Models\Post;
 class NewPostBox extends Component
 {
     public $postTypes = [];
+
     public $moods = [];
+
     public $selected;
+
     public $body;
+
     public $attachments = [];
+
     public $parentPostID;
+
     public $postSent = false;
 
     protected $listeners = ['filesAdded'];

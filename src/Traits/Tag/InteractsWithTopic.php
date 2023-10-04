@@ -4,7 +4,7 @@ namespace OmniaDigital\CatalystCore\Traits\Tag;
 
 trait InteractsWithTopic
 {
-    public function syncTopics(string|array|null $topics): void
+    public function syncTopics(string | array | null $topics): void
     {
         if (empty($topics)) {
             return;

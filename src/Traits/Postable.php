@@ -4,8 +4,8 @@ namespace OmniaDigital\CatalystCore\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\CatalystCore\Actions\Posts\CreateNewPostAction;
+use OmniaDigital\CatalystCore\Models\Post;
 
 trait Postable
 {
@@ -32,7 +32,7 @@ trait Postable
     /**
      * Alias for createPost()
      */
-    public function createComment($data, $userId): Model|Post
+    public function createComment($data, $userId): Model | Post
     {
         return $this->createPost($data, $userId);
     }
@@ -40,7 +40,7 @@ trait Postable
     /**
      * Handles creating the post for the current model
      */
-    public function createPost($data, $userId): Model|Post
+    public function createPost($data, $userId): Model | Post
     {
         return
             (new CreateNewPostAction)

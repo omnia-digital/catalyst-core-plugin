@@ -2,8 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Observers;
 
-use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\CatalystCore\Enums\PostType;
+use OmniaDigital\CatalystCore\Models\Post;
 
 class PostObserver
 {

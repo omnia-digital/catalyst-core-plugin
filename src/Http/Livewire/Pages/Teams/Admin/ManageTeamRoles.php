@@ -13,13 +13,21 @@ class ManageTeamRoles extends Component
     use AuthorizesRequests;
 
     public $team;
+
     public $confirmingDeleteTeamRole = false;
+
     public $currentlyEditingRole = false;
+
     public $currentlyAddingPermission = false;
+
     public $roleToAttachPermission = null;
+
     public $roleIdBeingRemoved = null;
+
     public Role $editingRole;
+
     public $selectedPermissions = [];
+
     public $permissionsToAttach = [];
 
     public function rules()

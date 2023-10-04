@@ -7,15 +7,20 @@ use OmniaDigital\CatalystCore\Catalyst;
 use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
+
 use function view;
 
 class PostCard extends Component
 {
-    use WithNotification, WithGuestAccess;
+    use WithGuestAccess;
+    use WithNotification;
 
     public Post $post;
+
     public $optionsMenuOpen = false;
+
     public $clickable;
+
     public $showPostActions = true;
 
     public function mount(Post $post, $clickable = true, $showPostActions = true)

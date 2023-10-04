@@ -4,14 +4,15 @@ namespace OmniaDigital\CatalystCore\Http\Livewire\Components;
 
 use App\Models\Team;
 use App\Models\User;
-use OmniaDigital\CatalystCore\Support\Livewire\InteractsWithCalendarTeams;
 use Omnia\LivewireCalendar\LivewireCalendar;
+use OmniaDigital\CatalystCore\Support\Livewire\InteractsWithCalendarTeams;
 
 class Calendar extends LivewireCalendar
 {
     use InteractsWithCalendarTeams;
 
     public $id = 'calendar';
+
     public $selectedID;
 
     protected $listeners = ['select_event' => 'goToMonth'];

@@ -4,10 +4,10 @@ namespace OmniaDigital\CatalystCore\Http\Livewire\Partials;
 
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\Post;
-use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 use OmniaDigital\CatalystCore\Actions\Posts\CreateNewPostAction;
+use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\CatalystCore\Notifications\PostWasRepostedNotification;
+use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 use OmniaDigital\CatalystCore\Support\Livewire\WithPostEditor;
 use OmniaDigital\OmniaLibrary\Livewire\WithModal;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
@@ -15,7 +15,10 @@ use Throwable;
 
 class RepostButton extends Component
 {
-    use WithGuestAccess, WithModal, WithNotification, WithPostEditor;
+    use WithGuestAccess;
+    use WithModal;
+    use WithNotification;
+    use WithPostEditor;
 
     public Post $model;
 

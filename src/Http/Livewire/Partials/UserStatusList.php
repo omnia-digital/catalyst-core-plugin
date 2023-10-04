@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class UserStatusList extends Component
 {
-    public Team|null $team = null;
+    public ?Team $team = null;
 
     public function getUsersQueryProperty()
     {

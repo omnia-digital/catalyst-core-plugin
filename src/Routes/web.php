@@ -4,6 +4,8 @@ use App\Livewire\Pages\Companies\Index as AllCompanies;
 use App\Livewire\Pages\Teams\Discover as DiscoverTeams;
 use App\Livewire\Pages\Teams\Index as AllTeams;
 use Illuminate\Support\Facades\Route;
+use OmniaDigital\CatalystCore\Catalyst;
+use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Http\Livewire\Home;
 use OmniaDigital\CatalystCore\Http\Livewire\Pages\Bookmarks\Index;
 use OmniaDigital\CatalystCore\Http\Livewire\Pages\Contacts\Index as ContactsIndex;
@@ -28,12 +30,12 @@ use OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Map as TeamMap;
 use OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\MyTeams;
 use OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Show as ShowTeam;
 use OmniaDigital\CatalystCore\Http\Middleware\GuestAccessMiddleware;
-use OmniaDigital\CatalystCore\Catalyst;
-use OmniaDigital\CatalystCore\Facades\Translate;
 
 // Shorten URLs
-Route::get('/' . Catalyst::getUsersLetter() . '/{profile}',
-    ShowProfile::class)->middleware([GuestAccessMiddleware::class, 'verified'])->name('social.profile.show');
+Route::get(
+    '/' . Catalyst::getUsersLetter() . '/{profile}',
+    ShowProfile::class
+)->middleware([GuestAccessMiddleware::class, 'verified'])->name('social.profile.show');
 Route::get('/' . Catalyst::getTeamsLetter() . '/{team}', ShowTeam::class)->middleware([
     GuestAccessMiddleware::class,
     'verified',
@@ -45,7 +47,7 @@ Route::name('social.')->prefix('social')->middleware([GuestAccessMiddleware::cla
     // /{handle}/status/{post_id} for any type of post, whether it's a post or reply
     // /{messages}/{message_id} for messages
 
-//    Route::get('/home', Home::class)->name('home');
+    //    Route::get('/home', Home::class)->name('home');
     Route::get('bookmarks', Index::class)->name('bookmarks');
 
     Route::get('/trending', DiscoverIndex::class)->name('discover');

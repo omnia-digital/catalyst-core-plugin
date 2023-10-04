@@ -10,7 +10,9 @@ use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
 class DeletePostModal extends Component
 {
-    use WithModal, WithNotification, AuthorizesRequests;
+    use AuthorizesRequests;
+    use WithModal;
+    use WithNotification;
 
     public Post $post;
 

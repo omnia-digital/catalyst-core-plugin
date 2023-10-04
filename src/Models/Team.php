@@ -24,9 +24,6 @@ use Modules\Reviews\Traits\Reviewable;
 use Modules\Social\Enums\PostType;
 use Modules\Social\Models\Post;
 use Modules\Social\Models\TeamNotification;
-use Modules\Social\Traits\Awardable;
-use Modules\Social\Traits\HasAssociations;
-use Modules\Social\Traits\HasHandle;
 use Modules\Social\Traits\Likable;
 use Modules\Social\Traits\Postable;
 use OmniaDigital\CatalystCore\Traits\Tag\HasTeamTags;
@@ -53,7 +50,8 @@ class Team extends JetstreamTeam implements HasMedia, Searchable
     use HasSlug;
     use HasTags, HasTeamTags {
         HasTeamTags::tags insteadof HasTags;
-    }use HasTeamTypeTags;
+    }
+    use HasTeamTypeTags;
     use InteractsWithMedia;
     use Likable;
     use Notifiable;

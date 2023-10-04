@@ -24,7 +24,13 @@ use Spatie\Tags\HasTags;
 
 class Post extends Model implements HasMedia, Searchable
 {
-    use HasFactory, Likable, Postable, Attachable, Bookmarkable, InteractsWithMedia, HasTags;
+    use Attachable;
+    use Bookmarkable;
+    use HasFactory;
+    use HasTags;
+    use InteractsWithMedia;
+    use Likable;
+    use Postable;
 
     protected $fillable = [
         'user_id',

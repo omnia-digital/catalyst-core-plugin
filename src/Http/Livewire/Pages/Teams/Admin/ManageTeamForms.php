@@ -18,12 +18,16 @@ use Thomasjohnkane\Snooze\ScheduledNotification;
 
 class ManageTeamForms extends Component
 {
-    use WithFormManagement, WithModal, WithNotification;
+    use WithFormManagement;
+    use WithModal;
+    use WithNotification;
 
     public ?Team $team;
+
     public $formId = null;
 
     public $platformForms = [];
+
     public $teamForms = [];
 
     public $editingNotification = [

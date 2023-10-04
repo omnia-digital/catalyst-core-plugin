@@ -5,8 +5,8 @@ namespace OmniaDigital\CatalystCore\Http\Livewire\Partials;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
 use OmniaDigital\CatalystCore\Models\Post;
-use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 use OmniaDigital\CatalystCore\Notifications\PostWasBookmarkedNotification;
+use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 
 class BookmarkButton extends Component
 {

@@ -10,7 +10,8 @@ use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 
 class TrendingSection extends Component
 {
-    use WithPagination, WithCachedRows;
+    use WithCachedRows;
+    use WithPagination;
 
     public $title = 'Trending';
 
@@ -44,9 +45,9 @@ class TrendingSection extends Component
 
     public function getRowsProperty()
     {
-//        return $this->cache(function () {
+        //        return $this->cache(function () {
         return $this->rowsQuery->paginate(5);
-//        });
+        //        });
     }
 
     public function render()

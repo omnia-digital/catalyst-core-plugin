@@ -3,17 +3,20 @@
 namespace OmniaDigital\CatalystCore\Http\Livewire;
 
 use App\Models\Location;
-use OmniaDigital\CatalystCore\Facades\Catalyst;
-use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 use Livewire\Component;
 use Modules\Feeds\Models\FeedSource;
+use OmniaDigital\CatalystCore\Facades\Catalyst;
+use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 use OmniaDigital\OmniaLibrary\Livewire\WithMap;
 use OmniaDigital\OmniaLibrary\Livewire\WithModal;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
 class Home extends Component
 {
-    use WithMap, WithNotification, WithModal, WithGuestAccess;
+    use WithGuestAccess;
+    use WithMap;
+    use WithModal;
+    use WithNotification;
 
     public $tabs = [];
 

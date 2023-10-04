@@ -19,6 +19,7 @@ class Like extends Model
     protected $casts = [
         'deleted_at' => 'datetime',
     ];
+
     protected $fillable = ['user_id', 'likable_id', 'likable_type', 'liked', 'deleted_at', 'created_at', 'updated_at'];
 
     public function actor()

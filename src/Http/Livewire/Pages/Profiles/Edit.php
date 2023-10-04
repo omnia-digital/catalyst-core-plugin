@@ -12,16 +12,19 @@ use Squire\Models\Country;
 
 class Edit extends Component
 {
-    use AuthorizesRequests, WithFileUploads;
+    use AuthorizesRequests;
+    use WithFileUploads;
 
     public Profile $profile;
 
     public ?string $country = null;
 
     public $bannerImage;
+
     public $bannerImageName;
 
     public $photo;
+
     public $photoName;
 
     public $profileTypes = [];
@@ -51,7 +54,8 @@ class Edit extends Component
 
     public function getProfileTagsProperty()
     {
-        return Tag::withType('profile_type')->get()->mapWithKeys(fn (Tag $tag
+        return Tag::withType('profile_type')->get()->mapWithKeys(fn (
+            Tag $tag
         ) => [$tag->name => ucwords($tag->name)])->all();
     }
 

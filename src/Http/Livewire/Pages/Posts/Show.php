@@ -3,12 +3,13 @@
 namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Posts;
 
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\CatalystCore\Enums\PostType;
+use OmniaDigital\CatalystCore\Models\Post;
 
 class Show extends Component
 {
     public $post;
+
     public $recentlyAddedComment;
 
     protected $listeners = ['postAdded' => '$refresh'];

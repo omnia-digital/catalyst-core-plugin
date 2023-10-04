@@ -11,9 +11,10 @@ use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
 class Map extends Component
 {
-    use WithMap, WithNotification;
+    use WithMap;
+    use WithNotification;
 
-    public string|int|null $placeId = null;
+    public string | int | null $placeId = null;
 
     public $height = '500px';
 

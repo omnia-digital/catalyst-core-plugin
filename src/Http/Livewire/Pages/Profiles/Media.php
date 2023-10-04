@@ -8,6 +8,7 @@ use OmniaDigital\CatalystCore\Models\Profile;
 class Media extends Component
 {
     public $profile;
+
     public $media;
 
     public function getUserProperty()
