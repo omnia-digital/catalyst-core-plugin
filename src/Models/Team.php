@@ -2,7 +2,6 @@
 
 namespace OmniaDigital\CatalystCore\Models;
 
-use App\Traits\Location\HasLocation;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -16,19 +15,10 @@ use Laravel\Jetstream\Events\TeamDeleted;
 use Laravel\Jetstream\Events\TeamUpdated;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\Team as JetstreamTeam;
-use Modules\Forms\Models\Form;
-use Modules\Forms\Models\FormType;
-use Modules\Jobs\Models\JobPosition;
-use Modules\Jobs\Support\HasJobs;
-use Modules\Reviews\Traits\Reviewable;
-use Modules\Social\Enums\PostType;
-use Modules\Social\Models\Post;
-use Modules\Social\Models\TeamNotification;
-use Modules\Social\Traits\Awardable;
-use Modules\Social\Traits\HasAssociations;
-use Modules\Social\Traits\HasHandle;
-use Modules\Social\Traits\Likable;
-use Modules\Social\Traits\Postable;
+use OmniaDigital\CatalystCore\Enums\PostType;
+use OmniaDigital\CatalystCore\Traits\Awardable;
+use OmniaDigital\CatalystCore\Traits\Likable;
+use OmniaDigital\CatalystCore\Traits\Postable;
 use OmniaDigital\CatalystCore\Traits\Tag\HasTeamTags;
 use OmniaDigital\CatalystCore\Traits\Tag\HasTeamTypeTags;
 use Spatie\MediaLibrary\HasMedia;
@@ -39,7 +29,6 @@ use Spatie\Searchable\SearchResult;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Spatie\Tags\HasTags;
-use Trans;
 
 /**
  * Teams are just Teams
@@ -47,8 +36,9 @@ use Trans;
 class Team extends JetstreamTeam implements HasMedia, Searchable
 {
     use HasFactory;
-    use HasJobs;
+    use Awardable;
     use HasLocation;
+    use Followable;
     use HasProfilePhoto;
     use HasSlug;
     use HasTags, HasTeamTags {

@@ -5,22 +5,11 @@ namespace OmniaDigital\CatalystCore\Policies;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use OmniaDigital\CatalystCore\Models\Post;
+use OmniaDigital\CatalystCore\Traits\Policies\HasDefaultPolicy;
 
 class PostPolicy
 {
-    use HandlesAuthorization;
-
-    /**
-     * Perform pre-authorization checks.
-     *
-     * @return void|bool
-     */
-    public function before(User $user)
-    {
-        if ($user->hasRole('super_admin')) {
-            return true;
-        }
-    }
+    use HandlesAuthorization, HasDefaultPolicy;
 
     /**
      * @return true

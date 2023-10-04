@@ -5,10 +5,11 @@ namespace OmniaDigital\CatalystCore\Policies;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use OmniaDigital\CatalystCore\Models\UserScoreContribution;
+use OmniaDigital\CatalystCore\Traits\Policies\HasDefaultPolicy;
 
 class UserScoreContributionPolicy
 {
-    use HandlesAuthorization;
+    use HandlesAuthorization, HasDefaultPolicy;
 
     /**
      * Determine whether the user can view any models.
