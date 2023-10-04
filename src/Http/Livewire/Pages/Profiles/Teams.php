@@ -3,12 +3,12 @@
 namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Profiles;
 
 use App\Models\Team;
-use App\Traits\Filter\WithSortAndFilters;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\App;
 use Livewire\Component;
 use Livewire\WithPagination;
 use OmniaDigital\CatalystCore\Models\Profile;
+use OmniaDigital\CatalystCore\Traits\Filter\WithSortAndFilters;
 use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 
 class Teams extends Component

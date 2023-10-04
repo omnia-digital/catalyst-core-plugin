@@ -2,12 +2,12 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Bookmarks;
 
-use App\Traits\Filter\WithSortAndFilters;
 use Livewire\Component;
 use Livewire\WithPagination;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
 use OmniaDigital\CatalystCore\Models\Bookmark;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
+use OmniaDigital\CatalystCore\Traits\Filter\WithSortAndFilters;
 use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 
 class Index extends Component

@@ -4,13 +4,13 @@ namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams;
 
 use App\Models\Team;
 use App\Models\User;
-use OmniaDigital\CatalystCore\Facades\Catalyst;
-use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
-use App\Traits\Filter\WithSortAndFilters;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\App;
 use Livewire\Component;
 use Livewire\WithPagination;
+use OmniaDigital\CatalystCore\Facades\Catalyst;
+use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
+use OmniaDigital\CatalystCore\Traits\Filter\WithSortAndFilters;
 use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 
 class MyTeams extends Component
