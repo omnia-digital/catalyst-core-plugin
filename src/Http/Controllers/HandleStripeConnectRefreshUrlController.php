@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace OmniaDigital\CatalystCore\Http\Controllers;
 
 use App\Support\StripeConnect\StripeConnect;
 use Illuminate\Http\Request;
