@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Observers;
+namespace OmniaDigital\CatalystCore\Observers;
 
 use App\Models\Membership;
 use Spatie\Permission\Models\Role;

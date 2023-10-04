@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Observers;
+namespace OmniaDigital\CatalystCore\Observers;
 
 use App\Models\Team;
 use OmniaDigital\CatalystCore\Facades\Translate;
-
 use function activity;
 
 class TeamObserver

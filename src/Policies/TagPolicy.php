@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Policies;
+namespace OmniaDigital\CatalystCore\Policies;
 
 use App\Models\Tag;
 use App\Models\User;
