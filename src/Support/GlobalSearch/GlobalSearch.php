@@ -8,7 +8,7 @@ use Spatie\Searchable\SearchAspect;
 
 class GlobalSearch extends Search
 {
-    public function perform(string $query, ?User $user = null): GlobalSearchResultCollection
+    public function perform(string $query, User $user = null): GlobalSearchResultCollection
     {
         $searchResults = new GlobalSearchResultCollection;
 

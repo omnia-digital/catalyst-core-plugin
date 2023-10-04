@@ -151,26 +151,26 @@ class Catalyst
     {
         $countries = [];
 
-//        foreach ((new ISO3166)->all() as $country) {
-//            $countries[$country['alpha2']] = $country['name'];
-//        }
+        //        foreach ((new ISO3166)->all() as $country) {
+        //            $countries[$country['alpha2']] = $country['name'];
+        //        }
 
         return $countries;
     }
 
     public static function isModuleEnabled($moduleName)
     {
-//        $modules = collect(Module::allEnabled());
-//
-//        $contains = $modules->contains(function ($value, $key) use ($moduleName) {
-//            return $moduleName === $value->getLowerName();
-//        });
-//
-//        if ($contains) {
-//            return true;
-//        }
-//
-//        return false;
+        //        $modules = collect(Module::allEnabled());
+        //
+        //        $contains = $modules->contains(function ($value, $key) use ($moduleName) {
+        //            return $moduleName === $value->getLowerName();
+        //        });
+        //
+        //        if ($contains) {
+        //            return true;
+        //        }
+        //
+        //        return false;
     }
 
     public function translate($string): string
