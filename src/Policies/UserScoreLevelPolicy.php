@@ -9,7 +9,8 @@ use OmniaDigital\CatalystCore\Traits\Policies\HasDefaultPolicy;
 
 class UserScoreLevelPolicy
 {
-    use HandlesAuthorization, HasDefaultPolicy;
+    use HandlesAuthorization;
+    use HasDefaultPolicy;
 
     /**
      * Determine whether the user can view any models.

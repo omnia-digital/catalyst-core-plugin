@@ -32,7 +32,8 @@ class Profile extends Model implements HasMedia, Searchable
     use HasProfilePhoto;
     use HasProfileTags, HasTags {
         HasProfileTags::tags insteadof HasTags;
-    }use HasSlug;
+    }
+    use HasSlug;
     use InteractsWithMedia;
     use SoftDeletes;
 
