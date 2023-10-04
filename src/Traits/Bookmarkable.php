@@ -9,7 +9,7 @@ use OmniaDigital\CatalystCore\Models\Bookmark;
 
 trait Bookmarkable
 {
-    public function isBookmarkedBy(User|Authenticatable|null $user = null): bool
+    public function isBookmarkedBy(User | Authenticatable $user = null): bool
     {
         is_null($user) && $user = auth()->user();
         $this->load('bookmarks');

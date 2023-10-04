@@ -4,9 +4,9 @@ namespace OmniaDigital\CatalystCore\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Modules\Billing\Events\NewSubscriptionPayment;
+use OmniaDigital\CatalystCore\Listeners\TrackContributionToUserScore;
 use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\CatalystCore\Models\Profile;
-use OmniaDigital\CatalystCore\Listeners\TrackContributionToUserScore;
 use OmniaDigital\CatalystCore\Observers\PostObserver;
 use OmniaDigital\CatalystCore\Observers\ProfileObserver;
 

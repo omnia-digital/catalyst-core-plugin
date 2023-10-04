@@ -11,6 +11,7 @@ class AttachmentDrawer extends Component
     use WithFileUploads;
 
     public $attached_files = [];
+
     public $attachments = [];
 
     public function updatedAttachedFiles()

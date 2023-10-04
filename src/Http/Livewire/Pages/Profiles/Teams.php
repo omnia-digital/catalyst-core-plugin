@@ -13,7 +13,9 @@ use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 
 class Teams extends Component
 {
-    use WithPagination, WithCachedRows, WithSortAndFilters;
+    use WithCachedRows;
+    use WithPagination;
+    use WithSortAndFilters;
 
     public array $sortLabels = [
         'name' => 'Name',

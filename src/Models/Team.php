@@ -43,7 +43,8 @@ class Team extends JetstreamTeam implements HasMedia, Searchable
     use HasSlug;
     use HasTags, HasTeamTags {
         HasTeamTags::tags insteadof HasTags;
-    }use HasTeamTypeTags;
+    }
+    use HasTeamTypeTags;
     use InteractsWithMedia;
     use Likable;
     use Notifiable;

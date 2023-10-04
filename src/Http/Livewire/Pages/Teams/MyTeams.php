@@ -4,6 +4,7 @@ namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams;
 
 use App\Models\Team;
 use App\Models\User;
+use App\Traits\Filter\WithSortAndFilters;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\App;
 use Livewire\Component;
@@ -15,9 +16,13 @@ use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 
 class MyTeams extends Component
 {
-    use WithPagination, WithCachedRows, WithSortAndFilters, WithGuestAccess;
+    use WithCachedRows;
+    use WithGuestAccess;
+    use WithPagination;
+    use WithSortAndFilters;
 
     public $perPage = 25;
+
     public $loadMoreCount = 25;
 
     public array $sortLabels = [

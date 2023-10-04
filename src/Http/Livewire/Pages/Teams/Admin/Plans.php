@@ -13,7 +13,8 @@ use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 /** @note We are not using this currently. Save for future when we want teams to create custom plans */
 class Plans extends Component
 {
-    use AuthorizesRequests, WithNotification;
+    use AuthorizesRequests;
+    use WithNotification;
 
     public Team $team;
 
@@ -21,7 +22,7 @@ class Plans extends Component
 
     public ?string $description = null;
 
-    public float|string|null $price = null;
+    public float | string | null $price = null;
 
     public string $billingPeriod;
 

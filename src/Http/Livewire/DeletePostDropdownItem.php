@@ -8,6 +8,7 @@ use OmniaDigital\CatalystCore\Models\Post;
 class DeletePostDropdownItem extends Component
 {
     public Post $post;
+
     public bool $show;
 
     public ?string $content = null;

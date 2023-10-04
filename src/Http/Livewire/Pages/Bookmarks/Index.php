@@ -12,7 +12,10 @@ use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 
 class Index extends Component
 {
-    use WithPagination, WithCachedRows, WithSortAndFilters, WithGuestAccess;
+    use WithCachedRows;
+    use WithGuestAccess;
+    use WithPagination;
+    use WithSortAndFilters;
 
     public ?string $search = null;
 

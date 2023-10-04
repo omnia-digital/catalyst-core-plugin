@@ -28,10 +28,13 @@ use Squire\Models\Country;
 
 class Profile extends Model implements HasMedia, Searchable
 {
-    use SoftDeletes, HasFactory, HasSlug, HasProfilePhoto, InteractsWithMedia;
+    use HasFactory;
+    use HasProfilePhoto;
     use HasProfileTags, HasTags {
         HasProfileTags::tags insteadof HasTags;
-    }
+    }use HasSlug;
+    use InteractsWithMedia;
+    use SoftDeletes;
 
     public $incrementing = false;
 
@@ -216,7 +219,7 @@ class Profile extends Model implements HasMedia, Searchable
             if ($this->user->settings->show_profile_follower_count == false) {
                 return 0;
             }
-//                $count = $this->withCount('followers')->orderBy('followers_count','desc')->get();
+            //                $count = $this->withCount('followers')->orderBy('followers_count','desc')->get();
             $count = DB::table('followers')->where('following_id', $this->id)->count();
             if ($this->followers_count != $count) {
                 $this->followers_count = $count;

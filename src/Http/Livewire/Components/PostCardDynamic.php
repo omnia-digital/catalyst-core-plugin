@@ -3,6 +3,7 @@
 namespace OmniaDigital\CatalystCore\Http\Livewire\Components;
 
 use OmniaDigital\CatalystCore\Models\Post;
+
 use function view;
 
 class PostCardDynamic extends PostCard

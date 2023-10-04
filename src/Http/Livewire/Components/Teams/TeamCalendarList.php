@@ -20,7 +20,10 @@ use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 
 class TeamCalendarList extends Component
 {
-    use WithCachedRows, WithPagination, WithSortAndFilters, WithTeamManagement;
+    use WithCachedRows;
+    use WithPagination;
+    use WithSortAndFilters;
+    use WithTeamManagement;
 
     public array $sortLabels = [
         'name' => 'Name',
@@ -114,7 +117,7 @@ class TeamCalendarList extends Component
         $this->dispatch('toggle_map_calendar', tab: $tab, places: $this->places);
     }
 
-    public function render(): View|\Illuminate\Foundation\Application|Factory|Application
+    public function render(): View | \Illuminate\Foundation\Application | Factory | Application
     {
         return view('social::livewire.components.teams.team-calendar-list', [
             'teams' => $this->rows,

@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
 use OmniaDigital\CatalystCore\Models\Post;
-use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 use OmniaDigital\CatalystCore\Notifications\PostWasLikedNotification;
+use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 
 class LikeButton extends Component
 {

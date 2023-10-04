@@ -11,6 +11,7 @@ use OmniaDigital\CatalystCore\Facades\Translate;
 class ApplicationAcceptedToTeamNotification extends BaseNotification
 {
     public static string $label = 'Application Accepted';
+
     public static string $description = 'This is a notification when your application to a team has been accepted.';
 
     /**

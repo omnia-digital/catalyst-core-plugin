@@ -14,7 +14,8 @@ use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
 class Edit extends Component
 {
-    use WithMediaManager, WithNotification;
+    use WithMediaManager;
+    use WithNotification;
 
     public Post $post;
 
@@ -121,7 +122,8 @@ class Edit extends Component
 
     private function emitImagesSet(): void
     {
-        $this->dispatch('update-post:image-set',
+        $this->dispatch(
+            'update-post:image-set',
             id: $this->editorId,
             images: $this->images
         );

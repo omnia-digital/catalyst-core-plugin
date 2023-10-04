@@ -28,7 +28,6 @@ use Modules\Reviews\Models\Review;
 use Modules\Social\Models\Like;
 use Modules\Social\Models\Post;
 use Modules\Social\Models\Profile;
-use Modules\Social\Traits\Awardable;
 use Modules\Social\Traits\HasBookmarks;
 use Modules\Social\Traits\HasHandle;
 use OmniaDigital\CatalystCore\Traits\Team\HasTeams;

@@ -7,16 +7,19 @@ use App\Models\Team;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Support\Livewire\ManagesTeamNotifications;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 use OmniaDigital\OmniaLibrary\Livewire\WithPlace;
-use Platform;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
-use OmniaDigital\CatalystCore\Facades\Translate;
 
 class TeamAdmin extends Component
 {
-    use WithPlace, AuthorizesRequests, WithFileUploads, WithNotification, ManagesTeamNotifications;
+    use AuthorizesRequests;
+    use ManagesTeamNotifications;
+    use WithFileUploads;
+    use WithNotification;
+    use WithPlace;
 
     public Team $team;
 
@@ -29,18 +32,23 @@ class TeamAdmin extends Component
     public bool $removeAddress = false;
 
     public $bannerImage;
+
     public $bannerImageName;
 
     public $mainImage;
+
     public $mainImageName;
 
     public $profilePhoto;
+
     public $profilePhotoName;
 
     public $sampleMedia = [];
+
     public $sampleMediaNames = [];
 
     public $confirmingRemoveMedia = false;
+
     public $mediaToRemove;
 
     public function mount(Team $team)
@@ -132,7 +140,7 @@ class TeamAdmin extends Component
         }
 
         if (! is_null($this->bannerImage) && $this->team->bannerImage()
-                ->count()) {
+            ->count()) {
             $this->team->bannerImage()
                 ->delete();
         }
@@ -140,7 +148,7 @@ class TeamAdmin extends Component
             ->toMediaCollection('team_banner_images');
 
         if ($this->mainImage && $this->team->mainImage()
-                ->count()) {
+            ->count()) {
             $this->team->mainImage()
                 ->delete();
         }
@@ -148,7 +156,7 @@ class TeamAdmin extends Component
             ->toMediaCollection('team_main_images');
 
         if ($this->profilePhoto && $this->team->profilePhoto()
-                ->count()) {
+            ->count()) {
             $this->team->profilePhoto()
                 ->delete();
         }
@@ -167,8 +175,18 @@ class TeamAdmin extends Component
 
         $this->team->refresh();
 
-        $this->reset('newAddress', 'removeAddress', 'bannerImage', 'bannerImageName', 'profilePhoto',
-            'profilePhotoName', 'mainImage', 'mainImageName', 'sampleMedia', 'sampleMediaNames');
+        $this->reset(
+            'newAddress',
+            'removeAddress',
+            'bannerImage',
+            'bannerImageName',
+            'profilePhoto',
+            'profilePhotoName',
+            'mainImage',
+            'mainImageName',
+            'sampleMedia',
+            'sampleMediaNames'
+        );
     }
 
     public function removeTag(string $tagName)

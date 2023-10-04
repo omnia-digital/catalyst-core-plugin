@@ -11,6 +11,7 @@ use Livewire\Component;
 class Applications extends Component
 {
     public $invitations;
+
     public $applications;
 
     public function mount()
@@ -86,10 +87,10 @@ class Applications extends Component
         return $this->applications->count();
     }
 
-//    public function testClick()
-//    {
-//        $this->dispatch('team_action', "Invitation declined");
-//    }
+    //    public function testClick()
+    //    {
+    //        $this->dispatch('team_action', "Invitation declined");
+    //    }
 
     public function getUserProperty()
     {

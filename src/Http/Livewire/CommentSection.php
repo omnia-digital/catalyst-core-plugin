@@ -5,17 +5,18 @@ namespace OmniaDigital\CatalystCore\Http\Livewire;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Facades\Catalyst;
-use OmniaDigital\CatalystCore\Models\Post;
-use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 use OmniaDigital\CatalystCore\Actions\Posts\CreateNewPostAction;
 use OmniaDigital\CatalystCore\Enums\PostType;
+use OmniaDigital\CatalystCore\Facades\Catalyst;
+use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\CatalystCore\Notifications\NewCommentNotification;
+use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 use OmniaDigital\CatalystCore\Support\Livewire\WithPostEditor;
 
 class CommentSection extends Component
 {
-    use WithPostEditor, WithGuestAccess;
+    use WithGuestAccess;
+    use WithPostEditor;
 
     public Post $post;
 

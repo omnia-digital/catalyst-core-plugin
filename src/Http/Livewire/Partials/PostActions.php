@@ -12,9 +12,13 @@ class PostActions extends Component
     public bool $show;
 
     public bool $showCommentButton = true;
+
     public bool $showLikeButton = true;
+
     public bool $showRepostButton = true;
+
     public bool $showShareButton = true;
+
     public bool $showBookmarkButton = false;
 
     public function mount(

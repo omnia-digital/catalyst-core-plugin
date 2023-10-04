@@ -10,11 +10,15 @@ use Share;
 
 class ShareButton extends Component
 {
-    use withModal, WithGuestAccess;
+    use WithGuestAccess;
+    use withModal;
 
     public Post $model;
+
     public ?string $url;
+
     public array $links = [];
+
     public ?string $content = null;
 
     public function mount(Post $model, $url = '')

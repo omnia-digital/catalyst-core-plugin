@@ -12,7 +12,7 @@ class CreateNewPostAction
 {
     use Conditionable;
 
-    protected User|Authenticatable|null $user = null;
+    protected User | Authenticatable | null $user = null;
 
     protected ?Model $postable = null;
 
@@ -71,7 +71,7 @@ class CreateNewPostAction
         return $post;
     }
 
-    public function user(User|Authenticatable $user): self
+    public function user(User | Authenticatable $user): self
     {
         $this->user = $user;
 

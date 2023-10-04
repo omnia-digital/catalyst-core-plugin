@@ -6,16 +6,18 @@ use App\Models\Award;
 use App\Models\Location;
 use App\Models\Team;
 use App\Models\User;
-use OmniaDigital\CatalystCore\Facades\Catalyst;
-use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 use App\Traits\Team\WithTeamManagement;
 use Livewire\Component;
+use OmniaDigital\CatalystCore\Facades\Catalyst;
+use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 use OmniaDigital\OmniaLibrary\Livewire\WithMap;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Show extends Component
 {
-    use WithTeamManagement, WithMap, WithGuestAccess;
+    use WithGuestAccess;
+    use WithMap;
+    use WithTeamManagement;
 
     public $team;
 
@@ -24,6 +26,7 @@ class Show extends Component
     public $displayID = null;
 
     public ?User $userToAddAwardsTo;
+
     public $applicationsCount = 0;
 
     public $awardsToAdd = [];
