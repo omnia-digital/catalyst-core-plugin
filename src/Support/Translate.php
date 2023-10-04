@@ -56,6 +56,7 @@ class Translate
         return $originalWord;
         $cleanedWord = htmlspecialchars($originalWord, ENT_QUOTES, 'UTF-8');
         $cleanedWord = str_replace(['"', "'", '’', '.', ',', ';'], '', $cleanedWord);
+
         // @TODO [Josh] - currently we are just replacing punctuations, but we should be fining the position, then putting them back in at the exact same spot
         return $cleanedWord;
     }

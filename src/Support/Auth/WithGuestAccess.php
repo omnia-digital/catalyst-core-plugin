@@ -6,7 +6,7 @@ use OmniaDigital\CatalystCore\Catalyst;
 
 trait WithGuestAccess
 {
-    public function showAuthenticationModal(?string $redirect = null)
+    public function showAuthenticationModal(string $redirect = null)
     {
         $this->dispatch('showAuthenticationModal', redirect: $redirect)->to('authentication-modal');
     }
