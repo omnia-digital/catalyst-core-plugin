@@ -13,7 +13,9 @@ abstract class BaseNotification extends Notification implements ShouldQueue
     use Queueable;
 
     public static string $label = '';
+
     public static string $description = '';
+
     public static array $channels = ['mail', 'database', 'broadcast', 'sms'];
 
     public static function getLabel()
@@ -69,12 +71,12 @@ abstract class BaseNotification extends Notification implements ShouldQueue
     public function toSms($notifiable)
     {
         return $this->toArray();
-//        $url = route('notifications');
-//
-//        return ()
-//            ->greeting('Hello!')
-//            ->line('You have a new Notification!')
-//            ->action('View Notifications', $url);
+        //        $url = route('notifications');
+        //
+        //        return ()
+        //            ->greeting('Hello!')
+        //            ->line('You have a new Notification!')
+        //            ->action('View Notifications', $url);
     }
 
     public function toArray($notifiable)
@@ -92,10 +94,10 @@ abstract class BaseNotification extends Notification implements ShouldQueue
     /**
      * Get the Vonage / SMS representation of the notification.
      */
-//    public function toVonage(object $notifiable): VonageMessage
-//    {
-//        return (new VonageMessage)
-//            ->clientReference((string) $notifiable->id)
-//            ->content('Your SMS message content');
-//    }
+    //    public function toVonage(object $notifiable): VonageMessage
+    //    {
+    //        return (new VonageMessage)
+    //            ->clientReference((string) $notifiable->id)
+    //            ->content('Your SMS message content');
+    //    }
 }

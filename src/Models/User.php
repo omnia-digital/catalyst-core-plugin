@@ -40,24 +40,18 @@ use Thomasjohnkane\Snooze\Traits\SnoozeNotifiable;
 
 class User extends Authenticatable implements FilamentUser, MustVerifyEmail
 {
-    use Awardable,
-        Followable,
-        Follower,
-        HasApiTokens,
-        HasBookmarks,
-        HasFactory,
-        HasHandle,
-        HasJobs,
-        HasNotificationSubscriptions,
-        HasPanelShield,
-        HasRoles,
-        HasTransactions,
-        Notifiable,
-        SnoozeNotifiable,
-        SoftDeletes,
-        TwoFactorAuthenticatable;
-    use Billable, WithChargentSubscriptions;
-
+    use Awardable;
+    use Billable;
+    use Followable;
+    use Follower;
+    use HasApiTokens;
+    use HasBookmarks;
+    use HasFactory;
+    use HasHandle;
+    use HasJobs;
+    use HasNotificationSubscriptions;
+    use HasPanelShield;
+    use HasRoles;
     use HasTeams, JetstreamHasTeams {
         HasTeams::teams insteadof JetstreamHasTeams;
         HasTeams::hasTeamRole insteadof JetstreamHasTeams;
@@ -67,6 +61,12 @@ class User extends Authenticatable implements FilamentUser, MustVerifyEmail
         HasTeams::currentTeam insteadof JetstreamHasTeams;
         HasTeams::teamRole insteadof JetstreamHasTeams;
     }
+    use HasTransactions;
+    use Notifiable;
+    use SnoozeNotifiable;
+    use SoftDeletes;
+    use TwoFactorAuthenticatable;
+    use WithChargentSubscriptions;
 
     protected $casts = [
         'deleted_at' => 'datetime',

@@ -14,7 +14,7 @@ class GlobalSearch extends Component
 {
     public ?string $search = null;
 
-    public SearchResultCollection|Collection $searchResults;
+    public SearchResultCollection | Collection $searchResults;
 
     public function updatedSearch($value)
     {

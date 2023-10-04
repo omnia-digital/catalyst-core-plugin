@@ -8,7 +8,8 @@ use Modules\Social\Traits\Schedulable;
 
 class TeamNotification extends Model
 {
-    use HasFactory, Schedulable;
+    use HasFactory;
+    use Schedulable;
 
     protected $guarded = [];
 

@@ -47,11 +47,23 @@ use Trans;
  */
 class Team extends JetstreamTeam implements HasMedia, Searchable
 {
-    use HasFactory, Notifiable, Likable, Postable, Followable, Awardable, Reviewable, HasProfilePhoto, HasSlug, HasHandle, HasLocation, HasTeamTypeTags, InteractsWithMedia, HasAssociations, HasJobs;
-
-    use HasTeamTags, HasTags {
+    use Awardable;
+    use Followable;
+    use HasAssociations;
+    use HasFactory;
+    use HasHandle;
+    use HasJobs;
+    use HasLocation;
+    use HasProfilePhoto;
+    use HasSlug;
+    use HasTags, HasTeamTags {
         HasTeamTags::tags insteadof HasTags;
-    }
+    }use HasTeamTypeTags;
+    use InteractsWithMedia;
+    use Likable;
+    use Notifiable;
+    use Postable;
+    use Reviewable;
 
     const DEFAULT_TEAM_NAME = 'Default Org';
 
@@ -257,12 +269,12 @@ class Team extends JetstreamTeam implements HasMedia, Searchable
 
     //** Memberships and Roles  **//
 
-//    public function owner()
-//    {
-//        return $this->morphOne(Membership::class, 'model')
-//                    ->where('role_id', $this->getRoleByName(config('platform.teams.default_owner_role'))
-//                                           ->id);
-//    }
+    //    public function owner()
+    //    {
+    //        return $this->morphOne(Membership::class, 'model')
+    //                    ->where('role_id', $this->getRoleByName(config('platform.teams.default_owner_role'))
+    //                                           ->id);
+    //    }
 
     public function owners()
     {

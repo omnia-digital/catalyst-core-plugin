@@ -17,7 +17,8 @@ trait HasLogo
         tap($this->logo_path, function ($previous) use ($photo) {
             $this->forceFill([
                 'logo_path' => $photo->storePublicly(
-                    'logos', ['disk' => $this->logoDisk()]
+                    'logos',
+                    ['disk' => $this->logoDisk()]
                 ),
             ])->save();
 
