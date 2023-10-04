@@ -2,9 +2,9 @@
 
 namespace OmniaDigital\CatalystCore\Http\Controllers;
 
-use App\Support\StripeConnect\StripeConnect;
 use Illuminate\Http\Request;
 use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Support\StripeConnect\StripeConnect;
 
 class HandleStripeConnectRefreshUrlController extends Controller
 {

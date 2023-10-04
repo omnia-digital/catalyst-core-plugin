@@ -2,11 +2,10 @@
 
 namespace OmniaDigital\CatalystCore\Notifications;
 
-use OmniaDigital\CatalystCore\Notifications\BaseNotification;
-use App\Support\Notification\NotificationCenter;
 use Illuminate\Notifications\Messages\MailMessage;
 use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Models\User;
+use OmniaDigital\CatalystCore\Support\Notification\NotificationCenter;
 
 class NewFollowerNotification extends BaseNotification
 {

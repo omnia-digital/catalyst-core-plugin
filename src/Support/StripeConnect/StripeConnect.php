@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Support\StripeConnect;
+namespace OmniaDigital\CatalystCore\Support\StripeConnect;
 
 use Stripe\Account;
 use Stripe\AccountLink;

@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Support\Livewire;
 
-use App\Rules\CronExpressionValidation;
+use OmniaDigital\CatalystCore\Rules\CronExpressionValidation;
 
 trait ManagesTeamNotifications
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Rules;
+namespace OmniaDigital\CatalystCore\Rules;
 
 use Cron\CronExpression;
 use Illuminate\Contracts\Validation\Rule;

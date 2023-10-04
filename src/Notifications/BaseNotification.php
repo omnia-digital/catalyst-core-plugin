@@ -2,11 +2,11 @@
 
 namespace OmniaDigital\CatalystCore\Notifications;
 
-use App\Support\Notification\NotificationCenter;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use OmniaDigital\CatalystCore\Support\Notification\NotificationCenter;
 
 abstract class BaseNotification extends Notification implements ShouldQueue
 {

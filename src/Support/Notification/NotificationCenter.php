@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Support\Notification;
+namespace OmniaDigital\CatalystCore\Support\Notification;
 
 use Illuminate\Support\Carbon;
 

@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Support\StripeConnect\StripeConnect;
 use Illuminate\Support\ServiceProvider;
+use OmniaDigital\CatalystCore\Support\StripeConnect\StripeConnect;
 
 class StripeConnectServiceProvider extends ServiceProvider
 {

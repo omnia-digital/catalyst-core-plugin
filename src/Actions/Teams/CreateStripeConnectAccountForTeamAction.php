@@ -2,9 +2,9 @@
 
 namespace OmniaDigital\CatalystCore\Actions\Teams;
 
-use App\Support\StripeConnect\StripeConnect;
 use Exception;
 use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Support\StripeConnect\StripeConnect;
 
 class CreateStripeConnectAccountForTeamAction
 {

@@ -2,11 +2,10 @@
 
 namespace OmniaDigital\CatalystCore\Notifications;
 
-use OmniaDigital\CatalystCore\Notifications\BaseNotification;
-use App\Support\Notification\NotificationCenter;
 use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\CatalystCore\Models\User;
+use OmniaDigital\CatalystCore\Support\Notification\NotificationCenter;
 
 class ApplicationAcceptedToTeamNotification extends BaseNotification
 {
