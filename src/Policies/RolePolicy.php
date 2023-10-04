@@ -2,9 +2,9 @@
 
 namespace OmniaDigital\CatalystCore\Policies;
 
-use App\Models\Role;
-use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use OmniaDigital\CatalystCore\Models\Role;
+use OmniaDigital\CatalystCore\Models\User;
 
 class RolePolicy
 {

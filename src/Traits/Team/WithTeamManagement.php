@@ -2,12 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Traits\Team;
 
-use App\Actions\Teams\ApplyToTeam;
-use App\Actions\Teams\RemoveTeamApplication;
 use App\Contracts\InvitesTeamMembers;
-use App\Models\TeamApplication;
-use App\Models\TeamInvitation;
-use App\Models\User;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Jetstream\Contracts\AddsTeamMembers;
 use Laravel\Jetstream\Contracts\RemovesTeamMembers;
@@ -16,6 +11,11 @@ use Laravel\Jetstream\Jetstream;
 use Modules\Social\Notifications\ApplicationAcceptedToTeamNotification;
 use Modules\Social\Notifications\NewApplicationToTeamNotification;
 use Modules\Social\Notifications\NewMemberOfMyTeamNotification;
+use OmniaDigital\CatalystCore\Actions\Teams\ApplyToTeam;
+use OmniaDigital\CatalystCore\Actions\Teams\RemoveTeamApplication;
+use OmniaDigital\CatalystCore\Models\TeamApplication;
+use OmniaDigital\CatalystCore\Models\TeamInvitation;
+use OmniaDigital\CatalystCore\Models\User;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 use Spatie\Permission\Models\Role;
 use Trans;

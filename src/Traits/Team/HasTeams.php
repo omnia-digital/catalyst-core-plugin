@@ -2,8 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Traits\Team;
 
-use App\Models\Team;
 use Laravel\Jetstream\Jetstream;
+use OmniaDigital\CatalystCore\Models\Team;
 use Spatie\Permission\Models\Role;
 
 trait HasTeams

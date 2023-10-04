@@ -2,12 +2,12 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Profiles;
 
-use App\Models\Tag;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use OmniaDigital\CatalystCore\Models\Profile;
+use OmniaDigital\CatalystCore\Models\Tag;
 use Squire\Models\Country;
 
 class Edit extends Component

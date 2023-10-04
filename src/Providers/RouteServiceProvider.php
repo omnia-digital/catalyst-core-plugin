@@ -2,68 +2,53 @@
 
 namespace OmniaDigital\CatalystCore\Providers;
 
+use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
     /**
-     * The module namespace to assume when generating URLs to actions.
+     * The path to your application's "home" route.
+     *
+     * Typically, users are redirected here after authentication.
      *
      * @var string
      */
-    protected $moduleNamespace = '';
+    public const HOME = '/';
 
     /**
-     * Called before routes are registered.
-     *
-     * Register any model bindings or pattern based filters.
-     *
-     * @return void
+     * Define your route model bindings, pattern filters, and other route configuration.
      */
-    public function boot()
+    public function boot(): void
     {
-        parent::boot();
+        $this->configureRateLimiting();
+
+        $this->routes(function () {
+            Route::prefix('api')
+                ->middleware('api')
+                ->namespace($this->namespace)
+                ->group(__DIR__.'/../routes/api.php');
+
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(__DIR__.'/../routes/web.php');
+        });
+
+//        Route::mailcoach('mailcoach');
     }
 
     /**
-     * Define the routes for the application.
+     * Configure the rate limiters for the application.
      *
      * @return void
      */
-    public function map()
+    protected function configureRateLimiting()
     {
-        $this->mapApiRoutes();
-
-        $this->mapWebRoutes();
-    }
-
-    /**
-     * Define the "api" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
-     */
-    protected function mapApiRoutes()
-    {
-        Route::prefix('api')
-            ->middleware('api')
-            ->namespace($this->moduleNamespace)
-            ->group(module_path('Social', '/Routes/api.php'));
-    }
-
-    /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapWebRoutes()
-    {
-        Route::middleware('web')
-            ->namespace($this->moduleNamespace)
-            ->group(module_path('Social', '/Routes/web.php'));
+        RateLimiter::for('api', function (Request $request) {
+            return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
+        });
     }
 }

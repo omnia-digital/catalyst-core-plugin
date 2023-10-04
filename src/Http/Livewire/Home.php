@@ -2,10 +2,10 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire;
 
-use App\Models\Location;
 use Livewire\Component;
 use Modules\Feeds\Models\FeedSource;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
+use OmniaDigital\CatalystCore\Models\Location;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 use OmniaDigital\OmniaLibrary\Livewire\WithMap;
 use OmniaDigital\OmniaLibrary\Livewire\WithModal;

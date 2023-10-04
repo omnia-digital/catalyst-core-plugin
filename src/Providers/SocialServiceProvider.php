@@ -2,14 +2,14 @@
 
 namespace OmniaDigital\CatalystCore\Providers;
 
-use App\Models\Team;
-use App\Models\User;
 use App\Settings\GeneralSettings;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use OmniaDigital\CatalystCore\Models\Profile;
+use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Models\User;
 
 class SocialServiceProvider extends ServiceProvider
 {
@@ -130,5 +130,15 @@ class SocialServiceProvider extends ServiceProvider
         }
 
         return $paths;
+    }
+
+    private function registerEvents()
+    {
+        
+    }
+
+    private function registerStripeConnect()
+    {
+        
     }
 }

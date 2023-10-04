@@ -2,7 +2,6 @@
 
 namespace OmniaDigital\CatalystCore\Models;
 
-use App\Models\Team;
 use Modules\Jobs\Models\JobPosition;
 use Modules\Social\Models\Post;
 

@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Observers;
 
-use App\Models\Membership;
+use OmniaDigital\CatalystCore\Models\Membership;
 use Spatie\Permission\Models\Role;
 
 class MembershipObserver

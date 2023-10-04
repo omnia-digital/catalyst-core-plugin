@@ -2,13 +2,13 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams;
 
-use App\Models\Award;
-use App\Models\Location;
-use App\Models\Team;
-use App\Models\User;
 use App\Traits\Team\WithTeamManagement;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
+use OmniaDigital\CatalystCore\Models\Award;
+use OmniaDigital\CatalystCore\Models\Location;
+use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Models\User;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 use OmniaDigital\OmniaLibrary\Livewire\WithMap;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;

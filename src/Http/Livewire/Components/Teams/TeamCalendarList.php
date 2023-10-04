@@ -2,9 +2,6 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Components\Teams;
 
-use App\Models\Location;
-use App\Models\Team;
-use App\Models\User;
 use App\Traits\Team\WithTeamManagement;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -15,6 +12,9 @@ use Illuminate\Support\Facades\App;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
+use OmniaDigital\CatalystCore\Models\Location;
+use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Models\User;
 use OmniaDigital\CatalystCore\Traits\Filter\WithSortAndFilters;
 use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 

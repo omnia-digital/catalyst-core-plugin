@@ -2,10 +2,10 @@
 
 namespace OmniaDigital\CatalystCore\Policies;
 
-use App\Models\Award;
-use App\Models\User;
 use App\Traits\Policies\HasDefaultPolicy;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use OmniaDigital\CatalystCore\Models\Award;
+use OmniaDigital\CatalystCore\Models\User;
 
 class AwardPolicy
 {

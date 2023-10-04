@@ -2,13 +2,13 @@
 
 namespace OmniaDigital\CatalystCore\Notifications;
 
-use App\Models\Team;
 use App\Notifications\BaseNotification;
 use App\Support\Notification\NotificationCenter;
 use Illuminate\Support\Str;
 use OmniaDigital\CatalystCore\Enums\PostType;
 use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Models\Mention;
+use OmniaDigital\CatalystCore\Models\Team;
 
 class SomeoneMentionedYouNotification extends BaseNotification
 {

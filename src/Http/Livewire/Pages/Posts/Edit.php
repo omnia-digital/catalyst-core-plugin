@@ -2,14 +2,14 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Posts;
 
-use App\Models\Tag;
-use App\Models\Team;
-use App\Models\User;
 use Livewire\Component;
 use Omnia\MediaManager\WithMediaManager;
 use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Models\Mention;
 use OmniaDigital\CatalystCore\Models\Post;
+use OmniaDigital\CatalystCore\Models\Tag;
+use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Models\User;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
 class Edit extends Component

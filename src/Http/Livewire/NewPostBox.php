@@ -2,9 +2,9 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire;
 
-use App\Models\User;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Models\Post;
+use OmniaDigital\CatalystCore\Models\User;
 
 class NewPostBox extends Component
 {

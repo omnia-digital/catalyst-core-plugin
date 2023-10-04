@@ -2,9 +2,9 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Admin;
 
-use App\Models\Team;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Component;
+use OmniaDigital\CatalystCore\Models\Team;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 

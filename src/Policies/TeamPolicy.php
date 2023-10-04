@@ -2,14 +2,14 @@
 
 namespace OmniaDigital\CatalystCore\Policies;
 
-use App\Models\Team;
-use App\Models\User;
-use OmniaDigital\CatalystCore\Facades\Catalyst;
 use App\Traits\Policies\HasDefaultPolicy;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Support\Facades\Response;
 use Modules\Billing\Models\SubscriptionType;
+use OmniaDigital\CatalystCore\Facades\Catalyst;
 use OmniaDigital\CatalystCore\Facades\Translate;
+use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Models\User;
 
 class TeamPolicy
 {

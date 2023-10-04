@@ -2,10 +2,10 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Components\Teams;
 
-use App\Models\Location;
-use App\Models\Team;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Facades\Translate;
+use OmniaDigital\CatalystCore\Models\Location;
+use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\OmniaLibrary\Livewire\WithMap;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 

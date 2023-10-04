@@ -2,9 +2,9 @@
 
 namespace OmniaDigital\CatalystCore\Policies;
 
-use App\Models\User;
 use App\Settings\BillingSettings;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use OmniaDigital\CatalystCore\Models\User;
 
 class BillingSettingsPolicy
 {

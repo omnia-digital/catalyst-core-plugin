@@ -2,8 +2,6 @@
 
 namespace OmniaDigital\CatalystCore\Models;
 
-use App\Models\Team;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

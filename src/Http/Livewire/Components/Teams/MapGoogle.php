@@ -2,9 +2,9 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Components\Teams;
 
-use App\Models\ContactCategory;
 use Illuminate\Support\Arr;
 use Livewire\Component;
+use OmniaDigital\CatalystCore\Models\ContactCategory;
 use Squire\Models\Country;
 
 class MapGoogle extends Component

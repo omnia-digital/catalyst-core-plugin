@@ -2,9 +2,9 @@
 
 namespace OmniaDigital\CatalystCore\Policies;
 
-use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use OmniaDigital\CatalystCore\Models\Profile;
+use OmniaDigital\CatalystCore\Models\User;
 use OmniaDigital\CatalystCore\Traits\Policies\HasDefaultPolicy;
 
 class ProfilePolicy

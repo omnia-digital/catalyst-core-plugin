@@ -2,7 +2,6 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Admin;
 
-use App\Models\Team;
 use Illuminate\Support\Arr;
 use Illuminate\Validation\Rule;
 use Laravel\Jetstream\Jetstream;
@@ -11,6 +10,7 @@ use Modules\Forms\Models\Form;
 use Modules\Forms\Models\FormNotification;
 use Modules\Forms\Notifications\FormReminderNotification;
 use Modules\Forms\Traits\Livewire\WithFormManagement;
+use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\OmniaLibrary\Livewire\WithModal;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 use Spatie\Permission\Models\Role;

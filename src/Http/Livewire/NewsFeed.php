@@ -2,10 +2,10 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire;
 
-use App\Models\Team;
 use Livewire\Component;
 use Livewire\WithPagination;
 use OmniaDigital\CatalystCore\Models\Post;
+use OmniaDigital\CatalystCore\Models\Team;
 
 class NewsFeed extends Component
 {

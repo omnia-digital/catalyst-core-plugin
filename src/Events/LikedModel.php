@@ -4,9 +4,9 @@ namespace OmniaDigital\CatalystCore\Events;
 
 use App\Contracts\Events\ContributesToUserScore;
 use App\Events\BaseEvent;
-use App\Models\User;
 use Illuminate\Queue\SerializesModels;
 use OmniaDigital\CatalystCore\Models\Post;
+use OmniaDigital\CatalystCore\Models\User;
 
 class LikedModel extends BaseEvent implements ContributesToUserScore
 {

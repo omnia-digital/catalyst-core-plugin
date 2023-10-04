@@ -2,11 +2,11 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Forms;
 
-use App\Models\Team;
 use Filament\Forms\Contracts\HasForms;
 use Livewire\Component;
 use Modules\Forms\Models\Form;
 use Modules\Forms\Traits\Livewire\WithFormBuilder;
+use OmniaDigital\CatalystCore\Models\Team;
 
 class Builder extends Component implements HasForms
 {

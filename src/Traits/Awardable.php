@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Traits;
 
-use App\Models\Award;
+use OmniaDigital\CatalystCore\Models\Award;
 
 trait Awardable
 {

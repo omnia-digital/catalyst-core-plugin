@@ -2,8 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Partials;
 
-use App\Models\User;
 use Livewire\Component;
+use OmniaDigital\CatalystCore\Models\User;
 
 class WhoToFollowSection extends Component
 {

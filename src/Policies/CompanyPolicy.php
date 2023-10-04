@@ -2,9 +2,9 @@
 
 namespace OmniaDigital\CatalystCore\Policies;
 
-use App\Models\Company;
-use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use OmniaDigital\CatalystCore\Models\Company;
+use OmniaDigital\CatalystCore\Models\User;
 
 class CompanyPolicy
 {

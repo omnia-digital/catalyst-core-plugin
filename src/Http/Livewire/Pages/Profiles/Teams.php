@@ -2,12 +2,12 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Profiles;
 
-use App\Models\Team;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\App;
 use Livewire\Component;
 use Livewire\WithPagination;
 use OmniaDigital\CatalystCore\Models\Profile;
+use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\CatalystCore\Traits\Filter\WithSortAndFilters;
 use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 

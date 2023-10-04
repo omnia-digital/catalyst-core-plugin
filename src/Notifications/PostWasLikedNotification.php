@@ -2,7 +2,6 @@
 
 namespace OmniaDigital\CatalystCore\Notifications;
 
-use App\Models\User;
 use App\Notifications\BaseNotification;
 use App\Support\Notification\NotificationCenter;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -10,6 +9,7 @@ use Illuminate\Support\Str;
 use OmniaDigital\CatalystCore\Enums\PostType;
 use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Models\Post;
+use OmniaDigital\CatalystCore\Models\User;
 
 class PostWasLikedNotification extends BaseNotification
 {

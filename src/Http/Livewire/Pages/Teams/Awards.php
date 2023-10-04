@@ -2,8 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams;
 
-use App\Models\Team;
 use Livewire\Component;
+use OmniaDigital\CatalystCore\Models\Team;
 
 class Awards extends Component
 {

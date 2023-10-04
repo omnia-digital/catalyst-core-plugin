@@ -2,9 +2,9 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Partials;
 
-use App\Models\Team;
-use App\Models\User;
 use Livewire\Component;
+use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Models\User;
 
 class UserStatusList extends Component
 {

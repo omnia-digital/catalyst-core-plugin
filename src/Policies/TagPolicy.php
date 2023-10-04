@@ -2,9 +2,9 @@
 
 namespace OmniaDigital\CatalystCore\Policies;
 
-use App\Models\Tag;
-use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use OmniaDigital\CatalystCore\Models\Tag;
+use OmniaDigital\CatalystCore\Models\User;
 
 class TagPolicy
 {

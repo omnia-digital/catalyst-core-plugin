@@ -2,8 +2,6 @@
 
 namespace OmniaDigital\CatalystCore\Models;
 
-use App\Models\NullMedia;
-use App\Models\User;
 use App\Support\Lexer\PrettyNumber;
 use App\Traits\Tag\HasProfileTags;
 use Filament\Tables\Columns\IconColumn;

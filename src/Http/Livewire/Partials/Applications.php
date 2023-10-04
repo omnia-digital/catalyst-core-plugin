@@ -2,11 +2,11 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Partials;
 
-use App\Models\TeamApplication;
-use App\Models\TeamInvitation;
-use App\Models\User;
 use Laravel\Jetstream\Contracts\AddsTeamMembers;
 use Livewire\Component;
+use OmniaDigital\CatalystCore\Models\TeamApplication;
+use OmniaDigital\CatalystCore\Models\TeamInvitation;
+use OmniaDigital\CatalystCore\Models\User;
 
 class Applications extends Component
 {

@@ -2,9 +2,9 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Components;
 
-use App\Models\Team;
-use App\Models\User;
 use Omnia\LivewireCalendar\LivewireCalendar;
+use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Models\User;
 use OmniaDigital\CatalystCore\Support\Livewire\InteractsWithCalendarTeams;
 
 class Calendar extends LivewireCalendar
