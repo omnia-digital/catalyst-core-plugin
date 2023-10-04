@@ -3,8 +3,6 @@
 namespace OmniaDigital\CatalystCore\Models;
 
 use App\Traits\Location\HasLocation;
-use App\Traits\Tag\HasTeamTags;
-use App\Traits\Tag\HasTeamTypeTags;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -31,7 +29,8 @@ use Modules\Social\Traits\HasAssociations;
 use Modules\Social\Traits\HasHandle;
 use Modules\Social\Traits\Likable;
 use Modules\Social\Traits\Postable;
-use Overtrue\LaravelFollow\Traits\Followable;
+use OmniaDigital\CatalystCore\Traits\Tag\HasTeamTags;
+use OmniaDigital\CatalystCore\Traits\Tag\HasTeamTypeTags;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Permission\Models\Role;
@@ -47,11 +46,7 @@ use Trans;
  */
 class Team extends JetstreamTeam implements HasMedia, Searchable
 {
-    use Awardable;
-    use Followable;
-    use HasAssociations;
     use HasFactory;
-    use HasHandle;
     use HasJobs;
     use HasLocation;
     use HasProfilePhoto;

@@ -26,6 +26,7 @@
     "filament/filament": "^3.0",
     "filament/spatie-laravel-settings-plugin": "^3.0",
     "illuminate/contracts": "^10.0",
+    "laravel/cashier": "^14.12",
     "laravel/jetstream": "^4.0",
     "spatie/laravel-medialibrary": "^10.13",
     "spatie/laravel-package-tools": "^1.15.0",

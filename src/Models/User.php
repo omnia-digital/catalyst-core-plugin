@@ -40,7 +40,6 @@ use Thomasjohnkane\Snooze\Traits\SnoozeNotifiable;
 
 class User extends Authenticatable implements FilamentUser, MustVerifyEmail
 {
-    use Awardable;
     use Billable;
     use Followable;
     use Follower;
