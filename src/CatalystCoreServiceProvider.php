@@ -10,11 +10,11 @@ use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
 use Livewire\Features\SupportTesting\Testable;
+use OmniaDigital\CatalystCore\Commands\CatalystCoreCommand;
+use OmniaDigital\CatalystCore\Testing\TestsCatalystCore;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use OmniaDigital\CatalystCore\Commands\CatalystCoreCommand;
-use OmniaDigital\CatalystCore\Testing\TestsCatalystCore;
 
 class CatalystCoreServiceProvider extends PackageServiceProvider
 {
