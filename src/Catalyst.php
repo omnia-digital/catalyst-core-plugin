@@ -6,9 +6,9 @@ use Carbon\CarbonTimeZone;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Str;
 use NumberFormatter;
+use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Settings\BillingSettings;
 use OmniaDigital\CatalystCore\Settings\GeneralSettings;
-use OmniaDigital\CatalystCore\Support\Translate;
 
 //use Nwidart\Modules\Facades\Module;
 

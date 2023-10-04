@@ -25,6 +25,8 @@
         "filament/filament": "^3.0",
         "filament/spatie-laravel-settings-plugin": "^3.0",
         "illuminate/contracts": "^10.0",
+        "laravel/jetstream": "^4.0",
+        "spatie/laravel-medialibrary": "^10.13",
         "spatie/laravel-package-tools": "^1.15.0",
         "spatie/laravel-searchable": "^1.11"
     },
@@ -72,9 +74,8 @@
                 "OmniaDigital\\CatalystCore\\CatalystCoreServiceProvider"
             ],
             "aliases": {
-                "CatalystCore": "OmniaDigital\\CatalystCore\\Facades\\CatalystCore",
-                "Catalyst": "OmniaDigital\\CatalystCore\\Support\\Catalyst\\Facades\\Catalyst",
-                "Translate": "OmniaDigital\\CatalystCore\\Support\\Catalyst\\Facades\\Translate"
+                "Catalyst": "OmniaDigital\\CatalystCore\\Facades\\Catalyst",
+                "Translate": "OmniaDigital\\CatalystCore\\Facades\\TranslateFacade"
             }
         }
     },

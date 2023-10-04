@@ -27,7 +27,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'OmniaDigital\\CatalystCore\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
+            fn (string $modelName) => 'OmniaDigital\\Catalyst\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 

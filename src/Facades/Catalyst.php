@@ -3,15 +3,14 @@
 namespace OmniaDigital\CatalystCore\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use OmniaDigital\CatalystCore\Catalyst;
 
 /**
- * @see \OmniaDigital\CatalystCore\CatalystCore
+ * @see \OmniaDigital\CatalystCore\Catalyst
  */
-class CatalystCore extends Facade
+class Catalyst extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return Catalyst::class;
+        return \OmniaDigital\CatalystCore\Catalyst::class;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-// config for OmniaDigital/CatalystCore
+// config for OmniaDigital/Catalyst
 return [
 
 ];

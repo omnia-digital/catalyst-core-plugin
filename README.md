@@ -46,8 +46,8 @@ return [
 ## Usage
 
 ```php
-$catalystCore = new OmniaDigital\CatalystCore();
-echo $catalystCore->echoPhrase('Hello, OmniaDigital!');
+$catalyst = new OmniaDigital\Catalyst();
+echo $catalyst->echoPhrase('Hello, OmniaDigital!');
 ```
 
 ## Testing

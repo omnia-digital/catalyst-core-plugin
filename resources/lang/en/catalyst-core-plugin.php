@@ -1,6 +1,6 @@
 <?php
 
-// translations for OmniaDigital/CatalystCore
+// translations for OmniaDigital/Catalyst
 return [
     //
 ];
