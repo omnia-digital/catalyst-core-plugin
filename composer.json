@@ -21,9 +21,12 @@
     ],
     "require": {
         "php": "^8.1",
+        "ext-intl": "*",
         "filament/filament": "^3.0",
+        "filament/spatie-laravel-settings-plugin": "^3.0",
+        "illuminate/contracts": "^10.0",
         "spatie/laravel-package-tools": "^1.15.0",
-        "illuminate/contracts": "^10.0"
+        "spatie/laravel-searchable": "^1.11"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -69,7 +72,9 @@
                 "OmniaDigital\\CatalystCore\\CatalystCoreServiceProvider"
             ],
             "aliases": {
-                "CatalystCore": "OmniaDigital\\CatalystCore\\Facades\\CatalystCore"
+                "CatalystCore": "OmniaDigital\\CatalystCore\\Facades\\CatalystCore",
+                "Catalyst": "OmniaDigital\\CatalystCore\\Support\\Catalyst\\Facades\\Catalyst",
+                "Translate": "OmniaDigital\\CatalystCore\\Support\\Catalyst\\Facades\\Translate"
             }
         }
     },
