@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace OmniaDigital\CatalystCore\Http\Middleware;
 
-use OmniaDigital\CatalystCore\Facades\Catalyst;
 use Closure;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\RedirectResponse;
@@ -10,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\URL;
+use OmniaDigital\CatalystCore\Facades\Catalyst;
 
 class EnsureEmailIsVerifiedMiddleware
 {

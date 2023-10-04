@@ -3,13 +3,13 @@
 namespace OmniaDigital\CatalystCore\Actions\Teams;
 
 use App\Contracts\InvitesTeamMembers;
-use App\Events\InvitedTeamMember;
 use Closure;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Jetstream\Mail\TeamInvitation;
+use OmniaDigital\CatalystCore\Events\InvitedTeamMember;
 use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Models\User;
 

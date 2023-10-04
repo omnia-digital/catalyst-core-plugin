@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Enums\Teams;
+namespace OmniaDigital\CatalystCore\Enums\Teams;
 
 enum TeamBillingPeriod: string
 {

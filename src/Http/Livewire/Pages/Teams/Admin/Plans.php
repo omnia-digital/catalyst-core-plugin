@@ -2,11 +2,11 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Admin;
 
-use App\Enums\Teams\TeamBillingPeriod;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Actions\Teams\CreateTeamPlanAction;
+use OmniaDigital\CatalystCore\Enums\Teams\TeamBillingPeriod;
 use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 

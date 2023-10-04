@@ -3,7 +3,6 @@
 namespace OmniaDigital\CatalystCore\Events;
 
 use App\Contracts\Events\ContributesToUserScore;
-use App\Events\BaseEvent;
 use Illuminate\Queue\SerializesModels;
 use OmniaDigital\CatalystCore\Models\User;
 use OmniaDigital\CatalystCore\Models\UserScoreContribution;

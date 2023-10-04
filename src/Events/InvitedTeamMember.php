@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace OmniaDigital\CatalystCore\Events;
 
 use Illuminate\Foundation\Events\Dispatchable;
 
