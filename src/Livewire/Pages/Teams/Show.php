@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Pages\Teams;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams;
 
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Models\Team;

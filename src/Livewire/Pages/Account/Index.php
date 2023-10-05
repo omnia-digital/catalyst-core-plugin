@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Pages\Account;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Account;
 
 use Laravel\Fortify\Contracts\UpdatesUserPasswords;
 use Laravel\Jetstream\ConfirmsPasswords;

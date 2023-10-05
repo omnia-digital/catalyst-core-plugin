@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Teams;
+namespace OmniaDigital\CatalystCore\Livewire\Teams;
 
 use Livewire\Component;
 use Livewire\WithFileUploads;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Pages\Teams;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams;
 
 use App\Support\Feed\FeedItem;
 use App\Support\Feed\PolygonFeedItem;

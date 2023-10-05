@@ -1,16 +1,14 @@
 <?php
 
-namespace App\Livewire\Pages\Media;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Media;
 
-use App\Traits\Filter\WithBulkActions;
-use App\Traits\Filter\WithPerPagePagination;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Livewire\Component;
-use Modules\Social\Models\Post;
-use Modules\Social\Models\Profile;
 use OmniaDigital\CatalystCore\Models\MediaFile;
 use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Traits\Filter\WithBulkActions;
+use OmniaDigital\CatalystCore\Traits\Filter\WithPerPagePagination;
 use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 use OmniaDigital\OmniaLibrary\Livewire\WithLayoutSwitcher;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;

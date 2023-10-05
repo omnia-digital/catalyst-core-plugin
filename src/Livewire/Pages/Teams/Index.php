@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Pages\Teams;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams;
 
 use App\Traits\Filter\WithSortAndFilters;
 use Illuminate\Database\Eloquent\Builder;

@@ -19,17 +19,8 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasTeams as JetstreamHasTeams;
 use Laravel\Passport\HasApiTokens;
 use LiranCo\NotificationSubscriptions\Traits\HasNotificationSubscriptions;
-use Modules\Billing\Models\Builders\CashierSubscriptionBuilder;
-use Modules\Billing\Traits\WithChargentSubscriptions;
-use Modules\Forms\Models\FormSubmission;
-use Modules\Jobs\Support\HasJobs;
-use Modules\Jobs\Support\HasTransactions;
-use Modules\Reviews\Models\Review;
-use Modules\Social\Models\Like;
-use Modules\Social\Models\Post;
-use Modules\Social\Models\Profile;
-use Modules\Social\Traits\HasBookmarks;
-use Modules\Social\Traits\HasHandle;
+use OmniaDigital\CatalystCore\Traits\HasBookmarks;
+use OmniaDigital\CatalystCore\Traits\HasHandle;
 use OmniaDigital\CatalystCore\Traits\Team\HasTeams;
 use Overtrue\LaravelFollow\Traits\Followable;
 use Overtrue\LaravelFollow\Traits\Follower;
@@ -42,12 +33,12 @@ class User extends Authenticatable implements FilamentUser, MustVerifyEmail
     use Billable;
     use Followable;
     use Follower;
-    use HasApiTokens;
+//    use HasApiTokens;
     use HasBookmarks;
     use HasFactory;
     use HasHandle;
-    use HasJobs;
-    use HasNotificationSubscriptions;
+//    use HasJobs;
+//    use HasNotificationSubscriptions;
     use HasPanelShield;
     use HasRoles;
     use HasTeams, JetstreamHasTeams {
@@ -59,12 +50,12 @@ class User extends Authenticatable implements FilamentUser, MustVerifyEmail
         HasTeams::currentTeam insteadof JetstreamHasTeams;
         HasTeams::teamRole insteadof JetstreamHasTeams;
     }
-    use HasTransactions;
+//    use HasTransactions;
     use Notifiable;
     use SnoozeNotifiable;
     use SoftDeletes;
     use TwoFactorAuthenticatable;
-    use WithChargentSubscriptions;
+//    use WithChargentSubscriptions;
 
     protected $casts = [
         'deleted_at' => 'datetime',

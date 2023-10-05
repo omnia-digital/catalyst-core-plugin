@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Teams;
+namespace OmniaDigital\CatalystCore\Livewire\Teams;
 
 use Illuminate\Validation\Rule;
 use Laravel\Cashier\Subscription;

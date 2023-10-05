@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Companies;
+namespace OmniaDigital\CatalystCore\Livewire\Companies;
 
 use Livewire\Component;
 use Livewire\WithFileUploads;

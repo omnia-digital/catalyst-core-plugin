@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Pages\Companies;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Companies;
 
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Models\Company;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Partials;
+namespace OmniaDigital\CatalystCore\Livewire\Partials;
 
 use Livewire\Component;
 
