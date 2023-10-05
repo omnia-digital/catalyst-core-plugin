@@ -33,12 +33,14 @@ class User extends Authenticatable implements FilamentUser, MustVerifyEmail
     use Billable;
     use Followable;
     use Follower;
-//    use HasApiTokens;
+
+    //    use HasApiTokens;
     use HasBookmarks;
     use HasFactory;
     use HasHandle;
-//    use HasJobs;
-//    use HasNotificationSubscriptions;
+
+    //    use HasJobs;
+    //    use HasNotificationSubscriptions;
     use HasPanelShield;
     use HasRoles;
     use HasTeams, JetstreamHasTeams {
@@ -50,12 +52,13 @@ class User extends Authenticatable implements FilamentUser, MustVerifyEmail
         HasTeams::currentTeam insteadof JetstreamHasTeams;
         HasTeams::teamRole insteadof JetstreamHasTeams;
     }
-//    use HasTransactions;
+
+    //    use HasTransactions;
     use Notifiable;
     use SnoozeNotifiable;
     use SoftDeletes;
     use TwoFactorAuthenticatable;
-//    use WithChargentSubscriptions;
+    //    use WithChargentSubscriptions;
 
     protected $casts = [
         'deleted_at' => 'datetime',

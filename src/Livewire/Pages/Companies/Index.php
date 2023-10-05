@@ -2,13 +2,13 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Pages\Companies;
 
-use OmniaDigital\CatalystCore\Traits\Filter\WithSortAndFilters;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\Component;
 use Livewire\WithPagination;
 use OmniaDigital\CatalystCore\Actions\Companies\GetCompanyCategoriesAction;
 use OmniaDigital\CatalystCore\Lenses\WithLenses;
 use OmniaDigital\CatalystCore\Models\Company;
+use OmniaDigital\CatalystCore\Traits\Filter\WithSortAndFilters;
 
 class Index extends Component
 {

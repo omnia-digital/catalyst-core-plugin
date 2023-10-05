@@ -2,11 +2,11 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams;
 
-use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 use Illuminate\Support\Facades\Gate;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Models\Form;
 use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 
 class Apply extends Component
 {

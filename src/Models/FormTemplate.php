@@ -9,7 +9,8 @@ use Spatie\Sluggable\SlugOptions;
 
 class FormTemplate extends Model
 {
-    use HasFactory, HasSlug;
+    use HasFactory;
+    use HasSlug;
 
     protected $fillable = [
         'name',

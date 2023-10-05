@@ -13,6 +13,7 @@ class FormNotification extends Model
     use HasFactory;
 
     protected $guarded = [];
+
     protected $appends = ['send_date_edit'];
 
     // protected static function newFactory()

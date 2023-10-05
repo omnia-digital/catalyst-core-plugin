@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use OmniaDigital\CatalystCore\Http\Livewire\Form;
-use OmniaDigital\CatalystCore\Http\Controllers\HandleStripeConnectRefreshUrlController;
-use OmniaDigital\CatalystCore\Http\Livewire\Home;
 use OmniaDigital\CatalystCore\Catalyst;
 use OmniaDigital\CatalystCore\Facades\Translate;
+use OmniaDigital\CatalystCore\Http\Controllers\HandleStripeConnectRefreshUrlController;
+use OmniaDigital\CatalystCore\Http\Livewire\Form;
+use OmniaDigital\CatalystCore\Http\Livewire\Home;
 use OmniaDigital\CatalystCore\Http\Livewire\Pages\Bookmarks\Index;
 use OmniaDigital\CatalystCore\Http\Livewire\Pages\Contacts\Index as ContactsIndex;
 use OmniaDigital\CatalystCore\Http\Livewire\Pages\Posts\Edit as EditPosts;
@@ -33,7 +33,7 @@ use OmniaDigital\CatalystCore\Livewire\Pages\Companies\Index as AllCompanies;
 use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Discover as DiscoverTeams;
 use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Index as AllTeams;
 
-# Forms
+// Forms
 Route::name('forms.')->prefix('forms')->group(function () {
     Route::get('/forms/{form}', Form::class)->name('form');
 });
@@ -54,7 +54,7 @@ Route::name('social.')->prefix('social')->middleware([GuestAccessMiddleware::cla
     // /{handle}/status/{post_id} for any type of post, whether it's a post or reply
     // /{messages}/{message_id} for messages
 
-        Route::get('/home', Home::class)->name('home');
+    Route::get('/home', Home::class)->name('home');
     Route::get('bookmarks', Index::class)->name('bookmarks');
 
     Route::get('/trending', DiscoverIndex::class)->name('discover');

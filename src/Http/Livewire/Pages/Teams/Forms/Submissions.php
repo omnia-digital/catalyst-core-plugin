@@ -2,11 +2,11 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Forms;
 
-use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Models\Form;
 use OmniaDigital\CatalystCore\Models\FormSubmission;
 use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 
 class Submissions extends Component
 {

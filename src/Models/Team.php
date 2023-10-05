@@ -38,10 +38,10 @@ use Spatie\Tags\HasTags;
 class Team extends JetstreamTeam implements HasMedia, Searchable
 {
     use Awardable;
+
     //    use HasLocation;
     use Followable;
     use HasAssociations;
-
     use HasFactory;
     use HasProfilePhoto;
     use HasSlug;

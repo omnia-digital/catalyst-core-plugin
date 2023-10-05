@@ -11,13 +11,17 @@ use OmniaDigital\CatalystCore\Models\FormNotification;
 trait WithFormManagement
 {
     public $confirmingFormRemoval = false;
+
     public $formIdBeingRemoved = null;
 
     public $confirmingFormNotificationRemoval = false;
+
     public $formNotificationIdBeingRemoved = null;
 
     public $confirmingPublishform = false;
+
     public $formIdBeingPublished = null;
+
     public $newStatus = '';
 
     public function confirmPublishForm($formId, $status)
