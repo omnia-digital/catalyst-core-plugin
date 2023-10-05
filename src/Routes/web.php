@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use OmniaDigital\CatalystCore\Http\Livewire\Form;
 use OmniaDigital\CatalystCore\Http\Controllers\HandleStripeConnectRefreshUrlController;
 use OmniaDigital\CatalystCore\Http\Livewire\Home;
-use OmniaDigital\CatalystCore\Models\Form;
 use OmniaDigital\CatalystCore\Catalyst;
 use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Http\Livewire\Pages\Bookmarks\Index;

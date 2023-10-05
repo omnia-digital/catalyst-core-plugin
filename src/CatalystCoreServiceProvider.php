@@ -11,6 +11,7 @@ use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
 use Livewire\Features\SupportTesting\Testable;
 use OmniaDigital\CatalystCore\Commands\CatalystCoreCommand;
+use OmniaDigital\CatalystCore\Providers\RouteServiceProvider;
 use OmniaDigital\CatalystCore\Testing\TestsCatalystCore;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
@@ -60,6 +61,7 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
 
     public function packageRegistered(): void
     {
+        $this->app->register(RouteServiceProvider::class);
     }
 
     public function packageBooted(): void

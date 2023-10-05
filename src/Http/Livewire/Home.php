@@ -4,8 +4,8 @@ namespace OmniaDigital\CatalystCore\Http\Livewire;
 
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
-use OmniaDigital\CatalystCore\Models\Location;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
+use OmniaDigital\CatalystLocation\Models\Location;
 use OmniaDigital\OmniaLibrary\Livewire\WithMap;
 use OmniaDigital\OmniaLibrary\Livewire\WithModal;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;

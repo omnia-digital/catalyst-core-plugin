@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Components\Teams;
 
-use App\Traits\Team\WithTeamManagement;
+use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;

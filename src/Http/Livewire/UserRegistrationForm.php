@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\Forms\Http\Livewire;
+namespace OmniaDigital\CatalystCore\Http\Livewire;
 
 use App\Actions\Fortify\CreateNewUser;
 use Illuminate\Auth\Events\Registered;
-use Modules\Forms\Http\Livewire\Form as LivewireForm;
+use OmniaDigital\CatalystCore\Http\Livewire\Form as LivewireForm;
 use OmniaDigital\CatalystCore\Models\FormSubmission;
 
 class UserRegistrationForm extends LivewireForm

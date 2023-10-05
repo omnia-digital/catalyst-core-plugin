@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams;
 
-use App\Traits\Filter\WithSortAndFilters;
+use OmniaDigital\CatalystCore\Traits\Filter\WithSortAndFilters;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\Component;
 use Livewire\WithPagination;

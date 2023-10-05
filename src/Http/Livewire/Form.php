@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Forms\Http\Livewire;
+namespace OmniaDigital\CatalystCore\Http\Livewire;
 
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\FileUpload;

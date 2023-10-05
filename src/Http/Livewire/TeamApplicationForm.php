@@ -1,9 +1,9 @@
 <?php
 
-namespace Modules\Forms\Http\Livewire;
+namespace OmniaDigital\CatalystCore\Http\Livewire;
 
-use App\Traits\Team\WithTeamManagement;
-use Modules\Forms\Http\Livewire\Form as LivewireForm;
+use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
+use OmniaDigital\CatalystCore\Http\Livewire\Form as LivewireForm;
 use OmniaDigital\CatalystCore\Models\Form;
 use OmniaDigital\CatalystCore\Models\FormSubmission;
 use OmniaDigital\CatalystCore\Models\Team;
