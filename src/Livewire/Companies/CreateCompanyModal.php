@@ -10,7 +10,8 @@ use OmniaDigital\OmniaLibrary\Livewire\WithModal;
 
 class CreateCompanyModal extends Component
 {
-    use WithModal, WithFileUploads;
+    use WithFileUploads;
+    use WithModal;
 
     public ?string $name = null;
 
@@ -19,15 +20,19 @@ class CreateCompanyModal extends Component
     public ?string $summary = null;
 
     public $bannerImage;
+
     public $bannerImageName;
 
     public $mainImage;
+
     public $mainImageName;
 
     public $profilePhoto;
+
     public $profilePhotoName;
 
     public $sampleMedia = [];
+
     public $sampleMediaNames = [];
 
     public $companyTypes = [];
@@ -72,7 +77,8 @@ class CreateCompanyModal extends Component
 
     public function getCompanyTagsProperty()
     {
-        return Tag::withType('company_type')->get()->mapWithKeys(fn (Tag $tag
+        return Tag::withType('company_type')->get()->mapWithKeys(fn (
+            Tag $tag
         ) => [$tag->name => ucwords($tag->name)])->all();
     }
 

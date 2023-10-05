@@ -14,7 +14,9 @@ use Modules\Social\Models\UserScoreContribution;
 class UserScoreContributionResource extends Resource
 {
     protected static ?string $model = UserScoreContribution::class;
+
     protected static ?string $navigationGroup = 'Settings';
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

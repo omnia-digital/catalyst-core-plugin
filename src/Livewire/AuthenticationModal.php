@@ -83,7 +83,8 @@ class AuthenticationModal extends Component
         $this->validate();
 
         $this->guard()->attempt(
-            ['email' => $this->email, 'password' => $this->password], $this->remember
+            ['email' => $this->email, 'password' => $this->password],
+            $this->remember
         );
 
         $this->redirect($this->redirectAfterLogin);

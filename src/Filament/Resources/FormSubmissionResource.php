@@ -28,8 +28,11 @@ use OmniaDigital\CatalystCore\Models\User;
 class FormSubmissionResource extends Resource
 {
     protected static ?string $label = 'Form Submissions';
+
     protected static ?string $model = FormSubmission::class;
+
     protected static ?string $navigationIcon = 'heroicon-o-users';
+
     protected static ?string $navigationGroup = 'Forms';
 
     public static function form(Form $form): Form
@@ -42,7 +45,8 @@ class FormSubmissionResource extends Resource
                         \Modules\Forms\Models\Form::get()
                             ->mapWithKeys(function ($item, $key) {
                                 return [$item['id'] => $item['id'] . ' - ' . $item['name']];
-                            }))
+                            })
+                    )
                     ->required(),
                 Select::make('user_id')
                     ->label('User')
@@ -50,7 +54,8 @@ class FormSubmissionResource extends Resource
                         User::get()
                             ->mapWithKeys(function ($item, $key) {
                                 return [$item['id'] => $item['id'] . ' - ' . $item['name']];
-                            }))
+                            })
+                    )
                     ->required(),
                 Select::make('team_id')
                     ->label('Team')
@@ -58,7 +63,8 @@ class FormSubmissionResource extends Resource
                         Team::get()
                             ->mapWithKeys(function ($item, $key) {
                                 return [$item['id'] => $item['id'] . ' - ' . $item['name']];
-                            }))
+                            })
+                    )
                     ->nullable(),
                 Textarea::make('data')
                     ->hint('Please write in json format.')

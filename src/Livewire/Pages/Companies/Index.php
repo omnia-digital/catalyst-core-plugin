@@ -12,7 +12,9 @@ use OmniaDigital\CatalystCore\Models\Company;
 
 class Index extends Component
 {
-    use WithSortAndFilters, WithPagination, WithLenses;
+    use WithLenses;
+    use WithPagination;
+    use WithSortAndFilters;
 
     public array $sortLabels = [
         'name' => 'Name',
@@ -39,8 +41,8 @@ class Index extends Component
     public function getRowsQueryProperty()
     {
         $query = Company::query();
-//            ->with('location')
-//            ->withCount('users');
+        //            ->with('location')
+        //            ->withCount('users');
 
         return $this->applyFilters($query)
             ->when($this->search, fn (Builder $q) => $q->search($this->search));
@@ -57,7 +59,7 @@ class Index extends Component
     public function getCategoriesProperty()
     {
         return [];
-//        return (new GetCompanyCategoriesAction)->execute();
+        //        return (new GetCompanyCategoriesAction)->execute();
     }
 
     public function render()

@@ -9,7 +9,9 @@ use OmniaDigital\CatalystCore\Models\User;
 
 abstract class BaseEvent
 {
-    use Dispatchable, InteractsWithSockets, SerializesModels;
+    use Dispatchable;
+    use InteractsWithSockets;
+    use SerializesModels;
 
     /**
      * The user instance.

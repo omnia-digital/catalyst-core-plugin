@@ -14,6 +14,7 @@ use OmniaDigital\CatalystCore\Models\Award;
 class AwardResource extends Resource
 {
     protected static ?string $model = Award::class;
+
     protected static ?string $navigationIcon = 'heroicon-o-check-badge';
 
     public static function form(Form $form): Form

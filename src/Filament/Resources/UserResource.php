@@ -21,8 +21,11 @@ use STS\FilamentImpersonate\Tables\Actions\Impersonate;
 class UserResource extends Resource
 {
     protected static ?string $label = 'Users';
+
     protected static ?string $model = User::class;
+
     protected static ?string $navigationIcon = 'heroicon-o-users';
+
     protected static ?string $navigationGroup = 'People';
 
     public static function form(Form $form): Form

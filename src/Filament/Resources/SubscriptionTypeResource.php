@@ -13,7 +13,9 @@ use Modules\Billing\Models\SubscriptionType;
 class SubscriptionTypeResource extends Resource
 {
     protected static ?string $model = SubscriptionType::class;
+
     protected static ?string $navigationIcon = 'heroicon-o-credit-card';
+
     protected static ?string $navigationGroup = 'Billing';
 
     public static function form(Form $form): Form
@@ -27,9 +29,10 @@ class SubscriptionTypeResource extends Resource
                     ->minValue('500')
                     ->label('Amount (in cents)')
                     ->helperText('Please write the amount in cents. For example: For $55.25, write 5525.')
-                    ->mask(fn (Forms\Components\TextInput\Mask $mask) => $mask
-                        ->numeric()
-                        ->integer()
+                    ->mask(
+                        fn (Forms\Components\TextInput\Mask $mask) => $mask
+                            ->numeric()
+                            ->integer()
                     ),
             ]);
     }

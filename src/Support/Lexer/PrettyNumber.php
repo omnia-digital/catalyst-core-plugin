@@ -16,6 +16,7 @@ class PrettyNumber
                 $display = $number / pow(10, $exponent);
                 $decimals = ($exponent >= 3 && round($display) < 100) ? 1 : 0;
                 $number = number_format($display, $decimals) . $abbrev;
+
                 break;
             }
         }

@@ -4,19 +4,20 @@ namespace OmniaDigital\CatalystCore\Observers;
 
 use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Models\Team;
+
 use function activity;
 
 class TeamObserver
 {
     public function created(Team $team)
     {
-//        $ownerRole = Role::create([
-//            'name' => config('platform.teams.default_owner_role'),
-//            'team_id' => $team->id,
-//        ]);
-//        dd($team->owner);
-//
-//        activity()->by($team->owner)->on($team)->log(\Translate::get("Team $team->name created"));
+        //        $ownerRole = Role::create([
+        //            'name' => config('platform.teams.default_owner_role'),
+        //            'team_id' => $team->id,
+        //        ]);
+        //        dd($team->owner);
+        //
+        //        activity()->by($team->owner)->on($team)->log(\Translate::get("Team $team->name created"));
     }
 
     public function updated(Team $team)

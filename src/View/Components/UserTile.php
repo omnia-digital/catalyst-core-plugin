@@ -9,6 +9,7 @@ use Illuminate\View\Component;
 class UserTile extends Component
 {
     public $user;
+
     public $team;
 
     /**

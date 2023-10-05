@@ -16,7 +16,8 @@ use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
  */
 class UpdateTeamPlanModal extends Component
 {
-    use WithNotification, WithModal;
+    use WithModal;
+    use WithNotification;
 
     public Team $team;
 

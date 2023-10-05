@@ -11,6 +11,7 @@ use OmniaDigital\CatalystCore\Models\Team;
 class OverviewNavigation extends Component
 {
     public Team $team;
+
     public $pageView;
 
     public $nav = [

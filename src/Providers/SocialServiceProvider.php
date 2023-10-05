@@ -134,11 +134,11 @@ class SocialServiceProvider extends ServiceProvider
 
     private function registerEvents()
     {
-        
+
     }
 
     private function registerStripeConnect()
     {
-        
+
     }
 }

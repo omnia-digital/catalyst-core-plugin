@@ -13,16 +13,18 @@ use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Modules\Social\Models\Profile;
+use OmniaDigital\CatalystCore\Facades\Translate;
 use RalphJSmit\Filament\Components\Forms\CreatedAt;
 use RalphJSmit\Filament\Components\Forms\DeletedAt;
 use RalphJSmit\Filament\Components\Forms\Timestamp;
 use RalphJSmit\Filament\Components\Forms\UpdatedAt;
-use OmniaDigital\CatalystCore\Facades\Translate;
 
 class ProfileResource extends Resource
 {
     protected static ?string $model = Profile::class;
+
     protected static ?string $navigationIcon = 'heroicon-o-users';
+
     protected static ?string $navigationGroup = 'People';
 
     protected $queryString = [

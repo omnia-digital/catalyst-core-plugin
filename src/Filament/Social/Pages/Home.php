@@ -13,7 +13,10 @@ use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
 class Home extends Page
 {
-    use WithGuestAccess, WithMap, WithModal, WithNotification;
+    use WithGuestAccess;
+    use WithMap;
+    use WithModal;
+    use WithNotification;
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
@@ -70,7 +73,7 @@ class Home extends Page
     {
         return [
             'places' => $this->places,
-            'newsRssFeeds' => $this->getNewsRssFeeds()
+            'newsRssFeeds' => $this->getNewsRssFeeds(),
         ];
     }
 
@@ -78,10 +81,10 @@ class Home extends Page
     {
         return parent::render();
 
-//        return view('social::livewire.pages.home', [
-//            'places' => $this->places,
-//            'newsRssFeeds' => $this->getNewsRssFeeds()
-//        ]);
+        //        return view('social::livewire.pages.home', [
+        //            'places' => $this->places,
+        //            'newsRssFeeds' => $this->getNewsRssFeeds()
+        //        ]);
     }
 
     public function getNewsRssFeeds()
