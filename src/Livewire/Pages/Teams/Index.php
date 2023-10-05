@@ -2,13 +2,13 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams;
 
-use OmniaDigital\CatalystCore\Traits\Filter\WithSortAndFilters;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\Component;
 use Livewire\WithPagination;
 use OmniaDigital\CatalystCore\Actions\Teams\GetTeamCategoriesAction;
 use OmniaDigital\CatalystCore\Lenses\WithLenses;
 use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Traits\Filter\WithSortAndFilters;
 
 class Index extends Component
 {

@@ -9,7 +9,8 @@ use Spatie\Sluggable\SlugOptions;
 
 class Form extends Model
 {
-    use HasFactory, HasSlug;
+    use HasFactory;
+    use HasSlug;
 
     protected $casts = [
         'content' => 'array',

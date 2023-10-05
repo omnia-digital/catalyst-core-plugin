@@ -2,10 +2,10 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Admin;
 
-use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 use Spatie\Permission\Models\Role;
 
 class ManageTeamMembers extends Component

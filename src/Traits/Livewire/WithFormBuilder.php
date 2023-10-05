@@ -12,9 +12,9 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Illuminate\Support\Str;
+use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Models\Form;
 use OmniaDigital\CatalystCore\Models\FormType;
-use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
@@ -23,12 +23,17 @@ use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
  */
 trait WithFormBuilder
 {
-    use InteractsWithForms, WithNotification;
+    use InteractsWithForms;
+    use WithNotification;
 
     public $name;
+
     public $slug;
+
     public $content;
+
     public $team_id;
+
     public $form_type_id;
 
     public function save($teamId = null): void
@@ -134,8 +139,8 @@ trait WithFormBuilder
                     ->lazy()
                     ->afterStateUpdated(function (Closure $set, $state) {
                         $name = Str::of($state)
-                                ->snake()
-                                ->lower() . uniqid('_');
+                            ->snake()
+                            ->lower() . uniqid('_');
                         $set('name', $name);
                     })
                     ->required(),

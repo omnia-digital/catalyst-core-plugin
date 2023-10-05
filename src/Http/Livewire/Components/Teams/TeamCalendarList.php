@@ -2,7 +2,6 @@
 
 namespace OmniaDigital\CatalystCore\Http\Livewire\Components\Teams;
 
-use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -16,6 +15,7 @@ use OmniaDigital\CatalystCore\Models\Location;
 use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\CatalystCore\Models\User;
 use OmniaDigital\CatalystCore\Traits\Filter\WithSortAndFilters;
+use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 
 class TeamCalendarList extends Component

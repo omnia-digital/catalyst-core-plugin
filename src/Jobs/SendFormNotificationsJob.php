@@ -9,13 +9,16 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use OmniaDigital\CatalystCore\Models\FormNotification;
 use Modules\Forms\Notifications\FormReminderNotification;
+use OmniaDigital\CatalystCore\Models\FormNotification;
 use OmniaDigital\CatalystCore\Models\Team;
 
 class SendFormNotificationsJob implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable;
+    use InteractsWithQueue;
+    use Queueable;
+    use SerializesModels;
 
     /**
      * Create a new job instance.

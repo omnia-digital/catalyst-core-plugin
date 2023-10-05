@@ -14,14 +14,19 @@ use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
 class Form extends Component implements HasForms
 {
-    use InteractsWithForms, WithNotification;
+    use InteractsWithForms;
+    use WithNotification;
 
     public \OmniaDigital\CatalystCore\Models\Form $formModel;
 
     public $data = [];
+
     public ?int $team_id = null; // tells us which team the form submission is for in case this is a global form
+
     public bool $formSubmitted = false;
+
     public bool $needBootcamp = false;
+
     public string $submitText;
 
     public function mount(\OmniaDigital\CatalystCore\Models\Form $form, int $team_id = null, $submitText = 'Submit')
