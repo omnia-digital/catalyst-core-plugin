@@ -12,7 +12,7 @@ class AwardStack extends Component
 
     public $awards;
 
-    public Team|null $team = null;
+    public ?Team $team = null;
 
     public function mount(User $user, Team $team = null)
     {

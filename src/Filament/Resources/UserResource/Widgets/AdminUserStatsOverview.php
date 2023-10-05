@@ -8,7 +8,7 @@ use OmniaDigital\CatalystCore\Models\User;
 
 class AdminUserStatsOverview extends BaseWidget
 {
-//    protected int | string | array $columnSpan = '4';
+    //    protected int | string | array $columnSpan = '4';
 
     public static function canView(): bool
     {

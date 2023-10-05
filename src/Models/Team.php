@@ -37,11 +37,12 @@ use Spatie\Tags\HasTags;
  */
 class Team extends JetstreamTeam implements HasMedia, Searchable
 {
-    use HasFactory;
-    use HasAssociations;
     use Awardable;
-//    use HasLocation;
+    //    use HasLocation;
     use Followable;
+    use HasAssociations;
+
+    use HasFactory;
     use HasProfilePhoto;
     use HasSlug;
     use HasTags, HasTeamTags {
@@ -52,7 +53,7 @@ class Team extends JetstreamTeam implements HasMedia, Searchable
     use Likable;
     use Notifiable;
     use Postable;
-//    use Reviewable;
+    //    use Reviewable;
 
     const DEFAULT_TEAM_NAME = 'Default Org';
 

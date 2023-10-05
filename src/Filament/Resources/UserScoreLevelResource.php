@@ -14,7 +14,9 @@ use Modules\Social\Models\UserScoreLevel;
 class UserScoreLevelResource extends Resource
 {
     protected static ?string $model = UserScoreLevel::class;
+
     protected static ?string $navigationGroup = 'Settings';
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

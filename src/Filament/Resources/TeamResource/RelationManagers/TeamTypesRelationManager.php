@@ -11,7 +11,9 @@ use Filament\Tables\Table;
 class TeamTypesRelationManager extends RelationManager
 {
     protected static string $relationship = 'teamTypes';
+
     protected static ?string $label = 'Team Type';
+
     protected static ?string $recordTitleAttribute = 'name';
 
     public function form(Form $form): Form

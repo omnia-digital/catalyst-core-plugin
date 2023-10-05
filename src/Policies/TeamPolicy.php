@@ -13,7 +13,8 @@ use OmniaDigital\CatalystCore\Models\User;
 
 class TeamPolicy
 {
-    use HandlesAuthorization, HasDefaultPolicy;
+    use HandlesAuthorization;
+    use HasDefaultPolicy;
 
     public function apply(User $user, Team $team): bool
     {

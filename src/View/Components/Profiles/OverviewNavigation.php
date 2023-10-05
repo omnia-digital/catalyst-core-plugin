@@ -11,6 +11,7 @@ use OmniaDigital\CatalystCore\Models\User;
 class OverviewNavigation extends Component
 {
     public $user;
+
     public $pageView;
 
     public $nav = [

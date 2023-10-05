@@ -11,7 +11,7 @@ use OmniaDigital\CatalystCore\Support\StripeConnect\StripeConnect;
 /** @note We are not using this currently. Save for future when we want teams to create custom plans */
 class CreateStripeConnectCustomerAction
 {
-    public function execute(Team $team, User|Authenticatable $user): StripeConnectCustomer
+    public function execute(Team $team, User | Authenticatable $user): StripeConnectCustomer
     {
         if ($user->isStripeConnectCustomerOf($team)) {
             return $user->stripeConnectCustomerOf($team);

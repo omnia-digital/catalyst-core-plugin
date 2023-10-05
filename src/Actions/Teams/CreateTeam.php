@@ -40,7 +40,8 @@ class CreateTeam implements CreatesTeams
         ]);
 
         $team->users()->attach(
-            $user, ['role_id' => $roleOwner->id]
+            $user,
+            ['role_id' => $roleOwner->id]
         );
 
         // Team types

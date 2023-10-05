@@ -15,6 +15,7 @@ use OmniaDigital\CatalystCore\Models\Team;
 class TeamResource extends Resource
 {
     protected static ?string $model = Team::class;
+
     protected static ?string $navigationIcon = 'heroicon-o-globe-americas';
 
     public static function getGloballySearchableAttributes(): array

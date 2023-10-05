@@ -9,7 +9,8 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 
 class MediaFile extends Model implements HasMedia
 {
-    use HasFactory, InteractsWithMedia;
+    use HasFactory;
+    use InteractsWithMedia;
 
     protected $guarded = [];
 

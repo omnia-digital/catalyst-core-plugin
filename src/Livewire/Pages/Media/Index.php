@@ -17,16 +17,27 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Index extends Component
 {
-    use WithBulkActions, WithPerPagePagination, WithSorting, WithCachedRows, WithNotification, WithLayoutSwitcher;
+    use WithBulkActions;
+    use WithCachedRows;
+    use WithLayoutSwitcher;
+    use WithNotification;
+    use WithPerPagePagination;
+    use WithSorting;
 
-    public Media|null $editingMedia = null;
+    public ?Media $editingMedia = null;
+
     public $showDeleteModal = false;
+
     public $showEditModal = false;
+
     public $showFilters = false;
 
     public $showCreateModal = false;
+
     public ?string $editorId = null;
+
     public array $images = [];
+
     public bool $openState = false;
 
     public ?int $selectedMedia = null;
@@ -182,10 +193,14 @@ class Index extends Component
             ->whereHasMorph('model', [Post::class, Profile::class], function ($q, $type) {
                 return $q->where('user_id', auth()->id());
             })
-            ->when($this->filters['date_min'],
-                fn ($query, $date) => $query->where('created_at', '>=', Carbon::parse($date)))
-            ->when($this->filters['date_max'],
-                fn ($query, $date) => $query->where('created_at', '<=', Carbon::parse($date)))
+            ->when(
+                $this->filters['date_min'],
+                fn ($query, $date) => $query->where('created_at', '>=', Carbon::parse($date))
+            )
+            ->when(
+                $this->filters['date_max'],
+                fn ($query, $date) => $query->where('created_at', '<=', Carbon::parse($date))
+            )
             ->when($this->filters['search'], function ($query, $search) {
                 return $query
                     ->whereHasMorph('model', '*', function ($query, $type) use ($search) {
@@ -231,7 +246,8 @@ class Index extends Component
 
     private function emitImagesSet(): void
     {
-        $this->dispatch('media-library:image-set',
+        $this->dispatch(
+            'media-library:image-set',
             id: $this->editorId,
             images: $this->images,
         );

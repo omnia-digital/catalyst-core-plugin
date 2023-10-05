@@ -13,8 +13,11 @@ use OmniaDigital\CatalystCore\Models\Tag;
 class TagResource extends Resource
 {
     protected static ?string $label = 'Tags';
+
     protected static ?string $model = Tag::class;
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
     protected static ?string $navigationGroup = 'Settings';
 
     public static function getGloballySearchableAttributes(): array

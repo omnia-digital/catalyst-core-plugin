@@ -30,10 +30,12 @@ class NullMedia
         switch ($this->type) {
             case 'profile':
                 return URL::asset('storage/images/profile_default.jpg');
+
                 break;
 
             default:
                 return URL::asset('storage/images/team_default.jpg');
+
                 break;
         }
     }

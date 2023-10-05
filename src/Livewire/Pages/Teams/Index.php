@@ -12,9 +12,12 @@ use OmniaDigital\CatalystCore\Models\Team;
 
 class Index extends Component
 {
-    use WithSortAndFilters, WithPagination, WithLenses;
+    use WithLenses;
+    use WithPagination;
+    use WithSortAndFilters;
 
     public $perPage = 25;
+
     public $loadMoreCount = 25;
 
     public array $sortLabels = [

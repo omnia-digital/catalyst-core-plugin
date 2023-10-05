@@ -8,7 +8,7 @@ use Filament\Widgets\AccountWidget;
 
 class Dashboard extends BasePage
 {
-    public function getColumns(): int|array
+    public function getColumns(): int | array
     {
         return 4;
     }

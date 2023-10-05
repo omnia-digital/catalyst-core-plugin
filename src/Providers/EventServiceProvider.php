@@ -25,14 +25,15 @@ class EventServiceProvider extends ServiceProvider
         Post::class => PostObserver::class,
         Profile::class => ProfileObserver::class,
     ];
+
     /**
      * The event to listener mappings for the application.
      *
      * @var array<class-string, array<int, class-string>>
      */
     protected $listen = [
-//        NewSubscriptionPayment::class => [
-//        ],
+        //        NewSubscriptionPayment::class => [
+        //        ],
         ContributesToUserScore::class => [TrackContributionToUserScore::class],
     ];
 

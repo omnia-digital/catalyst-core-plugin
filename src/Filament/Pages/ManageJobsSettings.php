@@ -12,9 +12,13 @@ class ManageJobsSettings extends SettingsPage
     use HasPageShield;
 
     protected static ?string $title = 'Jobs Settings';
+
     protected static ?string $navigationIcon = 'heroicon-o-briefcase';
+
     protected static string $settings = JobsSettings::class;
+
     protected static ?string $navigationGroup = 'Settings';
+
     protected static ?int $navigationSort = -100;
 
     protected function getFormSchema(): array

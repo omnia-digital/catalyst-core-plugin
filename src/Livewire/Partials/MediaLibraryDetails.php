@@ -13,7 +13,8 @@ use Spatie\MediaLibrary\Support\ImageFactory;
 
 class MediaLibraryDetails extends Component
 {
-    use WithSlideOver, WithNotification;
+    use WithNotification;
+    use WithSlideOver;
 
     public ?Media $media = null;
 

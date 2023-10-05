@@ -38,7 +38,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         }
 
         // fill in profile info
-//        'name' => $input['name'],
+        //        'name' => $input['name'],
     }
 
     /**

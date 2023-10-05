@@ -9,13 +9,14 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Modules\Games\Models\Game;
-use Platform;
 use RalphJSmit\Filament\Components\Forms\Timestamps;
 
 class GameResource extends Resource
 {
     protected static ?string $model = Game::class;
+
     protected static ?string $navigationIcon = 'heroicon-o-users';
+
     protected static ?string $navigationGroup = 'Games';
 
     protected $queryString = [

@@ -11,7 +11,9 @@ use Filament\Tables\Table;
 class TeamTagsRelationManager extends RelationManager
 {
     protected static string $relationship = 'teamTags';
+
     protected static ?string $label = 'Team Tag';
+
     protected static ?string $recordTitleAttribute = 'name';
 
     public function form(Form $form): Form

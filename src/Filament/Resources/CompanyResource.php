@@ -17,12 +17,14 @@ use RalphJSmit\Filament\Components\Forms\Timestamps;
 class CompanyResource extends Resource
 {
     protected static ?string $model = Company::class;
+
     protected static ?string $navigationIcon = 'heroicon-o-users';
+
     protected static ?string $navigationGroup = 'People';
 
-//    protected $queryString = [
-//        'tableColumnSearchQueries',
-//    ];
+    //    protected $queryString = [
+    //        'tableColumnSearchQueries',
+    //    ];
 
     public static function form(Form $form): Form
     {

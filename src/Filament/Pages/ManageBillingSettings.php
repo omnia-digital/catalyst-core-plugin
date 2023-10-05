@@ -18,12 +18,16 @@ class ManageBillingSettings extends SettingsPage
     use HasPageShield;
 
     protected static ?string $title = 'Billing Settings';
+
     protected static ?string $navigationIcon = 'heroicon-o-credit-card';
+
     protected static string $settings = BillingSettings::class;
+
     protected static ?string $navigationGroup = 'Billing';
+
     protected static ?int $navigationSort = -90;
 
-    public function getHeaderWidgetsColumns(): int|array
+    public function getHeaderWidgetsColumns(): int | array
     {
         return 3;
     }

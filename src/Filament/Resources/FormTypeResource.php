@@ -28,8 +28,11 @@ use OmniaDigital\CatalystCore\Models\FormType;
 class FormTypeResource extends Resource
 {
     protected static ?string $label = 'Form Types';
+
     protected static ?string $model = FormType::class;
+
     protected static ?string $navigationIcon = 'heroicon-o-users';
+
     protected static ?string $navigationGroup = 'Forms';
 
     public static function form(Form $form): Form
