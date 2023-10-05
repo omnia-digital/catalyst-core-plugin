@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace OmniaDigital\CatalystCore\Models;
 
 use Illuminate\Support\Facades\URL;
 

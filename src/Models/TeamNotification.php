@@ -4,7 +4,7 @@ namespace OmniaDigital\CatalystCore\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Modules\Social\Traits\Schedulable;
+use OmniaDigital\CatalystCore\Traits\Schedulable;
 
 class TeamNotification extends Model
 {

@@ -2,9 +2,9 @@
 
 namespace Modules\Forms\Policies;
 
-use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Modules\Forms\Models\FormType;
+use OmniaDigital\CatalystCore\Models\User;
 
 class FormTypePolicy
 {

@@ -1,4 +1,4 @@
-@php use App\Models\MediaFile; @endphp
+@php use OmniaDigital\CatalystCore\Models\MediaFile; @endphp
 @extends('social::livewire.layouts.pages.full-page-layout')
 
 @section('content')
@@ -43,16 +43,17 @@
                             </div>
 
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none" hidden>
-                                <x-library::icons.icon name="fa-duotone fa-magnifying-glass" class="h-5 w-5 text-light-text-color dark:text-light-text-color"
-                                                     aria-hidden="true"/>
+                                <x-library::icons.icon name="fa-duotone fa-magnifying-glass"
+                                                       class="h-5 w-5 text-light-text-color dark:text-light-text-color"
+                                                       aria-hidden="true"/>
                                 <span class="sr-only">Search</span>
                             </div>
                             <div class="w-full relative">
 
                                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                     <x-library::icons.icon name="fa-duotone fa-magnifying-glass"
-                                            class="h-5 w-5 text-light-text-color dark:text-light-text-color"
-                                            aria-hidden="true"/>
+                                                           class="h-5 w-5 text-light-text-color dark:text-light-text-color"
+                                                           aria-hidden="true"/>
                                 </div>
                                 <x-library::input.text type="search" wire:model.live.debounce.500ms="filters.search"
                                                        placeholder="Search Media"

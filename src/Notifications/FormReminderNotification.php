@@ -2,13 +2,13 @@
 
 namespace Modules\Forms\Notifications;
 
-use App\Models\Team;
 use App\Support\Notification\NotificationCenter;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Modules\Forms\Models\FormNotification;
 use OmniaDigital\CatalystCore\Facades\Translate;
+use OmniaDigital\CatalystCore\Models\Team;
 
 class FormReminderNotification extends Notification
 {

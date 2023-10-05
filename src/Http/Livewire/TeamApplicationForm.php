@@ -2,12 +2,12 @@
 
 namespace Modules\Forms\Http\Livewire;
 
-use App\Models\Team;
-use App\Models\TeamApplication;
 use App\Traits\Team\WithTeamManagement;
 use Modules\Forms\Http\Livewire\Form as LivewireForm;
 use Modules\Forms\Models\Form;
 use Modules\Forms\Models\FormSubmission;
+use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Models\TeamApplication;
 
 class TeamApplicationForm extends LivewireForm
 {

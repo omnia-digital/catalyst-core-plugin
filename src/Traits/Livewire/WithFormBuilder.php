@@ -2,7 +2,6 @@
 
 namespace OmniaDigital\CatalystCore\Traits\Livewire;
 
-use App\Models\Team;
 use Closure;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\Builder\Block;
@@ -16,6 +15,7 @@ use Illuminate\Support\Str;
 use Modules\Forms\Models\Form;
 use Modules\Forms\Models\FormType;
 use OmniaDigital\CatalystCore\Facades\Translate;
+use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
 /**

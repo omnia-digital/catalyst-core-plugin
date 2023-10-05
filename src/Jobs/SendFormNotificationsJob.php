@@ -2,7 +2,6 @@
 
 namespace Modules\Forms\Jobs;
 
-use App\Models\Team;
 use Carbon\Carbon;
 use Carbon\CarbonTimeZone;
 use Illuminate\Bus\Queueable;
@@ -12,6 +11,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Modules\Forms\Models\FormNotification;
 use Modules\Forms\Notifications\FormReminderNotification;
+use OmniaDigital\CatalystCore\Models\Team;
 
 class SendFormNotificationsJob implements ShouldQueue
 {

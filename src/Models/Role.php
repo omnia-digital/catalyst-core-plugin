@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace OmniaDigital\CatalystCore\Models;
 
 class Role extends \Spatie\Permission\Models\Role
 {

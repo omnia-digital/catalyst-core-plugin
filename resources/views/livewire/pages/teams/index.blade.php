@@ -1,4 +1,4 @@
-@php use App\Models\Team; @endphp
+@php use OmniaDigital\CatalystCore\Models\Team; @endphp
 @extends('social::livewire.layouts.pages.full-page-layout')
 
 @section('content')

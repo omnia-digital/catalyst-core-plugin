@@ -2,11 +2,11 @@
 
 namespace Modules\Forms\Models;
 
-use App\Models\Team;
-use App\Models\TeamApplication;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Models\TeamApplication;
+use OmniaDigital\CatalystCore\Models\User;
 
 class FormSubmission extends Model
 {
