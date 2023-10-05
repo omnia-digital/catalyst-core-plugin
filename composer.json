@@ -102,8 +102,8 @@
   },
   "repositories": [
     {
-      "type": "path",
-      "url": "../catalyst-location-plugin"
+      "type": "vcs",
+      "url": "https://github.com/omnia-digital/catalyst-location-plugin"
     }
   ],
   "extra": {
