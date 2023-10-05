@@ -17,10 +17,12 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\Team as JetstreamTeam;
 use OmniaDigital\CatalystCore\Enums\PostType;
 use OmniaDigital\CatalystCore\Traits\Awardable;
+use OmniaDigital\CatalystCore\Traits\HasAssociations;
 use OmniaDigital\CatalystCore\Traits\Likable;
 use OmniaDigital\CatalystCore\Traits\Postable;
 use OmniaDigital\CatalystCore\Traits\Tag\HasTeamTags;
 use OmniaDigital\CatalystCore\Traits\Tag\HasTeamTypeTags;
+use Overtrue\LaravelFollow\Traits\Followable;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Permission\Models\Role;
@@ -36,8 +38,9 @@ use Spatie\Tags\HasTags;
 class Team extends JetstreamTeam implements HasMedia, Searchable
 {
     use HasFactory;
+    use HasAssociations;
     use Awardable;
-    use HasLocation;
+//    use HasLocation;
     use Followable;
     use HasProfilePhoto;
     use HasSlug;
@@ -49,7 +52,7 @@ class Team extends JetstreamTeam implements HasMedia, Searchable
     use Likable;
     use Notifiable;
     use Postable;
-    use Reviewable;
+//    use Reviewable;
 
     const DEFAULT_TEAM_NAME = 'Default Org';
 
