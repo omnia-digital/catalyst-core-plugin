@@ -9,7 +9,8 @@ use OmniaDigital\CatalystCore\Traits\Policies\HasDefaultPolicy;
 
 class PostPolicy
 {
-    use HandlesAuthorization, HasDefaultPolicy;
+    use HandlesAuthorization;
+    use HasDefaultPolicy;
 
     /**
      * @return true

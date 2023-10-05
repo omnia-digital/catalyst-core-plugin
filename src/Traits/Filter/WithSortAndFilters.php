@@ -29,7 +29,9 @@ trait WithSortAndFilters
     // When the error is fixed, put them back to $filters.
     // https://omniaapp.slack.com/archives/G01LA6L3H60/p1656660776169019
     public array $members = [0, 0];
+
     public array $tags = [];
+
     public ?string $dateFilter = null;
 
     public $filterCount = 0;
@@ -89,11 +91,15 @@ trait WithSortAndFilters
         return $query
             ->when($this->filters['has_attachment'], fn (Builder $q) => $q->having('media_count', '>=', 1))
             // location filter
-            ->when(Arr::get($this->filters, 'location'), fn (Builder $query, $location) => $query->whereHas('location',
-                fn (Builder $query) => $query->search($location)))
+            ->when(Arr::get($this->filters, 'location'), fn (Builder $query, $location) => $query->whereHas(
+                'location',
+                fn (Builder $query) => $query->search($location)
+            ))
             // date filter
-            ->when($this->dateFilter,
-                fn (Builder $query, $date) => $query->whereDate($table . '.' . $this->dateColumn, $date))
+            ->when(
+                $this->dateFilter,
+                fn (Builder $query, $date) => $query->whereDate($table . '.' . $this->dateColumn, $date)
+            )
             // members filter
             ->when(max($this->members) > 0, fn (Builder $query) => $query->havingBetween('users_count', $this->members))
             // tags
