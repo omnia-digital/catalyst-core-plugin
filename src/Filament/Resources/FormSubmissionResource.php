@@ -21,7 +21,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
-use Modules\Forms\Models\FormSubmission;
+use OmniaDigital\CatalystCore\Models\FormSubmission;
 use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\CatalystCore\Models\User;
 
@@ -39,7 +39,7 @@ class FormSubmissionResource extends Resource
                 Select::make('form_id')
                     ->label('Form')
                     ->options(
-                        \Modules\Forms\Models\Form::get()
+                        \OmniaDigital\CatalystCore\Models\Form::get()
                             ->mapWithKeys(function ($item, $key) {
                                 return [$item['id'] => $item['id'] . ' - ' . $item['name']];
                             }))

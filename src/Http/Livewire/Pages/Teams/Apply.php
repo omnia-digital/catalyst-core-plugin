@@ -5,7 +5,7 @@ namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams;
 use App\Traits\Team\WithTeamManagement;
 use Illuminate\Support\Facades\Gate;
 use Livewire\Component;
-use Modules\Forms\Models\Form;
+use OmniaDigital\CatalystCore\Models\Form;
 use OmniaDigital\CatalystCore\Models\Team;
 
 class Apply extends Component

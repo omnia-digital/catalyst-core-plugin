@@ -3,7 +3,6 @@
 namespace OmniaDigital\CatalystCore\Http\Livewire;
 
 use Livewire\Component;
-use Modules\Feeds\Models\FeedSource;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
 use OmniaDigital\CatalystCore\Models\Location;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;

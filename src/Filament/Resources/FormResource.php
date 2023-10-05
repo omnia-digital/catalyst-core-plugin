@@ -29,12 +29,12 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Modules\Forms\Http\Livewire\UserRegistrationForm;
-use Modules\Forms\Models\FormType;
+use OmniaDigital\CatalystCore\Models\FormType;
 
 class FormResource extends Resource
 {
     protected static ?string $label = 'Forms';
-    protected static ?string $model = \Modules\Forms\Models\Form::class;
+    protected static ?string $model = \OmniaDigital\CatalystCore\Models\Form::class;
     protected static ?string $navigationIcon = 'heroicon-o-users';
     protected static ?string $navigationGroup = 'Forms';
 

@@ -4,7 +4,7 @@ namespace Modules\Forms\Database\Seeders;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
-use Modules\Forms\Models\FormType;
+use OmniaDigital\CatalystCore\Models\FormType;
 use OmniaDigital\CatalystCore\Facades\Translate;
 
 class FormsDatabaseSeeder extends Seeder

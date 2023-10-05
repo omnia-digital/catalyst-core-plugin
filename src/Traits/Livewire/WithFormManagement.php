@@ -2,8 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Traits\Livewire;
 
-use Modules\Forms\Models\Form;
-use Modules\Forms\Models\FormNotification;
+use OmniaDigital\CatalystCore\Models\Form;
+use OmniaDigital\CatalystCore\Models\FormNotification;
 
 /**
  * Add form management functions to livewire component

@@ -3,9 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Modules\Forms\Models\Form;
-use Modules\Forms\Models\FormTemplate;
-use Modules\Forms\Models\FormType;
+use OmniaDigital\CatalystCore\Models\Form;
+use OmniaDigital\CatalystCore\Models\FormTemplate;
+use OmniaDigital\CatalystCore\Models\FormType;
 use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\CatalystCore\Models\User;
 

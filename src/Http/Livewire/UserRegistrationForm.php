@@ -5,7 +5,7 @@ namespace Modules\Forms\Http\Livewire;
 use App\Actions\Fortify\CreateNewUser;
 use Illuminate\Auth\Events\Registered;
 use Modules\Forms\Http\Livewire\Form as LivewireForm;
-use Modules\Forms\Models\FormSubmission;
+use OmniaDigital\CatalystCore\Models\FormSubmission;
 
 class UserRegistrationForm extends LivewireForm
 {

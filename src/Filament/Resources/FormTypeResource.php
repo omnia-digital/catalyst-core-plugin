@@ -23,7 +23,7 @@ use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Modules\Forms\Models\FormType;
+use OmniaDigital\CatalystCore\Models\FormType;
 
 class FormTypeResource extends Resource
 {

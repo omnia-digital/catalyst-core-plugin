@@ -9,7 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Modules\Forms\Models\FormNotification;
+use OmniaDigital\CatalystCore\Models\FormNotification;
 use Modules\Forms\Notifications\FormReminderNotification;
 use OmniaDigital\CatalystCore\Models\Team;
 

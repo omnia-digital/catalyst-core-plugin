@@ -4,8 +4,8 @@ namespace Modules\Forms\Http\Livewire;
 
 use App\Traits\Team\WithTeamManagement;
 use Modules\Forms\Http\Livewire\Form as LivewireForm;
-use Modules\Forms\Models\Form;
-use Modules\Forms\Models\FormSubmission;
+use OmniaDigital\CatalystCore\Models\Form;
+use OmniaDigital\CatalystCore\Models\FormSubmission;
 use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\CatalystCore\Models\TeamApplication;
 

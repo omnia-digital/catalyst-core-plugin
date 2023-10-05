@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Modules\Forms\Models\Form;
+use OmniaDigital\CatalystCore\Models\Form;
 use Spatie\Permission\Models\Role;
 
 class CreateFormNotificationsTable extends Migration

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use OmniaDigital\CatalystCore\Http\Controllers\HandleStripeConnectRefreshUrlController;
+use OmniaDigital\CatalystCore\Http\Livewire\Home;
+use OmniaDigital\CatalystCore\Models\Form;
 use OmniaDigital\CatalystCore\Catalyst;
 use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Http\Livewire\Pages\Bookmarks\Index;
@@ -123,3 +126,6 @@ Route::name('social.')->prefix('social')->middleware([GuestAccessMiddleware::cla
     //        Route::get('/bookmarks', function () {
     //        })->name('bookmarks');
 });
+
+// Stripe Connect
+Route::get('teams/stripe-connect/refresh', HandleStripeConnectRefreshUrlController::class)->name('teams.stripe-connect.refresh');

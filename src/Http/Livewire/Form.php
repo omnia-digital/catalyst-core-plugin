@@ -9,14 +9,14 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Livewire\Component;
-use Modules\Forms\Models\FormSubmission;
+use OmniaDigital\CatalystCore\Models\FormSubmission;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
 class Form extends Component implements HasForms
 {
     use InteractsWithForms, WithNotification;
 
-    public \Modules\Forms\Models\Form $formModel;
+    public \OmniaDigital\CatalystCore\Models\Form $formModel;
 
     public $data = [];
     public ?int $team_id = null; // tells us which team the form submission is for in case this is a global form
@@ -24,7 +24,7 @@ class Form extends Component implements HasForms
     public bool $needBootcamp = false;
     public string $submitText;
 
-    public function mount(\Modules\Forms\Models\Form $form, int $team_id = null, $submitText = 'Submit')
+    public function mount(\OmniaDigital\CatalystCore\Models\Form $form, int $team_id = null, $submitText = 'Submit')
     {
         $this->formModel = $form;
         $this->team_id = $team_id;

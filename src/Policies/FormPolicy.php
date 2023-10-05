@@ -3,7 +3,7 @@
 namespace Modules\Forms\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Modules\Forms\Models\Form;
+use OmniaDigital\CatalystCore\Models\Form;
 use OmniaDigital\CatalystCore\Models\User;
 
 class FormPolicy
