@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Forms\Traits\Livewire;
+namespace OmniaDigital\CatalystCore\Traits\Livewire;
 
 use App\Models\Team;
 use Closure;
@@ -15,8 +15,8 @@ use Filament\Forms\Concerns\InteractsWithForms;
 use Illuminate\Support\Str;
 use Modules\Forms\Models\Form;
 use Modules\Forms\Models\FormType;
-use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 use OmniaDigital\CatalystCore\Facades\Translate;
+use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
 /**
  * Add form builder to livewire component

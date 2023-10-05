@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Forms\Traits\Livewire;
+namespace OmniaDigital\CatalystCore\Traits\Livewire;
 
 use Modules\Forms\Models\Form;
 use Modules\Forms\Models\FormNotification;
