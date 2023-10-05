@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::middleware('auth:api')->get('/forms', function (Request $request) {
+    return $request->user();
+});
 Route::middleware('auth:api')->get('/social', function (Request $request) {
     return $request->user();
 });

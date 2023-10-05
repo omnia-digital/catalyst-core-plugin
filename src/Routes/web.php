@@ -30,6 +30,11 @@ use OmniaDigital\CatalystCore\Livewire\Pages\Companies\Index as AllCompanies;
 use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Discover as DiscoverTeams;
 use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Index as AllTeams;
 
+# Forms
+Route::name('forms.')->prefix('forms')->group(function () {
+    Route::get('/forms/{form}', Form::class)->name('form');
+});
+
 // Shorten URLs
 Route::get(
     '/' . Catalyst::getUsersLetter() . '/{profile}',
