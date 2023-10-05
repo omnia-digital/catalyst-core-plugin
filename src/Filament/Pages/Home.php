@@ -76,18 +76,18 @@ class Home extends Page
         ];
     }
 
-    public function render(): \Illuminate\Contracts\View\View
-    {
-        return parent::render();
-
-        //        return view('social::livewire.pages.home', [
-        //            'places' => $this->places,
-        //            'newsRssFeeds' => $this->getNewsRssFeeds()
-        //        ]);
-    }
-
     public function getNewsRssFeeds()
     {
         return Catalyst::isModuleEnabled('Feeds') ? FeedSource::first()->get() : collect();
+    }
+
+    public function render(): \Illuminate\Contracts\View\View
+    {
+//        return parent::render();
+
+        return view('catalyst-core-plugin::filament.pages.home', [
+            'places' => $this->places,
+            'newsRssFeeds' => $this->getNewsRssFeeds()
+        ]);
     }
 }

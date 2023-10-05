@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace OmniaDigital\CatalystCore\Providers;
 
 use OmniaDigital\CatalystCore\Lenses\Teams\ByUserTagTeamsLens;
 use OmniaDigital\CatalystCore\Lenses\Teams\IndiesTeamsLens;

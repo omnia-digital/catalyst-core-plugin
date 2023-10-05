@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace OmniaDigital\CatalystCore\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use OmniaDigital\CatalystCore\Support\StripeConnect\StripeConnect;

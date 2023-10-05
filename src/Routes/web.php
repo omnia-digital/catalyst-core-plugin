@@ -3,35 +3,35 @@
 use Illuminate\Support\Facades\Route;
 use OmniaDigital\CatalystCore\Catalyst;
 use OmniaDigital\CatalystCore\Facades\Translate;
+use OmniaDigital\CatalystCore\Filament\Pages\Home;
 use OmniaDigital\CatalystCore\Http\Controllers\HandleStripeConnectRefreshUrlController;
-use OmniaDigital\CatalystCore\Http\Livewire\Form;
-use OmniaDigital\CatalystCore\Http\Livewire\Home;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Bookmarks\Index;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Contacts\Index as ContactsIndex;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Posts\Edit as EditPosts;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Posts\Show as ShowPosts;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Posts\Trending as DiscoverIndex;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Profiles\Awards as ProfileAwards;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Profiles\Edit as EditProfile;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Profiles\Followers as ProfileFollowers;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Profiles\Media as ProfileMedia;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Profiles\Show as ShowProfile;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Profiles\Teams as ProfileTeams;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Admin\ManageTeamMembers as TeamMembers;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Admin\TeamAdmin as EditTeam;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Apply as ApplyToTeam;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Awards as TeamAwards;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Calendar as TeamMapCalendar;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Followers as TeamFollowers;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Forms\Builder as TeamFormBuilder;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Forms\Submissions as TeamFormSubmissions;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Map as TeamMap;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\MyTeams;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Show as ShowTeam;
 use OmniaDigital\CatalystCore\Http\Middleware\GuestAccessMiddleware;
+use OmniaDigital\CatalystCore\Livewire\Form;
+use OmniaDigital\CatalystCore\Livewire\Pages\Bookmarks\Index;
 use OmniaDigital\CatalystCore\Livewire\Pages\Companies\Index as AllCompanies;
+use OmniaDigital\CatalystCore\Livewire\Pages\Contacts\Index as ContactsIndex;
+use OmniaDigital\CatalystCore\Livewire\Pages\Posts\Edit as EditPosts;
+use OmniaDigital\CatalystCore\Livewire\Pages\Posts\Show as ShowPosts;
+use OmniaDigital\CatalystCore\Livewire\Pages\Posts\Trending as DiscoverIndex;
+use OmniaDigital\CatalystCore\Livewire\Pages\Profiles\Awards as ProfileAwards;
+use OmniaDigital\CatalystCore\Livewire\Pages\Profiles\Edit as EditProfile;
+use OmniaDigital\CatalystCore\Livewire\Pages\Profiles\Followers as ProfileFollowers;
+use OmniaDigital\CatalystCore\Livewire\Pages\Profiles\Media as ProfileMedia;
+use OmniaDigital\CatalystCore\Livewire\Pages\Profiles\Show as ShowProfile;
+use OmniaDigital\CatalystCore\Livewire\Pages\Profiles\Teams as ProfileTeams;
+use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Admin\ManageTeamMembers as TeamMembers;
+use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Admin\TeamAdmin as EditTeam;
+use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Apply as ApplyToTeam;
+use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Awards as TeamAwards;
+use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Calendar as TeamMapCalendar;
 use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Discover as DiscoverTeams;
+use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Followers as TeamFollowers;
+use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Forms\Builder as TeamFormBuilder;
+use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Forms\Submissions as TeamFormSubmissions;
 use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Index as AllTeams;
+use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Map as TeamMap;
+use OmniaDigital\CatalystCore\Livewire\Pages\Teams\MyTeams;
+use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Show as ShowTeam;
 
 // Forms
 Route::name('forms.')->prefix('forms')->group(function () {
@@ -108,7 +108,7 @@ Route::name('social.')->prefix('social')->middleware([GuestAccessMiddleware::cla
         Route::get('/', ContactsIndex::class)->name('index');
     });
 
-    Route::get('/art', \OmniaDigital\CatalystCore\Http\Livewire\Pages\Art\Index::class)->name('art');
+    Route::get('/art', \OmniaDigital\CatalystCore\Livewire\Pages\Art\Index::class)->name('art');
 
     Route::get('/learn', function () {
         return 'Learn';

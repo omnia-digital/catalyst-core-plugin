@@ -57,6 +57,7 @@
     "spatie/laravel-searchable": "^1.11",
     "spatie/laravel-sluggable": "^3.5",
     "spatie/laravel-tags": "^4.5",
+    "squirephp/countries-en": "*",
     "stechstudio/filament-impersonate": "^3.5",
     "stripe/stripe-php": "^10.21",
     "thomasjohnkane/snooze": "^2.3",

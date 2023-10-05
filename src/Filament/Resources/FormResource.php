@@ -28,7 +28,7 @@ use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use OmniaDigital\CatalystCore\Http\Livewire\UserRegistrationForm;
+use OmniaDigital\CatalystCore\Livewire\UserRegistrationForm;
 use OmniaDigital\CatalystCore\Models\FormType;
 
 class FormResource extends Resource

@@ -2,16 +2,24 @@
 
 namespace OmniaDigital\CatalystCore;
 
-use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
-use Filament\Support\Assets\Css;
-use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Gate;
 use Livewire\Features\SupportTesting\Testable;
 use OmniaDigital\CatalystCore\Commands\CatalystCoreCommand;
+use OmniaDigital\CatalystCore\Models\Profile;
+use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Models\User;
+use OmniaDigital\CatalystCore\Providers\EventServiceProvider;
+use OmniaDigital\CatalystCore\Providers\FortifyServiceProvider;
+use OmniaDigital\CatalystCore\Providers\JetstreamServiceProvider;
 use OmniaDigital\CatalystCore\Providers\RouteServiceProvider;
+use OmniaDigital\CatalystCore\Providers\StripeConnectServiceProvider;
+use OmniaDigital\CatalystCore\Providers\TeamLensesServiceProvider;
+use OmniaDigital\CatalystCore\Settings\GeneralSettings;
 use OmniaDigital\CatalystCore\Testing\TestsCatalystCore;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
@@ -46,6 +54,11 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
             $package->hasConfigFile();
         }
 
+        # add settings config file
+        $configFileName = 'catalyst-settings';
+        $package->hasConfigFile($configFileName);
+
+
         if (file_exists($package->basePath('/../database/migrations'))) {
             $package->hasMigrations($this->getMigrations());
         }
@@ -62,6 +75,11 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
     public function packageRegistered(): void
     {
         $this->app->register(RouteServiceProvider::class);
+        $this->app->register(StripeConnectServiceProvider::class);
+        $this->app->register(TeamLensesServiceProvider::class);
+        $this->app->register(JetstreamServiceProvider::class);
+        $this->app->register(FortifyServiceProvider::class);
+        $this->app->register(EventServiceProvider::class);
     }
 
     public function packageBooted(): void
@@ -88,6 +106,20 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
                 ], 'catalyst-core-plugin-stubs');
             }
         }
+
+        Gate::define('update-profile', function (User $user, Profile $profile) {
+            return $user->id === $profile->user_id;
+        });
+
+        Gate::define('update-team', function (User $user, Team $team) {
+            return $user->belongsToTeam($team) &&
+                ($user->hasTeamRole($team, 'admin') ||
+                    $user->ownsTeam($team));
+        });
+
+        Blade::if('guestAccess', function () {
+            return (new GeneralSettings)->allow_guest_access;
+        });
 
         // Testing
         Testable::mixin(new TestsCatalystCore());
