@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Partials;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Partials;
 
+use App\Models\Team;
+use App\Models\User;
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Models\User;
 
 class UserStatusList extends Component
 {
@@ -39,6 +39,6 @@ class UserStatusList extends Component
 
     public function render()
     {
-        return view('social::livewire.partials.user-status-list');
+        return view('catalyst-social::livewire.partials.user-status-list');
     }
 }

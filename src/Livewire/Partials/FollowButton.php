@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Partials;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Partials;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\User;
-use OmniaDigital\CatalystCore\Notifications\NewFollowerNotification;
+use OmniaDigital\CatalystSocialPlugin\Notifications\NewFollowerNotification;
 
 /**
  * @property User $authUser
@@ -37,6 +37,6 @@ class FollowButton extends Component
 
     public function render()
     {
-        return view('social::livewire.partials.follow-button');
+        return view('catalyst-social::livewire.partials.follow-button');
     }
 }

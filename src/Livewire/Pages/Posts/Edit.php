@@ -1,15 +1,15 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Pages\Posts;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Posts;
 
+use App\Models\Tag;
+use App\Models\Team;
+use App\Models\User;
 use Livewire\Component;
 use Omnia\MediaManager\WithMediaManager;
 use OmniaDigital\CatalystCore\Facades\Translate;
-use OmniaDigital\CatalystCore\Models\Mention;
-use OmniaDigital\CatalystCore\Models\Post;
-use OmniaDigital\CatalystCore\Models\Tag;
-use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Models\User;
+use OmniaDigital\CatalystSocialPlugin\Models\Mention;
+use OmniaDigital\CatalystSocialPlugin\Models\Post;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
 class Edit extends Component
@@ -107,7 +107,7 @@ class Edit extends Component
 
     public function render()
     {
-        return view('social::livewire.pages.posts.edit', [
+        return view('catalyst-social::livewire.pages.posts.edit', [
             'postMedia' => $this->postMedia,
         ]);
     }

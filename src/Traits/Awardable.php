@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Traits;
+namespace OmniaDigital\CatalystSocialPlugin\Traits;
 
-use OmniaDigital\CatalystCore\Models\Award;
+use App\Models\Award;
 
 trait Awardable
 {

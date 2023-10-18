@@ -1,12 +1,12 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams\Forms;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Teams\Forms;
 
+use App\Models\Team;
 use Filament\Forms\Contracts\HasForms;
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\Form;
-use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Traits\Livewire\WithFormBuilder;
+use Modules\Forms\Models\Form;
+use Modules\Forms\Traits\Livewire\WithFormBuilder;
 
 class Builder extends Component implements HasForms
 {
@@ -28,6 +28,6 @@ class Builder extends Component implements HasForms
 
     public function render()
     {
-        return view('social::livewire.pages.teams.forms.builder');
+        return view('catalyst-social::livewire.pages.teams.forms.builder');
     }
 }

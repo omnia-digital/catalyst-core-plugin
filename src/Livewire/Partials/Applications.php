@@ -1,12 +1,12 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Partials;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Partials;
 
+use App\Models\TeamApplication;
+use App\Models\TeamInvitation;
+use App\Models\User;
 use Laravel\Jetstream\Contracts\AddsTeamMembers;
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\TeamApplication;
-use OmniaDigital\CatalystCore\Models\TeamInvitation;
-use OmniaDigital\CatalystCore\Models\User;
 
 class Applications extends Component
 {
@@ -99,6 +99,6 @@ class Applications extends Component
 
     public function render()
     {
-        return view('social::livewire.partials.applications');
+        return view('catalyst-social::livewire.partials.applications');
     }
 }

@@ -166,7 +166,7 @@ trait WithTeamManagement
     {
         $this->resetErrorBag();
 
-        $user = User::find($userID);
+        $user = ${config('catalyst-settings.models.user')}::find($userID);
 
         app(AddsTeamMembers::class)->add(
             $this->user,

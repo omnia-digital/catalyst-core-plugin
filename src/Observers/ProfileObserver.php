@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Observers;
+namespace OmniaDigital\CatalystSocialPlugin\Observers;
 
-use OmniaDigital\CatalystCore\Models\Profile;
+use OmniaDigital\CatalystSocialPlugin\Models\Profile;
 
 class ProfileObserver
 {

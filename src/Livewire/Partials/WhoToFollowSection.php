@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Partials;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Partials;
 
+use App\Models\User;
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\User;
 
 class WhoToFollowSection extends Component
 {
@@ -25,6 +25,6 @@ class WhoToFollowSection extends Component
 
     public function render()
     {
-        return view('social::livewire.partials.who-to-follow-section');
+        return view('catalyst-social::livewire.partials.who-to-follow-section');
     }
 }

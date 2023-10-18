@@ -1,14 +1,15 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Notifications;
+namespace OmniaDigital\CatalystSocialPlugin\Notifications;
 
+use App\Models\User;
+use App\Notifications\BaseNotification;
+use App\Support\Notification\NotificationCenter;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Support\Str;
-use OmniaDigital\CatalystCore\Enums\PostType;
 use OmniaDigital\CatalystCore\Facades\Translate;
-use OmniaDigital\CatalystCore\Models\Post;
-use OmniaDigital\CatalystCore\Models\User;
-use OmniaDigital\CatalystCore\Support\Notification\NotificationCenter;
+use OmniaDigital\CatalystSocialPlugin\Enums\PostType;
+use OmniaDigital\CatalystSocialPlugin\Models\Post;
 
 class PostWasLikedNotification extends BaseNotification
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Teams;
 
+use App\Models\Team;
+use App\Traits\Team\WithTeamManagement;
 use Illuminate\Support\Facades\Gate;
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\Form;
-use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
+use Modules\Forms\Models\Form;
 
 class Apply extends Component
 {
@@ -33,6 +33,6 @@ class Apply extends Component
 
     public function render()
     {
-        return view('social::livewire.pages.teams.apply');
+        return view('catalyst-social::livewire.pages.teams.apply');
     }
 }

@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams\Admin;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Teams\Admin;
 
+use App\Models\Team;
+use App\Traits\Team\WithTeamManagement;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 use Spatie\Permission\Models\Role;
 
 class ManageTeamMembers extends Component
@@ -59,6 +59,6 @@ class ManageTeamMembers extends Component
 
     public function render()
     {
-        return view('social::livewire.pages.teams.admin.manage-team-members');
+        return view('catalyst-social::livewire.pages.teams.admin.manage-team-members');
     }
 }

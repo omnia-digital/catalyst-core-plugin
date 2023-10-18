@@ -1,16 +1,14 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Policies;
+namespace OmniaDigital\CatalystSocialPlugin\Policies;
 
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use OmniaDigital\CatalystCore\Models\User;
-use OmniaDigital\CatalystCore\Models\UserScoreLevel;
-use OmniaDigital\CatalystCore\Traits\Policies\HasDefaultPolicy;
+use OmniaDigital\CatalystSocialPlugin\Models\UserScoreLevel;
 
 class UserScoreLevelPolicy
 {
     use HandlesAuthorization;
-    use HasDefaultPolicy;
 
     /**
      * Determine whether the user can view any models.

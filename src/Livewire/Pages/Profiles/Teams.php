@@ -1,14 +1,14 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Pages\Profiles;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Profiles;
 
+use App\Models\Team;
+use App\Traits\Filter\WithSortAndFilters;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\App;
 use Livewire\Component;
 use Livewire\WithPagination;
-use OmniaDigital\CatalystCore\Models\Profile;
-use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Traits\Filter\WithSortAndFilters;
+use OmniaDigital\CatalystSocialPlugin\Models\Profile;
 use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 
 class Teams extends Component
@@ -64,7 +64,7 @@ class Teams extends Component
 
     public function render()
     {
-        return view('social::livewire.pages.profiles.teams', [
+        return view('catalyst-social::livewire.pages.profiles.teams', [
             'teams' => $this->rows,
             'teamsCount' => $this->rowsQuery->count(),
         ]);

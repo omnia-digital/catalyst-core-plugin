@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Layouts;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Layouts;
 
 use Livewire\Component;
 
@@ -8,6 +8,6 @@ class UserProfileLayout extends Component
 {
     public function render()
     {
-        return view('social::livewire.layouts.user-profile-layout');
+        return view('catalyst-social::livewire.layouts.user-profile-layout');
     }
 }

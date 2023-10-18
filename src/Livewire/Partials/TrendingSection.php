@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Partials;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Partials;
 
 use Illuminate\Support\Facades\App;
 use Livewire\Component;
 use Livewire\WithPagination;
-use OmniaDigital\CatalystCore\Models\Post;
+use OmniaDigital\CatalystSocialPlugin\Models\Post;
 use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 
 class TrendingSection extends Component
@@ -52,7 +52,7 @@ class TrendingSection extends Component
 
     public function render()
     {
-        return view('social::livewire.partials.trending-section', [
+        return view('catalyst-social::livewire.partials.trending-section', [
             'posts' => $this->rows,
         ]);
     }

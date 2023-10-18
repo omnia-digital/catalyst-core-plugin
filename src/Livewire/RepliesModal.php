@@ -1,16 +1,16 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire;
 
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\On;
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Actions\Posts\CreateNewPostAction;
-use OmniaDigital\CatalystCore\Enums\PostType;
-use OmniaDigital\CatalystCore\Models\Post;
-use OmniaDigital\CatalystCore\Notifications\NewCommentNotification;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
-use OmniaDigital\CatalystCore\Support\Livewire\WithPostEditor;
+use OmniaDigital\CatalystSocialPlugin\Actions\Posts\CreateNewPostAction;
+use OmniaDigital\CatalystSocialPlugin\Enums\PostType;
+use OmniaDigital\CatalystSocialPlugin\Models\Post;
+use OmniaDigital\CatalystSocialPlugin\Notifications\NewCommentNotification;
+use OmniaDigital\CatalystSocialPlugin\Support\Livewire\WithPostEditor;
 use Throwable;
 
 class RepliesModal extends Component
@@ -71,6 +71,6 @@ class RepliesModal extends Component
 
     public function render()
     {
-        return view('social::livewire.partials.replies-modal');
+        return view('catalyst-social::livewire.partials.replies-modal');
     }
 }

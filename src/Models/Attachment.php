@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Models;
+namespace OmniaDigital\CatalystSocialPlugin\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -13,6 +13,6 @@ class Attachment extends Model
 
     /* protected static function newFactory()
     {
-        return \OmniaDigital\CatalystCore\Database\factories\AttachmentFactory::new();
+        return \OmniaDigital\CatalystSocialPlugin\Database\factories\AttachmentFactory::new();
     } */
 }

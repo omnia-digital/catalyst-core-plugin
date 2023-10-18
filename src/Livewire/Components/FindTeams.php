@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Components;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Components;
 
 use Livewire\Component;
 
@@ -14,14 +14,14 @@ class FindTeams extends Component
     public function updatedStartDate()
     {
         $component = $this->current === 'map'
-            ? 'social::components.team-map'
-            : 'social::components.current-week-team-calendar';
+            ? 'catalyst-social::components.team-map'
+            : 'catalyst-social::components.current-week-team-calendar';
 
         $this->dispatch('startDateUpdated', start_date: $this->startDate)->to($component);
     }
 
     public function render()
     {
-        return view('social::livewire.components.find-teams');
+        return view('catalyst-social::livewire.components.find-teams');
     }
 }

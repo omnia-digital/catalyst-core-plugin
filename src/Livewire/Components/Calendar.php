@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Components;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Components;
 
+use App\Models\Team;
+use App\Models\User;
 use Omnia\LivewireCalendar\LivewireCalendar;
-use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Models\User;
-use OmniaDigital\CatalystCore\Support\Livewire\InteractsWithCalendarTeams;
+use OmniaDigital\CatalystSocialPlugin\Support\Livewire\InteractsWithCalendarTeams;
 
 class Calendar extends LivewireCalendar
 {
@@ -30,7 +30,7 @@ class Calendar extends LivewireCalendar
 
     public function onEventClick($eventId)
     {
-        $this->dispatch('teamSelected', eventId: $eventId)->to('social::components.teams.team-calendar-list');
+        $this->dispatch('teamSelected', eventId: $eventId)->to('catalyst-social::components.teams.team-calendar-list');
     }
 
     public function getUserProperty()

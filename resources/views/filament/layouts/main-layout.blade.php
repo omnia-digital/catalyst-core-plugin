@@ -1,7 +1,7 @@
 <div>
     <div class="flex bg-neutral">
         <!-- SideMenu -->
-{{--        <livewire:social::layouts.module-navigation class=""/>--}}
+{{--        <livewire:catalyst-social::layouts.module-navigation class=""/>--}}
 
         <!-- Main Content -->
         <div class="lg:pl-64 w-full flex flex-col">

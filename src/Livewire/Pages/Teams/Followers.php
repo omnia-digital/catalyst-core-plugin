@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Teams;
 
+use App\Models\Team;
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\Team;
 
 class Followers extends Component
 {
@@ -16,6 +16,6 @@ class Followers extends Component
 
     public function render()
     {
-        return view('social::livewire.pages.teams.followers');
+        return view('catalyst-social::livewire.pages.teams.followers');
     }
 }

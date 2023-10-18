@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Partials;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Partials;
 
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\Post;
+use OmniaDigital\CatalystSocialPlugin\Models\Post;
 
 class PostActions extends Component
 {
@@ -38,7 +38,7 @@ class PostActions extends Component
 
     public function render()
     {
-        return view('social::livewire.partials.post-actions', [
+        return view('catalyst-social::livewire.partials.post-actions', [
             'show' => $this->show,
         ]);
     }

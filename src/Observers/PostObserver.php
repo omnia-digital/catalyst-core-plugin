@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Observers;
+namespace OmniaDigital\CatalystSocialPlugin\Observers;
 
-use OmniaDigital\CatalystCore\Enums\PostType;
-use OmniaDigital\CatalystCore\Models\Post;
+use OmniaDigital\CatalystSocialPlugin\Enums\PostType;
+use OmniaDigital\CatalystSocialPlugin\Models\Post;
 
 class PostObserver
 {

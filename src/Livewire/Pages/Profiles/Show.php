@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Pages\Profiles;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Profiles;
 
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\Profile;
+use OmniaDigital\CatalystSocialPlugin\Models\Profile;
 
 class Show extends Component
 {
@@ -29,6 +29,6 @@ class Show extends Component
 
     public function render()
     {
-        return view('social::livewire.pages.profiles.show');
+        return view('catalyst-social::livewire.pages.profiles.show');
     }
 }

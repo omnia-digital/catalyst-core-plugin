@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams\Admin;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Teams\Admin;
 
+use App\Models\Team;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\Team;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -186,6 +186,6 @@ class ManageTeamRoles extends Component
 
     public function render()
     {
-        return view('social::livewire.pages.teams.admin.manage-team-roles');
+        return view('catalyst-social::livewire.pages.teams.admin.manage-team-roles');
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Partials;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Partials;
 
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
+use OmniaDigital\CatalystSocialPlugin\Models\Post;
 use OmniaDigital\OmniaLibrary\Livewire\WithModal;
 use Share;
 
@@ -42,6 +42,6 @@ class ShareButton extends Component
 
     public function render()
     {
-        return view('social::livewire.partials.share-button');
+        return view('catalyst-social::livewire.partials.share-button');
     }
 }

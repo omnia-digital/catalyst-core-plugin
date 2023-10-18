@@ -1,13 +1,13 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Pages\Bookmarks;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Bookmarks;
 
+use App\Traits\Filter\WithSortAndFilters;
 use Livewire\Component;
 use Livewire\WithPagination;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
-use OmniaDigital\CatalystCore\Models\Bookmark;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
-use OmniaDigital\CatalystCore\Traits\Filter\WithSortAndFilters;
+use OmniaDigital\CatalystSocialPlugin\Models\Bookmark;
 use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 
 class Index extends Component
@@ -62,7 +62,7 @@ class Index extends Component
 
     public function render()
     {
-        return view('social::livewire.pages.bookmarks.index', [
+        return view('catalyst-social::livewire.pages.bookmarks.index', [
             'bookmarks' => $this->rows,
         ]);
     }

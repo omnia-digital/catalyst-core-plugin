@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire;
 
 use Livewire\Component;
 
@@ -68,7 +68,7 @@ class PostEditor extends Component
 
     public function render()
     {
-        return view('social::livewire.components.post-editor');
+        return view('catalyst-social::livewire.components.post-editor');
     }
 
     protected function getListeners()

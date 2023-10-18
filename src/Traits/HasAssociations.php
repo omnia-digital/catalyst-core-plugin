@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Traits;
+namespace OmniaDigital\CatalystSocialPlugin\Traits;
 
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
-use OmniaDigital\CatalystCore\Models\Association;
+use OmniaDigital\CatalystSocialPlugin\Models\Association;
 
 trait HasAssociations
 {

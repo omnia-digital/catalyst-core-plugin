@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Layouts;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Layouts;
 
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Facades\Translate;
@@ -108,6 +108,6 @@ class ModuleNavigation extends Component
 
     public function render()
     {
-        return view('social::livewire.layouts.module-navigation');
+        return view('catalyst-social::livewire.layouts.module-navigation');
     }
 }

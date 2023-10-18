@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Models;
+namespace OmniaDigital\CatalystSocialPlugin\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Commands;
+namespace OmniaDigital\CatalystSocialPlugin\Commands;
 
 use Illuminate\Console\Command;
 

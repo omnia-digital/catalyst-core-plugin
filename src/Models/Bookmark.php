@@ -1,11 +1,12 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Models;
+namespace OmniaDigital\CatalystSocialPlugin\Models;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use OmniaDigital\CatalystCore\Database\Factories\BookmarkFactory;
+use OmniaDigital\CatalystSocialPlugin\Database\Factories\BookmarkFactory;
 
 class Bookmark extends Model
 {

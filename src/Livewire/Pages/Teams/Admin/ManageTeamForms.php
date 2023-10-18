@@ -1,16 +1,16 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams\Admin;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Teams\Admin;
 
+use App\Models\Team;
 use Illuminate\Support\Arr;
 use Illuminate\Validation\Rule;
 use Laravel\Jetstream\Jetstream;
 use Livewire\Component;
+use Modules\Forms\Models\Form;
+use Modules\Forms\Models\FormNotification;
 use Modules\Forms\Notifications\FormReminderNotification;
-use OmniaDigital\CatalystCore\Models\Form;
-use OmniaDigital\CatalystCore\Models\FormNotification;
-use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Traits\Livewire\WithFormManagement;
+use Modules\Forms\Traits\Livewire\WithFormManagement;
 use OmniaDigital\OmniaLibrary\Livewire\WithModal;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 use Spatie\Permission\Models\Role;
@@ -159,7 +159,7 @@ class ManageTeamForms extends Component
 
     public function render()
     {
-        return view('social::livewire.pages.teams.admin.manage-team-forms', [
+        return view('catalyst-social::livewire.pages.teams.admin.manage-team-forms', [
             'platformForms' => $this->platformForms,
             'teamForms' => $this->teamForms,
         ]);

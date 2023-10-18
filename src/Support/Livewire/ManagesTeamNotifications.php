@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Support\Livewire;
+namespace OmniaDigital\CatalystSocialPlugin\Support\Livewire;
 
-use OmniaDigital\CatalystCore\Rules\CronExpressionValidation;
+use App\Rules\CronExpressionValidation;
 
 trait ManagesTeamNotifications
 {

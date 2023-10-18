@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Filament\Pages;
+namespace OmniaDigital\CatalystSocialPlugin\Filament\Pages;
 
 //use App\Support\Platform\Platform;
 //use App\Support\Platform\WithGuestAccess;
@@ -19,7 +19,7 @@ class Home extends Page
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static string $view = 'filament.social.pages.home';
+//    protected static string $view = 'filament.social.pages.home';
 
     public $tabs = [];
 
@@ -76,18 +76,18 @@ class Home extends Page
         ];
     }
 
-    public function getNewsRssFeeds()
-    {
-        return Catalyst::isModuleEnabled('Feeds') ? FeedSource::first()->get() : collect();
-    }
-
     public function render(): \Illuminate\Contracts\View\View
     {
 //        return parent::render();
 
-        return view('catalyst-core-plugin::filament.pages.home', [
-            'places' => $this->places,
-            'newsRssFeeds' => $this->getNewsRssFeeds()
-        ]);
+                return view('catalyst-social::filament.pages.home', [
+                    'places' => $this->places,
+                    'newsRssFeeds' => $this->getNewsRssFeeds()
+                ]);
+    }
+
+    public function getNewsRssFeeds()
+    {
+        return Catalyst::isModuleEnabled('Feeds') ? FeedSource::first()->get() : collect();
     }
 }

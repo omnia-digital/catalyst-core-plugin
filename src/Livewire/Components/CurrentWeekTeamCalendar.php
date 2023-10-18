@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Components;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Components;
 
+use App\Models\User;
 use Carbon\Carbon;
 use Omnia\LivewireCalendar\LivewireCalendar;
-use OmniaDigital\CatalystCore\Models\User;
-use OmniaDigital\CatalystCore\Support\Livewire\InteractsWithCalendarTeams;
+use OmniaDigital\CatalystSocialPlugin\Support\Livewire\InteractsWithCalendarTeams;
 
 class CurrentWeekTeamCalendar extends LivewireCalendar
 {

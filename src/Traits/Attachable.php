@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Traits;
+namespace OmniaDigital\CatalystSocialPlugin\Traits;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 

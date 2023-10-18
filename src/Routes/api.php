@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/forms', function (Request $request) {
-    return $request->user();
-});
 Route::middleware('auth:api')->get('/social', function (Request $request) {
     return $request->user();
 });

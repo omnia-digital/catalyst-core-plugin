@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Traits;
+namespace OmniaDigital\CatalystSocialPlugin\Traits;
 
+use App\Models\User;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use OmniaDigital\CatalystCore\Models\Bookmark;
-use OmniaDigital\CatalystCore\Models\User;
+use OmniaDigital\CatalystSocialPlugin\Models\Bookmark;
 
 trait Bookmarkable
 {

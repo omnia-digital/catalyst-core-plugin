@@ -1,12 +1,14 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Models;
+namespace OmniaDigital\CatalystSocialPlugin\Models;
 
+use App\Models\Team;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use OmniaDigital\CatalystCore\Database\Factories\MentionFactory;
-use OmniaDigital\CatalystCore\Notifications\SomeoneMentionedYouNotification;
+use OmniaDigital\CatalystSocialPlugin\Database\Factories\MentionFactory;
+use OmniaDigital\CatalystSocialPlugin\Notifications\SomeoneMentionedYouNotification;
 
 class Mention extends Model
 {

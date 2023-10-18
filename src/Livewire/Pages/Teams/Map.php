@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Teams;
 
 use Livewire\Component;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
@@ -11,6 +11,6 @@ class Map extends Component
 
     public function render()
     {
-        return view('social::livewire.pages.teams.map');
+        return view('catalyst-social::livewire.pages.teams.map');
     }
 }

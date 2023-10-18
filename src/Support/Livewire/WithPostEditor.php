@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Support\Livewire;
+namespace OmniaDigital\CatalystSocialPlugin\Support\Livewire;
 
 use Illuminate\Validation\Validator;
 
@@ -24,12 +24,12 @@ trait WithPostEditor
 
     public function emitPostValidated(Validator $validator)
     {
-        $this->dispatch('validationFailed', errors: $validator->errors())->to('social::post-editor');
+        $this->dispatch('validationFailed', errors: $validator->errors())->to('catalyst-social::post-editor');
     }
 
     public function emitPostSaved(string $editorId)
     {
-        $this->dispatch('postSaved:' . $editorId)->to('social::post-editor');
-        $this->dispatch('postSaved')->to('social::news-feed');
+        $this->dispatch('postSaved:' . $editorId)->to('catalyst-social::post-editor');
+        $this->dispatch('postSaved')->to('catalyst-social::news-feed');
     }
 }

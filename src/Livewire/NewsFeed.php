@@ -1,11 +1,12 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire;
 
+use App\Models\Team;
 use Livewire\Component;
 use Livewire\WithPagination;
-use OmniaDigital\CatalystCore\Models\Post;
-use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystSocialPlugin\Http\Livewire\On;
+use OmniaDigital\CatalystSocialPlugin\Models\Post;
 
 class NewsFeed extends Component
 {
@@ -63,7 +64,7 @@ class NewsFeed extends Component
 
     public function render()
     {
-        return view('social::livewire.partials.news-feed', [
+        return view('catalyst-social::livewire.partials.news-feed', [
             'feed' => $this->rows,
         ]);
     }

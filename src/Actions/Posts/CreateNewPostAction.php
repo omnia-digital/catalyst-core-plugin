@@ -1,12 +1,12 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Actions\Posts;
+namespace OmniaDigital\CatalystSocialPlugin\Actions\Posts;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Traits\Conditionable;
-use OmniaDigital\CatalystCore\Enums\PostType;
+use OmniaDigital\CatalystSocialPlugin\Enums\PostType;
 
 class CreateNewPostAction
 {

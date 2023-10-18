@@ -1,11 +1,12 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Events;
+namespace OmniaDigital\CatalystSocialPlugin\Events;
 
 use App\Contracts\Events\ContributesToUserScore;
+use App\Events\BaseEvent;
+use App\Models\User;
 use Illuminate\Queue\SerializesModels;
-use OmniaDigital\CatalystCore\Models\Post;
-use OmniaDigital\CatalystCore\Models\User;
+use OmniaDigital\CatalystSocialPlugin\Models\Post;
 
 class LikedModel extends BaseEvent implements ContributesToUserScore
 {

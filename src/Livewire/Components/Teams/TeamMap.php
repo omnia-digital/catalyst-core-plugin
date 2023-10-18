@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Components\Teams;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Components\Teams;
 
+use App\Models\Location;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\Location;
 use OmniaDigital\OmniaLibrary\Livewire\WithMap;
 
 /**
@@ -57,7 +57,7 @@ class TeamMap extends Component
 
     public function render()
     {
-        return view('social::livewire.components.teams.team-map', [
+        return view('catalyst-social::livewire.components.teams.team-map', [
             'places' => $this->places,
         ]);
     }

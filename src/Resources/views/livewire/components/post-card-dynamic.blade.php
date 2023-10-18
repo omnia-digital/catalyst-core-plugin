@@ -13,7 +13,7 @@
             :show-details="false"
     />
 @else
-    <livewire:social::components.post-card wire:key="post-{{ $post->id }}"
+    <livewire:catalyst-social::components.post-card wire:key="post-{{ $post->id }}"
                                            :post="$post"
                                            :show-post-actions="true"
                                            :clickable="$clickable"

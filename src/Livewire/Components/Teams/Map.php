@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Components\Teams;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Components\Teams;
 
+use App\Models\Location;
+use App\Models\Team;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Facades\Translate;
-use OmniaDigital\CatalystCore\Models\Location;
-use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\OmniaLibrary\Livewire\WithMap;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
@@ -39,7 +39,7 @@ class Map extends Component
 
     public function showPlaceDetail($placeId)
     {
-        $this->dispatch('teamSelected', placeId: $placeId)->to('social::components.teams.team-calendar-list');
+        $this->dispatch('teamSelected', placeId: $placeId)->to('catalyst-social::components.teams.team-calendar-list');
     }
 
     public function getPlacesProperty()
@@ -78,7 +78,7 @@ class Map extends Component
 
     public function render()
     {
-        return view('social::livewire.components.teams.map', [
+        return view('catalyst-social::livewire.components.teams.map', [
             'places' => $this->places,
         ]);
     }

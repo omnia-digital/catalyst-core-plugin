@@ -1,4 +1,4 @@
-@extends('social::livewire.layouts.pages.default-page-layout')
+@extends('catalyst-social::livewire.layouts.pages.default-page-layout')
 
 @section('content')
     <div class="flex items-center mt-6 max-w-post-card-max-w mx-auto">
@@ -14,14 +14,14 @@
         </div>
     </div>
     <div class="mt-6 max-w-post-card-max-w mx-auto divide-y">
-        <livewire:social::components.post-card-dynamic wire:key="post-{{ $post->id }}" :post="$post"
+        <livewire:catalyst-social::components.post-card-dynamic wire:key="post-{{ $post->id }}" :post="$post"
                                                        :clickable="false"/>
 
         {{--        @if ($post->type == \OmniaDigital\CatalystCore\Enums\PostType::RESOURCE)--}}
         {{--            <x-library::card class="px-4 py-2 sm:px-6 flex items-center sm:rounded-t-none justify-between flex-wrap sm:flex-nowrap">{!! $post->body !!}</x-library::card>--}}
         {{--        @endif--}}
         @auth
-            <livewire:social::comment-section :post="$post"/>
+            <livewire:catalyst-social::comment-section :post="$post"/>
             <livewire:media-manager/>
         @endauth
     </div>

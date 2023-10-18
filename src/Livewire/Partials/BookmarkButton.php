@@ -1,12 +1,12 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Partials;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Partials;
 
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
-use OmniaDigital\CatalystCore\Models\Post;
-use OmniaDigital\CatalystCore\Notifications\PostWasBookmarkedNotification;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
+use OmniaDigital\CatalystSocialPlugin\Models\Post;
+use OmniaDigital\CatalystSocialPlugin\Notifications\PostWasBookmarkedNotification;
 
 class BookmarkButton extends Component
 {
@@ -38,6 +38,6 @@ class BookmarkButton extends Component
 
     public function render()
     {
-        return view('social::livewire.partials.bookmark-button');
+        return view('catalyst-social::livewire.partials.bookmark-button');
     }
 }

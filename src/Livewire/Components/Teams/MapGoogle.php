@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Components\Teams;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Components\Teams;
 
+use App\Models\ContactCategory;
 use Illuminate\Support\Arr;
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\ContactCategory;
 use Squire\Models\Country;
 
 class MapGoogle extends Component
@@ -54,7 +54,7 @@ class MapGoogle extends Component
 
     public function render()
     {
-        return view('social::livewire.components.teams.map_google', [
+        return view('catalyst-social::livewire.components.teams.map_google', [
             'countries' => Country::orderBy('name')->get(),
         ]);
     }

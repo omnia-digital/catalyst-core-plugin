@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Components;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Components;
 
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Catalyst;
-use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
+use OmniaDigital\CatalystSocialPlugin\Models\Post;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 use function view;
 
@@ -89,11 +89,11 @@ class PostCard extends Component
      */
     public function confirmDeletePost()
     {
-        $this->dispatch('openDeletePostModal', postId: $this->post->id)->to('social::delete-post-modal');
+        $this->dispatch('openDeletePostModal', postId: $this->post->id)->to('catalyst-social::delete-post-modal');
     }
 
     public function render()
     {
-        return view('social::livewire.components.post-card');
+        return view('catalyst-social::livewire.components.post-card');
     }
 }

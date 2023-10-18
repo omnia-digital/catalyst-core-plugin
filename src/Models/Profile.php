@@ -1,8 +1,11 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Models;
+namespace OmniaDigital\CatalystSocialPlugin\Models;
 
+use App\Models\NullMedia;
+use App\Models\User;
 use App\Support\Lexer\PrettyNumber;
+use App\Traits\Tag\HasProfileTags;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -13,8 +16,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Jetstream\HasProfilePhoto;
-use OmniaDigital\CatalystCore\Database\Factories\ProfileFactory;
-use OmniaDigital\CatalystCore\Traits\Tag\HasProfileTags;
+use OmniaDigital\CatalystSocialPlugin\Database\Factories\ProfileFactory;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Searchable\Searchable;
@@ -30,8 +32,7 @@ class Profile extends Model implements HasMedia, Searchable
     use HasProfilePhoto;
     use HasProfileTags, HasTags {
         HasProfileTags::tags insteadof HasTags;
-    }
-    use HasSlug;
+    }use HasSlug;
     use InteractsWithMedia;
     use SoftDeletes;
 

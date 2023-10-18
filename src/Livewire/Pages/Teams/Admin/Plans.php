@@ -1,13 +1,13 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams\Admin;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Teams\Admin;
 
+use App\Actions\Teams\CreateTeamPlanAction;
+use App\Enums\Teams\TeamBillingPeriod;
+use App\Models\Team;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Actions\Teams\CreateTeamPlanAction;
-use OmniaDigital\CatalystCore\Enums\Teams\TeamBillingPeriod;
-use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
 /** @note We are not using this currently. Save for future when we want teams to create custom plans */
@@ -54,7 +54,7 @@ class Plans extends Component
 
     public function render()
     {
-        return view('social::livewire.pages.teams.admin.plans', [
+        return view('catalyst-social::livewire.pages.teams.admin.plans', [
             'plans' => $this->rows,
         ]);
     }

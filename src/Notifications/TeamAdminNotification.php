@@ -1,11 +1,12 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Notifications;
+namespace OmniaDigital\CatalystSocialPlugin\Notifications;
 
+use App\Models\Team;
+use App\Notifications\BaseNotification;
+use App\Support\Notification\NotificationCenter;
 use Illuminate\Notifications\Messages\MailMessage;
 use OmniaDigital\CatalystCore\Facades\Translate;
-use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Support\Notification\NotificationCenter;
 
 class TeamAdminNotification extends BaseNotification
 {

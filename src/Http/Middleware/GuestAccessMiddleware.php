@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Http\Middleware;
+namespace OmniaDigital\CatalystSocialPlugin\Http\Middleware;
 
+use App\Settings\GeneralSettings;
 use Closure;
 use Illuminate\Http\Request;
-use OmniaDigital\CatalystCore\Settings\GeneralSettings;
 
 class GuestAccessMiddleware
 {

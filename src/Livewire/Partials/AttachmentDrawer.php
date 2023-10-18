@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Partials;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Partials;
 
 use Livewire\Component;
 use Livewire\WithFileUploads;
-use OmniaDigital\CatalystCore\Models\Attachment;
+use OmniaDigital\CatalystSocialPlugin\Models\Attachment;
 
 class AttachmentDrawer extends Component
 {
@@ -42,6 +42,6 @@ class AttachmentDrawer extends Component
 
     public function render()
     {
-        return view('social::livewire.partials.attachment-drawer');
+        return view('catalyst-social::livewire.partials.attachment-drawer');
     }
 }

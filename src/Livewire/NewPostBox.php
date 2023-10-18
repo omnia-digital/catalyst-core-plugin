@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire;
 
+use App\Models\User;
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\Post;
-use OmniaDigital\CatalystCore\Models\User;
+use OmniaDigital\CatalystSocialPlugin\Models\Post;
 
 class NewPostBox extends Component
 {
@@ -127,6 +127,6 @@ class NewPostBox extends Component
 
     public function render()
     {
-        return view('social::livewire.components.new-post-box');
+        return view('catalyst-social::livewire.components.new-post-box');
     }
 }

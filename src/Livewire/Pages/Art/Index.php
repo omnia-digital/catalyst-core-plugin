@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Pages\Art;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Art;
 
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\Post;
+use OmniaDigital\CatalystSocialPlugin\Models\Post;
 
 class Index extends Component
 {
@@ -19,7 +19,7 @@ class Index extends Component
 
     public function render()
     {
-        return view('social::livewire.pages.art.index', [
+        return view('catalyst-social::livewire.pages.art.index', [
             'media_items' => $this->media_items,
         ]);
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Http\Controllers;
+namespace OmniaDigital\CatalystSocialPlugin\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
@@ -15,7 +15,7 @@ class SocialController extends Controller
      */
     public function index()
     {
-        return view('social::index');
+        return view('catalyst-social::index');
     }
 
     /**
@@ -25,7 +25,7 @@ class SocialController extends Controller
      */
     public function create()
     {
-        return view('social::create');
+        return view('catalyst-social::create');
     }
 
     /**
@@ -46,7 +46,7 @@ class SocialController extends Controller
      */
     public function show($id)
     {
-        return view('social::show');
+        return view('catalyst-social::show');
     }
 
     /**
@@ -57,7 +57,7 @@ class SocialController extends Controller
      */
     public function edit($id)
     {
-        return view('social::edit');
+        return view('catalyst-social::edit');
     }
 
     /**

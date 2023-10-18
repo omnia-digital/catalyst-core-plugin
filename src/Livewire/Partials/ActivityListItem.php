@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Partials;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Partials;
 
 use Livewire\Component;
 
@@ -15,6 +15,6 @@ class ActivityListItem extends Component
 
     public function render()
     {
-        return view('social::livewire.partials.activity-list-item');
+        return view('catalyst-social::livewire.partials.activity-list-item');
     }
 }

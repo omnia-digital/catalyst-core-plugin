@@ -1,12 +1,12 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams\Forms;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Teams\Forms;
 
+use App\Models\Team;
+use App\Traits\Team\WithTeamManagement;
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\Form;
-use OmniaDigital\CatalystCore\Models\FormSubmission;
-use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
+use Modules\Forms\Models\Form;
+use Modules\Forms\Models\FormSubmission;
 
 class Submissions extends Component
 {
@@ -34,6 +34,6 @@ class Submissions extends Component
 
     public function render()
     {
-        return view('social::livewire.pages.teams.forms.submissions');
+        return view('catalyst-social::livewire.pages.teams.forms.submissions');
     }
 }

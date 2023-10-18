@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Livewire;
+namespace OmniaDigital\CatalystSocialPlugin\Livewire;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Component;
-use OmniaDigital\CatalystCore\Models\Post;
+use OmniaDigital\CatalystSocialPlugin\Models\Post;
 use OmniaDigital\OmniaLibrary\Livewire\WithModal;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
@@ -46,6 +46,6 @@ class DeletePostModal extends Component
 
     public function render()
     {
-        return view('social::livewire.partials.delete-post-modal');
+        return view('catalyst-social::livewire.partials.delete-post-modal');
     }
 }
