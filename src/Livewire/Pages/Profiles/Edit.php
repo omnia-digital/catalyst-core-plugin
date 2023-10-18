@@ -1,13 +1,13 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Profiles;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Profiles;
 
 use App\Models\Tag;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
-use OmniaDigital\CatalystSocialPlugin\Models\Profile;
+use OmniaDigital\CatalystCore\Models\Profile;
 use Squire\Models\Country;
 
 class Edit extends Component

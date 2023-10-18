@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Database\Factories;
+namespace OmniaDigital\CatalystCore\Database\Factories;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use OmniaDigital\CatalystSocialPlugin\Models\Profile;
+use OmniaDigital\CatalystCore\Models\Profile;
 
 class ProfileFactory extends Factory
 {

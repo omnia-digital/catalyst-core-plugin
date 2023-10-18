@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Models;
+namespace OmniaDigital\CatalystCore\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use OmniaDigital\CatalystSocialPlugin\Database\factories\UserScoreContributionFactory;
+use OmniaDigital\CatalystCore\Database\factories\UserScoreContributionFactory;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 

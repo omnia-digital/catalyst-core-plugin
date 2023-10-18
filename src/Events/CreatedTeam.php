@@ -1,12 +1,12 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Events;
+namespace OmniaDigital\CatalystCore\Events;
 
 use App\Contracts\Events\ContributesToUserScore;
 use App\Events\BaseEvent;
 use App\Models\User;
 use Illuminate\Queue\SerializesModels;
-use OmniaDigital\CatalystSocialPlugin\Models\UserScoreContribution;
+use OmniaDigital\CatalystCore\Models\UserScoreContribution;
 
 class CreatedTeam extends BaseEvent implements ContributesToUserScore
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Traits;
+namespace OmniaDigital\CatalystCore\Traits;
 
 trait HasHandle
 {

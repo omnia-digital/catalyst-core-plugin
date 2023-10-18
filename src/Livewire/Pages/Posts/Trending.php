@@ -1,12 +1,12 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Posts;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Posts;
 
 use Illuminate\Support\Facades\App;
 use Livewire\Component;
 use Livewire\WithPagination;
-use OmniaDigital\CatalystSocialPlugin\Models\Post;
-use OmniaDigital\CatalystSocialPlugin\Models\Profile;
+use OmniaDigital\CatalystCore\Models\Post;
+use OmniaDigital\CatalystCore\Models\Profile;
 use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 
 class Trending extends Component

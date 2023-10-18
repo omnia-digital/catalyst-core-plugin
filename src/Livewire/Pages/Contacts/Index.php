@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Contacts;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Contacts;
 
 use Livewire\Component;
 

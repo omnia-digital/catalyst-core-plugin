@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire;
+namespace OmniaDigital\CatalystCore\Livewire;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Component;
-use OmniaDigital\CatalystSocialPlugin\Models\Post;
+use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\OmniaLibrary\Livewire\WithModal;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 

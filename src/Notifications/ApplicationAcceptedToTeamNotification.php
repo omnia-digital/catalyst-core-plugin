@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Notifications;
+namespace OmniaDigital\CatalystCore\Notifications;
 
 use App\Models\Team;
 use App\Models\User;

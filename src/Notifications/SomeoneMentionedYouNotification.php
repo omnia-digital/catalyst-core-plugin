@@ -1,14 +1,14 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Notifications;
+namespace OmniaDigital\CatalystCore\Notifications;
 
 use App\Models\Team;
 use App\Notifications\BaseNotification;
 use App\Support\Notification\NotificationCenter;
 use Illuminate\Support\Str;
 use OmniaDigital\CatalystCore\Facades\Translate;
-use OmniaDigital\CatalystSocialPlugin\Enums\PostType;
-use OmniaDigital\CatalystSocialPlugin\Models\Mention;
+use OmniaDigital\CatalystCore\Enums\PostType;
+use OmniaDigital\CatalystCore\Models\Mention;
 
 class SomeoneMentionedYouNotification extends BaseNotification
 {

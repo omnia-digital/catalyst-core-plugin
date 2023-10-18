@@ -17,7 +17,7 @@
         <livewire:catalyst-social::components.post-card-dynamic wire:key="post-{{ $post->id }}" :post="$post"
                                                        :clickable="false"/>
 
-        {{--        @if ($post->type == \OmniaDigital\CatalystSocialPlugin\Enums\PostType::RESOURCE)--}}
+        {{--        @if ($post->type == \OmniaDigital\CatalystCore\Enums\PostType::RESOURCE)--}}
         {{--            <x-library::card class="px-4 py-2 sm:px-6 flex items-center sm:rounded-t-none justify-between flex-wrap sm:flex-nowrap">{!! $post->body !!}</x-library::card>--}}
         {{--        @endif--}}
         @auth

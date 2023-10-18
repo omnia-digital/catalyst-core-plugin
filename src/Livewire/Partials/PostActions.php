@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Partials;
+namespace OmniaDigital\CatalystCore\Livewire\Partials;
 
 use Livewire\Component;
-use OmniaDigital\CatalystSocialPlugin\Models\Post;
+use OmniaDigital\CatalystCore\Models\Post;
 
 class PostActions extends Component
 {

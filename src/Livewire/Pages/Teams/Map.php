@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Teams;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams;
 
 use Livewire\Component;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;

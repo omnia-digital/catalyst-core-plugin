@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Database\Seeders;
+namespace OmniaDigital\CatalystCore\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use OmniaDigital\CatalystSocialPlugin\Models\Post;
+use OmniaDigital\CatalystCore\Models\Post;
 
 class PostsTableSeeder extends Seeder
 {

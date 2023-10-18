@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Partials;
+namespace OmniaDigital\CatalystCore\Livewire\Partials;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Livewire\Component;
-use OmniaDigital\CatalystSocialPlugin\Notifications\NewFollowerNotification;
+use OmniaDigital\CatalystCore\Notifications\NewFollowerNotification;
 
 /**
  * @property User $authUser

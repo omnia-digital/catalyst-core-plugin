@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Traits;
+namespace OmniaDigital\CatalystCore\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use OmniaDigital\CatalystSocialPlugin\Actions\Posts\CreateNewPostAction;
-use OmniaDigital\CatalystSocialPlugin\Models\Post;
+use OmniaDigital\CatalystCore\Actions\Posts\CreateNewPostAction;
+use OmniaDigital\CatalystCore\Models\Post;
 
 trait Postable
 {

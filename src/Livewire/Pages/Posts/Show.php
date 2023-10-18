@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Posts;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Posts;
 
 use Livewire\Component;
-use OmniaDigital\CatalystSocialPlugin\Enums\PostType;
-use OmniaDigital\CatalystSocialPlugin\Models\Post;
+use OmniaDigital\CatalystCore\Enums\PostType;
+use OmniaDigital\CatalystCore\Models\Post;
 
 class Show extends Component
 {

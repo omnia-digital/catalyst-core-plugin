@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Policies;
+namespace OmniaDigital\CatalystCore\Policies;
 
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use OmniaDigital\CatalystSocialPlugin\Models\UserScoreContribution;
+use OmniaDigital\CatalystCore\Models\UserScoreContribution;
 
 class UserScoreContributionPolicy
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire;
+namespace OmniaDigital\CatalystCore\Livewire;
 
 use App\Models\Team;
 use Illuminate\Support\Facades\DB;
@@ -8,9 +8,9 @@ use Livewire\Attributes\On;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
-use OmniaDigital\CatalystSocialPlugin\Actions\Posts\CreateNewPostAction;
-use OmniaDigital\CatalystSocialPlugin\Enums\PostType;
-use OmniaDigital\CatalystSocialPlugin\Support\Livewire\WithPostEditor;
+use OmniaDigital\CatalystCore\Actions\Posts\CreateNewPostAction;
+use OmniaDigital\CatalystCore\Enums\PostType;
+use OmniaDigital\CatalystCore\Support\Livewire\WithPostEditor;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 use Throwable;
 

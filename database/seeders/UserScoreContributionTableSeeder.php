@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Database\Seeders;
+namespace OmniaDigital\CatalystCore\Database\Seeders;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 use OmniaDigital\CatalystCore\Facades\Translate;
-use OmniaDigital\CatalystSocialPlugin\Models\UserScoreContribution;
+use OmniaDigital\CatalystCore\Models\UserScoreContribution;
 
 class UserScoreContributionTableSeeder extends Seeder
 {

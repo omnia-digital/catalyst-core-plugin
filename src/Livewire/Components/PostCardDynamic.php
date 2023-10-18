@@ -1,8 +1,8 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Components;
+namespace OmniaDigital\CatalystCore\Livewire\Components;
 
-use OmniaDigital\CatalystSocialPlugin\Models\Post;
+use OmniaDigital\CatalystCore\Models\Post;
 use function view;
 
 class PostCardDynamic extends PostCard

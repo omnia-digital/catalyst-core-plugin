@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Filament\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Pages;
 
 //use App\Support\Platform\Platform;
 //use App\Support\Platform\WithGuestAccess;

@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Components;
+namespace OmniaDigital\CatalystCore\Livewire\Components;
 
 use Livewire\Component;
 

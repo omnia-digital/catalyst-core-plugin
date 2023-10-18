@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Http\Middleware;
+namespace OmniaDigital\CatalystCore\Http\Middleware;
 
 use App\Settings\GeneralSettings;
 use Closure;

@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Components\Teams;
+namespace OmniaDigital\CatalystCore\Livewire\Components\Teams;
 
 use App\Models\Location;
 use App\Models\Team;

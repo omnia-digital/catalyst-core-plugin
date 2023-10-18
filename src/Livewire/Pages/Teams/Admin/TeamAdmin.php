@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Teams\Admin;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams\Admin;
 
 use App\Models\Tag;
 use App\Models\Team;
@@ -8,8 +8,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use OmniaDigital\CatalystCore\Facades\Translate;
-use OmniaDigital\CatalystSocialPlugin\Http\Livewire\Pages\Teams\Admin\Catalyst;
-use OmniaDigital\CatalystSocialPlugin\Support\Livewire\ManagesTeamNotifications;
+use OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Admin\Catalyst;
+use OmniaDigital\CatalystCore\Support\Livewire\ManagesTeamNotifications;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 use OmniaDigital\OmniaLibrary\Livewire\WithPlace;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;

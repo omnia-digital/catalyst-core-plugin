@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Database\Factories;
+namespace OmniaDigital\CatalystCore\Database\Factories;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use OmniaDigital\CatalystSocialPlugin\Enums\PostType;
-use OmniaDigital\CatalystSocialPlugin\Models\Post;
+use OmniaDigital\CatalystCore\Enums\PostType;
+use OmniaDigital\CatalystCore\Models\Post;
 
 class PostFactory extends Factory
 {

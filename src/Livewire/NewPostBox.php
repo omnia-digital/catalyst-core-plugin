@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire;
+namespace OmniaDigital\CatalystCore\Livewire;
 
 use App\Models\User;
 use Livewire\Component;
-use OmniaDigital\CatalystSocialPlugin\Models\Post;
+use OmniaDigital\CatalystCore\Models\Post;
 
 class NewPostBox extends Component
 {

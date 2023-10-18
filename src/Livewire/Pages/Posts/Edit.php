@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Posts;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Posts;
 
 use App\Models\Tag;
 use App\Models\Team;
@@ -8,8 +8,8 @@ use App\Models\User;
 use Livewire\Component;
 use Omnia\MediaManager\WithMediaManager;
 use OmniaDigital\CatalystCore\Facades\Translate;
-use OmniaDigital\CatalystSocialPlugin\Models\Mention;
-use OmniaDigital\CatalystSocialPlugin\Models\Post;
+use OmniaDigital\CatalystCore\Models\Mention;
+use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
 class Edit extends Component

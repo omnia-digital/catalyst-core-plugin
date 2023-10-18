@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Teams;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams;
 
 use App\Models\Team;
-use App\Traits\Team\WithTeamManagement;
+use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 use Illuminate\Support\Facades\Gate;
 use Livewire\Component;
 use Modules\Forms\Models\Form;

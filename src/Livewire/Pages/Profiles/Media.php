@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Profiles;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Profiles;
 
 use Livewire\Component;
-use OmniaDigital\CatalystSocialPlugin\Models\Profile;
+use OmniaDigital\CatalystCore\Models\Profile;
 
 class Media extends Component
 {

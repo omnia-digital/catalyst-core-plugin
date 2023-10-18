@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Partials;
+namespace OmniaDigital\CatalystCore\Livewire\Partials;
 
 use App\Models\TeamApplication;
 use App\Models\TeamInvitation;

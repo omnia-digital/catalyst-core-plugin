@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Components;
+namespace OmniaDigital\CatalystCore\Livewire\Components;
 
 use App\Models\Team;
 use App\Models\User;
 use Omnia\LivewireCalendar\LivewireCalendar;
-use OmniaDigital\CatalystSocialPlugin\Support\Livewire\InteractsWithCalendarTeams;
+use OmniaDigital\CatalystCore\Support\Livewire\InteractsWithCalendarTeams;
 
 class Calendar extends LivewireCalendar
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire;
+namespace OmniaDigital\CatalystCore\Livewire;
 
 use App\Models\Location;
 use Livewire\Component;

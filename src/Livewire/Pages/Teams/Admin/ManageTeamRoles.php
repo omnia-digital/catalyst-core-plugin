@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Teams\Admin;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams\Admin;
 
 use App\Models\Team;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;

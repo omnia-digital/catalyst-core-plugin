@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Enums;
+namespace OmniaDigital\CatalystCore\Enums;
 
 enum PostType: string
 {

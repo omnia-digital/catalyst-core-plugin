@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Partials;
+namespace OmniaDigital\CatalystCore\Livewire\Partials;
 
 use Illuminate\Support\Facades\App;
 use Livewire\Component;
 use Livewire\WithPagination;
-use OmniaDigital\CatalystSocialPlugin\Models\Post;
+use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 
 class TrendingSection extends Component

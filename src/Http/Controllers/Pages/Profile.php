@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Http\Controllers\Pages;
+namespace OmniaDigital\CatalystCore\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
 use Inertia\Inertia;

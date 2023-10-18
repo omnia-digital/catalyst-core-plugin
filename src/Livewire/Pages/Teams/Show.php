@@ -1,15 +1,13 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Teams;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams;
 
-use App\Models\Award;
-use App\Models\Location;
 use App\Models\Team;
 use App\Models\User;
-use App\Traits\Team\WithTeamManagement;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
+use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 use OmniaDigital\OmniaLibrary\Livewire\WithMap;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 

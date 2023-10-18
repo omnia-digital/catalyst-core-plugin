@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Teams\Admin;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams\Admin;
 
 use App\Models\Team;
-use App\Traits\Team\WithTeamManagement;
+use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
 use Spatie\Permission\Models\Role;

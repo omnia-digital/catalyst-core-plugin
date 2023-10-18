@@ -1,16 +1,16 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Facades;
+namespace OmniaDigital\CatalystCore\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \OmniaDigital\CatalystSocialPlugin\CatalystSocialPlugin
+ * @see \OmniaDigital\CatalystCore\CatalystSocialPlugin
  */
 class CatalystSocialPlugin extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \OmniaDigital\CatalystSocialPlugin\CatalystSocialPlugin::class;
+        return \OmniaDigital\CatalystCore\CatalystSocialPlugin::class;
     }
 }

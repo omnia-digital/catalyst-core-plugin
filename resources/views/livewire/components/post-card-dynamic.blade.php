@@ -1,4 +1,4 @@
-@php use OmniaDigital\CatalystSocialPlugin\Enums\PostType; @endphp
+@php use OmniaDigital\CatalystCore\Enums\PostType; @endphp
 @if ($post->type == PostType::ARTICLE)
     <livewire:articles::components.article-card
             :post="$post"

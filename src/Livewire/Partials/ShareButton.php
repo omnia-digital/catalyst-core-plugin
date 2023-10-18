@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Partials;
+namespace OmniaDigital\CatalystCore\Livewire\Partials;
 
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
-use OmniaDigital\CatalystSocialPlugin\Models\Post;
+use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\OmniaLibrary\Livewire\WithModal;
 use Share;
 

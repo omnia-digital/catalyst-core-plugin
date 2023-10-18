@@ -1,13 +1,13 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Partials;
+namespace OmniaDigital\CatalystCore\Livewire\Partials;
 
 use Illuminate\Database\Eloquent\Model;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
-use OmniaDigital\CatalystSocialPlugin\Models\Post;
-use OmniaDigital\CatalystSocialPlugin\Notifications\PostWasLikedNotification;
+use OmniaDigital\CatalystCore\Models\Post;
+use OmniaDigital\CatalystCore\Notifications\PostWasLikedNotification;
 
 class LikeButton extends Component
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Support\Livewire;
+namespace OmniaDigital\CatalystCore\Support\Livewire;
 
 use App\Models\Team;
 use Illuminate\Support\Collection;

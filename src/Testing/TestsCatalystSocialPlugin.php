@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Testing;
+namespace OmniaDigital\CatalystCore\Testing;
 
 use Livewire\Features\SupportTesting\Testable;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Layouts;
+namespace OmniaDigital\CatalystCore\Livewire\Layouts;
 
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Facades\Translate;

@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Models;
+namespace OmniaDigital\CatalystCore\Models;
 
 use App\Models\Team;
 use App\Models\User;
@@ -10,12 +10,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use OmniaDigital\CatalystSocialPlugin\Database\Factories\PostFactory;
-use OmniaDigital\CatalystSocialPlugin\Enums\PostType;
-use OmniaDigital\CatalystSocialPlugin\Traits\Attachable;
-use OmniaDigital\CatalystSocialPlugin\Traits\Bookmarkable;
-use OmniaDigital\CatalystSocialPlugin\Traits\Likable;
-use OmniaDigital\CatalystSocialPlugin\Traits\Postable;
+use OmniaDigital\CatalystCore\Database\Factories\PostFactory;
+use OmniaDigital\CatalystCore\Enums\PostType;
+use OmniaDigital\CatalystCore\Traits\Attachable;
+use OmniaDigital\CatalystCore\Traits\Bookmarkable;
+use OmniaDigital\CatalystCore\Traits\Likable;
+use OmniaDigital\CatalystCore\Traits\Postable;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Searchable\Searchable;

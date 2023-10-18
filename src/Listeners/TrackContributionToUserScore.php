@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Listeners;
+namespace OmniaDigital\CatalystCore\Listeners;
 
 class TrackContributionToUserScore
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Art;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Art;
 
 use Livewire\Component;
-use OmniaDigital\CatalystSocialPlugin\Models\Post;
+use OmniaDigital\CatalystCore\Models\Post;
 
 class Index extends Component
 {

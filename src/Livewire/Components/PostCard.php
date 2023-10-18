@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Components;
+namespace OmniaDigital\CatalystCore\Livewire\Components;
 
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Catalyst;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
-use OmniaDigital\CatalystSocialPlugin\Models\Post;
+use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 use function view;
 

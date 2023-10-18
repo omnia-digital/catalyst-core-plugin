@@ -2,7 +2,10 @@
 
 namespace OmniaDigital\CatalystCore;
 
+use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
+use Filament\Support\Assets\Css;
+use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
@@ -29,7 +32,7 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
 {
     public static string $name = 'catalyst-core-plugin';
 
-    public static string $viewNamespace = 'catalyst-core-plugin';
+    public static string $viewNamespace = 'catalyst-core';
 
     public function configurePackage(Package $package): void
     {
@@ -40,10 +43,12 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
          */
         $package->name(static::$name)
             ->hasCommands($this->getCommands())
+            ->hasRoutes(['web','api'])
             ->hasInstallCommand(function (InstallCommand $command) {
                 $command
                     ->publishConfigFile()
                     ->publishMigrations()
+                    ->publishAssets()
                     ->askToRunMigrations()
                     ->askToStarRepoOnGitHub('omnia-digital/catalyst-core-plugin');
             });
@@ -74,7 +79,6 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
 
     public function packageRegistered(): void
     {
-        $this->app->register(RouteServiceProvider::class);
         $this->app->register(StripeConnectServiceProvider::class);
         $this->app->register(TeamLensesServiceProvider::class);
         $this->app->register(JetstreamServiceProvider::class);

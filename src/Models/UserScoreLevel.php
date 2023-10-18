@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Models;
+namespace OmniaDigital\CatalystCore\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use OmniaDigital\CatalystSocialPlugin\Database\factories\UserScoreLevelFactory;
+use OmniaDigital\CatalystCore\Database\factories\UserScoreLevelFactory;
 
 class UserScoreLevel extends Model
 {

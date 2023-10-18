@@ -1,10 +1,10 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Traits;
+namespace OmniaDigital\CatalystCore\Traits;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use OmniaDigital\CatalystSocialPlugin\Events\LikedModel;
-use OmniaDigital\CatalystSocialPlugin\Models\Like;
+use OmniaDigital\CatalystCore\Events\LikedModel;
+use OmniaDigital\CatalystCore\Models\Like;
 
 use function auth;
 

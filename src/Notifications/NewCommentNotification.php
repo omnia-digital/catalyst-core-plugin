@@ -1,14 +1,14 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Notifications;
+namespace OmniaDigital\CatalystCore\Notifications;
 
 use App\Models\User;
 use App\Notifications\BaseNotification;
 use App\Support\Notification\NotificationCenter;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Support\Str;
-use OmniaDigital\CatalystSocialPlugin\Enums\PostType;
-use OmniaDigital\CatalystSocialPlugin\Models\Post;
+use OmniaDigital\CatalystCore\Enums\PostType;
+use OmniaDigital\CatalystCore\Models\Post;
 
 class NewCommentNotification extends BaseNotification
 {

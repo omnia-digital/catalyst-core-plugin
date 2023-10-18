@@ -1,9 +1,9 @@
 <?php
 
-namespace OmniaDigital\CatalystSocialPlugin\Livewire\Pages\Teams;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams;
 
 use Livewire\Component;
-use OmniaDigital\CatalystSocialPlugin\Models\Profile;
+use OmniaDigital\CatalystCore\Models\Profile;
 
 class Members extends Component
 {
