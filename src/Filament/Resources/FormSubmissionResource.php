@@ -1,11 +1,7 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace OmniaDigital\CatalystCore\Filament\Resources;
 
-use App\Filament\Resources\FormSubmissionResource\Pages\CreateFormSubmission;
-use App\Filament\Resources\FormSubmissionResource\Pages\EditFormSubmission;
-use App\Filament\Resources\FormSubmissionResource\Pages\ListFormSubmissions;
-use App\Filament\Resources\FormSubmissionResource\Pages\ViewFormSubmission;
 use Closure;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -21,6 +17,10 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
+use OmniaDigital\CatalystCore\Filament\Resources\FormSubmissionResource\Pages\CreateFormSubmission;
+use OmniaDigital\CatalystCore\Filament\Resources\FormSubmissionResource\Pages\EditFormSubmission;
+use OmniaDigital\CatalystCore\Filament\Resources\FormSubmissionResource\Pages\ListFormSubmissions;
+use OmniaDigital\CatalystCore\Filament\Resources\FormSubmissionResource\Pages\ViewFormSubmission;
 use OmniaDigital\CatalystCore\Models\FormSubmission;
 use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\CatalystCore\Models\User;

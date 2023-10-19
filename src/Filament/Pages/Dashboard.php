@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Pages;
 
-use App\Filament\Resources\UserResource\Widgets\AdminUserStatsOverview;
 use Filament\Pages\Dashboard as BasePage;
 use Filament\Widgets\AccountWidget;
+use OmniaDigital\CatalystCore\Filament\Resources\UserResource\Widgets\AdminUserStatsOverview;
 
 class Dashboard extends BasePage
 {
@@ -17,7 +17,7 @@ class Dashboard extends BasePage
     {
         return [
             AccountWidget::class,
-            AdminUserStatsOverview::class,
+//            AdminUserStatsOverview::class,
         ];
     }
 }

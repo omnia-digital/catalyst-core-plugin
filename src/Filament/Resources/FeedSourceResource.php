@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace OmniaDigital\CatalystCore\Filament\Resources;
 
-use App\Filament\Resources\FeedSourceResource\Pages;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -12,6 +11,7 @@ use Filament\Tables\Table;
 use Illuminate\Validation\Rule;
 use Modules\Feeds\Enums\FeedSourceType;
 use Modules\Feeds\Models\FeedSource;
+use OmniaDigital\CatalystCore\Filament\Resources\FeedSourceResource\Pages;
 
 class FeedSourceResource extends Resource
 {

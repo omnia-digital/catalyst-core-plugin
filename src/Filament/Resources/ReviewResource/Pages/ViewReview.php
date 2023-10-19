@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\ReviewResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\ReviewResource\Pages;
 
-use App\Filament\Resources\ReviewResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ViewRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\ReviewResource;
 
 class ViewReview extends ViewRecord
 {

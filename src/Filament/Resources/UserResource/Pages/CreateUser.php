@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\UserResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\UserResource\Pages;
 
-use App\Filament\Resources\UserResource;
 use Filament\Resources\Pages\CreateRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\UserResource;
 
 class CreateUser extends CreateRecord
 {

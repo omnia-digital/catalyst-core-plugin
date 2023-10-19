@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\FormResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\FormResource\Pages;
 
-use App\Filament\Resources\FormResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ViewRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\FormResource;
 
 class ViewForm extends ViewRecord
 {

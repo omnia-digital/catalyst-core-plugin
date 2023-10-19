@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\AwardResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\AwardResource\Pages;
 
-use App\Filament\Resources\AwardResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
+use OmniaDigital\CatalystCore\Filament\Resources\AwardResource;
 
 class ListAwards extends ListRecords
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace OmniaDigital\CatalystCore\Filament\Resources;
 
-use App\Filament\Resources\TagResource\Pages;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use OmniaDigital\CatalystCore\Filament\Resources\TagResource\Pages;
 use OmniaDigital\CatalystCore\Models\Tag;
 
 class TagResource extends Resource

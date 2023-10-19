@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\Shield\PermissionResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\Shield\PermissionResource\Pages;
 
-use App\Filament\Resources\Shield\PermissionResource;
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Support\Collection;
+use OmniaDigital\CatalystCore\Filament\Resources\Shield\PermissionResource;
 
 class CreatePermission extends CreateRecord
 {

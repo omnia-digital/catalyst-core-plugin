@@ -1,11 +1,7 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace OmniaDigital\CatalystCore\Filament\Resources;
 
-use App\Filament\Resources\FormTypeResource\Pages\CreateFormType;
-use App\Filament\Resources\FormTypeResource\Pages\EditFormType;
-use App\Filament\Resources\FormTypeResource\Pages\ListFormsType;
-use App\Filament\Resources\FormTypeResource\Pages\ViewFormType;
 use Closure;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -23,6 +19,10 @@ use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use OmniaDigital\CatalystCore\Filament\Resources\FormTypeResource\Pages\CreateFormType;
+use OmniaDigital\CatalystCore\Filament\Resources\FormTypeResource\Pages\EditFormType;
+use OmniaDigital\CatalystCore\Filament\Resources\FormTypeResource\Pages\ListFormsType;
+use OmniaDigital\CatalystCore\Filament\Resources\FormTypeResource\Pages\ViewFormType;
 use OmniaDigital\CatalystCore\Models\FormType;
 
 class FormTypeResource extends Resource

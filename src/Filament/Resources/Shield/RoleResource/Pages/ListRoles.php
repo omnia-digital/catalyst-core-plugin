@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\Shield\RoleResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\Shield\RoleResource\Pages;
 
-use App\Filament\Resources\Shield\RoleResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
+use OmniaDigital\CatalystCore\Filament\Resources\Shield\RoleResource;
 
 class ListRoles extends ListRecords
 {

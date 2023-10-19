@@ -6,11 +6,9 @@ use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use OmniaDigital\CatalystCore\Traits\CatalystTraits;
 
 class User extends Authenticatable implements FilamentUser, MustVerifyEmail
 {
-    public function canAccessPanel(Panel $panel): bool
-    {
-        return true;
-    }
+    use CatalystTraits;
 }

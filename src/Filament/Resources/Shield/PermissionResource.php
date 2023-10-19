@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Filament\Resources\Shield;
+namespace OmniaDigital\CatalystCore\Filament\Resources\Shield;
 
-use App\Filament\Resources\Shield\PermissionResource\Pages;
 use BezhanSalleh\FilamentShield\Contracts\HasShieldPermissions;
 use BezhanSalleh\FilamentShield\Support\Utils;
 use Filament\Forms;
@@ -11,6 +10,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
+use OmniaDigital\CatalystCore\Filament\Resources\Shield\PermissionResource\Pages;
 
 class PermissionResource extends Resource implements HasShieldPermissions
 {

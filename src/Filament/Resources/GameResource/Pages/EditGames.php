@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\GameResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\GameResource\Pages;
 
-use App\Filament\Resources\GameResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\GameResource;
 
 class EditGames extends EditRecord
 {

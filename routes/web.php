@@ -1,5 +1,6 @@
 <?php
 
+use OmniaDigital\CatalystCore\Livewire\Home;
 use OmniaDigital\CatalystCore\Livewire\Pages\Companies\Index as AllCompanies;
 use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Discover as DiscoverTeams;
 use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Index as AllTeams;

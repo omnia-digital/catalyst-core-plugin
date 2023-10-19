@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\TagResource\RelationManagers;
+namespace OmniaDigital\CatalystCore\Filament\Resources\TagResource\RelationManagers;
 
 use Filament\Forms;
 use Filament\Forms\Form;

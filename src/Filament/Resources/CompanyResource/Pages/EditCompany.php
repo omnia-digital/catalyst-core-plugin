@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\CompanyResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\CompanyResource\Pages;
 
-use App\Filament\Resources\CompanyResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\CompanyResource;
 
 class EditCompany extends EditRecord
 {

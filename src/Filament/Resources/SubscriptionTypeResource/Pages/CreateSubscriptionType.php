@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\SubscriptionTypeResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\SubscriptionTypeResource\Pages;
 
-use App\Filament\Resources\SubscriptionTypeResource;
 use Filament\Resources\Pages\CreateRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\SubscriptionTypeResource;
 
 class CreateSubscriptionType extends CreateRecord
 {

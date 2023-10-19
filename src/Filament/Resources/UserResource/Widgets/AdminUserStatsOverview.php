@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\UserResource\Widgets;
+namespace OmniaDigital\CatalystCore\Filament\Resources\UserResource\Widgets;
 
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Card;

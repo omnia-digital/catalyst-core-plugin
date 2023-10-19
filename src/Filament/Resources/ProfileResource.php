@@ -1,10 +1,7 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace OmniaDigital\CatalystCore\Filament\Resources;
 
-use App\Filament\Resources\ProfileResource\Pages\CreateProfile;
-use App\Filament\Resources\ProfileResource\Pages\EditProfile;
-use App\Filament\Resources\ProfileResource\Pages\ManageProfiles;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -14,6 +11,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Modules\Social\Models\Profile;
 use OmniaDigital\CatalystCore\Facades\Translate;
+use OmniaDigital\CatalystCore\Filament\Resources\ProfileResource\Pages\CreateProfile;
+use OmniaDigital\CatalystCore\Filament\Resources\ProfileResource\Pages\EditProfile;
+use OmniaDigital\CatalystCore\Filament\Resources\ProfileResource\Pages\ManageProfiles;
 use RalphJSmit\Filament\Components\Forms\CreatedAt;
 use RalphJSmit\Filament\Components\Forms\DeletedAt;
 use RalphJSmit\Filament\Components\Forms\Timestamp;

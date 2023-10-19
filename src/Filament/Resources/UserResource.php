@@ -1,9 +1,7 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace OmniaDigital\CatalystCore\Filament\Resources;
 
-use App\Filament\Resources\UserResource\Pages;
-use App\Filament\Resources\UserResource\RelationManagers;
 use Filament\Forms;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\TextInput;
@@ -15,6 +13,8 @@ use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use OmniaDigital\CatalystCore\Filament\Resources\UserResource\Pages;
+use OmniaDigital\CatalystCore\Filament\Resources\UserResource\RelationManagers;
 use OmniaDigital\CatalystCore\Models\User;
 use STS\FilamentImpersonate\Tables\Actions\Impersonate;
 

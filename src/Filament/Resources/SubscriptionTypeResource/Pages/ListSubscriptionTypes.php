@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\SubscriptionTypeResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\SubscriptionTypeResource\Pages;
 
-use App\Filament\Resources\SubscriptionTypeResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
+use OmniaDigital\CatalystCore\Filament\Resources\SubscriptionTypeResource;
 
 class ListSubscriptionTypes extends ListRecords
 {

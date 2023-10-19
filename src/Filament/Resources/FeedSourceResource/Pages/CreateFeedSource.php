@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\FeedSourceResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\FeedSourceResource\Pages;
 
-use App\Filament\Resources\FeedSourceResource;
 use Filament\Resources\Pages\CreateRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\FeedSourceResource;
 
 class CreateFeedSource extends CreateRecord
 {

@@ -1,11 +1,7 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace OmniaDigital\CatalystCore\Filament\Resources;
 
-use App\Filament\Resources\FormResource\Pages\CreateForm;
-use App\Filament\Resources\FormResource\Pages\EditForm;
-use App\Filament\Resources\FormResource\Pages\ListForms;
-use App\Filament\Resources\FormResource\Pages\ViewForm;
 use Closure;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\Builder\Block;
@@ -28,6 +24,10 @@ use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use OmniaDigital\CatalystCore\Filament\Resources\FormResource\Pages\CreateForm;
+use OmniaDigital\CatalystCore\Filament\Resources\FormResource\Pages\EditForm;
+use OmniaDigital\CatalystCore\Filament\Resources\FormResource\Pages\ListForms;
+use OmniaDigital\CatalystCore\Filament\Resources\FormResource\Pages\ViewForm;
 use OmniaDigital\CatalystCore\Livewire\UserRegistrationForm;
 use OmniaDigital\CatalystCore\Models\FormType;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\TagResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\TagResource\Pages;
 
-use App\Filament\Resources\TagResource;
 use Filament\Resources\Pages\CreateRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\TagResource;
 
 class CreateTag extends CreateRecord
 {

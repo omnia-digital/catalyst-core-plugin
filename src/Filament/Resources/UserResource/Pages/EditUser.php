@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\UserResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\UserResource\Pages;
 
-use App\Filament\Resources\UserResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\UserResource;
 
 class EditUser extends EditRecord
 {

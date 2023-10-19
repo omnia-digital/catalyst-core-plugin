@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace OmniaDigital\CatalystCore\Filament\Resources;
 
-use App\Filament\Resources\SubscriptionTypeResource\Pages;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Billing\Models\SubscriptionType;
+use OmniaDigital\CatalystCore\Filament\Resources\SubscriptionTypeResource\Pages;
 
 class SubscriptionTypeResource extends Resource
 {

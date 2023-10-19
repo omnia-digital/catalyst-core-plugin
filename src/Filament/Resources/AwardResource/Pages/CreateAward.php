@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\AwardResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\AwardResource\Pages;
 
-use App\Filament\Resources\AwardResource;
 use Filament\Resources\Pages\CreateRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\AwardResource;
 
 class CreateAward extends CreateRecord
 {

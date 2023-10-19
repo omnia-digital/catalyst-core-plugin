@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\FormSubmissionResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\FormSubmissionResource\Pages;
 
-use App\Filament\Resources\FormSubmissionResource;
 use Filament\Resources\Pages\CreateRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\FormSubmissionResource;
 
 class CreateFormSubmission extends CreateRecord
 {

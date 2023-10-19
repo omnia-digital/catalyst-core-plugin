@@ -17,6 +17,8 @@ use OmniaDigital\CatalystCore\Models\Profile;
 use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\CatalystCore\Models\User;
 use OmniaDigital\CatalystCore\Providers\EventServiceProvider;
+use OmniaDigital\CatalystCore\Providers\Filament\AdminPanelProvider;
+use OmniaDigital\CatalystCore\Providers\Filament\SocialPanelProvider;
 use OmniaDigital\CatalystCore\Providers\FortifyServiceProvider;
 use OmniaDigital\CatalystCore\Providers\JetstreamServiceProvider;
 use OmniaDigital\CatalystCore\Providers\RouteServiceProvider;
@@ -79,6 +81,8 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
 
     public function packageRegistered(): void
     {
+        $this->app->register(AdminPanelProvider::class);
+        $this->app->register(SocialPanelProvider::class);
         $this->app->register(StripeConnectServiceProvider::class);
         $this->app->register(TeamLensesServiceProvider::class);
         $this->app->register(JetstreamServiceProvider::class);

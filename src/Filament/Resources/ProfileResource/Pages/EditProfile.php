@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\ProfileResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\ProfileResource\Pages;
 
-use App\Filament\Resources\ProfileResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\ProfileResource;
 
 class EditProfile extends EditRecord
 {

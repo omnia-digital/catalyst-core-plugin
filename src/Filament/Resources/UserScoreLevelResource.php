@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace OmniaDigital\CatalystCore\Filament\Resources;
 
-use App\Filament\Resources\UserScoreLevelResource\Pages;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -10,6 +9,7 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Modules\Social\Models\UserScoreLevel;
+use OmniaDigital\CatalystCore\Filament\Resources\UserScoreLevelResource\Pages;
 
 class UserScoreLevelResource extends Resource
 {

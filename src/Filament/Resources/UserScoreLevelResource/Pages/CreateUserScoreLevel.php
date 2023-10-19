@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\UserScoreLevelResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\UserScoreLevelResource\Pages;
 
-use App\Filament\Resources\UserScoreLevelResource;
 use Filament\Resources\Pages\CreateRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\UserScoreLevelResource;
 
 class CreateUserScoreLevel extends CreateRecord
 {

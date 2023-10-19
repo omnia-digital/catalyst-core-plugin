@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\Shield\PermissionResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\Shield\PermissionResource\Pages;
 
-use App\Filament\Resources\Shield\PermissionResource;
 use BezhanSalleh\FilamentShield\Support\Utils;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use OmniaDigital\CatalystCore\Filament\Resources\Shield\PermissionResource;
 
 class EditPermission extends EditRecord
 {

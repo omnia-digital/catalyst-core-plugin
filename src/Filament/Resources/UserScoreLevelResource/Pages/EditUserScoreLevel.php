@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\UserScoreLevelResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\UserScoreLevelResource\Pages;
 
-use App\Filament\Resources\UserScoreLevelResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\UserScoreLevelResource;
 
 class EditUserScoreLevel extends EditRecord
 {

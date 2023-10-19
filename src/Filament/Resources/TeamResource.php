@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace OmniaDigital\CatalystCore\Filament\Resources;
 
-use App\Filament\Resources\TeamResource\Pages;
-use App\Filament\Resources\TeamResource\RelationManagers;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use OmniaDigital\CatalystCore\Facades\Translate;
+use OmniaDigital\CatalystCore\Filament\Resources\TeamResource\Pages;
+use OmniaDigital\CatalystCore\Filament\Resources\TeamResource\RelationManagers;
 use OmniaDigital\CatalystCore\Models\Team;
 
 class TeamResource extends Resource

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\GameResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\GameResource\Pages;
 
-use App\Filament\Resources\GameResource;
 use Filament\Resources\Pages\CreateRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\GameResource;
 
 class CreateGame extends CreateRecord
 {

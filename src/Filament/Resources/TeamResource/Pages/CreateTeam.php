@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\TeamResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\TeamResource\Pages;
 
-use App\Filament\Resources\TeamResource;
 use Filament\Resources\Pages\CreateRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\TeamResource;
 
 class CreateTeam extends CreateRecord
 {

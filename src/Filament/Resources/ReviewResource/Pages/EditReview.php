@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\ReviewResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\ReviewResource\Pages;
 
-use App\Filament\Resources\ReviewResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\ReviewResource;
 
 class EditReview extends EditRecord
 {

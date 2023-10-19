@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\ProfileResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\ProfileResource\Pages;
 
-use App\Filament\Resources\ProfileResource;
 use Filament\Resources\Pages\CreateRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\ProfileResource;
 
 class CreateProfile extends CreateRecord
 {

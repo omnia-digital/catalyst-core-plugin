@@ -1,9 +1,7 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace OmniaDigital\CatalystCore\Filament\Resources;
 
-use App\Filament\Resources\ReviewResource\Pages;
-use App\Filament\Resources\ReviewResource\RelationManagers;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -11,6 +9,8 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Reviews\Models\Review;
 use OmniaDigital\CatalystCore\Facades\Translate;
+use OmniaDigital\CatalystCore\Filament\Resources\ReviewResource\Pages;
+use OmniaDigital\CatalystCore\Filament\Resources\ReviewResource\RelationManagers;
 use OmniaDigital\CatalystCore\Models\User;
 
 class ReviewResource extends Resource

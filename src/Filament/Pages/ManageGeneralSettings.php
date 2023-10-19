@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Pages;
 
 use App\Settings\GeneralSettings;
 use BezhanSalleh\FilamentShield\Traits\HasPageShield;

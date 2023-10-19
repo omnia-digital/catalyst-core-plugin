@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Filament\Resources\Shield;
+namespace OmniaDigital\CatalystCore\Filament\Resources\Shield;
 
-use App\Filament\Resources\Shield\RoleResource\Pages;
 use BezhanSalleh\FilamentShield\Contracts\HasShieldPermissions;
 use BezhanSalleh\FilamentShield\Facades\FilamentShield;
 use BezhanSalleh\FilamentShield\Support\Utils;
@@ -17,6 +16,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
+use OmniaDigital\CatalystCore\Filament\Resources\Shield\RoleResource\Pages;
 
 class RoleResource extends Resource implements HasShieldPermissions
 {

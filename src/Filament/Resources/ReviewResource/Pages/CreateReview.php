@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\ReviewResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\ReviewResource\Pages;
 
-use App\Filament\Resources\ReviewResource;
 use Filament\Resources\Pages\CreateRecord;
+use OmniaDigital\CatalystCore\Filament\Resources\ReviewResource;
 
 class CreateReview extends CreateRecord
 {

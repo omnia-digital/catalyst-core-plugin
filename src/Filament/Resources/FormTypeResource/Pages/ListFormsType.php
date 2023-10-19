@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\FormTypeResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\FormTypeResource\Pages;
 
-use App\Filament\Resources\FormTypeResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
+use OmniaDigital\CatalystCore\Filament\Resources\FormTypeResource;
 
 class ListFormsType extends ListRecords
 {

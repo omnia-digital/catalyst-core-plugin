@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\ProfileResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\ProfileResource\Pages;
 
-use App\Filament\Resources\ProfileResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ManageRecords;
+use OmniaDigital\CatalystCore\Filament\Resources\ProfileResource;
 
 class ManageProfiles extends ManageRecords
 {

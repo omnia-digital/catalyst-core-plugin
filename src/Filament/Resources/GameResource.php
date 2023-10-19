@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace OmniaDigital\CatalystCore\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Forms\Form;

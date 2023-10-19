@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\GameResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\GameResource\Pages;
 
-use App\Filament\Resources\GameResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ManageRecords;
+use OmniaDigital\CatalystCore\Filament\Resources\GameResource;
 
 class ManageGames extends ManageRecords
 {

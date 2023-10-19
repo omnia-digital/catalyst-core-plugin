@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace OmniaDigital\CatalystCore\Filament\Resources;
 
-use App\Filament\Resources\CompanyResource\Pages\CreateCompany;
-use App\Filament\Resources\CompanyResource\Pages\EditCompany;
-use App\Filament\Resources\CompanyResource\Pages\ManageCompanies;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use OmniaDigital\CatalystCore\Filament\Resources\CompanyResource\Pages\CreateCompany;
+use OmniaDigital\CatalystCore\Filament\Resources\CompanyResource\Pages\EditCompany;
+use OmniaDigital\CatalystCore\Filament\Resources\CompanyResource\Pages\ManageCompanies;
 use OmniaDigital\CatalystCore\Models\Company;
 use RalphJSmit\Filament\Components\Forms\Timestamps;
 

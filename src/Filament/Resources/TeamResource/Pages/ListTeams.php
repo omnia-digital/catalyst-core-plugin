@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\TeamResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\TeamResource\Pages;
 
-use App\Filament\Resources\TeamResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
+use OmniaDigital\CatalystCore\Filament\Resources\TeamResource;
 
 class ListTeams extends ListRecords
 {

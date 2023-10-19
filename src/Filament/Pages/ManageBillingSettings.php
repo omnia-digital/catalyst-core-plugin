@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Filament\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Pages;
 
-use App\Filament\Resources\UserResource\Widgets\AdminUserStatsOverview;
 use App\Settings\BillingSettings;
 use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Forms\Components\Select;
@@ -12,6 +11,7 @@ use Filament\Pages\SettingsPage;
 use Illuminate\Support\Arr;
 use Modules\Billing\Enums\PaymentGateway;
 use Modules\Billing\Models\FormAssemblyForm;
+use OmniaDigital\CatalystCore\Filament\Resources\UserResource\Widgets\AdminUserStatsOverview;
 
 class ManageBillingSettings extends SettingsPage
 {

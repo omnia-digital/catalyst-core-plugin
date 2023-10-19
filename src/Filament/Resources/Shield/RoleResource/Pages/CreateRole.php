@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Filament\Resources\Shield\RoleResource\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Resources\Shield\RoleResource\Pages;
 
-use App\Filament\Resources\Shield\RoleResource;
 use BezhanSalleh\FilamentShield\Support\Utils;
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
+use OmniaDigital\CatalystCore\Filament\Resources\Shield\RoleResource;
 
 class CreateRole extends CreateRecord
 {
