@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Billing\Stripe\Team;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Billing\Stripe\Team;
 
 use App\Models\Team;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;

@@ -31,6 +31,8 @@ use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Map as TeamMap;
 use OmniaDigital\CatalystCore\Livewire\Pages\Teams\MyTeams;
 use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Show as ShowTeam;
 
+
+
 // Shorten URLs
 Route::get(
     '/' . Catalyst::getUsersLetter() . '/{profile}',
@@ -47,7 +49,10 @@ Route::name('catalyst-social.')->prefix('social')->middleware([GuestAccessMiddle
     // /{handle}/status/{post_id} for any type of post, whether it's a post or reply
     // /{messages}/{message_id} for messages
 
-//    Route::get('/home', Home::class)->name('home');
+    Route::get('/home', Home::class)->name('home');
+    Route::get('/home', function() {
+        return dd('adfa');
+    })->name('home');
     Route::get('bookmarks', Index::class)->name('bookmarks');
 
     Route::get('/trending', DiscoverIndex::class)->name('discover');
@@ -119,3 +124,17 @@ Route::name('catalyst-social.')->prefix('social')->middleware([GuestAccessMiddle
     //        Route::get('/bookmarks', function () {
     //        })->name('bookmarks');
 });
+
+use OmniaDigital\CatalystCore\Livewire\Pages\Billing\Stripe\User\Billing as StripBillingPage;
+use OmniaDigital\CatalystCore\Livewire\Pages\Billing\Chargent\User\Subscription as ChargentBillingPage;
+
+// Billing
+Route::name('billing.')
+    ->prefix('billing')
+    ->group(function () {
+        Route::get('billing', StripBillingPage::class)
+            ->name('stripe-billing'); // stripe billing page
+        Route::get('/subscription', ChargentBillingPage::class)
+            ->withoutMiddleware('subscribed')
+            ->name('chargent-billing'); // chargent billing
+    });

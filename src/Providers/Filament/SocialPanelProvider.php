@@ -16,6 +16,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use OmniaDigital\CatalystCore\Filament\Pages\Home;
 use Trans;
 
 class SocialPanelProvider extends PanelProvider
@@ -28,15 +29,16 @@ class SocialPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
-            ->discoverResources(
-                in: __DIR__ . '/../../Filament/Resources',
-                for: 'OmniaDigital\\CatalystSocialPlugin\\Filament\\Resources'
-            )
-            ->discoverPages(
-                in: __DIR__ . '/../../Filament/Pages',
-                for: 'OmniaDigital\\CatalystSocialPlugin\\Filament\\Pages'
-            )
+//            ->discoverResources(
+//                in: __DIR__ . '/../../Filament/Resources',
+//                for: 'OmniaDigital\\CatalystSocialPlugin\\Filament\\Resources'
+//            )
+//            ->discoverPages(
+//                in: __DIR__ . '/../../Filament/Pages',
+//                for: 'OmniaDigital\\CatalystSocialPlugin\\Filament\\Pages'
+//            )
             ->pages([
+                Home::class
                 //                Pages\Dashboard::class,
             ])
             ->discoverWidgets(

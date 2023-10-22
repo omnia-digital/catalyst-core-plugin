@@ -5,7 +5,7 @@ namespace OmniaDigital\CatalystCore\Livewire;
 use App\Models\Team;
 use Livewire\Component;
 use Livewire\WithPagination;
-use OmniaDigital\CatalystCore\Http\Livewire\On;
+use OmniaDigital\CatalystCore\Livewire\On;
 use OmniaDigital\CatalystCore\Models\Post;
 
 class NewsFeed extends Component

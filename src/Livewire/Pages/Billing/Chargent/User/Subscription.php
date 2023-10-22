@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Billing\Chargent\User;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Billing\Chargent\User;
 
 use OmniaDigital\CatalystCore\Facades\Catalyst;
 use Livewire\Component;

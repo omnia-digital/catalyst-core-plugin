@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use OmniaDigital\CatalystCore\Facades\Translate;
-use OmniaDigital\CatalystCore\Http\Livewire\Pages\Teams\Admin\Catalyst;
+use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Admin\Catalyst;
 use OmniaDigital\CatalystCore\Support\Livewire\ManagesTeamNotifications;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 use OmniaDigital\OmniaLibrary\Livewire\WithPlace;

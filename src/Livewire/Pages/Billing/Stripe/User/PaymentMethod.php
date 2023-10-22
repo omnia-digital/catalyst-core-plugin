@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Http\Livewire\Pages\Billing\Stripe\User;
+namespace OmniaDigital\CatalystCore\Livewire\Pages\Billing\Stripe\User;
 
 use Livewire\Component;
 use OmniaDigital\OmniaLibrary\Livewire\WithStripe;

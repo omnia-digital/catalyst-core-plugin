@@ -12,10 +12,10 @@ use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
 class Home extends Component
 {
-    use WithGuestAccess;
-    use WithMap;
-    use WithModal;
-    use WithNotification;
+//    use WithGuestAccess;
+//    use WithMap;
+//    use WithModal;
+//    use WithNotification;
 
     public $tabs = [];
 
@@ -66,6 +66,7 @@ class Home extends Component
 
     public function render()
     {
+        dd('render');
         return view('catalyst-social::livewire.pages.home', [
             'places' => $this->places,
             'newsRssFeeds' => $this->getNewsRssFeeds(),

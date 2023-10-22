@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 use OmniaDigital\CatalystCore\Actions\Posts\CreateNewPostAction;
-use OmniaDigital\CatalystCore\Http\Livewire\Partials\On;
+use OmniaDigital\CatalystCore\Livewire\Partials\On;
 use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\CatalystCore\Notifications\PostWasRepostedNotification;
 use OmniaDigital\CatalystCore\Support\Livewire\WithPostEditor;
