@@ -52,7 +52,7 @@
         {{--                </div>--}}
         <div class="mt-4 space-y-4">
             @forelse ($posts as $post)
-                <livewire:catalyst-social::components.post-card-dynamic :post="$post"/>
+                <livewire:catalyst::components.post-card-dynamic :post="$post"/>
             @empty
                 <div class="bg-white p-4">
                     <p class="text-dark-text-color">{{ Translate::get('No posts to show.') }}</p>
@@ -87,7 +87,7 @@
     <div x-cloak x-show="activeTab === 'resources'">
         <div class="mt-4 space-y-4">
             @forelse ($resources as $resource)
-                <livewire:catalyst-social::components.post-card-dynamic :post="$resource->load('user')"/>
+                <livewire:catalyst::components.post-card-dynamic :post="$resource->load('user')"/>
             @empty
                 <div class="bg-white p-4">
                     <p class="text-dark-text-color">{{ Translate::get('No resources to show. Check back later!') }}</p>

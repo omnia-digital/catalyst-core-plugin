@@ -19,7 +19,7 @@ class Index extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.pages.art.index', [
+        return view('catalyst::livewire.pages.art.index', [
             'media_items' => $this->media_items,
         ]);
     }

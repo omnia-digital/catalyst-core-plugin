@@ -7,7 +7,7 @@
             </div>
             <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
                 <a
-                        href="{{ route('social.teams.admin.forms.create', $team) }}"
+                        href="{{ route('catalyst-social.teams.admin.forms.create', $team) }}"
                         class="inline-flex items-center justify-center rounded-md border border-transparent bg-black px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-dark-text-color focus:ring-offset-2 sm:w-auto"
                 >Create a form</a>
             </div>
@@ -70,7 +70,7 @@
                                 <dd class="mt-1 truncate text-light-text-color">
                                     @if ($form->submissions()->count())
                                         <a
-                                                href="{{ route('social.teams.forms.submissions', ['team' => $team, 'form' => $form]) }}"
+                                                href="{{ route('catalyst-social.teams.forms.submissions', ['team' => $team, 'form' => $form]) }}"
                                                 class="underline hover:no-underline focus:ring-1"
                                         >{{ $form->submissions()->count() }} {{ Str::plural('submission', $form->submissions()->count()) }}</a>
                                     @else
@@ -102,7 +102,7 @@
                         <td class="hidden px-3 py-4 text-sm text-light-text-color lg:table-cell">
                             @if ($form->submissions()->count())
                                 <a
-                                        href="{{ route('social.teams.forms.submissions', ['team' => $team, 'form' => $form]) }}"
+                                        href="{{ route('catalyst-social.teams.forms.submissions', ['team' => $team, 'form' => $form]) }}"
                                         class="underline hover:no-underline focus:ring-1"
                                 >{{ $form->submissions()->count() }}</a>
                             @else
@@ -133,7 +133,7 @@
 
                                 <!-- Edit Form -->
                                 <a
-                                        href="{{ route('social.teams.admin.forms.edit', ['team' => $team, 'form' => $form]) }}"
+                                        href="{{ route('catalyst-social.teams.admin.forms.edit', ['team' => $team, 'form' => $form]) }}"
                                         class="block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 disabled:text-base-text-color"
                                 >Edit<span class="sr-only">, {{ $form->name }}</span></a>
 

@@ -11,6 +11,6 @@ class Map extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.pages.teams.map');
+        return view('catalyst::livewire.pages.teams.map');
     }
 }

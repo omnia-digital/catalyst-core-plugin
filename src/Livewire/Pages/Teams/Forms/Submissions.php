@@ -34,6 +34,6 @@ class Submissions extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.pages.teams.forms.submissions');
+        return view('catalyst::livewire.pages.teams.forms.submissions');
     }
 }

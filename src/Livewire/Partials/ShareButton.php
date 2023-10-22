@@ -42,6 +42,6 @@ class ShareButton extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.partials.share-button');
+        return view('catalyst::livewire.partials.share-button');
     }
 }

@@ -20,7 +20,7 @@
                             </p>
                         </div>
                         <div class="flex-shrink-0">
-                            <livewire:catalyst-social::partials.follow-button :model="$user"/>
+                            <livewire:catalyst::partials.follow-button :model="$user"/>
                         </div>
                     </li>
                 @empty

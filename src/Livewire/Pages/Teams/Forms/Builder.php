@@ -27,6 +27,6 @@ class Builder extends Component implements HasForms
 
     public function render()
     {
-        return view('catalyst-social::livewire.pages.teams.forms.builder');
+        return view('catalyst::livewire.pages.teams.forms.builder');
     }
 }

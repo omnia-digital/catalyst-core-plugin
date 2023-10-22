@@ -26,11 +26,11 @@ class DeletePostDropdownItem extends Component
      */
     public function confirmDeletePost()
     {
-        $this->dispatch('openDeletePostModal', postId: $this->post->id)->to('catalyst-social::delete-post-modal');
+        $this->dispatch('openDeletePostModal', postId: $this->post->id)->to('catalyst::delete-post-modal');
     }
 
     public function render()
     {
-        return view('catalyst-social::livewire.partials.delete-post-dropdown-item');
+        return view('catalyst::livewire.partials.delete-post-dropdown-item');
     }
 }

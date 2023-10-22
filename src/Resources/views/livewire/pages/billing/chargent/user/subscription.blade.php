@@ -1,12 +1,12 @@
-@extends('catalyst-social::livewire.layouts.pages.full-page-layout')
+@extends('catalyst::livewire.layouts.pages.full-page-layout')
 
 @section('content')
     <div x-data="" class="">
         <div class="mt-0">
-            <x-catalyst-social::page-heading>
+            <x-catalyst::page-heading>
                 <x-slot name="title">{{ Translate::get('Membership') }}</x-slot>
                 Manage your membership plan and billing information.
-            </x-catalyst-social::page-heading>
+            </x-catalyst::page-heading>
 
             <!-- Subscriptions Settings -->
             <div class="mt-6 space-y-6">

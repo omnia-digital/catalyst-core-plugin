@@ -52,7 +52,7 @@ class NewCommentNotification extends BaseNotification
     {
         return $this->post->type === PostType::ARTICLE->value
             ? route('resources.show', $this->post)
-            : route('social.posts.show', $this->post);
+            : route('catalyst-social.posts.show', $this->post);
     }
 
     public function toArray($notifiable): array

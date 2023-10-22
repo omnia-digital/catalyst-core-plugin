@@ -140,7 +140,7 @@ class Post extends Model implements HasMedia, Searchable
             return route('resources.show', $this);
         }
 
-        return route('social.posts.show', $this);
+        return route('catalyst-social.posts.show', $this);
     }
 
     public function scopeOnlyResources($query)
@@ -160,7 +160,7 @@ class Post extends Model implements HasMedia, Searchable
 
     public function getSearchResult(): SearchResult
     {
-        $url = route('social.posts.show', $this);
+        $url = route('catalyst-social.posts.show', $this);
 
         return (new SearchResult($this, $this->title, $url))->setType($this->type?->value ?? $this->getTable());
     }

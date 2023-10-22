@@ -66,6 +66,6 @@ class NewsFeedEditor extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.components.news-feed-editor');
+        return view('catalyst::livewire.components.news-feed-editor');
     }
 }

@@ -39,6 +39,6 @@ class UserStatusList extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.partials.user-status-list');
+        return view('catalyst::livewire.partials.user-status-list');
     }
 }

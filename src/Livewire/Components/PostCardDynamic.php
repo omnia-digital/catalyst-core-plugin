@@ -16,6 +16,6 @@ class PostCardDynamic extends PostCard
 
     public function render()
     {
-        return view('catalyst-social::livewire.components.post-card-dynamic');
+        return view('catalyst::livewire.components.post-card-dynamic');
     }
 }

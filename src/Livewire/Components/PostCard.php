@@ -43,26 +43,26 @@ class PostCard extends Component
     public function showPost()
     {
         if ($this->clickable) {
-            return $this->redirectRoute('social.posts.show', $this->post);
+            return $this->redirectroute('catalyst-social.posts.show', $this->post);
         }
     }
 
     public function showProfile($handle = null, $team = false)
     {
         if ($team) {
-            return $this->redirectRoute('social.teams.show', $handle);
+            return $this->redirectroute('catalyst-social.teams.show', $handle);
         }
         if ($handle) {
-            return $this->redirectRoute('social.profile.show', $handle);
+            return $this->redirectroute('catalyst-social.profile.show', $handle);
         }
 
-        return $this->redirectRoute('social.profile.show', $this->author->handle);
+        return $this->redirectroute('catalyst-social.profile.show', $this->author->handle);
     }
 
     public function toggleBookmark()
     {
         if (Catalyst::isAllowingGuestAccess() && ! auth()->check()) {
-            $this->showAuthenticationModal(route('social.posts.show', $this->post));
+            $this->showAuthenticationModal(route('catalyst-social.posts.show', $this->post));
 
             return;
         }
@@ -89,11 +89,11 @@ class PostCard extends Component
      */
     public function confirmDeletePost()
     {
-        $this->dispatch('openDeletePostModal', postId: $this->post->id)->to('catalyst-social::delete-post-modal');
+        $this->dispatch('openDeletePostModal', postId: $this->post->id)->to('catalyst::delete-post-modal');
     }
 
     public function render()
     {
-        return view('catalyst-social::livewire.components.post-card');
+        return view('catalyst::livewire.components.post-card');
     }
 }

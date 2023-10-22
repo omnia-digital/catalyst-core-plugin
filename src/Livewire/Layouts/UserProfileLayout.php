@@ -8,6 +8,6 @@ class UserProfileLayout extends Component
 {
     public function render()
     {
-        return view('catalyst-social::livewire.layouts.user-profile-layout');
+        return view('catalyst::livewire.layouts.user-profile-layout');
     }
 }

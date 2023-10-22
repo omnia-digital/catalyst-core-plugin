@@ -1,4 +1,4 @@
-@extends('catalyst-social::livewire.layouts.pages.full-page-layout')
+@extends('catalyst::livewire.layouts.pages.full-page-layout')
 
 {{--@section('full-width-header')--}}
 {{--    <div class="col-span-2 h-36 bg-[url('https://source.unsplash.com/random')] -mx-4 bg-cover bg-no-repeat"></div>--}}
@@ -346,14 +346,14 @@
             <!-- Team Members -->
             <div x-cloak x-show="activeTab === 3" class="mt-6 pb-12 space-y-6">
                 <div>
-                    <livewire:catalyst-social::pages.teams.members :team="$team"/>
+                    <livewire:catalyst::pages.teams.members :team="$team"/>
                 </div>
             </div>
 
             <!-- Forms -->
             <div x-cloak x-show="activeTab === 4" class="mt-6 pb-12 space-y-6">
                 <div>
-                    <livewire:catalyst-social::pages.teams.forms :team="$team"/>
+                    <livewire:catalyst::pages.teams.forms :team="$team"/>
                 </div>
             </div>
 
@@ -379,17 +379,17 @@
                     {
                         id: 1,
                         title: 'Profile',
-                        /* component: 'catalyst-social::pages.teams.partials.edit-team-basic' */
+                        /* component: 'catalyst::pages.teams.partials.edit-team-basic' */
                     },
                     {
                         id: 2,
                         title: 'Locations',
-                        /* component: 'catalyst-social::pages.teams.partials.edit-team-locations' */
+                        /* component: 'catalyst::pages.teams.partials.edit-team-locations' */
                     },
                     {
                         id: 3,
                         title: 'Members',
-                        // component: 'catalyst-social::pages.teams.members'
+                        // component: 'catalyst::pages.teams.members'
                     },
                     {
                         id: 4,

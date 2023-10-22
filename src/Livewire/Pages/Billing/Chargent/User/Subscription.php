@@ -27,7 +27,7 @@ class Subscription extends Component
     {
         $platformIsUsingChargentPaymentGateway = Catalyst::isUsingPaymentGateway('chargent');
         if (! $platformIsUsingChargentPaymentGateway || ! config('forrest.credentials.consumerKey')) {
-//            $this->redirect(route('social.home'));
+//            $this->redirect(route('catalyst-social.home'));
         }
 
         $subscriptionFormSlug = Catalyst::getBillingSetting('user_subscription_form');

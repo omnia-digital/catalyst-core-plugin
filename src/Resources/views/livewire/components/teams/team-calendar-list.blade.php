@@ -48,14 +48,14 @@
                     <div x-show="showDetail" class="text-lg font-bold" x-text="title"></div>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a x-show="!showDetail" href="{{ route('social.teams.map') }}" @class([
+                    <a x-show="!showDetail" href="{{ route('catalyst-social.teams.map') }}" @class([
 		                    'text-light-text-color hover:text-primary active:text-primary focus:text-primary',
 		                    'text-primary' => request()->routeIs('social.teams.map')
                             ])>
                         <span class="sr-only" x-text="'Map'"></span>
                         <span><x-heroicon-o-map class="h-6 w-6"/></span>
                     </a>
-                    <a x-show="!showDetail" href="{{ route('social.teams.calendar') }}" @class([
+                    <a x-show="!showDetail" href="{{ route('catalyst-social.teams.calendar') }}" @class([
 		                    'text-light-text-color hover:text-primary active:text-primary focus:text-primary',
 		                    'text-primary' => request()->routeIs('social.teams.calendar')
                             ])>

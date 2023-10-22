@@ -46,6 +46,6 @@ class DeletePostModal extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.partials.delete-post-modal');
+        return view('catalyst::livewire.partials.delete-post-modal');
     }
 }

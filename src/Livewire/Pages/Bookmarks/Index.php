@@ -56,13 +56,13 @@ class Index extends Component
     public function showGuestAccessModal()
     {
         if (Catalyst::isAllowingGuestAccess() && ! auth()->check()) {
-            $this->showAuthenticationModal(route('social.bookmarks'));
+            $this->showAuthenticationModal(route('catalyst-social.bookmarks'));
         }
     }
 
     public function render()
     {
-        return view('catalyst-social::livewire.pages.bookmarks.index', [
+        return view('catalyst::livewire.pages.bookmarks.index', [
             'bookmarks' => $this->rows,
         ]);
     }

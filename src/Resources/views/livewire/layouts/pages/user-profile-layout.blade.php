@@ -1,2 +1,2 @@
-@extends('catalyst-social::livewire.layouts.pages.full-page-layout')
+@extends('catalyst::livewire.layouts.pages.full-page-layout')
 

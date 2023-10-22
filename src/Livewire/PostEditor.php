@@ -68,7 +68,7 @@ class PostEditor extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.components.post-editor');
+        return view('catalyst::livewire.components.post-editor');
     }
 
     protected function getListeners()

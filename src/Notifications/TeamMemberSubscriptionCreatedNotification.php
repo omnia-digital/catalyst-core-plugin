@@ -47,7 +47,7 @@ class TeamMemberSubscriptionCreatedNotification extends Notification implements 
         return (new MailMessage)
             ->subject('New Subscription')
             ->line('Your team ' . $this->team->name . ' has a new subscription.')
-            ->action('View', route('social.teams.admin', $this->team))
+            ->action('View', route('catalyst-social.teams.admin', $this->team))
             ->line('Thank you for using our application!');
     }
 
@@ -63,7 +63,7 @@ class TeamMemberSubscriptionCreatedNotification extends Notification implements 
             ->success('New subscription')
             ->subtitle($this->team->name)
             //->image()
-            ->actionLink(route('social.teams.admin', $this->team))
+            ->actionLink(route('catalyst-social.teams.admin', $this->team))
             ->actionText('View')
             ->toArray();
     }

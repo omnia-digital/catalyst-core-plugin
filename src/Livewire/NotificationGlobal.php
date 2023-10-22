@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace OmniaDigital\CatalystCore\Livewire;
 
 use Livewire\Component;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;

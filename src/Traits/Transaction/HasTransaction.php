@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Traits\Transaction;
+namespace OmniaDigital\CatalystCore\Traits\Transaction;
 
 use App\Support\Transaction\Transaction;
 

@@ -1,5 +1,5 @@
 @php use App\Enums\Teams\TeamBillingPeriod; @endphp
-@extends('catalyst-social::livewire.layouts.pages.team-profile-layout')
+@extends('catalyst::livewire.layouts.pages.team-profile-layout')
 
 @section('content')
     <div class="mt-4">

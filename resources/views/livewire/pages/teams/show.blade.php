@@ -1,5 +1,5 @@
 @php use Carbon\Carbon; @endphp
-@extends('catalyst-social::livewire.layouts.pages.team-profile-layout')
+@extends('catalyst::livewire.layouts.pages.team-profile-layout')
 
 
 @section('content')
@@ -8,7 +8,7 @@
             {{--            <x-library::heading.3 class="pl-3 mb-4">Discussion</x-library::heading.3>--}}
             <div class="space-y-4">
                 @if ($this->canViewTeamContent)
-                    <livewire:catalyst-social::news-feed-editor :team="$team"/>
+                    <livewire:catalyst::news-feed-editor :team="$team"/>
                     {{-- Featured --}}
                     @if ($team->sampleImages()->count())
                         <div class="col-span-12 bg-neutral">
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                     @endif
-                    <livewire:catalyst-social::news-feed :team="$team"/>
+                    <livewire:catalyst::news-feed :team="$team"/>
                 @else
                     <div class="card p-1 col-span-12">
                         <div class="py-28 px-12 flex flex-col justify-center items-center text-center">
@@ -104,7 +104,7 @@
 
                 {{-- People --}}
                 <div class="col-span-12 2xl:col-span-6 space-y-6">
-                    <livewire:catalyst-social::partials.user-status-list :team="$team"/>
+                    <livewire:catalyst::partials.user-status-list :team="$team"/>
                 </div>
 
 
@@ -164,7 +164,7 @@
                 {{--                <div class="flex justify-between items-center text-base-text-color font-semibold">--}}
                 {{--                    <x-library::heading.3>{{ \Translate::get('Awards') }}</x-library::heading.3>--}}
                 {{--                    @if ($team->awards()->count())--}}
-                {{--                        <a href="{{ route('social.teams.awards', $team) }}" class="text-xs flex items-center">{{ \Translate::get('See all') }}--}}
+                {{--                        <a href="{{ route('catalyst-social.teams.awards', $team) }}" class="text-xs flex items-center">{{ \Translate::get('See all') }}--}}
                 {{--                            <x-heroicon-s-chevron-right class="ml-2 w-4 h-4"/>--}}
                 {{--                        </a>--}}
                 {{--                    @endif--}}

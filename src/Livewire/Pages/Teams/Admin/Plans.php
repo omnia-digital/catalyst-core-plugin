@@ -54,7 +54,7 @@ class Plans extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.pages.teams.admin.plans', [
+        return view('catalyst::livewire.pages.teams.admin.plans', [
             'plans' => $this->rows,
         ]);
     }

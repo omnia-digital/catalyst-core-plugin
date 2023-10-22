@@ -116,7 +116,7 @@
                 </div>
                 <div x-cloak x-show="attachmentDrawer" class="basis-full h-2"></div>
                 <div x-cloak x-show="attachmentDrawer" class="w-full">
-                    <livewire:catalyst-social::partials.attachment-drawer/>
+                    <livewire:catalyst::partials.attachment-drawer/>
                 </div>
             </div>
         </form>

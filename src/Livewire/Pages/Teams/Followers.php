@@ -16,6 +16,6 @@ class Followers extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.pages.teams.followers');
+        return view('catalyst::livewire.pages.teams.followers');
     }
 }

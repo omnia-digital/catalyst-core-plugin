@@ -1,4 +1,4 @@
-@extends('catalyst-social::livewire.layouts.pages.default-page-layout')
+@extends('catalyst::livewire.layouts.pages.default-page-layout')
 
 @section('content')
     <div class="sticky top-[55px] z-40 mb-4 rounded-b-lg pl-4 flex items-center bg-primary items-center">
@@ -20,7 +20,7 @@
                     <ul role="list" class="masonry masonry-2 space-y-4">
                         @foreach ($bookmarks as $bookmark)
                             <li>
-                                <livewire:catalyst-social::components.post-card :post="$bookmark->bookmarkable()->first()"/>
+                                <livewire:catalyst::components.post-card :post="$bookmark->bookmarkable()->first()"/>
                             </li>
                         @endforeach
                     </ul>

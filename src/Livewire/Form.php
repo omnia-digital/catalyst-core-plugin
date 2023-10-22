@@ -87,7 +87,7 @@ class Form extends Component implements HasForms
 
         $this->success('Form submitted successfully');
 
-        $this->redirectRoute('social.home');
+        $this->redirectroute('catalyst-social.home');
     }
 
     public function render()

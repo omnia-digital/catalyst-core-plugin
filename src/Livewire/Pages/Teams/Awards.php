@@ -16,6 +16,6 @@ class Awards extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.pages.teams.awards');
+        return view('catalyst::livewire.pages.teams.awards');
     }
 }

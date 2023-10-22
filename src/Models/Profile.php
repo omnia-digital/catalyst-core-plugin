@@ -334,6 +334,6 @@ class Profile extends Model implements HasMedia, Searchable
 
     public function urlLink()
     {
-        return route('social.profile.show', $this->handle);
+        return route('catalyst-social.profile.show', $this->handle);
     }
 }

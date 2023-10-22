@@ -36,7 +36,7 @@
         <x-slot:content>
             @if (Form::getRegistrationForm())
                 <livewire:forms::user-registration-form
-                        :form="\OmniaDigital\CatalystCore\Models\Form::getRegistrationForm()"
+                        :form="Form::getRegistrationForm()"
                         submitText="Sign Up"
                 />
             @else

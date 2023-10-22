@@ -24,6 +24,6 @@ class Media extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.pages.profiles.media');
+        return view('catalyst::livewire.pages.profiles.media');
     }
 }

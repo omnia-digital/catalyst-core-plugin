@@ -108,7 +108,7 @@ class Edit extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.pages.profiles.edit', [
+        return view('catalyst::livewire.pages.profiles.edit', [
             'countries' => $this->countriesArray(),
             'profileTags' => $this->profileTags,
         ]);

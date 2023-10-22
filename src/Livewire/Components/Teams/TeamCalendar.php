@@ -28,7 +28,7 @@ class TeamCalendar extends LivewireCalendar
 
     public function onEventClick($eventId)
     {
-        $this->dispatch('teamSelected', eventId: $eventId)->to('catalyst-social::components.teams.team-calendar-list');
+        $this->dispatch('teamSelected', eventId: $eventId)->to('catalyst::components.teams.team-calendar-list');
     }
 
     public function getUserProperty()
@@ -38,6 +38,6 @@ class TeamCalendar extends LivewireCalendar
 
     public function render()
     {
-        return view('catalyst-social::livewire.components.teams.team-calendar');
+        return view('catalyst::livewire.components.teams.team-calendar');
     }
 }

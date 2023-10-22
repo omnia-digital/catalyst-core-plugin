@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Traits\Coupon;
+namespace OmniaDigital\CatalystCore\Traits\Coupon;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphOne;

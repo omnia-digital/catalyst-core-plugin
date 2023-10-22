@@ -20,7 +20,7 @@
                         </div>
                         <div class="lg:hidden xl:block flex-shrink-0">
                             <livewire:award-stack :user="$user" :team="$team" wire:key="award-stack-{{ $user->id }}"/>
-                            {{--                                <livewire:catalyst-social::partials.follow-button :model="$user"/>--}}
+                            {{--                                <livewire:catalyst::partials.follow-button :model="$user"/>--}}
                         </div>
                     </li>
                 @empty

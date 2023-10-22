@@ -2,10 +2,9 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Components\Teams;
 
-use App\Models\Location;
 use App\Models\Team;
 use App\Models\User;
-use App\Traits\Filter\WithSortAndFilters;
+use OmniaDigital\CatalystCore\Traits\Filter\WithSortAndFilters;
 use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -109,7 +108,7 @@ class TeamCalendarList extends Component
 
     public function moreInfo(): RedirectResponse
     {
-        return redirect()->route('social.teams.show', $this->team);
+        return redirect()->route('catalyst-social.teams.show', $this->team);
     }
 
     public function toggleMapCalendar($tab): void
@@ -119,7 +118,7 @@ class TeamCalendarList extends Component
 
     public function render(): View | \Illuminate\Foundation\Application | Factory | Application
     {
-        return view('catalyst-social::livewire.components.teams.team-calendar-list', [
+        return view('catalyst::livewire.components.teams.team-calendar-list', [
             'teams' => $this->rows,
             'teamsCount' => $this->rowsQuery->count(),
         ]);

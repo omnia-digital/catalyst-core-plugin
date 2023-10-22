@@ -53,7 +53,7 @@ class Trending extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.pages.posts.trending', [
+        return view('catalyst::livewire.pages.posts.trending', [
             'posts' => $this->posts,
             'profiles' => $this->profiles,
         ]);

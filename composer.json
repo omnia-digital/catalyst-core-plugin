@@ -37,6 +37,7 @@
     "laravel/cashier": "^14.12",
     "laravel/jetstream": "^4.0",
     "laravel/passport": "^11.9",
+    "livewire/livewire": "^3.0",
     "omnia-digital/catalyst-location-plugin": "dev-main",
     "omnia-digital/catalyst-reviews-plugin": "dev-main",
     "omnia-digital/library": "*",
@@ -117,7 +118,7 @@
       ],
       "aliases": {
         "Catalyst": "OmniaDigital\\CatalystCore\\Facades\\Catalyst",
-        "Translate": "OmniaDigital\\CatalystCore\\Facades\\TranslateFacade"
+        "Translate": "OmniaDigital\\CatalystCore\\Facades\\Translate"
       }
     }
   },

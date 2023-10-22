@@ -67,7 +67,7 @@ class Home extends Component
     public function render()
     {
         dd('render');
-        return view('catalyst-social::livewire.pages.home', [
+        return view('catalyst::livewire.pages.home', [
             'places' => $this->places,
             'newsRssFeeds' => $this->getNewsRssFeeds(),
         ]);

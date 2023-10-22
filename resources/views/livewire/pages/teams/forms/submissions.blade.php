@@ -1,10 +1,10 @@
-@extends('catalyst-social::livewire.layouts.pages.full-page-layout')
+@extends('catalyst::livewire.layouts.pages.full-page-layout')
 
 @section('content')
-    <x-catalyst-social::page-heading>
+    <x-catalyst::page-heading>
         <x-slot name="title">{{ Translate::get('Form Submissions') }}</x-slot>
         {{ $form->name }}
-    </x-catalyst-social::page-heading>
+    </x-catalyst::page-heading>
 
     <div x-data="{
     viewSubmission(submissionId) {
@@ -15,7 +15,7 @@
         <div class="space-y-6 p-4">
             <div class="text-right">
                 <a class="hover:underline focus:ring-1"
-                   href="{{ route('social.teams.admin', $team) }}">{{ Translate::get('Return to Team Admin Page') }}</a>
+                   href="{{ route('catalyst-social.teams.admin', $team) }}">{{ Translate::get('Return to Team Admin Page') }}</a>
             </div>
             @forelse ($form->submissions as $submission)
                 <div class="flex items-center justify-between">

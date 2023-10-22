@@ -9,7 +9,7 @@
             {
                 id: 0,
                 title: 'All Members',
-                /* component: 'catalyst-social::pages.teams.partials.edit-team-basic' */
+                /* component: 'catalyst::pages.teams.partials.edit-team-basic' */
             },
             {
                 id: 1,
@@ -296,7 +296,7 @@
         <!-- Team Roles -->
         <div x-cloak x-show="activeMembersTab === 3" class="mt-6 px-6 space-y-6">
             <div>
-                <livewire:catalyst-social::pages.teams.admin.manage-team-roles :team="$team"/>
+                <livewire:catalyst::pages.teams.admin.manage-team-roles :team="$team"/>
             </div>
         </div>
     </div>

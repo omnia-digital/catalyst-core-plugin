@@ -42,6 +42,6 @@ class AttachmentDrawer extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.partials.attachment-drawer');
+        return view('catalyst::livewire.partials.attachment-drawer');
     }
 }

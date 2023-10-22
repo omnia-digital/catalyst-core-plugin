@@ -57,9 +57,9 @@ trait WithFormBuilder
         $this->success(Translate::get('Form created successfully'));
 
         if ($teamId) {
-            $this->redirectRoute('social.teams.admin', Team::find($teamId));
+            $this->redirectroute('catalyst-social.teams.admin', Team::find($teamId));
         } else {
-            $this->redirectRoute('social.home');
+            $this->redirectroute('catalyst-social.home');
         }
     }
 

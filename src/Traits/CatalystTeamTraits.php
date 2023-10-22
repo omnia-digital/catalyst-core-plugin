@@ -118,7 +118,7 @@ trait CatalystTeamTraits
 
     public function teamLink()
     {
-        return route('social.teams.show', $this->id);
+        return route('catalyst-social.teams.show', $this->id);
     }
 
     public function visits(): Relation
@@ -280,7 +280,7 @@ trait CatalystTeamTraits
 
     public function profile(): string
     {
-        return route('social.teams.show', $this);
+        return route('catalyst-social.teams.show', $this);
     }
 
     /** @note We are not using this currently. Save for future when we want teams to create custom plans */

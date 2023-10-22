@@ -38,7 +38,7 @@ class PostActions extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.partials.post-actions', [
+        return view('catalyst::livewire.partials.post-actions', [
             'show' => $this->show,
         ]);
     }

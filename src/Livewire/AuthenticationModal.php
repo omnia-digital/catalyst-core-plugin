@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Livewire;
+namespace OmniaDigital\CatalystCore\Livewire;
 
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Fortify\Rules\Password;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
-use App\Models\User;
 use OmniaDigital\OmniaLibrary\Livewire\WithModal;
 
 class AuthenticationModal extends Component
@@ -41,7 +41,7 @@ class AuthenticationModal extends Component
 
     public function handleShowAuthenticationModal($data)
     {
-        $this->redirectAfterLogin = $data['redirect'] ?? route('social.home');
+        $this->redirectAfterLogin = $data['redirect'] ?? route('catalyst-social.home');
 
         $this->openModal('authentication-modal');
     }
@@ -92,7 +92,7 @@ class AuthenticationModal extends Component
 
     public function render()
     {
-        return view('livewire.authentication-modal');
+        return view('catalyst::livewire.authentication-modal');
     }
 
     protected function createProfile(User $user)

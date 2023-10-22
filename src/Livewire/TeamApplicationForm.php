@@ -47,6 +47,6 @@ class TeamApplicationForm extends LivewireForm
 
     public function afterSubmission()
     {
-        $this->redirectRoute('social.teams.show', $this->team);
+        $this->redirectroute('catalyst-social.teams.show', $this->team);
     }
 }

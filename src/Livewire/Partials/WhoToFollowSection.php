@@ -25,6 +25,6 @@ class WhoToFollowSection extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.partials.who-to-follow-section');
+        return view('catalyst::livewire.partials.who-to-follow-section');
     }
 }

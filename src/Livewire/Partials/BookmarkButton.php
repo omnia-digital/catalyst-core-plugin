@@ -19,7 +19,7 @@ class BookmarkButton extends Component
     public function toggleBookmark()
     {
         if (Catalyst::isAllowingGuestAccess() && ! auth()->check()) {
-            $this->showAuthenticationModal(route('social.posts.show', $this->model));
+            $this->showAuthenticationModal(route('catalyst-social.posts.show', $this->model));
 
             return;
         }
@@ -38,6 +38,6 @@ class BookmarkButton extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.partials.bookmark-button');
+        return view('catalyst::livewire.partials.bookmark-button');
     }
 }

@@ -54,7 +54,7 @@ class MapGoogle extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.components.teams.map_google', [
+        return view('catalyst::livewire.components.teams.map_google', [
             'countries' => Country::orderBy('name')->get(),
         ]);
     }

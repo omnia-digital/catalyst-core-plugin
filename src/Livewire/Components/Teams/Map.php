@@ -39,7 +39,7 @@ class Map extends Component
 
     public function showPlaceDetail($placeId)
     {
-        $this->dispatch('teamSelected', placeId: $placeId)->to('catalyst-social::components.teams.team-calendar-list');
+        $this->dispatch('teamSelected', placeId: $placeId)->to('catalyst::components.teams.team-calendar-list');
     }
 
     public function getPlacesProperty()
@@ -78,7 +78,7 @@ class Map extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.components.teams.map', [
+        return view('catalyst::livewire.components.teams.map', [
             'places' => $this->places,
         ]);
     }

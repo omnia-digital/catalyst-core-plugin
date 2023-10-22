@@ -30,7 +30,7 @@ class TrendingSection extends Component
 
     public function showPost($postID)
     {
-        return $this->redirectRoute('social.posts.show', $postID);
+        return $this->redirectroute('catalyst-social.posts.show', $postID);
     }
 
     public function showProfile($url)
@@ -52,7 +52,7 @@ class TrendingSection extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.partials.trending-section', [
+        return view('catalyst::livewire.partials.trending-section', [
             'posts' => $this->rows,
         ]);
     }

@@ -35,7 +35,7 @@ class LikeButton extends Component
     public function like()
     {
         if (Catalyst::isAllowingGuestAccess() && ! auth()->check()) {
-            $this->showAuthenticationModal(route('social.posts.show', $this->model));
+            $this->showAuthenticationModal(route('catalyst-social.posts.show', $this->model));
 
             return;
         }
@@ -54,6 +54,6 @@ class LikeButton extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.partials.like-button');
+        return view('catalyst::livewire.partials.like-button');
     }
 }

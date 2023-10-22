@@ -8,6 +8,6 @@ class MainLayout extends Component
 {
     public function render()
     {
-        return view('catalyst-social::livewire.layouts.main-layout');
+        return view('catalyst::livewire.layouts.main-layout');
     }
 }

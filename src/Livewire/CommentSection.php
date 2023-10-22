@@ -41,7 +41,7 @@ class CommentSection extends Component
     public function saveComment($data)
     {
         if (Catalyst::isAllowingGuestAccess() && ! auth()->check()) {
-            $this->showAuthenticationModal(route('social.posts.show', $this->post));
+            $this->showAuthenticationModal(route('catalyst-social.posts.show', $this->post));
 
             return;
         }
@@ -69,7 +69,7 @@ class CommentSection extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.partials.comment-section');
+        return view('catalyst::livewire.partials.comment-section');
     }
 
     private function loadComments(): void

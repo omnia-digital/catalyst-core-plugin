@@ -127,6 +127,6 @@ class NewPostBox extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.components.new-post-box');
+        return view('catalyst::livewire.components.new-post-box');
     }
 }

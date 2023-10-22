@@ -1,5 +1,5 @@
 @php use OmniaDigital\CatalystCore\Models\Team; @endphp
-@extends('catalyst-social::livewire.layouts.pages.default-page-layout')
+@extends('catalyst::livewire.layouts.pages.default-page-layout')
 
 @section('content')
     <div>
@@ -29,7 +29,7 @@
             <div x-data="{}" class="mt-2">
                 <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-4">
                     @forelse ($teams as $team)
-                        <livewire:catalyst-social::components.teams.team-card :team="$team" wire:key="team-{{ $team->id }}"/>
+                        <livewire:catalyst::components.teams.team-card :team="$team" wire:key="team-{{ $team->id }}"/>
                     @empty
                         <p class="p-4 bg-secondary rounded-md text-base-text-color">{{ Translate::get('No Teams Found') }}</p>
                     @endforelse

@@ -159,7 +159,7 @@ class ManageTeamForms extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.pages.teams.admin.manage-team-forms', [
+        return view('catalyst::livewire.pages.teams.admin.manage-team-forms', [
             'platformForms' => $this->platformForms,
             'teamForms' => $this->teamForms,
         ]);

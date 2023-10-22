@@ -15,6 +15,6 @@ class ActivityListItem extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.partials.activity-list-item');
+        return view('catalyst::livewire.partials.activity-list-item');
     }
 }

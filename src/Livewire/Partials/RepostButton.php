@@ -55,11 +55,11 @@ class RepostButton extends Component
 
         $this->emitPostSaved($data['id']);
         $this->closeModal('repost-modal-' . $this->model->id);
-        $this->redirectRoute('social.posts.show', $repost);
+        $this->redirectroute('catalyst-social.posts.show', $repost);
     }
 
     public function render()
     {
-        return view('catalyst-social::livewire.partials.repost-button');
+        return view('catalyst::livewire.partials.repost-button');
     }
 }

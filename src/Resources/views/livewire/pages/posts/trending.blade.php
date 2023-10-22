@@ -1,4 +1,4 @@
-@extends('catalyst-social::livewire.layouts.pages.default-page-layout')
+@extends('catalyst::livewire.layouts.pages.default-page-layout')
 
 
 @section('content')
@@ -13,7 +13,7 @@
             <x-library::heading.2>{{ Translate::get('Posts') }}</x-library::heading.2>
             <div class="mt-2 space-y-2">
                 @foreach ($posts as $post)
-                    <livewire:catalyst-social::components.post-card :post="$post" :show-post-actions="false"/>
+                    <livewire:catalyst::components.post-card :post="$post" :show-post-actions="false"/>
                 @endforeach
             </div>
         </div>

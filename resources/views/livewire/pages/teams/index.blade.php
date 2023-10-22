@@ -1,10 +1,10 @@
 @php use OmniaDigital\CatalystCore\Models\Team; @endphp
-@extends('catalyst-social::livewire.layouts.pages.full-page-layout')
+@extends('catalyst::livewire.layouts.pages.full-page-layout')
 
 @section('content')
     <div class="md:mr-4">
         <div class="sticky top-[55px] z-40 rounded-b-lg px-4 flex items-center bg-primary items-center justify-between">
-            <a href="{{ route('social.teams.home', []) }}">
+            <a href="{{ route('catalyst-social.teams.home', []) }}">
                 <div class="flex-1 flex items-center space-x-2 -ml-1">
                     <x-library::icons.icon name="fa-regular fa-users" size="w-8 h-8" color="text-white-text-color"/>
                     <x-library::heading.1 class="py-4"
@@ -29,7 +29,7 @@
                 <div class="flex justify-between space-x-2 pt-4 mb-4">
                     @foreach ($categories as $category)
                         <x-library::button.link
-                                :href="route('social.teams.home', ['lens' => str($category['slug'])->slug()->value()])"
+                                :href="route('catalyst-social.teams.home', ['lens' => str($category['slug'])->slug()->value()])"
                                 class="w-full h-16 {{ str($lens) == str($category['slug'])->slug()
                 ->value() ? 'border-primary text-base-text-color' : 'text-base-text-color' }}">
                             {{ $category['name'] }}
@@ -46,7 +46,7 @@
             @endif
             <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-4">
                 @forelse ($teams as $team)
-                    <livewire:catalyst-social::components.teams.team-card :team="$team" wire:key="team-{{ $team->id }}"/>
+                    <livewire:catalyst::components.teams.team-card :team="$team" wire:key="team-{{ $team->id }}"/>
                 @empty
                     <p class="p-4 bg-secondary rounded-md text-base-text-color">{{ Translate::get('No Teams Found') }}</p>
                 @endforelse

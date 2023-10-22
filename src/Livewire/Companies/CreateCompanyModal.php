@@ -100,7 +100,7 @@ class CreateCompanyModal extends Component
         $this->closeModal('create-company');
         $this->reset();
 
-        $this->redirectRoute('social.companies.show', $company);
+        $this->redirectroute('catalyst-social.companies.show', $company);
     }
 
     public function render()

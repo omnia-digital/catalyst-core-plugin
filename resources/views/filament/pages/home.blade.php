@@ -5,7 +5,7 @@
         test
         <div class="flex bg-neutral">
             <!-- SideMenu -->
-            {{--        <livewire:catalyst-social::layouts.module-navigation class=""/>--}}
+            {{--        <livewire:catalyst::layouts.module-navigation class=""/>--}}
 
             <!-- Main Content -->
             <div class="lg:pl-64 w-full flex flex-col">
@@ -89,16 +89,16 @@
                                                         @if (config('app.modules.social.map'))
                                                             <div class="mt-4 justify-center mx-auto max-w-post-card-max-w">
                                                                 {{--                    <x-library::heading.3>{{ Trans::get('Team Map') }}</x-library::heading.3>--}}
-                                                                <livewire:catalyst-social::components.teams.map :places="$places"/>
+                                                                <livewire:catalyst::components.teams.map :places="$places"/>
                                                             </div>
                                                         @endif
                                                         <div class="mt-4 mx-auto max-w-post-card-max-w">
-                                                            <livewire:catalyst-social::news-feed/>
+                                                            <catalyst::livewire.news-feed/>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <livewire:catalyst-social::delete-post-modal/>
+                                                <livewire:catalyst::delete-post-modal/>
                                                 <livewire:media-manager :handleUploadProcess="false"/>
                                                 <livewire:authentication-modal/>
 {{--                                            @endsection--}}

@@ -7,11 +7,11 @@
                 {{--            </div>--}}
                 <div>
 
-                    <livewire:catalyst-social::post-editor placeholder="Reply..."/>
+                    <livewire:catalyst::post-editor placeholder="Reply..."/>
 
                     <div class="mt-2 space-y-2">
                         @foreach ($comments as $comment)
-                            <livewire:catalyst-social::components.post-card wire:key="comment-{{ $comment->id }}"
+                            <livewire:catalyst::components.post-card wire:key="comment-{{ $comment->id }}"
                                                                    :post="$comment"/>
                         @endforeach
                     </div>

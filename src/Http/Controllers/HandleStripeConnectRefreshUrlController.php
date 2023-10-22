@@ -14,12 +14,12 @@ class HandleStripeConnectRefreshUrlController extends Controller
         $team = $request->user()->currentTeam;
 
         if (! $team) {
-            return route('social.home');
+            return route('catalyst-social.home');
         }
 
         $accountLink = app(StripeConnect::class)->createAccountLink(
             accountStripeId: $team->stripe_connect_id,
-            returnUrl: route('social.teams.subscriptions', $team)
+            returnUrl: route('catalyst-social.teams.subscriptions', $team)
         );
 
         return redirect()->to($accountLink->url);

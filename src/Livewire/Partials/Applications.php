@@ -99,6 +99,6 @@ class Applications extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.partials.applications');
+        return view('catalyst::livewire.partials.applications');
     }
 }

@@ -1,4 +1,4 @@
-@extends('catalyst-social::livewire.layouts.pages.full-page-layout')
+@extends('catalyst::livewire.layouts.pages.full-page-layout')
 
 @section('content')
     <div class="pr-4">
@@ -8,6 +8,6 @@
                 <x-library::heading.1 class="py-4">Calendar</x-library::heading.1>
             </div>
         </div>
-        <livewire:catalyst-social::components.teams.team-calendar/>
+        <livewire:catalyst::components.teams.team-calendar/>
     </div>
 @endsection

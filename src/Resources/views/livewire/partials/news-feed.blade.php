@@ -1,6 +1,6 @@
 <div class="space-y-4">
     @foreach ($feed as $post)
-        <livewire:catalyst-social::components.post-card-dynamic :post="$post" wire:key="feed-item-{{ $post->id }}"/>
+        <livewire:catalyst::components.post-card-dynamic :post="$post" wire:key="feed-item-{{ $post->id }}"/>
     @endforeach
     <div>
         @if ($this->hasMore())

@@ -11,7 +11,12 @@ use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Str;
+use Illuminate\View\Compilers\BladeCompiler;
+use Livewire\Component;
 use Livewire\Features\SupportTesting\Testable;
+use Livewire\Livewire;
+use Livewire\LivewireServiceProvider;
 use OmniaDigital\CatalystCore\Commands\CatalystCoreCommand;
 use OmniaDigital\CatalystCore\Models\Profile;
 use OmniaDigital\CatalystCore\Models\Team;
@@ -26,15 +31,17 @@ use OmniaDigital\CatalystCore\Providers\StripeConnectServiceProvider;
 use OmniaDigital\CatalystCore\Providers\TeamLensesServiceProvider;
 use OmniaDigital\CatalystCore\Settings\GeneralSettings;
 use OmniaDigital\CatalystCore\Testing\TestsCatalystCore;
+use ReflectionClass;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use SplFileInfo;
 
 class CatalystCoreServiceProvider extends PackageServiceProvider
 {
     public static string $name = 'catalyst-core-plugin';
 
-    public static string $viewNamespace = 'catalyst-core';
+    public static string $viewNamespace = 'catalyst';
 
     public function configurePackage(Package $package): void
     {
@@ -77,12 +84,101 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
         if (file_exists($package->basePath('/../resources/views'))) {
             $package->hasViews(static::$viewNamespace);
         }
+
+        if (file_exists($package->basePath('/Livewire'))) {
+            $this->registerLivewireComponents($package);
+        }
+    }
+
+    public function registerLivewireComponents($package)
+    {
+        $this->callAfterResolving(BladeCompiler::class, function () use ($package) {
+            if (class_exists(Livewire::class) && file_exists($package->basePath('/Livewire'))) {
+                $namespace = 'OmniaDigital\CatalystCore\Livewire';
+                $_directory = Str::of($package->basePath('/Livewire'))
+//                    ->append("/$namespace")
+                    ->replace('\\', '/')
+                    ->toString();
+
+                $this->registerComponentDirectory($_directory, $namespace);
+            }
+        });
+    }
+
+    /**
+     * Register component directory.
+     *
+     * @param string $directory
+     * @param string $namespace
+     * @param string $aliasPrefix
+     *
+     * @return void
+     */
+    protected function registerComponentDirectory(string $directory, string $namespace): void
+    {
+        $filesystem = new Filesystem();
+
+        /**
+         * Directory doesn't existS.
+         */
+        if (!$filesystem->isDirectory($directory))
+        {
+            return;
+        }
+
+        $aliases = collect();
+
+        collect($filesystem->allFiles($directory))
+            ->map(fn(SplFileInfo $file) => Str::of($namespace)
+                ->append("\\{$file->getRelativePathname()}")
+                ->replace(['/', '.php'], ['\\', ''])
+                ->toString())
+            ->filter(fn($class) => (is_subclass_of($class, Component::class) && !(new ReflectionClass($class))->isAbstract()))
+            ->each(function($class) use ($namespace, $aliases) {
+                $alias = Str::of($class)
+                    ->after($namespace . '\\')
+                    ->replace(['/', '\\'], '.')
+                    ->explode('.')
+                    ->map([Str::class, 'kebab'])
+                    ->implode('.');
+                $aliases->push($alias);
+                $this->registerSingleComponent($class, $namespace);
+            });
+
+//        dd($aliases);
+    }
+
+    /**
+     * Register livewire single component.
+     *
+     * @param string $class
+     * @param string $namespace
+     * @param string $aliasPrefix
+     *
+     * @return void
+     */
+    private function registerSingleComponent(string $class, string $namespace): void
+    {
+        $alias = Str::of($class)
+                ->after($namespace . '\\')
+                ->replace(['/', '\\'], '.')
+                ->explode('.')
+                ->map([Str::class, 'kebab'])
+                ->implode('.');
+
+        $prefix = 'catalyst::';
+        Livewire::component($alias, $class);
+
+        Str::endsWith($class, ['\Index', '\index'])
+            ? Livewire::component($prefix . Str::beforeLast($alias, '.index'), $class)
+            : Livewire::component($prefix . $alias, $class);
     }
 
     public function packageRegistered(): void
     {
+        $this->app->register(LivewireServiceProvider::class);
         $this->app->register(AdminPanelProvider::class);
-//        $this->app->register(SocialPanelProvider::class);
+        $this->app->register(SocialPanelProvider::class);
         $this->app->register(StripeConnectServiceProvider::class);
         $this->app->register(TeamLensesServiceProvider::class);
         $this->app->register(JetstreamServiceProvider::class);

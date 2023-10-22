@@ -263,7 +263,7 @@ trait CatalystUserTraits
 
     public function url()
     {
-        return route('social.profile.show', $this->handle);
+        return route('catalyst-social.profile.show', $this->handle);
     }
 
     /**

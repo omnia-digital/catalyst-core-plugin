@@ -8,7 +8,7 @@
                 <span class="font-medium text-dark-text-color sr-only">Share</span>
             </button>
         @else
-            <button wire:click.prevent.stop="showAuthenticationModal('{{ route('social.posts.show', $model) }}')"
+            <button wire:click.prevent.stop="showAuthenticationModal('{{ route('catalyst-social.posts.show', $model) }}')"
                     type="button" class="inline-flex space-x-2 text-light-text-color hover:text-base-text-color">
                 <x-heroicon-o-share :class="'h-5 w-5'" aria-hidden="true"/>
                 <span class="font-medium text-dark-text-color sr-only">Share</span>

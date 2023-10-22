@@ -1,4 +1,4 @@
-@extends('catalyst-social::livewire.layouts.pages.default-page-layout')
+@extends('catalyst::livewire.layouts.pages.default-page-layout')
 
 @section('banner-with-sidebar')
     <div class="w-full mb-4">
@@ -49,7 +49,7 @@
             @endif
 
             <div class="mx-auto max-w-post-card-max-w">
-                <livewire:catalyst-social::news-feed-editor/>
+                <livewire:catalyst::news-feed-editor/>
             </div>
             {{--                        <div x-data="setup()">--}}
             {{--                            <ul class="flex justify-center items-center my-4">--}}
@@ -66,16 +66,16 @@
             @if (config('app.modules.social.map'))
                 <div class="mt-4 justify-center mx-auto max-w-post-card-max-w">
                     {{--                    <x-library::heading.3>{{ Translate::get('Team Map') }}</x-library::heading.3>--}}
-                    <livewire:catalyst-social::components.teams.map :places="$places"/>
+                    <livewire:catalyst::components.teams.map :places="$places"/>
                 </div>
             @endif
             <div class="mt-4 mx-auto max-w-post-card-max-w">
-                <livewire:catalyst-social::news-feed/>
+                <livewire:catalyst::news-feed/>
             </div>
         </div>
     </div>
 
-    <livewire:catalyst-social::delete-post-modal/>
+    <livewire:catalyst::delete-post-modal/>
     <livewire:media-manager :handleUploadProcess="false"/>
     <livewire:authentication-modal/>
 @endsection

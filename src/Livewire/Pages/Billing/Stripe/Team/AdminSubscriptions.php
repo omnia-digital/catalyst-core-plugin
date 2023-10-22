@@ -48,7 +48,7 @@ class AdminSubscriptions extends Component
 
         $accountLink = app(StripeConnect::class)->createAccountLink(
             accountStripeId: $this->team->stripe_connect_id,
-            returnUrl: route('social.teams.admin', $this->team)
+            returnUrl: route('catalyst-social.teams.admin', $this->team)
         );
 
         $this->redirect($accountLink->url);

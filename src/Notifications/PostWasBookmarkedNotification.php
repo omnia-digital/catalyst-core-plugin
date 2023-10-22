@@ -53,7 +53,7 @@ class PostWasBookmarkedNotification extends BaseNotification
     {
         return $this->post->type === PostType::ARTICLE->value
             ? route('resources.show', $this->post)
-            : route('social.posts.show', $this->post) ?? route('notifications');
+            : route('catalyst-social.posts.show', $this->post) ?? route('notifications');
     }
 
     public function toArray($notifiable): array

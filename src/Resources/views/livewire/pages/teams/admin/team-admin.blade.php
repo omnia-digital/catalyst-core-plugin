@@ -1,4 +1,4 @@
-@extends('catalyst-social::livewire.layouts.pages.full-page-layout')
+@extends('catalyst::livewire.layouts.pages.full-page-layout')
 
 @section('content')
     <div class="">
@@ -414,14 +414,14 @@
             <!-- Team ManageTeamMembers -->
             <div x-cloak x-show="activeTab === 2" class="mt-6 pb-12 space-y-6">
                 <div>
-                    <livewire:catalyst-social::pages.teams.admin.manage-team-members :team="$team"/>
+                    <livewire:catalyst::pages.teams.admin.manage-team-members :team="$team"/>
                 </div>
             </div>
 
             <!-- ManageTeamForms -->
             <div x-cloak x-show="activeTab === 3" class="mt-6 pb-12 space-y-6">
                 <div>
-                    <livewire:catalyst-social::pages.teams.admin.manage-team-forms :team="$team"/>
+                    <livewire:catalyst::pages.teams.admin.manage-team-forms :team="$team"/>
                 </div>
             </div>
 

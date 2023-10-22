@@ -52,7 +52,7 @@ class FormReminderNotification extends Notification
             ->line(Translate::get($this->formNotification->message))
             ->line('Team: ' . $this->team->name)
             ->line('Form: ' . $this->formNotification->form->name)
-            ->action('Go to Team Page', route('social.teams.show', $this->team))
+            ->action('Go to Team Page', route('catalyst-social.teams.show', $this->team))
             ->line('Thank you!');
     }
 
@@ -64,7 +64,7 @@ class FormReminderNotification extends Notification
      */
     public function toArray($notifiable)
     {
-        $url = route('social.teams.show', $this->team);
+        $url = route('catalyst-social.teams.show', $this->team);
 
         return NotificationCenter::make()
             ->icon('heroicon-o-clock')

@@ -45,7 +45,7 @@ class SomeoneMentionedYouNotification extends BaseNotification
      */
     public function toArray($notifiable)
     {
-        $url = route('social.posts.show', $this->mention->postable);
+        $url = route('catalyst-social.posts.show', $this->mention->postable);
 
         $message = $this->mention->mentionable::class === Team::class
             ? Translate::get($this->mention->postable->user->name . ' mentioned your team, ' . $this->mention->mentionable->name . ' in their post')

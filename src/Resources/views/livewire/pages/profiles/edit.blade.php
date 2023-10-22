@@ -1,4 +1,4 @@
-@extends('catalyst-social::livewire.layouts.pages.user-profile-layout')
+@extends('catalyst::livewire.layouts.pages.user-profile-layout')
 
 @section('full-width-header')
     <x-profiles.partials.header :user="$profile->user"/>

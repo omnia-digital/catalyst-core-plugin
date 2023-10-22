@@ -2,9 +2,11 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Partials;
 
-use App\Traits\WithSlideOver;
 use Livewire\Component;
+use OmniaDigital\CatalystCore\Models\Post;
+use OmniaDigital\CatalystCore\Models\Profile;
 use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Traits\WithSlideOver;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\MediaLibrary\Support\ImageFactory;

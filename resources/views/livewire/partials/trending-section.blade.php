@@ -29,7 +29,7 @@
             </ul>
         </div>
         <div class="">
-            <a href="{{ route('social.discover') }}"
+            <a href="{{ route('catalyst-social.discover') }}"
                class="w-full block text-center px-4 py-4 shadow-sm text-sm font-medium rounded-md text-dark-text-color bg-secondary hover:bg-neutral-hover">
                 View all
             </a>

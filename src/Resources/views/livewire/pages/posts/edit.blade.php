@@ -1,9 +1,9 @@
-@extends('catalyst-social::livewire.layouts.pages.full-page-layout')
+@extends('catalyst::livewire.layouts.pages.full-page-layout')
 
 @section('content')
     <div class="mb-3 rounded-b-lg pl-4 flex items-center bg-neutral-dark">
         <a
-                href="{{ route('social.posts.show', $post->id) }}"
+                href="{{ route('catalyst-social.posts.show', $post->id) }}"
                 class="mr-4 hover:bg-neutral-dark p-2 rounded-full bg-secondary hover:text-secondary"
         >Cancel</a>
         <x-library::heading.1 class="py-4 hover:cursor-pointer">{{ Translate::get('Edit Post') }}</x-library::heading.1>

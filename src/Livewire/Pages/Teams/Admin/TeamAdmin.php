@@ -242,7 +242,7 @@ class TeamAdmin extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.pages.teams.admin.team-admin', [
+        return view('catalyst::livewire.pages.teams.admin.team-admin', [
             'teamTags' => $this->teamTags,
         ]);
     }

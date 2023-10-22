@@ -91,7 +91,7 @@ class Show extends Component
 
     public function showPost($post)
     {
-        return $this->redirectRoute('social.posts.show', $post['id']);
+        return $this->redirectroute('catalyst-social.posts.show', $post['id']);
     }
 
     public function setImage(Media $media)
@@ -149,6 +149,6 @@ class Show extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.pages.teams.show');
+        return view('catalyst::livewire.pages.teams.show');
     }
 }

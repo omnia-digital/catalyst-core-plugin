@@ -100,7 +100,7 @@ class CreateTeamModal extends Component
         $this->closeModal('create-team');
         $this->reset();
 
-        $this->redirectRoute('social.teams.show', $team);
+        $this->redirectroute('catalyst-social.teams.show', $team);
     }
 
     public function render()

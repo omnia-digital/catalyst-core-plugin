@@ -21,6 +21,6 @@ class TeamCard extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.components.teams.team-card');
+        return view('catalyst::livewire.components.teams.team-card');
     }
 }

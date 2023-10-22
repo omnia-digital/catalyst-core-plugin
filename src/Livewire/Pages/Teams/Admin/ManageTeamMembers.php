@@ -59,6 +59,6 @@ class ManageTeamMembers extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.pages.teams.admin.manage-team-members');
+        return view('catalyst::livewire.pages.teams.admin.manage-team-members');
     }
 }

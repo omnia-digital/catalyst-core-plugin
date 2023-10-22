@@ -25,7 +25,7 @@ class Apply extends Component
         if (! $this->teamHasApplicationForm()) {
             $this->applyToTeam();
 
-            $this->redirectRoute('social.teams.show', $this->team);
+            $this->redirectroute('catalyst-social.teams.show', $this->team);
         }
 
         $this->applicationForm = $this->team->applicationForm();
@@ -33,6 +33,6 @@ class Apply extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.pages.teams.apply');
+        return view('catalyst::livewire.pages.teams.apply');
     }
 }

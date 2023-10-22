@@ -64,7 +64,7 @@ class Teams extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.pages.profiles.teams', [
+        return view('catalyst::livewire.pages.profiles.teams', [
             'teams' => $this->rows,
             'teamsCount' => $this->rowsQuery->count(),
         ]);

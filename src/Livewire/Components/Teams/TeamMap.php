@@ -57,7 +57,7 @@ class TeamMap extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.components.teams.team-map', [
+        return view('catalyst::livewire.components.teams.team-map', [
             'places' => $this->places,
         ]);
     }

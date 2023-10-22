@@ -8,6 +8,6 @@ class Index extends Component
 {
     public function render()
     {
-        return view('catalyst-social::livewire.pages.contacts.index');
+        return view('catalyst::livewire.pages.contacts.index');
     }
 }

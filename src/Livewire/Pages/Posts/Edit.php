@@ -61,7 +61,7 @@ class Edit extends Component
         Mention::createManyFromHandles($teamMentions, Team::class, $this->post);
 
         $this->success('Post updated!');
-        $this->redirectRoute('social.posts.show', $this->post);
+        $this->redirectroute('catalyst-social.posts.show', $this->post);
     }
 
     public function setImage($image)
@@ -107,7 +107,7 @@ class Edit extends Component
 
     public function render()
     {
-        return view('catalyst-social::livewire.pages.posts.edit', [
+        return view('catalyst::livewire.pages.posts.edit', [
             'postMedia' => $this->postMedia,
         ]);
     }

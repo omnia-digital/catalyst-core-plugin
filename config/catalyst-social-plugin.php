@@ -8,6 +8,6 @@ return [
     'max_follow_per_hour' => 100,
 
     'extends' => [
-        'frontend' => 'catalyst-social::layouts.app',
+        'frontend' => 'catalyst::layouts.app',
     ],
 ];
