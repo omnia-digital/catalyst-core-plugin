@@ -8,7 +8,7 @@ use Laravel\Jetstream\Contracts\CreatesTeams;
 use Laravel\Jetstream\Events\AddingTeam;
 use Laravel\Jetstream\Jetstream;
 use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 
 class CreateTeam implements CreatesTeams
 {

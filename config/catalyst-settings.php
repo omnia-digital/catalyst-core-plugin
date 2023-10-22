@@ -3,7 +3,7 @@
 return [
 
     'models' => [
-        'user' => OmniaDigital\CatalystCore\Models\User::class,
+        'user' => App\Models\User::class,
     ],
 
     /*

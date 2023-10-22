@@ -30,7 +30,7 @@ use Spatie\Permission\Traits\HasRoles;
 use Stripe\Review;
 use Thomasjohnkane\Snooze\Traits\SnoozeNotifiable;
 
-trait CatalystTraits
+trait CatalystUserTraits
 {
     use Profileable;
     use Billable;

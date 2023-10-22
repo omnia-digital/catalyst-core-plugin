@@ -23,7 +23,7 @@ use OmniaDigital\CatalystCore\Filament\Resources\FormSubmissionResource\Pages\Li
 use OmniaDigital\CatalystCore\Filament\Resources\FormSubmissionResource\Pages\ViewFormSubmission;
 use OmniaDigital\CatalystCore\Models\FormSubmission;
 use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 
 class FormSubmissionResource extends Resource
 {

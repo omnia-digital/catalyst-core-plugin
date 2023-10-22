@@ -7,7 +7,7 @@ use OmniaDigital\CatalystCore\Models\Form;
 use OmniaDigital\CatalystCore\Models\FormTemplate;
 use OmniaDigital\CatalystCore\Models\FormType;
 use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 
 return new class extends Migration
 {

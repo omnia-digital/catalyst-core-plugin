@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Laravel\Fortify\Rules\Password;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use OmniaDigital\OmniaLibrary\Livewire\WithModal;
 
 class AuthenticationModal extends Component

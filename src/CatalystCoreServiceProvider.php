@@ -15,7 +15,7 @@ use Livewire\Features\SupportTesting\Testable;
 use OmniaDigital\CatalystCore\Commands\CatalystCoreCommand;
 use OmniaDigital\CatalystCore\Models\Profile;
 use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use OmniaDigital\CatalystCore\Providers\EventServiceProvider;
 use OmniaDigital\CatalystCore\Providers\Filament\AdminPanelProvider;
 use OmniaDigital\CatalystCore\Providers\Filament\SocialPanelProvider;

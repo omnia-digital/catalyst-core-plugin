@@ -11,7 +11,7 @@ use Illuminate\Validation\Rule;
 use Laravel\Jetstream\Mail\TeamInvitation;
 use OmniaDigital\CatalystCore\Events\InvitedTeamMember;
 use OmniaDigital\CatalystCore\Facades\Translate;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 
 class InviteTeamMember implements InvitesTeamMembers
 {

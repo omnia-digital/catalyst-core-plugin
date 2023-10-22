@@ -4,7 +4,7 @@ namespace OmniaDigital\CatalystCore\Filament\Resources\UserResource\Widgets;
 
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Card;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 
 class AdminUserStatsOverview extends BaseWidget
 {

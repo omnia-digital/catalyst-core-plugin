@@ -5,8 +5,6 @@ namespace OmniaDigital\CatalystCore\Observers;
 use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Models\Team;
 
-use function activity;
-
 class TeamObserver
 {
     public function created(Team $team)

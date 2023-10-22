@@ -15,7 +15,7 @@ use OmniaDigital\CatalystCore\Actions\Teams\ApplyToTeam;
 use OmniaDigital\CatalystCore\Actions\Teams\RemoveTeamApplication;
 use OmniaDigital\CatalystCore\Models\TeamApplication;
 use OmniaDigital\CatalystCore\Models\TeamInvitation;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 use Spatie\Permission\Models\Role;
 use Trans;

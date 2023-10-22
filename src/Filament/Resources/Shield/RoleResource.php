@@ -18,7 +18,7 @@ use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
 use OmniaDigital\CatalystCore\Filament\Resources\Shield\RoleResource\Pages;
 
-class RoleResource extends Resource implements HasShieldPermissions
+class RoleResource extends \BezhanSalleh\FilamentShield\Resources\RoleResource implements HasShieldPermissions
 {
     protected static ?string $recordTitleAttribute = 'name';
 

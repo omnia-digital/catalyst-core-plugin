@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Observers;
 
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 
 class UserObserver
 {
