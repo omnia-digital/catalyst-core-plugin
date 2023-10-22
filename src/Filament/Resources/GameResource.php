@@ -9,6 +9,7 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Modules\Games\Models\Game;
+use OmniaDigital\CatalystCore\Facades\Catalyst;
 use RalphJSmit\Filament\Components\Forms\Timestamps;
 
 class GameResource extends Resource

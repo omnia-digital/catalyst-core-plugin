@@ -8,8 +8,8 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Modules\Social\Models\UserScoreContribution;
 use OmniaDigital\CatalystCore\Filament\Resources\UserScoreContributionResource\Pages;
+use OmniaDigital\CatalystCore\Models\UserScoreContribution;
 
 class UserScoreContributionResource extends Resource
 {

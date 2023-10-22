@@ -2,12 +2,12 @@
 
 namespace OmniaDigital\CatalystCore\Filament\Pages;
 
-use App\Settings\GeneralSettings;
 use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Pages\SettingsPage;
+use OmniaDigital\CatalystCore\Settings\GeneralSettings;
 
 class ManageGeneralSettings extends SettingsPage
 {

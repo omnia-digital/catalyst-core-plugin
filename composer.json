@@ -31,6 +31,7 @@
     "calebporzio/sushi": "^2.4",
     "codeat3/blade-teeny-icons": "^1.9",
     "filament/filament": "^3.0",
+    "filament/spatie-laravel-media-library-plugin": "^3.0-stable",
     "filament/spatie-laravel-settings-plugin": "^3.0",
     "illuminate/contracts": "^10.0",
     "laravel/cashier": "^14.12",

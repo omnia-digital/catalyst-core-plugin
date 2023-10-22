@@ -2,6 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Filament\Resources;
 
+use BezhanSalleh\FilamentShield\Traits\HasPanelShield;
 use Filament\Forms;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\TextInput;
@@ -20,6 +21,8 @@ use STS\FilamentImpersonate\Tables\Actions\Impersonate;
 
 class UserResource extends Resource
 {
+    use HasPanelShield;
+
     protected static ?string $label = 'Users';
 
     protected static ?string $model = User::class;

@@ -2,9 +2,9 @@
 
 namespace OmniaDigital\CatalystCore\Http\Middleware;
 
-use App\Settings\GeneralSettings;
 use Closure;
 use Illuminate\Http\Request;
+use OmniaDigital\CatalystCore\Settings\GeneralSettings;
 
 class GuestAccessMiddleware
 {
@@ -18,6 +18,6 @@ class GuestAccessMiddleware
             return $next($request);
         }
 
-        return redirect()->route('login');
+//        return redirect()->route('login');
     }
 }

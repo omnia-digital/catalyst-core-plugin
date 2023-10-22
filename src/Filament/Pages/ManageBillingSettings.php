@@ -2,16 +2,14 @@
 
 namespace OmniaDigital\CatalystCore\Filament\Pages;
 
-use App\Settings\BillingSettings;
 use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Pages\SettingsPage;
 use Illuminate\Support\Arr;
-use Modules\Billing\Enums\PaymentGateway;
-use Modules\Billing\Models\FormAssemblyForm;
 use OmniaDigital\CatalystCore\Filament\Resources\UserResource\Widgets\AdminUserStatsOverview;
+use OmniaDigital\CatalystCore\Settings\BillingSettings;
 
 class ManageBillingSettings extends SettingsPage
 {

@@ -8,8 +8,8 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Modules\Social\Models\UserScoreLevel;
 use OmniaDigital\CatalystCore\Filament\Resources\UserScoreLevelResource\Pages;
+use OmniaDigital\CatalystCore\Models\UserScoreLevel;
 
 class UserScoreLevelResource extends Resource
 {

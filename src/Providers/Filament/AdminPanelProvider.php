@@ -32,8 +32,8 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'OmniaDigital\\CatalystCore\\Filament\\Resources')
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'OmniaDigital\\CatalystCore\\Filament\\Pages')
+            ->discoverResources(in: __DIR__ .'/../../Filament/Resources', for: 'OmniaDigital\\CatalystCore\\Filament\\Resources')
+            ->discoverPages(in: __DIR__ . '/../../Filament/Pages', for: 'OmniaDigital\\CatalystCore\\Filament\\Pages')
             ->pages([
                 Dashboard::class,
             ])
