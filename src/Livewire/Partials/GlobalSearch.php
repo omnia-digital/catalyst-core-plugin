@@ -4,8 +4,8 @@ namespace OmniaDigital\CatalystCore\Livewire\Partials;
 
 use Illuminate\Support\Collection;
 use Livewire\Component;
-use Modules\Social\Models\Post;
-use Modules\Social\Models\Profile;
+use OmniaDigital\CatalystCore\Models\Post;
+use OmniaDigital\CatalystCore\Models\Profile;
 use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\CatalystCore\Support\GlobalSearch\GlobalSearch as Search;
 use Spatie\Searchable\SearchResultCollection;

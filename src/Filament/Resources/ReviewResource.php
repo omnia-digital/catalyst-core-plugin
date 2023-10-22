@@ -7,11 +7,11 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Modules\Reviews\Models\Review;
 use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Filament\Resources\ReviewResource\Pages;
 use OmniaDigital\CatalystCore\Filament\Resources\ReviewResource\RelationManagers;
 use OmniaDigital\CatalystCore\Models\User;
+use OmniaDigital\CatalystCore\Models\Review;
 
 class ReviewResource extends Resource
 {

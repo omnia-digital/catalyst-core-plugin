@@ -5,7 +5,7 @@ namespace App\View\Components\Social\Partials;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
-use Modules\Social\Models\Post;
+use OmniaDigital\CatalystCore\Models\Post;
 
 class ReplyListItem extends Component
 {

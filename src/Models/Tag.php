@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Models;
 
 use Modules\Jobs\Models\JobPosition;
-use Modules\Social\Models\Post;
+use OmniaDigital\CatalystCore\Models\Post;
 
 class Tag extends \Spatie\Tags\Tag
 {

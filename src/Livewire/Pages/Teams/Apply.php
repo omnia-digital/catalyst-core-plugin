@@ -6,7 +6,7 @@ use App\Models\Team;
 use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 use Illuminate\Support\Facades\Gate;
 use Livewire\Component;
-use Modules\Forms\Models\Form;
+use OmniaDigital\CatalystCore\Models\Form;
 
 class Apply extends Component
 {

@@ -1,4 +1,4 @@
-@php use Modules\Forms\Models\Form; @endphp
+@php use OmniaDigital\CatalystCore\Models\Form; @endphp
 <x-library::modal id="authentication-modal" hideCancelButton="true">
     @if ($showLoginModal)
         <x-slot:title>Login</x-slot:title>
@@ -36,7 +36,7 @@
         <x-slot:content>
             @if (Form::getRegistrationForm())
                 <livewire:forms::user-registration-form
-                        :form="\Modules\Forms\Models\Form::getRegistrationForm()"
+                        :form="\OmniaDigital\CatalystCore\Models\Form::getRegistrationForm()"
                         submitText="Sign Up"
                 />
             @else

@@ -18,7 +18,7 @@ class FormNotification extends Model
 
     // protected static function newFactory()
     // {
-    //     return \Modules\Forms\Database\factories\FormNotificationFactory::new();
+    //     return \OmniaDigital\CatalystCore\Database\factories\FormNotificationFactory::new();
     // }
 
     public function getPrintSendDateAttribute()

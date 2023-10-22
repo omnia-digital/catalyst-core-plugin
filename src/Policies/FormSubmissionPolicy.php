@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Forms\Policies;
+namespace OmniaDigital\CatalystCore\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
 use OmniaDigital\CatalystCore\Models\FormSubmission;

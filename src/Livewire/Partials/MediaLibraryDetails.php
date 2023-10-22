@@ -4,8 +4,6 @@ namespace OmniaDigital\CatalystCore\Livewire\Partials;
 
 use App\Traits\WithSlideOver;
 use Livewire\Component;
-use Modules\Social\Models\Post;
-use Modules\Social\Models\Profile;
 use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;

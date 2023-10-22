@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Forms\Notifications;
+namespace OmniaDigital\CatalystCore\Notifications;
 
 use App\Support\Notification\NotificationCenter;
 use Illuminate\Bus\Queueable;

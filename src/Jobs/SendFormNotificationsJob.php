@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Forms\Jobs;
+namespace OmniaDigital\CatalystCore\Jobs;
 
 use Carbon\Carbon;
 use Carbon\CarbonTimeZone;
@@ -9,7 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Modules\Forms\Notifications\FormReminderNotification;
+use OmniaDigital\CatalystCore\Notifications\FormReminderNotification;
 use OmniaDigital\CatalystCore\Models\FormNotification;
 use OmniaDigital\CatalystCore\Models\Team;
 

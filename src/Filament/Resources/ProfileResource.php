@@ -9,7 +9,7 @@ use Filament\Tables;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
-use Modules\Social\Models\Profile;
+use OmniaDigital\CatalystCore\Models\Profile;
 use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Filament\Resources\ProfileResource\Pages\CreateProfile;
 use OmniaDigital\CatalystCore\Filament\Resources\ProfileResource\Pages\EditProfile;
