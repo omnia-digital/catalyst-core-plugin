@@ -4,7 +4,7 @@ namespace OmniaDigital\CatalystCore\Livewire\Teams;
 
 use Illuminate\Validation\Rule;
 use Livewire\Component;
-use Modules\Billing\Events\TeamMemberSubscriptionCreatedEvent;
+use OmniaDigital\CatalystCore\Events\TeamMemberSubscriptionCreatedEvent;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
 use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\CatalystCore\Models\User;

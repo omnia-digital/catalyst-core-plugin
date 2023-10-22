@@ -7,7 +7,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Modules\Billing\Models\SubscriptionType;
+use OmniaDigital\CatalystCore\Models\SubscriptionType;
 use OmniaDigital\CatalystCore\Filament\Resources\SubscriptionTypeResource\Pages;
 
 class SubscriptionTypeResource extends Resource
