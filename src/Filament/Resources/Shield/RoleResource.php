@@ -4,6 +4,7 @@ namespace OmniaDigital\CatalystCore\Filament\Resources\Shield;
 
 use BezhanSalleh\FilamentShield\Contracts\HasShieldPermissions;
 use BezhanSalleh\FilamentShield\Facades\FilamentShield;
+use BezhanSalleh\FilamentShield\Resources\RoleResource as ShieldRoleResource;
 use BezhanSalleh\FilamentShield\Support\Utils;
 use Filament\Forms;
 use Filament\Forms\Components\Actions\Action as FormAction;
@@ -18,7 +19,7 @@ use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
 use OmniaDigital\CatalystCore\Filament\Resources\Shield\RoleResource\Pages;
 
-class RoleResource extends \BezhanSalleh\FilamentShield\Resources\RoleResource implements HasShieldPermissions
+class RoleResource extends ShieldRoleResource implements HasShieldPermissions
 {
     protected static ?string $recordTitleAttribute = 'name';
 
