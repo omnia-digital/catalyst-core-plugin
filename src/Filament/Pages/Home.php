@@ -2,8 +2,6 @@
 
 namespace OmniaDigital\CatalystCore\Filament\Pages;
 
-//use App\Support\Platform\Platform;
-//use App\Support\Platform\WithGuestAccess;
 use Filament\Pages\Page;
 use OmniaDigital\CatalystCore\Catalyst;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
@@ -12,11 +10,9 @@ use OmniaDigital\OmniaLibrary\Livewire\WithMap;
 use OmniaDigital\OmniaLibrary\Livewire\WithModal;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
-//use Modules\Feeds\Models\FeedSource;
-
 class Home extends Page
 {
-        use WithGuestAccess, WithMap, WithModal, WithNotification;
+    use WithGuestAccess, WithMap, WithModal, WithNotification;
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
@@ -84,8 +80,6 @@ class Home extends Page
 
     public function render(): \Illuminate\Contracts\View\View
     {
-//        return parent::render();
-
         return view('catalyst::filament.pages.home', [
             'places' => $this->places,
             'newsRssFeeds' => $this->getNewsRssFeeds()

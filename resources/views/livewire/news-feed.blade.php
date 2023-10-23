@@ -1,5 +1,6 @@
 <div class="space-y-4">
     @foreach ($feed as $post)
+        test
         <livewire:catalyst::components.post-card-dynamic :post="$post" wire:key="feed-item-{{ $post->id }}"/>
     @endforeach
     <div>

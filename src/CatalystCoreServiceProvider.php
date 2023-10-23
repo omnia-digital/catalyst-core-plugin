@@ -75,6 +75,7 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
 
         if (file_exists($package->basePath('/../database/migrations'))) {
             $package->hasMigrations($this->getMigrations());
+            $package->runsMigrations();
         }
 
         if (file_exists($package->basePath('/../resources/lang'))) {
@@ -200,13 +201,13 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
         FilamentIcon::register($this->getIcons());
 
         // Handle Stubs
-        if (app()->runningInConsole()) {
-            foreach (app(Filesystem::class)->files(__DIR__ . '/../stubs/') as $file) {
-                $this->publishes([
-                    $file->getRealPath() => base_path("stubs/catalyst-core-plugin/{$file->getFilename()}"),
-                ], 'catalyst-core-plugin-stubs');
-            }
-        }
+//        if (app()->runningInConsole()) {
+//            foreach (app(Filesystem::class)->files(__DIR__ . '/../stubs/') as $file) {
+//                $this->publishes([
+//                    $file->getRealPath() => base_path("stubs/catalyst-core-plugin/{$file->getFilename()}"),
+//                ], 'catalyst-core-plugin-stubs');
+//            }
+//        }
 
         Gate::define('update-profile', function (User $user, Profile $profile) {
             return $user->id === $profile->user_id;
@@ -280,10 +281,12 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
     /**
      * @return array<string>
      */
-    protected function getMigrations(): array
+    protected function getMigrations()
     {
-        return [
-            'create_catalyst-core-plugin_table',
-        ];
+        $migrations = collect();
+        foreach (app(Filesystem::class)->files(__DIR__ . '/../database/migrations/') as $file) {
+            $migrations->push($file->getBasename(suffix: '.php'));
+        }
+        return $migrations;
     }
 }

@@ -21,7 +21,7 @@
                                 <div class="grid grid-cols-12 gap-4 sm:mr-4">
                                     <div class="col-span-12 sm:col-span-8 2xl:col-span-9">
 
-                                        {{--                                        @section('banner-with-sidebar')--}}
+{{--                                        @section('banner-with-sidebar')--}}
                                         <div class="w-full mb-4">
                                             <div class="relative shadow-xl sm:rounded-b-2xl sm:overflow-hidden">
                                                 {{--            <div class="absolute inset-0 grayscale">--}}
@@ -52,7 +52,7 @@
 
                                         <div class="ml-4 mr-4 lg:ml-0 sm:mr-0">
 
-{{--                                            @section('content')--}}
+                                            @section('content')
                                                 <div>
                                                     <div>
                                                         <!-- Recommended Teams -->
@@ -60,42 +60,39 @@
                                                             {{--                                {{ $recommendedTeams }}--}}
                                                         </div>
 
-{{--                                                        @if (Catalyst::isModuleEnabled('feeds'))--}}
+                                                        @if (Catalyst::isModuleEnabled('feeds'))
                                                             <div class="my-4">
-                                                                <x-library::heading.3>{{ \OmniaDigital\CatalystCore\Facades\Translate::get('Latest News') }}</x-library::heading.3>
+                                                                <x-library::heading.3>{{ Trans::get('Latest News') }}</x-library::heading.3>
                                                                 @foreach ($newsRssFeeds->take(1) as $newsFeed)
-                                                                    <livewire:feeds::feed-section :type="$newsFeed[0]"
-                                                                                                  :feed-url="$newsFeed->url"
-                                                                                                  :show-description="false"
-                                                                                                  :show-link-to-news-page="true"/>
+                                                                    <livewire:feeds::feed-section :type="$newsFeed[0]" :feed-url="$newsFeed->url"
+                                                                                                  :show-description="false" :show-link-to-news-page="true"/>
                                                                 @endforeach
                                                             </div>
-{{--                                                        @endif--}}
+                                                        @endif
 
                                                         <div class="mx-auto max-w-post-card-max-w">
                                                             <livewire:news-feed-editor/>
                                                         </div>
-                                                        <div x-data="setup()">
-                                                            <ul class="flex justify-center items-center my-4">
-                                                                <template x-for="(tab, index) in tabs" :key="tab.id">
-                                                                    <li class="flex flex-1 text-sm cursor-pointer py-2 px-6 text-gray-500 border-b-2 justify-center"
-                                                                        :class="activeTab===tab.id ? 'text-base-text-color font-bold border-black' : ''"
-                                                                        @click="activeTab = tab.id"
-                                                                        x-html="tab.title + notifications"></li>
-                                                                </template>
-                                                            </ul>
-                                                        </div>
+                                                                                <div x-data="setup()">
+                                                                                    <ul class="flex justify-center items-center my-4">
+                                                                                        <template x-for="(tab, index) in tabs" :key="tab.id">
+                                                                                            <li class="flex flex-1 text-sm cursor-pointer py-2 px-6 text-gray-500 border-b-2 justify-center"
+                                                                                                :class="activeTab===tab.id ? 'text-base-text-color font-bold border-black' : ''"
+                                                                                                @click="activeTab = tab.id"
+                                                                                                x-html="tab.title + notifications"></li>
+                                                                                        </template>
+                                                                                    </ul>
+                                                                                </div>
 
                                                         <!-- Featured Section -->
-{{--                                                        @if (config('app.modules.social.map'))--}}
+                                                        @if (config('app.modules.social.map'))
                                                             <div class="mt-4 justify-center mx-auto max-w-post-card-max-w">
                                                                 {{--                    <x-library::heading.3>{{ Trans::get('Team Map') }}</x-library::heading.3>--}}
-                                                                <livewire:catalyst::components.teams.map
-                                                                        :places="$places"/>
+                                                                <livewire:catalyst::components.teams.map :places="$places"/>
                                                             </div>
-{{--                                                        @endif--}}
+                                                        @endif
                                                         <div class="mt-4 mx-auto max-w-post-card-max-w">
-                                                            <livewire:catalyst::news-feed/>
+                                                            <catalyst::livewire.news-feed/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -103,7 +100,7 @@
                                                 <livewire:catalyst::delete-post-modal/>
                                                 <livewire:media-manager :handleUploadProcess="false"/>
                                                 <livewire:authentication-modal/>
-{{--                                            @endsection--}}
+                                            @endsection
                                         </div>
                                     </div>
                                     <x-sidebar-column class="mt-4 hidden sm:block col-span-4 2xl:col-span-3"/>

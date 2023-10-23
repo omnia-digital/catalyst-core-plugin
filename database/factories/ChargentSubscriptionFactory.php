@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Database\factories;
+namespace OmniaDigital\CatalystCore\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use OmniaDigital\CatalystCore\Models\ChargentSubscription;

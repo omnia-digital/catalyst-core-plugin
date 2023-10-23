@@ -5,6 +5,8 @@
             :wire:key="'article-card-' . $post->id"
             :show-post-actions="true"
     />
+    test2
+
 @elseif ($post->type == PostType::RESOURCE && Route::is('resources.home'))
     <livewire:resources::components.resource-media-card
             :post="$post"
@@ -12,7 +14,10 @@
             :show-post-actions="false"
             :show-details="false"
     />
+    test3
+
 @else
+    test
     <livewire:catalyst::components.post-card wire:key="post-{{ $post->id }}"
                                            :post="$post"
                                            :show-post-actions="true"

@@ -21,6 +21,7 @@ use OmniaDigital\CatalystCore\Models\Media;
 use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\CatalystCore\Models\Profile;
 use OmniaDigital\CatalystCore\Models\TeamApplication;
+use OmniaDigital\CatalystCore\Models\TeamInvitation;
 use OmniaDigital\CatalystCore\Traits\Profile\Profileable;
 use OmniaDigital\CatalystCore\Traits\Team\HasTeams;
 use Overtrue\LaravelFollow\Traits\Followable;
@@ -44,7 +45,7 @@ trait CatalystUserTraits
 
     use HasHandle;
 
-    use HasPanelShield;
+//    use HasPanelShield;
     use HasRoles;
     use HasTeams, JetstreamHasTeams {
         HasTeams::teams insteadof JetstreamHasTeams;

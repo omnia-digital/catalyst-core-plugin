@@ -50,7 +50,7 @@ Route::name('catalyst-social.')->prefix('social')
         Route::get('/' . Catalyst::getTeamsLetter() . '/{team}', ShowTeam::class)->middleware([
             GuestAccessMiddleware::class,
             'verified',
-        ])->name('social.teams.show');
+        ])->name('teams.show');
 
 
         // Auth Routes

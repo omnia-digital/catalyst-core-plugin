@@ -79,7 +79,10 @@
   "autoload": {
     "psr-4": {
       "OmniaDigital\\CatalystCore\\": "src/",
-      "OmniaDigital\\CatalystCore\\Database\\Factories\\": "database/factories/"
+      "OmniaDigital\\CatalystCore\\Database\\Seeders": "database/seeders",
+      "OmniaDigital\\CatalystCore\\Database\\Factories\\": "database/factories",
+      "OmniaDigital\\CatalystCore\\Database\\Migrations\\": "database/migrations",
+      "OmniaDigital\\CatalystCore\\Database\\Settings\\": "database/settings"
     }
   },
   "autoload-dev": {

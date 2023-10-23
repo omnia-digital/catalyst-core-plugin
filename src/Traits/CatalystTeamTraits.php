@@ -2,6 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Traits;
 
+use App\Models\User;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Jetstream\Events\TeamCreated;
 use Laravel\Jetstream\Events\TeamDeleted;
@@ -9,6 +11,7 @@ use Laravel\Jetstream\Events\TeamUpdated;
 use Laravel\Jetstream\HasProfilePhoto;
 use OmniaDigital\CatalystCore\Traits\Tag\HasTeamTags;
 use OmniaDigital\CatalystCore\Traits\Tag\HasTeamTypeTags;
+use OmniaDigital\CatalystLocation\Traits\Location\HasLocation;
 use Overtrue\LaravelFollow\Traits\Followable;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Sluggable\HasSlug;
@@ -17,7 +20,7 @@ use Spatie\Sluggable\SlugOptions;
 trait CatalystTeamTraits
 {
     use Awardable;
-    //    use HasLocation;
+        use HasLocation;
     use Followable;
     use HasAssociations;
 
