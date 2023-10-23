@@ -55,7 +55,7 @@ class Trending extends Component
     {
         return view('catalyst::livewire.pages.posts.trending', [
             'posts' => $this->posts,
-            'profiles' => $this->profiles,
+            'profiles' => $this->profiles->load('user')
         ]);
     }
 }

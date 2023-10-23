@@ -24,7 +24,7 @@
                                         class="pl-2 py-2 flex items-center text-gray-400 hover:text-gray-600"
                                         id="menu-0-button" aria-expanded="false" aria-haspopup="true">
                                     <span class="sr-only">Open options</span>
-                                    <x-heroicon-s-dots-vertical class="h-5 w-5"/>
+                                    <x-library::icons.icon name="heroicon-s-dots-vertical" class="h-5 w-5"/>
                                 </button>
                             </x-slot>
                             <!-- Leave Team -->

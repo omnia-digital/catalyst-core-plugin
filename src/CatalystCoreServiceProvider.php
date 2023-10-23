@@ -96,7 +96,6 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
             if (class_exists(Livewire::class) && file_exists($package->basePath('/Livewire'))) {
                 $namespace = 'OmniaDigital\CatalystCore\Livewire';
                 $_directory = Str::of($package->basePath('/Livewire'))
-//                    ->append("/$namespace")
                     ->replace('\\', '/')
                     ->toString();
 
@@ -144,8 +143,6 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
                 $aliases->push($alias);
                 $this->registerSingleComponent($class, $namespace);
             });
-
-//        dd($aliases);
     }
 
     /**

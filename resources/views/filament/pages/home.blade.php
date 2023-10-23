@@ -2,7 +2,6 @@
 
 <x-filament-panels::page>
     <div>
-        test
         <div class="flex bg-neutral">
             <!-- SideMenu -->
             {{--        <livewire:catalyst::layouts.module-navigation class=""/>--}}
@@ -53,7 +52,7 @@
 
                                         <div class="ml-4 mr-4 lg:ml-0 sm:mr-0">
 
-{{--                                            @section('content')--}}
+                                            @section('content')
                                                 <div>
                                                     <div>
                                                         <!-- Recommended Teams -->
@@ -72,18 +71,18 @@
                                                         @endif
 
                                                         <div class="mx-auto max-w-post-card-max-w">
-{{--                                                            <livewire:news-feed-editor/>--}}
+                                                            <livewire:news-feed-editor/>
                                                         </div>
-                                                        {{--                        <div x-data="setup()">--}}
-                                                        {{--                            <ul class="flex justify-center items-center my-4">--}}
-                                                        {{--                                <template x-for="(tab, index) in tabs" :key="tab.id">--}}
-                                                        {{--                                    <li class="flex flex-1 text-sm cursor-pointer py-2 px-6 text-gray-500 border-b-2 justify-center"--}}
-                                                        {{--                                        :class="activeTab===tab.id ? 'text-base-text-color font-bold border-black' : ''"--}}
-                                                        {{--                                        @click="activeTab = tab.id"--}}
-                                                        {{--                                        x-html="tab.title + notifications"></li>--}}
-                                                        {{--                                </template>--}}
-                                                        {{--                            </ul>--}}
-                                                        {{--                        </div>--}}
+                                                                                <div x-data="setup()">
+                                                                                    <ul class="flex justify-center items-center my-4">
+                                                                                        <template x-for="(tab, index) in tabs" :key="tab.id">
+                                                                                            <li class="flex flex-1 text-sm cursor-pointer py-2 px-6 text-gray-500 border-b-2 justify-center"
+                                                                                                :class="activeTab===tab.id ? 'text-base-text-color font-bold border-black' : ''"
+                                                                                                @click="activeTab = tab.id"
+                                                                                                x-html="tab.title + notifications"></li>
+                                                                                        </template>
+                                                                                    </ul>
+                                                                                </div>
 
                                                         <!-- Featured Section -->
                                                         @if (config('app.modules.social.map'))
@@ -101,7 +100,7 @@
                                                 <livewire:catalyst::delete-post-modal/>
                                                 <livewire:media-manager :handleUploadProcess="false"/>
                                                 <livewire:authentication-modal/>
-{{--                                            @endsection--}}
+                                            @endsection
                                         </div>
                                     </div>
                                     <x-sidebar-column class="mt-4 hidden sm:block col-span-4 2xl:col-span-3"/>

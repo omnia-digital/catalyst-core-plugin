@@ -20,7 +20,7 @@
                             class="md:hidden py-4 mx-4 flex items-center text-gray-400 hover:text-gray-600"
                             id="menu-0-button" aria-expanded="false" aria-haspopup="true">
                         <span class="sr-only">Open options</span>
-                        <x-heroicon-s-dots-vertical class="h-6 w-6"/>
+                        <x-library::icons.icon name="heroicon-s-dots-vertical" class="h-6 w-6"/>
                     </button>
                 </x-slot>
                 @foreach ($nav as $key => $item)

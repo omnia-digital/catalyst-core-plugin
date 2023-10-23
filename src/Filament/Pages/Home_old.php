@@ -14,7 +14,7 @@ use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
 //use Modules\Feeds\Models\FeedSource;
 
-class Home extends Page
+class Home_old extends Page
 {
         use WithGuestAccess, WithMap, WithModal, WithNotification;
 
