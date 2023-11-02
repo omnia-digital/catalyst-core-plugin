@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Pages\Billing\Stripe\Team;
 
-use App\Models\Team;
+use OmniaDigital\CatalystCore\Models\Team;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Laravel\Cashier\Subscription;
 use Livewire\Component;

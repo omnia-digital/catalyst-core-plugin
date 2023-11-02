@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Database\Seeders;
 
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 use Illuminate\Database\Seeder;
 use Modules\Social\Models\Post;
 use Modules\Social\Notifications\NewCommentNotification;

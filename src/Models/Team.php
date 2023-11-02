@@ -2,6 +2,10 @@
 
 namespace OmniaDigital\CatalystCore\Models;
 
+use Laravel\Jetstream\Events\TeamCreated;
+use Laravel\Jetstream\Events\TeamDeleted;
+use Laravel\Jetstream\Events\TeamUpdated;
+use OmniaDigital\CatalystCore\Database\Factories\TeamFactory;
 use Spatie\Searchable\Searchable;
 use Spatie\Searchable\SearchResult;
 use Spatie\MediaLibrary\HasMedia;
@@ -17,6 +21,10 @@ class Team extends JetstreamTeam implements HasMedia, Searchable
     use CatalystTeamTraits;
     use HasFactory;
 
+    protected static function newFactory()
+    {
+        return app(TeamFactory::class);
+    }
 
     /**
      * The attributes that are mass assignable.

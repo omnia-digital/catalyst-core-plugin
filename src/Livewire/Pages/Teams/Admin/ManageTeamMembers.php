@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams\Admin;
 
-use App\Models\Team;
+use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 use Illuminate\Validation\Rule;
 use Livewire\Component;

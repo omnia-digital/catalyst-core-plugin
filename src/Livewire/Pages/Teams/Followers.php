@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams;
 
-use App\Models\Team;
+use OmniaDigital\CatalystCore\Models\Team;
 use Livewire\Component;
 
 class Followers extends Component

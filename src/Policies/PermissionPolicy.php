@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 use Spatie\Permission\Models\Permission;
 
 class PermissionPolicy

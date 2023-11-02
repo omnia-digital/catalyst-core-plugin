@@ -2,9 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Pages\Posts;
 
-use App\Models\Tag;
-use App\Models\Team;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\Tag;
+use OmniaDigital\CatalystCore\Models\User;
 use Livewire\Component;
 use Omnia\MediaManager\WithMediaManager;
 use OmniaDigital\CatalystCore\Facades\Translate;

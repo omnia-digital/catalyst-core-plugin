@@ -12,7 +12,7 @@ use Laravel\Jetstream\Events\TeamMemberAdded;
 use Laravel\Jetstream\Jetstream;
 use Laravel\Jetstream\Rules\Role;
 use OmniaDigital\CatalystCore\Models\Team;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 
 class AddTeamMember implements AddsTeamMembers
 {

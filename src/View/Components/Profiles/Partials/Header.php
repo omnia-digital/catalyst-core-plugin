@@ -5,7 +5,7 @@ namespace App\View\Components\Profiles\Partials;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 
 class Header extends Component
 {

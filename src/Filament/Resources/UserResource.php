@@ -16,7 +16,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use OmniaDigital\CatalystCore\Filament\Resources\UserResource\Pages;
 use OmniaDigital\CatalystCore\Filament\Resources\UserResource\RelationManagers;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 use STS\FilamentImpersonate\Tables\Actions\Impersonate;
 
 class UserResource extends Resource

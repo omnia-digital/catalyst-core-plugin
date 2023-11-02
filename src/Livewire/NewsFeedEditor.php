@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire;
 
-use App\Models\Team;
+use OmniaDigital\CatalystCore\Models\Team;
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\On;
 use Livewire\Component;

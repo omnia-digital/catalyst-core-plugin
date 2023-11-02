@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Components\Teams;
 
-use App\Models\Team;
+use OmniaDigital\CatalystCore\Models\Team;
 use Livewire\Component;
 
 class TeamCard extends Component

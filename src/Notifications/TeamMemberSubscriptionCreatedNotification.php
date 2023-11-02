@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Notifications;
 
-use App\Models\Team;
+use OmniaDigital\CatalystCore\Models\Team;
 use App\Support\Notification\NotificationCenter;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

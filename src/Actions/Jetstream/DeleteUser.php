@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Laravel\Jetstream\Contracts\DeletesTeams;
 use Laravel\Jetstream\Contracts\DeletesUsers;
 use OmniaDigital\CatalystCore\Models\Team;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 
 class DeleteUser implements DeletesUsers
 {

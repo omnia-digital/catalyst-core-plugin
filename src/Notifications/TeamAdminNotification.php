@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Notifications;
 
-use App\Models\Team;
+use OmniaDigital\CatalystCore\Models\Team;
 use App\Notifications\BaseNotification;
 use App\Support\Notification\NotificationCenter;
 use Illuminate\Notifications\Messages\MailMessage;

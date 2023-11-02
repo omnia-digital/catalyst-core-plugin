@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Pages\Profiles;
 
-use App\Models\Tag;
+use OmniaDigital\CatalystCore\Models\Tag;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Validation\Rule;
 use Livewire\Component;

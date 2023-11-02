@@ -8,7 +8,7 @@ use Illuminate\Validation\ValidationException;
 use Laravel\Jetstream\Contracts\RemovesTeamMembers;
 use Laravel\Jetstream\Events\TeamMemberRemoved;
 use OmniaDigital\CatalystCore\Models\Team;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 
 class RemoveTeamMember implements RemovesTeamMembers
 {

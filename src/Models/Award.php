@@ -2,14 +2,18 @@
 
 namespace OmniaDigital\CatalystCore\Models;
 
-use App\Models\Team;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use OmniaDigital\CatalystCore\Database\Factories\AwardFactory;
 
 class Award extends Model
 {
     use HasFactory;
+
+    protected static function newFactory()
+    {
+        return app(AwardFactory::class);
+    }
 
     protected $fillable = [
         'name',

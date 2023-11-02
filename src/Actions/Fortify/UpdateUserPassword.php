@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\UpdatesUserPasswords;
 use OmniaDigital\CatalystCore\Facades\Translate;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 
 class UpdateUserPassword implements UpdatesUserPasswords
 {

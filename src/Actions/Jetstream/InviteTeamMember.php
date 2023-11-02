@@ -14,7 +14,7 @@ use Laravel\Jetstream\Jetstream;
 use Laravel\Jetstream\Mail\TeamInvitation;
 use Laravel\Jetstream\Rules\Role;
 use OmniaDigital\CatalystCore\Models\Team;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 
 class InviteTeamMember implements InvitesTeamMembers
 {

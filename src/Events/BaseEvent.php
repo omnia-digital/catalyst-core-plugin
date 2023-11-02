@@ -5,7 +5,7 @@ namespace OmniaDigital\CatalystCore\Events;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 
 abstract class BaseEvent
 {

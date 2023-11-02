@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Traits;
 
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Jetstream\Events\TeamCreated;

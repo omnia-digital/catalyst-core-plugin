@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire;
 
-use App\Models\Team;
+use OmniaDigital\CatalystCore\Models\Team;
 use Livewire\Component;
 use Livewire\WithPagination;
 use OmniaDigital\CatalystCore\Livewire\On;

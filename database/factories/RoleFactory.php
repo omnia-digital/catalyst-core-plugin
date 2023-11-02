@@ -2,8 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Database\Factories;
 
-use App\Models\Team;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Laravel\Jetstream\Features;
 use OmniaDigital\CatalystCore\Models\Profile;

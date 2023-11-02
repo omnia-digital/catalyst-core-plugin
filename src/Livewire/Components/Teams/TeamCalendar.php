@@ -2,8 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Components\Teams;
 
-use App\Models\Team;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Models\User;
 use Omnia\LivewireCalendar\LivewireCalendar;
 use OmniaDigital\CatalystCore\Support\Livewire\InteractsWithCalendarTeams;
 

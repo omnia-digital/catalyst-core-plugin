@@ -2,13 +2,13 @@
 
 namespace OmniaDigital\CatalystCore\Database\Factories;
 
-use App\Models\Team;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Models\User;
 use Spatie\Permission\Models\Role;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Team>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\OmniaDigital\CatalystCore\Models\Team>
  */
 class TeamFactory extends Factory
 {

@@ -3,9 +3,9 @@
 namespace OmniaDigital\CatalystCore\Database\Seeders;
 
 use OmniaDigital\CatalystCore\Models\Role;
-use App\Models\User;
 use BezhanSalleh\FilamentShield\Support\Utils;
 use Illuminate\Database\Seeder;
+use OmniaDigital\CatalystCore\Models\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -25,9 +25,9 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('testing'),
         ]);
 
-        Role::create(['name' => 'super-admin']);
+//        Role::create(['name' => 'super-admin','guard_name' => 'web']);
 
-        $adminUser->first()->assignRole('super-admin');
+//        $adminUser->first()->assignRole('super-admin');
 
         User::factory(1)->withProfile([
             'first_name' => 'Team',

@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Database\Seeders;
 
-use App\Models\Team;
+use OmniaDigital\CatalystCore\Models\Team;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Artisan;
 use Spatie\Permission\Models\Permission;

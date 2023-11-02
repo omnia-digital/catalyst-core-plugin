@@ -1,6 +1,6 @@
-@php use Modules\Forms\Models\Form; @endphp
-<x-guest-layout>
-    <x-authentication-card>
+@php use \OmniaDigital\CatalystCore\Models\Form; @endphp
+<catalyst::x-guest-layout>
+    <catalyst::x-authentication-card>
         <x-slot name="logo">
             <img src="{{ config('app.logo_path') }}" class="h-16"/>
         </x-slot>
@@ -12,11 +12,11 @@
 
         <x-library::heading.2 class="text-center">{{ Translate::get('Create your account') }}</x-library::heading.2>
 
-        <x-validation-errors class="mb-4"/>
+        <catalyst::x-validation-errors class="mb-4"/>
 
         @if (Form::getRegistrationForm())
             <livewire:forms::user-registration-form
-                    :form="\OmniaDigital\CatalystCore\Models\Form::getRegistrationForm()"
+                    :form="Form::getRegistrationForm()"
                     submitText="Sign Up"
             />
         @else
@@ -34,5 +34,5 @@
                 </p>
             </div>
         </x-slot>
-    </x-authentication-card>
-</x-guest-layout>
+    </catalyst::x-authentication-card>
+</catalyst::x-guest-layout>

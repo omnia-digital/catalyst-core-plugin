@@ -2,16 +2,16 @@
 
 namespace OmniaDigital\CatalystCore\Database\Factories;
 
-use App\Models\Team;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use Laravel\Jetstream\Features;
 use OmniaDigital\CatalystCore\Models\Profile;
+use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Models\User;
 use Spatie\Permission\Models\Role;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\OmniaDigital\CatalystCore\Models\User>
  */
 class UserFactory extends Factory
 {

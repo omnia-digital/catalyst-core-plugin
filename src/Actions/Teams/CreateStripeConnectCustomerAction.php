@@ -5,7 +5,7 @@ namespace OmniaDigital\CatalystCore\Actions\Teams;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use OmniaDigital\CatalystCore\Models\StripeConnectCustomer;
 use OmniaDigital\CatalystCore\Models\Team;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 use OmniaDigital\CatalystCore\Support\StripeConnect\StripeConnect;
 
 /** @note We are not using this currently. Save for future when we want teams to create custom plans */

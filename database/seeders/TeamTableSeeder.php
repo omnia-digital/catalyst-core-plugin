@@ -2,8 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Database\Seeders;
 
-use App\Models\Location;
-use App\Models\Team;
+use OmniaDigital\CatalystLocation\Models\Location;
+use OmniaDigital\CatalystCore\Models\Team;
 use Illuminate\Database\Seeder;
 
 class TeamTableSeeder extends Seeder

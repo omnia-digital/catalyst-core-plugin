@@ -2,8 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams;
 
-use App\Models\Team;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\App;
 use Livewire\Component;

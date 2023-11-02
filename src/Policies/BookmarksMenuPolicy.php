@@ -4,7 +4,7 @@ namespace OmniaDigital\CatalystCore\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Auth\Access\Response;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 use STAFEGROUPAB\FilamentBookmarksMenu\Models\BookmarksMenu;
 
 class BookmarksMenuPolicy

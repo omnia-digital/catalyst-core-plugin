@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Traits;
 
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 use BezhanSalleh\FilamentShield\Traits\HasPanelShield;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

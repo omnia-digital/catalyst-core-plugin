@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams;
 
-use App\Models\Team;
+use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 use Illuminate\Support\Facades\Gate;
 use Livewire\Component;

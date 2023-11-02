@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Pages\Profiles;
 
-use App\Models\Team;
+use OmniaDigital\CatalystCore\Models\Team;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\App;
 use Livewire\Component;

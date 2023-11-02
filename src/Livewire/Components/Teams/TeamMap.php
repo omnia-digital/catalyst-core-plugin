@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Components\Teams;
 
-use App\Models\Location;
+use OmniaDigital\CatalystLocation\Models\Location;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Livewire\Component;
 use OmniaDigital\OmniaLibrary\Livewire\WithMap;

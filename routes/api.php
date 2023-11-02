@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 use OmniaDigital\CatalystCore\Models\SubscriptionType;
 
 /*

@@ -2,8 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Events;
 
-use App\Models\Team;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Models\User;
 use Illuminate\Queue\SerializesModels;
 use Laravel\Cashier\Subscription;
 

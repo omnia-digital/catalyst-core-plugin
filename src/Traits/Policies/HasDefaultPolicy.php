@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Traits\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 
 trait HasDefaultPolicy
 {

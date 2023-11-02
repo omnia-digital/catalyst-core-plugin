@@ -1,9 +1,11 @@
 <?php
 
+use OmniaDigital\CatalystCore\Settings\GeneralSettings;
+
 return [
 
     'models' => [
-        'user' => App\Models\User::class,
+        'user' => OmniaDigital\CatalystCore\Models\User::class,
     ],
 
     /*
@@ -11,7 +13,7 @@ return [
      * put them (manually) here.
      */
     'settings' => [
-        //        GeneralSettings::class,
+            GeneralSettings::class,
         //        BillingSettings::class,
         //        \Modules\Jobs\Settings\JobsSettings::class,
     ],

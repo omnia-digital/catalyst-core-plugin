@@ -6,7 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 
 class UpdateUserProfileInformation implements UpdatesUserProfileInformation
 {

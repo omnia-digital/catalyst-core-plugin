@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams\Forms;
 
-use App\Models\Team;
+use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Models\Form;

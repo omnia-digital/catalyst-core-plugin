@@ -23,7 +23,7 @@ class CreateTeamCategoriesTable extends Migration
         }
         Schema::create('team_team_category', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\Team::class)->index();
+            $table->foreignIdFor(\OmniaDigital\CatalystCore\Models\Team::class)->index();
             $table->foreignIdFor(TeamCategory::class)->index();
         });
     }

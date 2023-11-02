@@ -20,7 +20,7 @@ use Livewire\LivewireServiceProvider;
 use OmniaDigital\CatalystCore\Commands\CatalystCoreCommand;
 use OmniaDigital\CatalystCore\Models\Profile;
 use OmniaDigital\CatalystCore\Models\Team;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 use OmniaDigital\CatalystCore\Providers\EventServiceProvider;
 use OmniaDigital\CatalystCore\Providers\Filament\AdminPanelProvider;
 use OmniaDigital\CatalystCore\Providers\Filament\SocialPanelProvider;
@@ -71,7 +71,6 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
         # add settings config file
         $configFileName = 'catalyst-settings';
         $package->hasConfigFile($configFileName);
-
 
         if (file_exists($package->basePath('/../database/migrations'))) {
             $package->hasMigrations($this->getMigrations());
@@ -199,6 +198,23 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
 
         // Icon Registration
         FilamentIcon::register($this->getIcons());
+
+        // Seeders
+        if (app()->runningInConsole()) {
+            foreach (app(Filesystem::class)->files(__DIR__ . '/../database/seeders/') as $file) {
+                $this->publishes([
+                    $file->getRealPath() => base_path("database/seeders/{$file->getFilename()}"),
+                ], 'catalyst-core-plugin-seeders');
+            }
+        }
+
+        if (app()->runningInConsole()) {
+            foreach (app(Filesystem::class)->files(__DIR__ . '/../database/factories/') as $file) {
+                $this->publishes([
+                    $file->getRealPath() => base_path("database/factories/{$file->getFilename()}"),
+                ], 'catalyst-core-plugin-factories');
+            }
+        }
 
         // Handle Stubs
 //        if (app()->runningInConsole()) {

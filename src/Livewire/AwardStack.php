@@ -4,7 +4,7 @@ namespace OmniaDigital\CatalystCore\Livewire;
 
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Models\Team;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\User;
 
 class AwardStack extends Component
 {

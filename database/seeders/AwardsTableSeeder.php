@@ -2,8 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Database\Seeders;
 
-use App\Models\Team;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Models\User;
 use Illuminate\Database\Seeder;
 use OmniaDigital\CatalystCore\Models\Award;
 

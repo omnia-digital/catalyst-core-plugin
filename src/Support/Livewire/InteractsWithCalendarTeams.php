@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Support\Livewire;
 
-use App\Models\Team;
+use OmniaDigital\CatalystCore\Models\Team;
 use Illuminate\Support\Collection;
 
 trait InteractsWithCalendarTeams

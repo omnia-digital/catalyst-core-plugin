@@ -1,4 +1,4 @@
-@php use App\Models\Team; @endphp
+@php use OmniaDigital\CatalystCore\Models\Team; @endphp
 @extends('catalyst::livewire.layouts.pages.default-page-layout')
 
 @section('content')

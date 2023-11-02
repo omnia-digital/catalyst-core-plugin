@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams\Admin;
 
-use App\Models\Team;
+use OmniaDigital\CatalystCore\Models\Team;
 use Illuminate\Support\Arr;
 use Illuminate\Validation\Rule;
 use Laravel\Jetstream\Jetstream;
