@@ -7,7 +7,7 @@ use Livewire\Component;
 use OmniaDigital\CatalystCore\Actions\Salesforce\CreateContactObjectAction;
 use OmniaDigital\CatalystCore\Actions\Salesforce\GetChargentOrderInfoAction;
 use OmniaDigital\CatalystCore\Actions\Salesforce\StopRecurringBillingOnChargentOrderAction;
-use OmniaDigital\CatalystCore\Models\FormAssemblyForm;
+use OmniaDigital\CatalystFormsPlugin\Models\FormAssemblyForm;
 
 class Subscription extends Component
 {

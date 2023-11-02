@@ -1,4 +1,4 @@
-@php use OmniaDigital\CatalystCore\Models\Form; @endphp
+@php use OmniaDigital\CatalystFormsPlugin\Models\Form; @endphp
 <x-library::modal id="authentication-modal" hideCancelButton="true">
     @if ($showLoginModal)
         <x-slot:title>Login</x-slot:title>

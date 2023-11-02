@@ -4,8 +4,8 @@ namespace OmniaDigital\CatalystCore\Database\Seeders;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
-use OmniaDigital\CatalystCore\Models\FormAssemblyField;
-use OmniaDigital\CatalystCore\Models\FormAssemblyForm;
+use OmniaDigital\CatalystFormsPlugin\Models\FormAssemblyField;
+use OmniaDigital\CatalystFormsPlugin\Models\FormAssemblyForm;
 use OmniaDigital\CatalystCore\Models\SubscriptionType;
 
 class BillingDatabaseSeeder extends Seeder

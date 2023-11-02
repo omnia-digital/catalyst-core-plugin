@@ -4,8 +4,8 @@ namespace OmniaDigital\CatalystCore\Livewire;
 
 use App\Actions\Fortify\CreateNewUser;
 use Illuminate\Auth\Events\Registered;
-use OmniaDigital\CatalystCore\Livewire\Form as LivewireForm;
-use OmniaDigital\CatalystCore\Models\FormSubmission;
+use OmniaDigital\CatalystFormsPlugin\Livewire\Form as LivewireForm;
+use OmniaDigital\CatalystFormsPlugin\Models\FormSubmission;
 
 class UserRegistrationForm extends LivewireForm
 {

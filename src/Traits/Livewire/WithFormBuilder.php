@@ -13,8 +13,8 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Illuminate\Support\Str;
 use OmniaDigital\CatalystCore\Facades\Translate;
-use OmniaDigital\CatalystCore\Models\Form;
-use OmniaDigital\CatalystCore\Models\FormType;
+use OmniaDigital\CatalystFormsPlugin\Models\Form;
+use OmniaDigital\CatalystFormsPlugin\Models\FormType;
 use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 

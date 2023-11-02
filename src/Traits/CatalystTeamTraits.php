@@ -2,6 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Traits;
 
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use OmniaDigital\CatalystCore\Models\Role;
 use OmniaDigital\CatalystCore\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Notifications\Notifiable;

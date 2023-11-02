@@ -26,7 +26,7 @@ class Builder extends Component implements HasForms
 
     public function save(): void
     {
-        $form = \OmniaDigital\CatalystCore\Models\Form::create($this->form->getState());
+        $form = \OmniaDigital\CatalystFormsPlugin\Models\Form::create($this->form->getState());
 
         redirect()->route('form', ['form' => $form]);
     }

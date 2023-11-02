@@ -1,4 +1,4 @@
-@php use \OmniaDigital\CatalystCore\Models\Form; @endphp
+@php use \OmniaDigital\CatalystFormsPlugin\Models\Form; @endphp
 <catalyst::catalyst::x-guest-layout>
     <catalyst::catalyst::x-authentication-card>
         <x-slot name="logo">
