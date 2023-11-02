@@ -8,6 +8,7 @@ use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
@@ -50,7 +51,7 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
          */
         $package->name(static::$name)
             ->hasCommands($this->getCommands())
-            ->hasRoutes(['web', 'api'])
+            ->hasRoutes($this->getRoutes())
             ->hasInstallCommand(function (InstallCommand $command) {
                 $command
                     ->publishConfigFile()
@@ -101,7 +102,7 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
     /**
      * @return array<string>
      */
-    protected function getMigrations()
+    protected function getMigrations() : Collection
     {
         $migrations = collect();
         foreach (app(Filesystem::class)->files(__DIR__ . '/../database/migrations/') as $file) {
@@ -301,6 +302,6 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
      */
     protected function getRoutes(): array
     {
-        return [];
+        return ['web','api'];
     }
 }

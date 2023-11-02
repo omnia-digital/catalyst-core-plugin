@@ -7,7 +7,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use OmniaDigital\CatalystCore\Facades\Translate;
-use OmniaDigital\CatalystFormsPlugin\Models\FormNotification;
+use OmniaDigital\CatalystForms\Models\FormNotification;
 use OmniaDigital\CatalystCore\Models\Team;
 
 class FormReminderNotification extends Notification

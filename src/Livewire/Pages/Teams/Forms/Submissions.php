@@ -5,8 +5,8 @@ namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams\Forms;
 use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 use Livewire\Component;
-use OmniaDigital\CatalystFormsPlugin\Models\Form;
-use OmniaDigital\CatalystFormsPlugin\Models\FormSubmission;
+use OmniaDigital\CatalystForms\Models\Form;
+use OmniaDigital\CatalystForms\Models\FormSubmission;
 
 class Submissions extends Component
 {

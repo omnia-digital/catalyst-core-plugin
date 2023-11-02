@@ -34,8 +34,6 @@ use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Show as ShowTeam;
 
 Route::name('catalyst-social.')->prefix('social')
     ->group(function () {
-
-
         // Shorten URLs
         Route::get(
             '/' . Catalyst::getUsersLetter() . '/{profile}',

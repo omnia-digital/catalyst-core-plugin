@@ -15,7 +15,7 @@ use Laravel\Cashier\Billable;
 use Laravel\Cashier\SubscriptionBuilder;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasTeams as JetstreamHasTeams;
-use OmniaDigital\CatalystFormsPlugin\Models\FormSubmission;
+use OmniaDigital\CatalystForms\Models\FormSubmission;
 use OmniaDigital\CatalystCore\Models\Like;
 use OmniaDigital\CatalystCore\Models\Media;
 use OmniaDigital\CatalystCore\Models\Post;

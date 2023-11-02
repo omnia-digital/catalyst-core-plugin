@@ -1,4 +1,4 @@
-@php use OmniaDigital\CatalystFormsPlugin\Models\Form; @endphp
+@php use OmniaDigital\CatalystForms\Models\Form; @endphp
 <x-library::modal id="authentication-modal" hideCancelButton="true">
     @if ($showLoginModal)
         <x-slot:title>Login</x-slot:title>
@@ -35,7 +35,7 @@
         <x-slot:title>Register</x-slot:title>
         <x-slot:content>
             @if (Form::getRegistrationForm())
-                <livewire:forms::user-registration-form
+                <livewire:catalyst-forms::user-registration-form
                         :form="Form::getRegistrationForm()"
                         submitText="Sign Up"
                 />

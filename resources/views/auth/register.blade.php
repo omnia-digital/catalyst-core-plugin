@@ -1,4 +1,4 @@
-@php use \OmniaDigital\CatalystFormsPlugin\Models\Form; @endphp
+@php use \OmniaDigital\CatalystForms\Models\Form; @endphp
 <catalyst::catalyst::x-guest-layout>
     <catalyst::catalyst::x-authentication-card>
         <x-slot name="logo">
@@ -15,7 +15,7 @@
         <catalyst::catalyst::x-validation-errors class="mb-4"/>
 
         @if (Form::getRegistrationForm())
-            <livewire:forms::user-registration-form
+            <livewire:catalyst-forms::user-registration-form
                     :form="Form::getRegistrationForm()"
                     submitText="Sign Up"
             />

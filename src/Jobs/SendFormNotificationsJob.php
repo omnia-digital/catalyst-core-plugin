@@ -10,7 +10,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use OmniaDigital\CatalystCore\Notifications\FormReminderNotification;
-use OmniaDigital\CatalystFormsPlugin\Models\FormNotification;
+use OmniaDigital\CatalystForms\Models\FormNotification;
 use OmniaDigital\CatalystCore\Models\Team;
 
 class SendFormNotificationsJob implements ShouldQueue
