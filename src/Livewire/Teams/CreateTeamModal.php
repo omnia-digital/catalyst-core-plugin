@@ -105,7 +105,7 @@ class CreateTeamModal extends Component
 
     public function render()
     {
-        return view('livewire.teams.create-team-modal', [
+        return view('catalyst::livewire.teams.create-team-modal', [
             'teamTags' => $this->teamTags,
         ]);
     }

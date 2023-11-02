@@ -33,7 +33,7 @@ class Builder extends Component implements HasForms
 
     public function render()
     {
-        return view('livewire.builder');
+        return view('catalyst::livewire.builder');
     }
 
     protected function getFormSchema(): array

@@ -112,6 +112,6 @@ class MainNavigationMenu extends Component
      */
     public function render(): View
     {
-        return view('livewire.main-navigation-menu');
+        return view('catalyst::livewire.main-navigation-menu');
     }
 }

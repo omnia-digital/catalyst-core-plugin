@@ -33,6 +33,6 @@ class GlobalSearch extends Component
 
     public function render()
     {
-        return view('livewire.partials.global-search');
+        return view('catalyst::livewire.partials.global-search');
     }
 }

@@ -137,7 +137,7 @@ class Discover extends Component
 
     public function render()
     {
-        return view('livewire.pages.teams.discover', [
+        return view('catalyst::livewire.pages.teams.discover', [
             'featuredTeams' => $this->featuredTeams,
             'newTeams' => $this->newTeams,
             'trendingTeams' => $this->trendingTeams,

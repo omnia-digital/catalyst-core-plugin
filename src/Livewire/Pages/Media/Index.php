@@ -228,7 +228,7 @@ class Index extends Component
 
     public function render()
     {
-        return view('livewire.pages.media.index', ['mediaList' => $this->rows]);
+        return view('catalyst::livewire.pages.media.index', ['mediaList' => $this->rows]);
     }
 
     protected function rules()

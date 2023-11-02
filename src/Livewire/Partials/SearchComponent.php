@@ -12,6 +12,6 @@ class SearchComponent extends Component
 
     public function render()
     {
-        return view('livewire.partials.search-component');
+        return view('catalyst::livewire.partials.search-component');
     }
 }

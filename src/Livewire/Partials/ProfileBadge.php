@@ -27,6 +27,6 @@ class ProfileBadge extends Component
      */
     public function render(): View
     {
-        return view('livewire.partials.profile-badge');
+        return view('catalyst::livewire.partials.profile-badge');
     }
 }

@@ -90,9 +90,9 @@
                         {{ __('Cancel') }}
                     </catalyst::x-secondary-button>
 
-                    <x-button class="ml-2" type="submit" wire:loading.attr="disabled">
+                    <catalyst::x-button class="ml-2" type="submit" wire:loading.attr="disabled">
                         {{ __('Delete') }}
-                    </x-button>
+                    </catalyst::x-button>
                 </x-slot>
             </x-dialog-modal>
         </form>

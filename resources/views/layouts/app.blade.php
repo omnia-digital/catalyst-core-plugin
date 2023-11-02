@@ -29,10 +29,10 @@
     <catalyst::x-layouts.partials.fontawesome/>
 </head>
 <body class="{{ config('app.theme') }} h-full bg-neutral font-sans antialiased">
-<x-banner/>
+<catalyst::x-banner/>
 
 <!-- App Navigation -->
-<livewire:main-navigation-menu/>
+<livewire:catalyst::main-navigation-menu/>
 
 <main class="pb-20 lg:pb-4 pt-14">
     {{ $slot }}

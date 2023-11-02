@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="mt-4 sm:mt-0 sm:ml-6 sm:flex-shrink-0">
-                        <x-button x-on:click="editMode = true">Edit</x-button>
+                        <catalyst::x-button x-on:click="editMode = true">Edit</catalyst::x-button>
                     </div>
                 </div>
             @endif

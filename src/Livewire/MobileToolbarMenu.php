@@ -38,6 +38,6 @@ class MobileToolbarMenu extends Component
 
     public function render()
     {
-        return view('livewire.mobile-toolbar-menu');
+        return view('catalyst::livewire.mobile-toolbar-menu');
     }
 }

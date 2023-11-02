@@ -70,6 +70,6 @@ class SideMenuOld extends Component
 
     public function render()
     {
-        return view('livewire.side-menu-old');
+        return view('catalyst::livewire.side-menu-old');
     }
 }

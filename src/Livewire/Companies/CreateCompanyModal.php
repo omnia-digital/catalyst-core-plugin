@@ -105,7 +105,7 @@ class CreateCompanyModal extends Component
 
     public function render()
     {
-        return view('livewire.create-company-modal', [
+        return view('catalyst::livewire.create-company-modal', [
             'companyTags' => $this->companyTags,
         ]);
     }

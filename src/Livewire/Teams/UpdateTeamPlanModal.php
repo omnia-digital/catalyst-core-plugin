@@ -85,7 +85,7 @@ class UpdateTeamPlanModal extends Component
 
     public function render()
     {
-        return view('livewire.teams.update-team-plan-modal', [
+        return view('catalyst::livewire.teams.update-team-plan-modal', [
             'teamPlans' => $this->teamPlans,
         ]);
     }

@@ -31,6 +31,6 @@ class SideMenu extends Component
 
     public function render()
     {
-        return view('livewire.side-menu-wide');
+        return view('catalyst::livewire.side-menu-wide');
     }
 }

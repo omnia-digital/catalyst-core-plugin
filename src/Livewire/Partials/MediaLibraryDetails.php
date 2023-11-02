@@ -93,6 +93,6 @@ class MediaLibraryDetails extends Component
 
     public function render()
     {
-        return view('livewire.partials.media-library-details');
+        return view('catalyst::livewire.partials.media-library-details');
     }
 }

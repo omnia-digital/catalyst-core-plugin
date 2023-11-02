@@ -1,29 +1,29 @@
-<x-guest-layout>
-    <x-authentication-card>
+<catalyst::x-guest-layout>
+    <catalyst::x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo/>
+            <catalyst::x-authentication-card-logo/>
         </x-slot>
 
         <div class="mb-4 text-sm text-base-text-color">
             {{ Translate::get('This is a secure area of the application. Please confirm your password before continuing.') }}
         </div>
 
-        <x-validation-errors class="mb-4"/>
+        <catalyst::x-validation-errors class="mb-4"/>
 
         <form method="POST" action="{{ route('password.confirm') }}">
             @csrf
 
             <div>
-                <x-label for="password" value="{{ Translate::get('Password') }}"/>
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required
+                <catalyst::x-label for="password" value="{{ Translate::get('Password') }}"/>
+                <catalyst::x-input id="password" class="block mt-1 w-full" type="password" name="password" required
                          autocomplete="current-password" autofocus/>
             </div>
 
             <div class="flex justify-end mt-4">
-                <x-button class="ml-4">
+                <catalyst::x-button class="ml-4">
                     {{ Translate::get('Confirm') }}
-                </x-button>
+                </catalyst::x-button>
             </div>
         </form>
-    </x-authentication-card>
-</x-guest-layout>
+    </catalyst::x-authentication-card>
+</catalyst::x-guest-layout>

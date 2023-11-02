@@ -12,16 +12,16 @@
         <x-slot name="form">
             <!-- Token Name -->
             <div class="col-span-6 sm:col-span-4">
-                <x-label for="name" value="{{ Translate::get('Token Name') }}"/>
-                <x-input id="name" type="text" class="mt-1 block w-full" wire:model.live="createApiTokenForm.name"
+                <catalyst::x-label for="name" value="{{ Translate::get('Token Name') }}"/>
+                <catalyst::x-input id="name" type="text" class="mt-1 block w-full" wire:model.live="createApiTokenForm.name"
                          autofocus/>
-                <x-input-error for="name" class="mt-2"/>
+                <catalyst::x-input-error for="name" class="mt-2"/>
             </div>
 
             <!-- Token Permissions -->
             @if (Laravel\Jetstream\Jetstream::hasPermissions())
                 <div class="col-span-6">
-                    <x-label for="permissions" value="{{ Translate::get('Permissions') }}"/>
+                    <catalyst::x-label for="permissions" value="{{ Translate::get('Permissions') }}"/>
 
                     <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
                         @foreach (Laravel\Jetstream\Jetstream::$permissions as $permission)
@@ -40,9 +40,9 @@
                 {{ Translate::get('Created.') }}
             </x-action-message>
 
-            <x-button>
+            <catalyst::x-button>
                 {{ Translate::get('Create') }}
-            </x-button>
+            </catalyst::x-button>
         </x-slot>
     </x-form-section>
 
@@ -107,7 +107,7 @@
                 {{ Translate::get('Please copy your new API token. For your security, it won\'t be shown again.') }}
             </div>
 
-            <x-input x-ref="plaintextToken" type="text" readonly :value="$plainTextToken"
+            <catalyst::x-input x-ref="plaintextToken" type="text" readonly :value="$plainTextToken"
                      class="mt-4 bg-neutral px-4 py-2 rounded font-mono text-sm text-base-text-color w-full"
                      autofocus autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
                      @showing-token-modal.window="setTimeout(() => $refs.plaintextToken.select(), 250)"
@@ -143,9 +143,9 @@
                 {{ Translate::get('Cancel') }}
             </catalyst::x-secondary-button>
 
-            <x-button class="ml-2" wire:click="updateApiToken" wire:loading.attr="disabled">
+            <catalyst::x-button class="ml-2" wire:click="updateApiToken" wire:loading.attr="disabled">
                 {{ Translate::get('Save') }}
-            </x-button>
+            </catalyst::x-button>
         </x-slot>
     </x-dialog-modal>
 

@@ -204,9 +204,9 @@
                 {{ Translate::get('Cancel') }}
             </catalyst::x-secondary-button>
 
-            <x-button class="ml-2" wire:click="changeFormStatus" wire:loading.attr="disabled">
+            <catalyst::x-button class="ml-2" wire:click="changeFormStatus" wire:loading.attr="disabled">
                 {{ Translate::get($newStatus) }}
-            </x-button>
+            </catalyst::x-button>
         </x-slot>
     </catalyst::x-confirmation-modal>
     <!-- Remove Form Confirmation Modal -->

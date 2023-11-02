@@ -14,6 +14,6 @@ class MainNavLeft extends Component
      */
     public function render(): View
     {
-        return view('livewire.main-nav-left');
+        return view('catalyst::livewire.main-nav-left');
     }
 }

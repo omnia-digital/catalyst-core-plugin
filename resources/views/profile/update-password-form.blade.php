@@ -9,24 +9,24 @@
 
     <x-slot name="form">
         <div class="col-span-6 sm:col-span-4">
-            <x-label for="current_password" value="{{ Translate::get('Current Password') }}"/>
-            <x-input id="current_password" type="password" class="mt-1 block w-full"
+            <catalyst::x-label for="current_password" value="{{ Translate::get('Current Password') }}"/>
+            <catalyst::x-input id="current_password" type="password" class="mt-1 block w-full"
                      wire:model.live="state.current_password" autocomplete="current-password"/>
-            <x-input-error for="current_password" class="mt-2"/>
+            <catalyst::x-input-error for="current_password" class="mt-2"/>
         </div>
 
         <div class="col-span-6 sm:col-span-4">
-            <x-label for="password" value="{{ Translate::get('New Password') }}"/>
-            <x-input id="password" type="password" class="mt-1 block w-full" wire:model.live="state.password"
+            <catalyst::x-label for="password" value="{{ Translate::get('New Password') }}"/>
+            <catalyst::x-input id="password" type="password" class="mt-1 block w-full" wire:model.live="state.password"
                      autocomplete="new-password"/>
-            <x-input-error for="password" class="mt-2"/>
+            <catalyst::x-input-error for="password" class="mt-2"/>
         </div>
 
         <div class="col-span-6 sm:col-span-4">
-            <x-label for="password_confirmation" value="{{ Translate::get('Confirm Password') }}"/>
-            <x-input id="password_confirmation" type="password" class="mt-1 block w-full"
+            <catalyst::x-label for="password_confirmation" value="{{ Translate::get('Confirm Password') }}"/>
+            <catalyst::x-input id="password_confirmation" type="password" class="mt-1 block w-full"
                      wire:model.live="state.password_confirmation" autocomplete="new-password"/>
-            <x-input-error for="password_confirmation" class="mt-2"/>
+            <catalyst::x-input-error for="password_confirmation" class="mt-2"/>
         </div>
     </x-slot>
 
@@ -35,8 +35,8 @@
             {{ Translate::get('Saved.') }}
         </x-action-message>
 
-        <x-button>
+        <catalyst::x-button>
             {{ Translate::get('Save') }}
-        </x-button>
+        </catalyst::x-button>
     </x-slot>
 </x-form-section>

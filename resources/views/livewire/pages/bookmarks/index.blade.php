@@ -11,7 +11,7 @@
     <div wire:init="showGuestAccessModal">
         @auth
             <!-- Filters -->
-            @include('livewire.partials.filters', ['skipFilters' => ['location', 'members', 'tags']])
+            @include('catalyst::livewire.partials.filters', ['skipFilters' => ['location', 'members', 'tags']])
 
             @if (empty($bookmarks))
                 <x-library::heading.2>No Bookmarked Resources</x-library::heading.2>

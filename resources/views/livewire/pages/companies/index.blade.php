@@ -38,7 +38,7 @@
         @endif
 
         <!-- Filters -->
-        @include('livewire.partials.filters', ['skipFilters' => ['has_attachment', 'members']])
+        @include('catalyst::livewire.partials.filters', ['skipFilters' => ['has_attachment', 'members']])
 
         {{-- Sorting & Filters --}}
         {{-- <div class="flex items-center space-x-4">

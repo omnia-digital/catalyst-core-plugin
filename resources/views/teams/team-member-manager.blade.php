@@ -22,17 +22,17 @@
 
                     <!-- Member Email -->
                     <div class="col-span-6 sm:col-span-4">
-                        <x-label for="email" value="{{ Translate::get('Email') }}"/>
-                        <x-input id="email" type="email" class="mt-1 block w-full"
+                        <catalyst::x-label for="email" value="{{ Translate::get('Email') }}"/>
+                        <catalyst::x-input id="email" type="email" class="mt-1 block w-full"
                                  wire:model.live="addTeamMemberForm.email"/>
-                        <x-input-error for="email" class="mt-2"/>
+                        <catalyst::x-input-error for="email" class="mt-2"/>
                     </div>
 
                     <!-- Role -->
                     @if (count($this->roles) > 0)
                         <div class="col-span-6 lg:col-span-4">
-                            <x-label for="role" value="{{ Translate::get('Role') }}"/>
-                            <x-input-error for="role" class="mt-2"/>
+                            <catalyst::x-label for="role" value="{{ Translate::get('Role') }}"/>
+                            <catalyst::x-input-error for="role" class="mt-2"/>
 
                             <div class="relative z-0 mt-1 border border-neutral-light rounded-lg cursor-pointer">
                                 @foreach ($this->roles as $index => $role)
@@ -68,9 +68,9 @@
 
                     <!-- Invitation Message -->
                     {{-- <div class="col-span-6 sm:col-span-4">
-                        <x-label for="message" value="{{ \Translate::get('Message') }}" />
-                        <x-input id="message" type="text" class="mt-1 block w-full" wire:model.live="addTeamMemberForm.message" />
-                        <x-input-error for="message" class="mt-2" />
+                        <catalyst::x-label for="message" value="{{ \Translate::get('Message') }}" />
+                        <catalyst::x-input id="message" type="text" class="mt-1 block w-full" wire:model.live="addTeamMemberForm.message" />
+                        <catalyst::x-input-error for="message" class="mt-2" />
                     </div> --}}
                 </x-slot>
 
@@ -79,9 +79,9 @@
                         {{ Translate::get('Added.') }}
                     </x-action-message>
 
-                    <x-button>
+                    <catalyst::x-button>
                         {{ Translate::get('Add') }}
-                    </x-button>
+                    </catalyst::x-button>
                 </x-slot>
             </x-form-section>
         </div>
@@ -228,9 +228,9 @@
                 {{ Translate::get('Cancel') }}
             </catalyst::x-secondary-button>
 
-            <x-button class="ml-2" wire:click="updateRole" wire:loading.attr="disabled">
+            <catalyst::x-button class="ml-2" wire:click="updateRole" wire:loading.attr="disabled">
                 {{ Translate::get('Save') }}
-            </x-button>
+            </catalyst::x-button>
         </x-slot>
     </x-dialog-modal>
 

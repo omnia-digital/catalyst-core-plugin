@@ -57,9 +57,9 @@
         @endif
 
         <div class="flex items-center mt-5">
-            <x-button wire:click="confirmLogout" wire:loading.attr="disabled">
+            <catalyst::x-button wire:click="confirmLogout" wire:loading.attr="disabled">
                 {{ Translate::get('Log Out Other Browser Sessions') }}
-            </x-button>
+            </catalyst::x-button>
 
             <x-action-message class="ml-3" on="loggedOut">
                 {{ Translate::get('Done.') }}
@@ -77,13 +77,13 @@
 
                 <div class="mt-4" x-data="{}"
                      x-on:confirming-logout-other-browser-sessions.window="setTimeout(() => $refs.password.focus(), 250)">
-                    <x-input type="password" class="mt-1 block w-3/4"
+                    <catalyst::x-input type="password" class="mt-1 block w-3/4"
                              placeholder="{{ Translate::get('Password') }}"
                              x-ref="password"
                              wire:model.live="password"
                              wire:keydown.enter="logoutOtherBrowserSessions"/>
 
-                    <x-input-error for="password" class="mt-2"/>
+                    <catalyst::x-input-error for="password" class="mt-2"/>
                 </div>
             </x-slot>
 
@@ -92,11 +92,11 @@
                     {{ Translate::get('Cancel') }}
                 </catalyst::x-secondary-button>
 
-                <x-button class="ml-2"
+                <catalyst::x-button class="ml-2"
                           wire:click="logoutOtherBrowserSessions"
                           wire:loading.attr="disabled">
                     {{ Translate::get('Log Out Other Browser Sessions') }}
-                </x-button>
+                </catalyst::x-button>
             </x-slot>
         </x-dialog-modal>
     </x-slot>

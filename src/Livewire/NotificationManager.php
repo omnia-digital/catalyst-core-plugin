@@ -47,6 +47,6 @@ class NotificationManager extends Component
 
     public function render()
     {
-        return view('livewire.notification-manager');
+        return view('catalyst::livewire.notification-manager');
     }
 }

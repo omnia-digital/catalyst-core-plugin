@@ -50,7 +50,7 @@ class UserNotifications extends Component
 
     public function render()
     {
-        return view('livewire.user-notifications', [
+        return view('catalyst::livewire.user-notifications', [
             'notifications' => $this->rows,
             'allNotificationCount' => $this->allNotificationCount,
         ]);

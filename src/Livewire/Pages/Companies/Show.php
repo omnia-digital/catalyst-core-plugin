@@ -18,6 +18,6 @@ class Show extends Component
 
     public function render()
     {
-        return view('livewire.pages.companies.show');
+        return view('catalyst::livewire.pages.companies.show');
     }
 }

@@ -29,13 +29,13 @@
 
                 <div class="mt-4" x-data="{}"
                      x-on:confirming-delete-user.window="setTimeout(() => $refs.password.focus(), 250)">
-                    <x-input type="password" class="mt-1 block w-3/4"
+                    <catalyst::x-input type="password" class="mt-1 block w-3/4"
                              placeholder="{{ Translate::get('Password') }}"
                              x-ref="password"
                              wire:model.live="password"
                              wire:keydown.enter="deleteUser"/>
 
-                    <x-input-error for="password" class="mt-2"/>
+                    <catalyst::x-input-error for="password" class="mt-2"/>
                 </div>
             </x-slot>
 

@@ -75,7 +75,7 @@ class SubscribeTeamModal extends Component
 
     public function render()
     {
-        return view('livewire.teams.subscribe-team-modal', [
+        return view('catalyst::livewire.teams.subscribe-team-modal', [
             'teamPlans' => $this->teamPlans,
         ]);
     }

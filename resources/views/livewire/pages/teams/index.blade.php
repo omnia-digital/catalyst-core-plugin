@@ -39,7 +39,7 @@
             @endif
 
             <!-- Filters -->
-            @include('livewire.partials.filters', ['skipFilters' => ['has_attachment', 'members']])
+            @include('catalyst::livewire.partials.filters', ['skipFilters' => ['has_attachment', 'members']])
 
             @if ($lens)
                 <x-library::heading.2 class="pt-3">{{ str($lens)->headline() }}</x-library::heading.2>

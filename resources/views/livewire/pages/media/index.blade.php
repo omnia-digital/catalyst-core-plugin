@@ -281,9 +281,9 @@
                             {{ __('Cancel') }}
                         </catalyst::x-secondary-button>
 
-                        <x-button class="ml-2" type="submit" wire:loading.attr="disabled">
+                        <catalyst::x-button class="ml-2" type="submit" wire:loading.attr="disabled">
                             {{ __('Delete') }}
-                        </x-button>
+                        </catalyst::x-button>
                     </x-slot>
                 </x-dialog-modal>
             </form>
@@ -304,21 +304,21 @@
                             <x-library::input.label value="Name"/>
                             <x-library::input.text id="editingMedia.name" wire:model.live="editingMedia.name"
                                                    placeholder="Name"/>
-                            <x-input-error for="editingMedia.name" class="mt-2"/>
+                            <catalyst::x-input-error for="editingMedia.name" class="mt-2"/>
                         </div>
                         <div class="mt-4">
                             <x-library::input.label value="Attached to Type"/>
                             <x-library::input.select class="" wire:model.live="editingMedia.model_type"
                                                      id="editingMedia.model_type" :showDefaultOption="false"
                                                      :options="$availableModelTypes"/>
-                            <x-input-error for="editingMedia.model_type" class="mt-2"/>
+                            <catalyst::x-input-error for="editingMedia.model_type" class="mt-2"/>
                         </div>
                         <div class="mt-4">
                             <x-library::input.label value="Attached to"/>
                             <x-library::input.select class="" wire:model.live="editingMedia.model_id"
                                                      id="editingMedia.model_id" :showDefaultOption="false"
                                                      :options="$this->availableModelIds"/>
-                            <x-input-error for="editingMedia.model_id" class="mt-2"/>
+                            <catalyst::x-input-error for="editingMedia.model_id" class="mt-2"/>
                         </div>
                     </x-slot>
                     <x-slot name="footer">
@@ -326,9 +326,9 @@
                             {{ __('Cancel') }}
                         </catalyst::x-secondary-button>
 
-                        <x-button class="ml-2" type="submit" wire:loading.attr="disabled">
+                        <catalyst::x-button class="ml-2" type="submit" wire:loading.attr="disabled">
                             {{ __('Submit') }}
-                        </x-button>
+                        </catalyst::x-button>
                     </x-slot>
                 </x-dialog-modal>
             </form>
@@ -420,9 +420,9 @@
                             {{ __('Cancel') }}
                         </catalyst::x-secondary-button>
 
-                        <x-button class="ml-2" type="submit" wire:loading.attr="disabled">
+                        <catalyst::x-button class="ml-2" type="submit" wire:loading.attr="disabled">
                             {{ __('Submit') }}
-                        </x-button>
+                        </catalyst::x-button>
                     </x-slot>
                 </x-dialog-modal>
             </form>

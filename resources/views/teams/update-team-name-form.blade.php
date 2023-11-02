@@ -10,7 +10,7 @@
     <x-slot name="form">
         <!-- Team Owner Information -->
         <div class="col-span-6">
-            <x-label value="{{ Translate::get('Team Owner') }}"/>
+            <catalyst::x-label value="{{ Translate::get('Team Owner') }}"/>
 
             <div class="flex items-center mt-2">
                 <img class="w-12 h-12 rounded-full object-cover" src="{{ $team->owner->profile_photo_url }}"
@@ -25,15 +25,15 @@
 
         <!-- Team Name -->
         <div class="col-span-6 sm:col-span-4">
-            <x-label for="name" value="{{ Translate::get('Team Name') }}"/>
+            <catalyst::x-label for="name" value="{{ Translate::get('Team Name') }}"/>
 
-            <x-input id="name"
+            <catalyst::x-input id="name"
                      type="text"
                      class="mt-1 block w-full"
                      wire:model.live="state.name"
                      :disabled="! Gate::check('update', $team)"/>
 
-            <x-input-error for="name" class="mt-2"/>
+            <catalyst::x-input-error for="name" class="mt-2"/>
         </div>
     </x-slot>
 
@@ -43,9 +43,9 @@
                 {{ Translate::get('Saved.') }}
             </x-action-message>
 
-            <x-button>
+            <catalyst::x-button>
                 {{ Translate::get('Save') }}
-            </x-button>
+            </catalyst::x-button>
         </x-slot>
     @endif
 </x-form-section>

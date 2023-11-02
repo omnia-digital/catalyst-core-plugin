@@ -204,9 +204,9 @@
                     {{ Translate::get('Cancel') }}
                 </catalyst::x-secondary-button>
 
-                <x-button class="ml-2" wire:click="saveRole" wire:loading.attr="disabled">
+                <catalyst::x-button class="ml-2" wire:click="saveRole" wire:loading.attr="disabled">
                     {{ Translate::get('Save') }}
-                </x-button>
+                </catalyst::x-button>
             </x-slot>
         </x-dialog-modal>
 
@@ -233,9 +233,9 @@
                     {{ Translate::get('Cancel') }}
                 </catalyst::x-secondary-button>
 
-                <x-button class="ml-2" wire:click="attachPermissions" wire:loading.attr="disabled">
+                <catalyst::x-button class="ml-2" wire:click="attachPermissions" wire:loading.attr="disabled">
                     {{ Translate::get('Save') }}
-                </x-button>
+                </catalyst::x-button>
             </x-slot>
         </x-dialog-modal>
     @endonce

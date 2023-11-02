@@ -64,7 +64,7 @@ class Index extends Component
 
     public function render()
     {
-        return view('livewire.pages.companies.index', [
+        return view('catalyst::livewire.pages.companies.index', [
             'companies' => $this->rows,
             'allTags' => $this->allTags,
             'categories' => $this->categories,

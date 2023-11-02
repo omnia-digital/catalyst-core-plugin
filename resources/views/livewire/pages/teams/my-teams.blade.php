@@ -23,7 +23,7 @@
         </div>
         <div class="px-4 sm:px-2 lg:px-0">
             <!-- Filters -->
-            @include('livewire.partials.filters', ['skipFilters' => ['has_attachment', 'members']])
+            @include('catalyst::livewire.partials.filters', ['skipFilters' => ['has_attachment', 'members']])
 
             <!-- Teams -->
             <div x-data="{}" class="mt-2">

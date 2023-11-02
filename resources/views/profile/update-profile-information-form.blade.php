@@ -24,7 +24,7 @@
                                     reader.readAsDataURL($refs.photo.files[0]);
                             "/>
 
-                <x-label for="photo" value="{{ Translate::get('Photo') }}"/>
+                <catalyst::x-label for="photo" value="{{ Translate::get('Photo') }}"/>
 
                 <!-- Current Profile Photo -->
                 <div class="mt-2" x-show="! photoPreview">
@@ -49,22 +49,22 @@
                     </catalyst::x-secondary-button>
                 @endif
 
-                <x-input-error for="photo" class="mt-2"/>
+                <catalyst::x-input-error for="photo" class="mt-2"/>
             </div>
         @endif
 
         <!-- Name -->
         <div class="col-span-6 sm:col-span-4">
-            <x-label for="name" value="{{ Translate::get('Name') }}"/>
-            <x-input id="name" type="text" class="mt-1 block w-full" wire:model.live="state.name" autocomplete="name"/>
-            <x-input-error for="name" class="mt-2"/>
+            <catalyst::x-label for="name" value="{{ Translate::get('Name') }}"/>
+            <catalyst::x-input id="name" type="text" class="mt-1 block w-full" wire:model.live="state.name" autocomplete="name"/>
+            <catalyst::x-input-error for="name" class="mt-2"/>
         </div>
 
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
-            <x-label for="email" value="{{ Translate::get('Email') }}"/>
-            <x-input id="email" type="email" class="mt-1 block w-full" wire:model.live="state.email"/>
-            <x-input-error for="email" class="mt-2"/>
+            <catalyst::x-label for="email" value="{{ Translate::get('Email') }}"/>
+            <catalyst::x-input id="email" type="email" class="mt-1 block w-full" wire:model.live="state.email"/>
+            <catalyst::x-input-error for="email" class="mt-2"/>
         </div>
     </x-slot>
 
@@ -73,8 +73,8 @@
             {{ Translate::get('Saved.') }}
         </x-action-message>
 
-        <x-button wire:loading.attr="disabled" wire:target="photo">
+        <catalyst::x-button wire:loading.attr="disabled" wire:target="photo">
             {{ Translate::get('Save') }}
-        </x-button>
+        </catalyst::x-button>
     </x-slot>
 </x-form-section>

@@ -37,9 +37,9 @@
     <div :class="{'block': open, 'hidden': ! open}"
          class="hidden sm:hidden bg-secondary max-h-full-minus-[56px] overflow-y-scroll scrollbar-hide">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <catalyst::x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ Translate::get('Dashboard') }}
-            </x-responsive-nav-link>
+            </catalyst::x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
@@ -61,26 +61,26 @@
 
                 <div class="mt-3 space-y-1">
                     <!-- Account Management -->
-                    <x-responsive-nav-link href="{{ route('profile.show') }}"
+                    <catalyst::x-responsive-nav-link href="{{ route('profile.show') }}"
                                            :active="request()->routeIs('profile.show')">
                         {{ Translate::get('Profile') }}
-                    </x-responsive-nav-link>
+                    </catalyst::x-responsive-nav-link>
 
                     {{--                @if (Laravel\Jetstream\Jetstream::hasApiFeatures())--}}
-                    {{--                    <x-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">--}}
+                    {{--                    <catalyst::x-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">--}}
                     {{--                        {{ \Translate::get('API Tokens') }}--}}
-                    {{--                    </x-responsive-nav-link>--}}
+                    {{--                    </catalyst::x-responsive-nav-link>--}}
                     {{--                @endif--}}
 
                     <!-- Authentication -->
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
 
-                        <x-responsive-nav-link href="{{ route('logout') }}"
+                        <catalyst::x-responsive-nav-link href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
                                         this.closest('form').submit();">
                             {{ Translate::get('Log Out') }}
-                        </x-responsive-nav-link>
+                        </catalyst::x-responsive-nav-link>
                     </form>
 
                     <!-- Team Management -->
@@ -92,15 +92,15 @@
                         {{--                    </div>--}}
 
                         <!-- Team Settings -->
-                        <x-responsive-nav-link href="{{ route('catalyst-social.teams.show', Auth::user()->currentTeam->id) }}"
+                        <catalyst::x-responsive-nav-link href="{{ route('catalyst-social.teams.show', Auth::user()->currentTeam->id) }}"
                                                :active="request()->routeIs('teams.show')">
                             {{ Translate::get('Team Settings') }}
-                        </x-responsive-nav-link>
+                        </catalyst::x-responsive-nav-link>
 
                         {{--                    @can('create', Laravel\Jetstream\Jetstream::newTeamModel())--}}
-                        {{--                        <x-responsive-nav-link href="{{ route('teams.create') }}" :active="request()->routeIs('teams.create')">--}}
+                        {{--                        <catalyst::x-responsive-nav-link href="{{ route('teams.create') }}" :active="request()->routeIs('teams.create')">--}}
                         {{--                            {{ \Translate::get('Create New Team') }}--}}
-                        {{--                        </x-responsive-nav-link>--}}
+                        {{--                        </catalyst::x-responsive-nav-link>--}}
                         {{--                    @endcan--}}
 
                         @if (Auth::user()->hasMultipleTeams())
@@ -112,7 +112,7 @@
                             </div>
 
                             @foreach (Auth::user()->teams as $team)
-                                <x-switchable-team :team="$team" component="responsive-nav-link"/>
+                                <catalyst::x-switchable-team :team="$team" component="responsive-nav-link"/>
                             @endforeach
                         @endif
                     @endif
