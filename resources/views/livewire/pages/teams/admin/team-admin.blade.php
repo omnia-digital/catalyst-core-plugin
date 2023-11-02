@@ -126,7 +126,7 @@
                             <x-library::input.error for="sampleMedia"/>
 
                             <!-- Delete Media Confirmation Modal -->
-                            <x-confirmation-modal wire:model.live="confirmingRemoveMedia">
+                            <catalyst::x-confirmation-modal wire:model.live="confirmingRemoveMedia">
                                 <x-slot name="title">
                                     {{ __('Delete Media') }}
                                 </x-slot>
@@ -136,17 +136,17 @@
                                 </x-slot>
 
                                 <x-slot name="footer">
-                                    <x-secondary-button wire:click="$toggle('confirmingRemoveMedia')"
+                                    <catalyst::x-secondary-button wire:click="$toggle('confirmingRemoveMedia')"
                                                         wire:loading.attr="disabled">
                                         {{ __('Cancel') }}
-                                    </x-secondary-button>
+                                    </catalyst::x-secondary-button>
 
-                                    <x-danger-button class="ml-2" wire:click="removeMedia()"
+                                    <catalyst::x-danger-button class="ml-2" wire:click="removeMedia()"
                                                      wire:loading.attr="disabled">
                                         {{ __('Delete Media') }}
-                                    </x-danger-button>
+                                    </catalyst::x-danger-button>
                                 </x-slot>
-                            </x-confirmation-modal>
+                            </catalyst::x-confirmation-modal>
                         </div>
                     </div>
 

@@ -20,7 +20,7 @@
                     submitText="Sign Up"
             />
         @else
-            <x-forms.register-default-form/>
+            <catalyst::x-forms.register-default-form/>
         @endif
 
         <x-slot name="additionalCard">

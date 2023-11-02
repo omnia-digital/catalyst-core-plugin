@@ -60,22 +60,22 @@
             @else
                 @if ($showingRecoveryCodes)
                     <x-confirms-password wire:then="regenerateRecoveryCodes">
-                        <x-secondary-button class="mr-3">
+                        <catalyst::x-secondary-button class="mr-3">
                             {{ Translate::get('Regenerate Recovery Codes') }}
-                        </x-secondary-button>
+                        </catalyst::x-secondary-button>
                     </x-confirms-password>
                 @else
                     <x-confirms-password wire:then="showRecoveryCodes">
-                        <x-secondary-button class="mr-3">
+                        <catalyst::x-secondary-button class="mr-3">
                             {{ Translate::get('Show Recovery Codes') }}
-                        </x-secondary-button>
+                        </catalyst::x-secondary-button>
                     </x-confirms-password>
                 @endif
 
                 <x-confirms-password wire:then="disableTwoFactorAuthentication">
-                    <x-danger-button wire:loading.attr="disabled">
+                    <catalyst::x-danger-button wire:loading.attr="disabled">
                         {{ Translate::get('Disable') }}
-                    </x-danger-button>
+                    </catalyst::x-danger-button>
                 </x-confirms-password>
             @endif
         </div>

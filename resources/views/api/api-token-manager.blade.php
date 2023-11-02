@@ -26,7 +26,7 @@
                     <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
                         @foreach (Laravel\Jetstream\Jetstream::$permissions as $permission)
                             <label class="flex items-center">
-                                <x-checkbox wire:model.live="createApiTokenForm.permissions" :value="$permission"/>
+                                <catalyst::x-checkbox wire:model.live="createApiTokenForm.permissions" :value="$permission"/>
                                 <span class="ml-2 text-sm text-base-text-color">{{ $permission }}</span>
                             </label>
                         @endforeach
@@ -115,9 +115,9 @@
         </x-slot>
 
         <x-slot name="footer">
-            <x-secondary-button wire:click="$set('displayingToken', false)" wire:loading.attr="disabled">
+            <catalyst::x-secondary-button wire:click="$set('displayingToken', false)" wire:loading.attr="disabled">
                 {{ Translate::get('Close') }}
-            </x-secondary-button>
+            </catalyst::x-secondary-button>
         </x-slot>
     </x-dialog-modal>
 
@@ -131,7 +131,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 @foreach (Laravel\Jetstream\Jetstream::$permissions as $permission)
                     <label class="flex items-center">
-                        <x-checkbox wire:model.live="updateApiTokenForm.permissions" :value="$permission"/>
+                        <catalyst::x-checkbox wire:model.live="updateApiTokenForm.permissions" :value="$permission"/>
                         <span class="ml-2 text-sm text-base-text-color">{{ $permission }}</span>
                     </label>
                 @endforeach
@@ -139,9 +139,9 @@
         </x-slot>
 
         <x-slot name="footer">
-            <x-secondary-button wire:click="$set('managingApiTokenPermissions', false)" wire:loading.attr="disabled">
+            <catalyst::x-secondary-button wire:click="$set('managingApiTokenPermissions', false)" wire:loading.attr="disabled">
                 {{ Translate::get('Cancel') }}
-            </x-secondary-button>
+            </catalyst::x-secondary-button>
 
             <x-button class="ml-2" wire:click="updateApiToken" wire:loading.attr="disabled">
                 {{ Translate::get('Save') }}
@@ -150,7 +150,7 @@
     </x-dialog-modal>
 
     <!-- Delete Token Confirmation Modal -->
-    <x-confirmation-modal wire:model.live="confirmingApiTokenDeletion">
+    <catalyst::x-confirmation-modal wire:model.live="confirmingApiTokenDeletion">
         <x-slot name="title">
             {{ Translate::get('Delete API Token') }}
         </x-slot>
@@ -160,13 +160,13 @@
         </x-slot>
 
         <x-slot name="footer">
-            <x-secondary-button wire:click="$toggle('confirmingApiTokenDeletion')" wire:loading.attr="disabled">
+            <catalyst::x-secondary-button wire:click="$toggle('confirmingApiTokenDeletion')" wire:loading.attr="disabled">
                 {{ Translate::get('Cancel') }}
-            </x-secondary-button>
+            </catalyst::x-secondary-button>
 
-            <x-danger-button class="ml-2" wire:click="deleteApiToken" wire:loading.attr="disabled">
+            <catalyst::x-danger-button class="ml-2" wire:click="deleteApiToken" wire:loading.attr="disabled">
                 {{ Translate::get('Delete') }}
-            </x-danger-button>
+            </catalyst::x-danger-button>
         </x-slot>
-    </x-confirmation-modal>
+    </catalyst::x-confirmation-modal>
 </div>

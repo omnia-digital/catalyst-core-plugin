@@ -190,7 +190,7 @@
         </div>
     </div>
     <!-- Publish/Draft Form Confirmation Modal -->
-    <x-confirmation-modal wire:model.live="confirmingPublishform">
+    <catalyst::x-confirmation-modal wire:model.live="confirmingPublishform">
         <x-slot name="title">
             {{ Translate::get('Change Form Status') }}
         </x-slot>
@@ -200,17 +200,17 @@
         </x-slot>
 
         <x-slot name="footer">
-            <x-secondary-button wire:click="$toggle('confirmingPublishform')" wire:loading.attr="disabled">
+            <catalyst::x-secondary-button wire:click="$toggle('confirmingPublishform')" wire:loading.attr="disabled">
                 {{ Translate::get('Cancel') }}
-            </x-secondary-button>
+            </catalyst::x-secondary-button>
 
             <x-button class="ml-2" wire:click="changeFormStatus" wire:loading.attr="disabled">
                 {{ Translate::get($newStatus) }}
             </x-button>
         </x-slot>
-    </x-confirmation-modal>
+    </catalyst::x-confirmation-modal>
     <!-- Remove Form Confirmation Modal -->
-    <x-confirmation-modal wire:model.live="confirmingFormRemoval">
+    <catalyst::x-confirmation-modal wire:model.live="confirmingFormRemoval">
         <x-slot name="title">
             {{ Translate::get('Delete Form') }}
         </x-slot>
@@ -220,18 +220,18 @@
         </x-slot>
 
         <x-slot name="footer">
-            <x-secondary-button wire:click="$toggle('confirmingFormRemoval')" wire:loading.attr="disabled">
+            <catalyst::x-secondary-button wire:click="$toggle('confirmingFormRemoval')" wire:loading.attr="disabled">
                 {{ Translate::get('Cancel') }}
-            </x-secondary-button>
+            </catalyst::x-secondary-button>
 
-            <x-danger-button class="ml-2" wire:click="removeForm" wire:loading.attr="disabled">
+            <catalyst::x-danger-button class="ml-2" wire:click="removeForm" wire:loading.attr="disabled">
                 {{ Translate::get('Delete') }}
-            </x-danger-button>
+            </catalyst::x-danger-button>
         </x-slot>
-    </x-confirmation-modal>
+    </catalyst::x-confirmation-modal>
 
     <!-- Delete Form Notification Confirmation Modal -->
-    <x-confirmation-modal wire:model.live="confirmingFormNotificationRemoval">
+    <catalyst::x-confirmation-modal wire:model.live="confirmingFormNotificationRemoval">
         <x-slot name="title">
             {{ Translate::get('Delete Form Notification') }}
         </x-slot>
@@ -241,15 +241,15 @@
         </x-slot>
 
         <x-slot name="footer">
-            <x-secondary-button wire:click="$toggle('confirmingFormNotificationRemoval')" wire:loading.attr="disabled">
+            <catalyst::x-secondary-button wire:click="$toggle('confirmingFormNotificationRemoval')" wire:loading.attr="disabled">
                 {{ Translate::get('Cancel') }}
-            </x-secondary-button>
+            </catalyst::x-secondary-button>
 
-            <x-danger-button class="ml-2" wire:click="removeFormNotification" wire:loading.attr="disabled">
+            <catalyst::x-danger-button class="ml-2" wire:click="removeFormNotification" wire:loading.attr="disabled">
                 {{ Translate::get('Delete') }}
-            </x-danger-button>
+            </catalyst::x-danger-button>
         </x-slot>
-    </x-confirmation-modal>
+    </catalyst::x-confirmation-modal>
 
     <!-- Form Notification Modal -->
     <form wire:submit.prevent="saveFormNotification">

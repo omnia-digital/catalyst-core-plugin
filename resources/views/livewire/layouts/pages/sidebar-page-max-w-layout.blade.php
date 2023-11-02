@@ -6,6 +6,6 @@
         <div class="col-span-9 mx-auto max-w-post-card-max-w">
             @yield('content')
         </div>
-        <x-sidebar-column class="hidden sm:block col-span-3"/>
+        <catalyst::x-sidebar-column class="hidden sm:block col-span-3"/>
     </div>
 @endsection

@@ -277,9 +277,9 @@
                         <div>Are you sure you? This action is irreversible.</div>
                     </x-slot>
                     <x-slot name="footer">
-                        <x-secondary-button wire:click="$set('showDeleteModal', false)" wire:loading.attr="disabled">
+                        <catalyst::x-secondary-button wire:click="$set('showDeleteModal', false)" wire:loading.attr="disabled">
                             {{ __('Cancel') }}
-                        </x-secondary-button>
+                        </catalyst::x-secondary-button>
 
                         <x-button class="ml-2" type="submit" wire:loading.attr="disabled">
                             {{ __('Delete') }}
@@ -322,9 +322,9 @@
                         </div>
                     </x-slot>
                     <x-slot name="footer">
-                        <x-secondary-button wire:click="$set('showEditModal', false)" wire:loading.attr="disabled">
+                        <catalyst::x-secondary-button wire:click="$set('showEditModal', false)" wire:loading.attr="disabled">
                             {{ __('Cancel') }}
-                        </x-secondary-button>
+                        </catalyst::x-secondary-button>
 
                         <x-button class="ml-2" type="submit" wire:loading.attr="disabled">
                             {{ __('Submit') }}
@@ -416,9 +416,9 @@
 
                     </x-slot>
                     <x-slot name="footer">
-                        <x-secondary-button wire:click="$set('showCreateModal', false)" wire:loading.attr="disabled">
+                        <catalyst::x-secondary-button wire:click="$set('showCreateModal', false)" wire:loading.attr="disabled">
                             {{ __('Cancel') }}
-                        </x-secondary-button>
+                        </catalyst::x-secondary-button>
 
                         <x-button class="ml-2" type="submit" wire:loading.attr="disabled">
                             {{ __('Submit') }}

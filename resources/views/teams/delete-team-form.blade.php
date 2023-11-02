@@ -13,13 +13,13 @@
         </div>
 
         <div class="mt-5">
-            <x-danger-button wire:click="$toggle('confirmingTeamDeletion')" wire:loading.attr="disabled">
+            <catalyst::x-danger-button wire:click="$toggle('confirmingTeamDeletion')" wire:loading.attr="disabled">
                 {{ Translate::get('Delete Team') }}
-            </x-danger-button>
+            </catalyst::x-danger-button>
         </div>
 
         <!-- Delete Team Confirmation Modal -->
-        <x-confirmation-modal wire:model.live="confirmingTeamDeletion">
+        <catalyst::x-confirmation-modal wire:model.live="confirmingTeamDeletion">
             <x-slot name="title">
                 {{ Translate::get('Delete Team') }}
             </x-slot>
@@ -29,14 +29,14 @@
             </x-slot>
 
             <x-slot name="footer">
-                <x-secondary-button wire:click="$toggle('confirmingTeamDeletion')" wire:loading.attr="disabled">
+                <catalyst::x-secondary-button wire:click="$toggle('confirmingTeamDeletion')" wire:loading.attr="disabled">
                     {{ Translate::get('Cancel') }}
-                </x-secondary-button>
+                </catalyst::x-secondary-button>
 
-                <x-danger-button class="ml-2" wire:click="deleteTeam" wire:loading.attr="disabled">
+                <catalyst::x-danger-button class="ml-2" wire:click="deleteTeam" wire:loading.attr="disabled">
                     {{ Translate::get('Delete Team') }}
-                </x-danger-button>
+                </catalyst::x-danger-button>
             </x-slot>
-        </x-confirmation-modal>
+        </catalyst::x-confirmation-modal>
     </x-slot>
 </x-action-section>

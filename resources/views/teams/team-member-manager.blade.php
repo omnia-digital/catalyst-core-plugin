@@ -224,9 +224,9 @@
         </x-slot>
 
         <x-slot name="footer">
-            <x-secondary-button wire:click="stopManagingRole" wire:loading.attr="disabled">
+            <catalyst::x-secondary-button wire:click="stopManagingRole" wire:loading.attr="disabled">
                 {{ Translate::get('Cancel') }}
-            </x-secondary-button>
+            </catalyst::x-secondary-button>
 
             <x-button class="ml-2" wire:click="updateRole" wire:loading.attr="disabled">
                 {{ Translate::get('Save') }}
@@ -235,7 +235,7 @@
     </x-dialog-modal>
 
     <!-- Leave Team Confirmation Modal -->
-    <x-confirmation-modal wire:model.live="confirmingLeavingTeam">
+    <catalyst::x-confirmation-modal wire:model.live="confirmingLeavingTeam">
         <x-slot name="title">
             {{ Translate::get('Leave Team') }}
         </x-slot>
@@ -245,18 +245,18 @@
         </x-slot>
 
         <x-slot name="footer">
-            <x-secondary-button wire:click="$toggle('confirmingLeavingTeam')" wire:loading.attr="disabled">
+            <catalyst::x-secondary-button wire:click="$toggle('confirmingLeavingTeam')" wire:loading.attr="disabled">
                 {{ Translate::get('Cancel') }}
-            </x-secondary-button>
+            </catalyst::x-secondary-button>
 
-            <x-danger-button class="ml-2" wire:click="leaveTeam" wire:loading.attr="disabled">
+            <catalyst::x-danger-button class="ml-2" wire:click="leaveTeam" wire:loading.attr="disabled">
                 {{ Translate::get('Leave') }}
-            </x-danger-button>
+            </catalyst::x-danger-button>
         </x-slot>
-    </x-confirmation-modal>
+    </catalyst::x-confirmation-modal>
 
     <!-- Remove Team Member Confirmation Modal -->
-    <x-confirmation-modal wire:model.live="confirmingTeamMemberRemoval">
+    <catalyst::x-confirmation-modal wire:model.live="confirmingTeamMemberRemoval">
         <x-slot name="title">
             {{ Translate::get('Remove Team Member') }}
         </x-slot>
@@ -266,13 +266,13 @@
         </x-slot>
 
         <x-slot name="footer">
-            <x-secondary-button wire:click="$toggle('confirmingTeamMemberRemoval')" wire:loading.attr="disabled">
+            <catalyst::x-secondary-button wire:click="$toggle('confirmingTeamMemberRemoval')" wire:loading.attr="disabled">
                 {{ Translate::get('Cancel') }}
-            </x-secondary-button>
+            </catalyst::x-secondary-button>
 
-            <x-danger-button class="ml-2" wire:click="removeTeamMember" wire:loading.attr="disabled">
+            <catalyst::x-danger-button class="ml-2" wire:click="removeTeamMember" wire:loading.attr="disabled">
                 {{ Translate::get('Remove') }}
-            </x-danger-button>
+            </catalyst::x-danger-button>
         </x-slot>
-    </x-confirmation-modal>
+    </catalyst::x-confirmation-modal>
 </div>

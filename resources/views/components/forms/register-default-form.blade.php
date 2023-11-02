@@ -33,7 +33,7 @@
         <div class="mt-4">
             <x-label for="terms">
                 <div class="flex items-center">
-                    <x-checkbox name="terms" id="terms"/>
+                    <catalyst::x-checkbox name="terms" id="terms"/>
 
                     <div class="ml-2">
                         {!! Translate::get('I agree to the :terms_of_service and :privacy_policy', [

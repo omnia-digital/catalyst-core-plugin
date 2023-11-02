@@ -13,9 +13,9 @@
         </div>
 
         <div class="mt-5">
-            <x-danger-button wire:click="confirmUserDeletion" wire:loading.attr="disabled">
+            <catalyst::x-danger-button wire:click="confirmUserDeletion" wire:loading.attr="disabled">
                 {{ Translate::get('Delete Account') }}
-            </x-danger-button>
+            </catalyst::x-danger-button>
         </div>
 
         <!-- Delete User Confirmation Modal -->
@@ -40,13 +40,13 @@
             </x-slot>
 
             <x-slot name="footer">
-                <x-secondary-button wire:click="$toggle('confirmingUserDeletion')" wire:loading.attr="disabled">
+                <catalyst::x-secondary-button wire:click="$toggle('confirmingUserDeletion')" wire:loading.attr="disabled">
                     {{ Translate::get('Cancel') }}
-                </x-secondary-button>
+                </catalyst::x-secondary-button>
 
-                <x-danger-button class="ml-2" wire:click="deleteUser" wire:loading.attr="disabled">
+                <catalyst::x-danger-button class="ml-2" wire:click="deleteUser" wire:loading.attr="disabled">
                     {{ Translate::get('Delete Account') }}
-                </x-danger-button>
+                </catalyst::x-danger-button>
             </x-slot>
         </x-dialog-modal>
     </x-slot>
