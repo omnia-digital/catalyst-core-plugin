@@ -2,12 +2,12 @@
 
 namespace OmniaDigital\CatalystCore\Database\Seeders;
 
+use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\CatalystCore\Models\User;
 use Illuminate\Database\Seeder;
-use Modules\Social\Models\Post;
-use Modules\Social\Notifications\NewCommentNotification;
-use Modules\Social\Notifications\NewFollowerNotification;
-use Modules\Social\Notifications\PostWasRepostedNotification;
+use OmniaDigital\CatalystCore\Notifications\NewCommentNotification;
+use OmniaDigital\CatalystCore\Notifications\NewFollowerNotification;
+use OmniaDigital\CatalystCore\Notifications\PostWasRepostedNotification;
 
 class NotificationTableSeeder extends Seeder
 {

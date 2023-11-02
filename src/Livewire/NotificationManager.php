@@ -3,11 +3,11 @@
 namespace OmniaDigital\CatalystCore\Livewire;
 
 use Livewire\Component;
-use Modules\Social\Notifications\ApplicationAcceptedToTeamNotification;
-use Modules\Social\Notifications\NewApplicationToTeamNotification;
-use Modules\Social\Notifications\NewCommentNotification;
-use Modules\Social\Notifications\NewFollowerNotification;
-use Modules\Social\Notifications\NewMemberOfMyTeamNotification;
+use OmniaDigital\CatalystCore\Notifications\ApplicationAcceptedToTeamNotification;
+use OmniaDigital\CatalystCore\Notifications\NewApplicationToTeamNotification;
+use OmniaDigital\CatalystCore\Notifications\NewCommentNotification;
+use OmniaDigital\CatalystCore\Notifications\NewFollowerNotification;
+use OmniaDigital\CatalystCore\Notifications\NewMemberOfMyTeamNotification;
 
 class NotificationManager extends Component
 {

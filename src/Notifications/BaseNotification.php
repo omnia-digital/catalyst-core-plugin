@@ -16,7 +16,7 @@ abstract class BaseNotification extends Notification implements ShouldQueue
 
     public static string $description = '';
 
-    public static array $channels = ['mail', 'database', 'broadcast', 'sms'];
+    public static array $channels = ['mail', 'database', 'broadcast'];
 
     public static function getLabel()
     {

@@ -3,8 +3,8 @@
 namespace OmniaDigital\CatalystCore\Notifications;
 
 use OmniaDigital\CatalystCore\Models\User;
-use App\Notifications\BaseNotification;
-use App\Support\Notification\NotificationCenter;
+use OmniaDigital\CatalystCore\Notifications\BaseNotification;
+use OmniaDigital\CatalystCore\Support\Notification\NotificationCenter;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Support\Str;
 use OmniaDigital\CatalystCore\Enums\PostType;

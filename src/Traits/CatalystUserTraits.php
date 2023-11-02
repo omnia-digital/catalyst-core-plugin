@@ -37,7 +37,7 @@ trait CatalystUserTraits
     use Billable;
     use Followable;
     use Follower;
-
+    use Awardable;
     //    use HasJobs;
     //    use HasNotificationSubscriptions;
     use HasBookmarks;

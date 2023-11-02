@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Notifications;
 
-use App\Support\Notification\NotificationCenter;
+use OmniaDigital\CatalystCore\Support\Notification\NotificationCenter;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;

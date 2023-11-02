@@ -2,9 +2,9 @@
 
 namespace OmniaDigital\CatalystCore\Database\Seeders;
 
-use App\Models\Language;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
+use OmniaDigital\CatalystCore\Models\Language;
 
 class LanguageTableSeeder extends Seeder
 {
