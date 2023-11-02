@@ -2,7 +2,6 @@
 
 namespace OmniaDigital\CatalystCore;
 
-use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
@@ -26,7 +25,6 @@ use OmniaDigital\CatalystCore\Providers\Filament\AdminPanelProvider;
 use OmniaDigital\CatalystCore\Providers\Filament\SocialPanelProvider;
 use OmniaDigital\CatalystCore\Providers\FortifyServiceProvider;
 use OmniaDigital\CatalystCore\Providers\JetstreamServiceProvider;
-use OmniaDigital\CatalystCore\Providers\RouteServiceProvider;
 use OmniaDigital\CatalystCore\Providers\StripeConnectServiceProvider;
 use OmniaDigital\CatalystCore\Providers\TeamLensesServiceProvider;
 use OmniaDigital\CatalystCore\Settings\GeneralSettings;
@@ -52,7 +50,7 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
          */
         $package->name(static::$name)
             ->hasCommands($this->getCommands())
-            ->hasRoutes(['web','api'])
+            ->hasRoutes(['web', 'api'])
             ->hasInstallCommand(function (InstallCommand $command) {
                 $command
                     ->publishConfigFile()
@@ -90,6 +88,28 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
         }
     }
 
+    /**
+     * @return array<class-string>
+     */
+    protected function getCommands(): array
+    {
+        return [
+            CatalystCoreCommand::class,
+        ];
+    }
+
+    /**
+     * @return array<string>
+     */
+    protected function getMigrations()
+    {
+        $migrations = collect();
+        foreach (app(Filesystem::class)->files(__DIR__ . '/../database/migrations/') as $file) {
+            $migrations->push($file->getBasename(suffix: '.php'));
+        }
+        return $migrations;
+    }
+
     public function registerLivewireComponents($package)
     {
         $this->callAfterResolving(BladeCompiler::class, function () use ($package) {
@@ -120,8 +140,7 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
         /**
          * Directory doesn't existS.
          */
-        if (!$filesystem->isDirectory($directory))
-        {
+        if (!$filesystem->isDirectory($directory)) {
             return;
         }
 
@@ -132,8 +151,9 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
                 ->append("\\{$file->getRelativePathname()}")
                 ->replace(['/', '.php'], ['\\', ''])
                 ->toString())
-            ->filter(fn($class) => (is_subclass_of($class, Component::class) && !(new ReflectionClass($class))->isAbstract()))
-            ->each(function($class) use ($namespace, $aliases) {
+            ->filter(fn($class) => (is_subclass_of($class,
+                    Component::class) && !(new ReflectionClass($class))->isAbstract()))
+            ->each(function ($class) use ($namespace, $aliases) {
                 $alias = Str::of($class)
                     ->after($namespace . '\\')
                     ->replace(['/', '\\'], '.')
@@ -157,11 +177,11 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
     private function registerSingleComponent(string $class, string $namespace): void
     {
         $alias = Str::of($class)
-                ->after($namespace . '\\')
-                ->replace(['/', '\\'], '.')
-                ->explode('.')
-                ->map([Str::class, 'kebab'])
-                ->implode('.');
+            ->after($namespace . '\\')
+            ->replace(['/', '\\'], '.')
+            ->explode('.')
+            ->map([Str::class, 'kebab'])
+            ->implode('.');
 
         $prefix = 'catalyst::';
         Livewire::component($alias, $class);
@@ -243,11 +263,6 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
         Testable::mixin(new TestsCatalystCore());
     }
 
-    protected function getAssetPackageName(): ?string
-    {
-        return 'omnia-digital/catalyst-core-plugin';
-    }
-
     /**
      * @return array<Asset>
      */
@@ -255,19 +270,22 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
     {
         return [
             // AlpineComponent::make('catalyst-core-plugin', __DIR__ . '/../resources/dist/components/catalyst-core-plugin.js'),
-            //            Css::make('catalyst-core-plugin-styles', __DIR__ . '/../resources/dist/catalyst-core-plugin.css'),
-            //            Js::make('catalyst-core-plugin-scripts', __DIR__ . '/../resources/dist/catalyst-core-plugin.js'),
+            Css::make('catalyst-core-plugin-styles', __DIR__ . '/../resources/dist/catalyst-core-plugin.css'),
+            Js::make('catalyst-core-plugin-scripts', __DIR__ . '/../resources/dist/catalyst-core-plugin.js'),
         ];
     }
 
-    /**
-     * @return array<class-string>
-     */
-    protected function getCommands(): array
+    protected function getAssetPackageName(): ?string
     {
-        return [
-            CatalystCoreCommand::class,
-        ];
+        return 'omnia-digital/catalyst-core-plugin';
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    protected function getScriptData(): array
+    {
+        return [];
     }
 
     /**
@@ -284,25 +302,5 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
     protected function getRoutes(): array
     {
         return [];
-    }
-
-    /**
-     * @return array<string, mixed>
-     */
-    protected function getScriptData(): array
-    {
-        return [];
-    }
-
-    /**
-     * @return array<string>
-     */
-    protected function getMigrations()
-    {
-        $migrations = collect();
-        foreach (app(Filesystem::class)->files(__DIR__ . '/../database/migrations/') as $file) {
-            $migrations->push($file->getBasename(suffix: '.php'));
-        }
-        return $migrations;
     }
 }

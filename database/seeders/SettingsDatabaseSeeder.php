@@ -4,6 +4,7 @@ namespace OmniaDigital\CatalystCore\Database\Seeders;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
+use OmniaDigital\CatalystCore\Settings\BillingSettings;
 use OmniaDigital\CatalystCore\Settings\GeneralSettings;
 
 class SettingsDatabaseSeeder extends Seeder
@@ -21,6 +22,18 @@ class SettingsDatabaseSeeder extends Seeder
             'teams_apply_button_text' => 'Apply',
             'allow_guest_access' => true,
             'should_show_login_on_guest_access' => true
+        ]))->save();
+
+        (new BillingSettings([
+            'payment_gateway' => 'stripe',
+            'user_subscriptions' => false,
+            'team_subscriptions' => false,
+            'team_member_subscriptions' => false,
+            'user_subscription_form' => 'user-subscriptions',
+            'change_payment_method_form' => 'change-payment-method',
+            'show_user_subscription_plan_in_navigation' => false,
+            'show_user_subscription_plan_in_profile_header' => false,
+            'application_fee_percent' => 10,
         ]))->save();
     }
 }
