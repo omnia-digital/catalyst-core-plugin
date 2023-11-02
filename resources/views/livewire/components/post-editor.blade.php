@@ -2,7 +2,6 @@
      x-on:media-manager:file-selected.window="setImage"
      x-on:post-editor:image-set.window="setImages"
      class="bg-secondary p-2 pl-3 pr-5 rounded-lg flex justify-start pt-4 max-w-post-card-max-w relative">
-
     <div class="mr-3 flex-shrink-0">
         @auth
             <img class="h-10 w-10 rounded-full" src="{{ Auth::user()->profile_photo_url }}"
