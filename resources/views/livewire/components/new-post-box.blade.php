@@ -37,7 +37,7 @@
                         </div>
                     </div>
                 </div>
-                {{-- <catalyst::x-dropdown :content="$postTypes" :trigger="'trigger'" /> --}}
+                {{-- <catalyst::components.dropdown :content="$postTypes" :trigger="'trigger'" /> --}}
             </div>
 
             <div class="bottom-0 border-t border-gray-100 inset-x-0 pl-3 pr-2 pt-2 flex flex-wrap justify-between">

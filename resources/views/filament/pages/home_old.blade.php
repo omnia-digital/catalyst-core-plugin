@@ -103,7 +103,7 @@
                                             @endsection
                                         </div>
                                     </div>
-                                    <catalyst::x-sidebar-column class="mt-4 hidden sm:block col-span-4 2xl:col-span-3"/>
+                                    <catalyst::components.sidebar-column class="mt-4 hidden sm:block col-span-4 2xl:col-span-3"/>
                                 </div>
                             </div>
                         </div>

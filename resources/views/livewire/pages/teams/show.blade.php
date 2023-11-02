@@ -37,7 +37,7 @@
                             <x-heroicon-o-lock-closed class="w-20 h-20"/>
                             <p class="text-lg">{{ Translate::get('You must be a member of this Team to view content and participate in discussions.') }}</p>
                             <div class="my-2">
-                                <catalyst::x-teams.apply-button :team="$team"/>
+                                <catalyst::components.teams.apply-button :team="$team"/>
                             </div>
                         </div>
                     </div>

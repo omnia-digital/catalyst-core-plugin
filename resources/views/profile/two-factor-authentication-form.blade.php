@@ -53,29 +53,29 @@
         <div class="mt-5">
             @if (! $this->enabled)
                 <x-confirms-password wire:then="enableTwoFactorAuthentication">
-                    <catalyst::x-button type="button" wire:loading.attr="disabled">
+                    <catalyst::components.button type="button" wire:loading.attr="disabled">
                         {{ Translate::get('Enable') }}
-                    </catalyst::x-button>
+                    </catalyst::components.button>
                 </x-confirms-password>
             @else
                 @if ($showingRecoveryCodes)
                     <x-confirms-password wire:then="regenerateRecoveryCodes">
-                        <catalyst::x-secondary-button class="mr-3">
+                        <catalyst::components.secondary-button class="mr-3">
                             {{ Translate::get('Regenerate Recovery Codes') }}
-                        </catalyst::x-secondary-button>
+                        </catalyst::components.secondary-button>
                     </x-confirms-password>
                 @else
                     <x-confirms-password wire:then="showRecoveryCodes">
-                        <catalyst::x-secondary-button class="mr-3">
+                        <catalyst::components.secondary-button class="mr-3">
                             {{ Translate::get('Show Recovery Codes') }}
-                        </catalyst::x-secondary-button>
+                        </catalyst::components.secondary-button>
                     </x-confirms-password>
                 @endif
 
                 <x-confirms-password wire:then="disableTwoFactorAuthentication">
-                    <catalyst::x-danger-button wire:loading.attr="disabled">
+                    <catalyst::components.danger-button wire:loading.attr="disabled">
                         {{ Translate::get('Disable') }}
-                    </catalyst::x-danger-button>
+                    </catalyst::components.danger-button>
                 </x-confirms-password>
             @endif
         </div>

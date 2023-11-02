@@ -28,7 +28,7 @@
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures() && auth()->user()->isMemberOfATeam())
                     <div class="md:relative mr-2">
-                        <catalyst::x-dropdown align="right" width="60">
+                        <catalyst::components.dropdown align="right" width="60">
                             <x-slot name="trigger">
                                 <button type="button"
                                         class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
@@ -44,15 +44,15 @@
                                     <div class="block px-4 py-2 text-xs text-light-text-color">
                                         {{ Translate::get('Current Team') }}
                                     </div>
-                                    <catalyst::x-dropdown-link
+                                    <catalyst::components.dropdown-link
                                             href="{{ route('catalyst-social.teams.show', auth()->user()->currentTeam->handle) }}">
                                         {{ auth()->user()->currentTeam->name }}
-                                    </catalyst::x-dropdown-link>
+                                    </catalyst::components.dropdown-link>
 
                                     {{--                                                                            @can('create', Laravel\Jetstream\Jetstream::newTeamModel())--}}
-                                    {{--                                                                                <catalyst::x-dropdown-link href="{{ route('teams.create') }}">--}}
+                                    {{--                                                                                <catalyst::components.dropdown-link href="{{ route('teams.create') }}">--}}
                                     {{--                                                                                    {{ \Translate::get('Create New Team') }}--}}
-                                    {{--                                                                                </catalyst::x-dropdown-link>--}}
+                                    {{--                                                                                </catalyst::components.dropdown-link>--}}
                                     {{--                                                                            @endcan--}}
 
                                     @if (auth()->user()->hasMultipleTeams())
@@ -64,18 +64,18 @@
                                         </div>
 
                                         @foreach (auth()->user()->teams as $team)
-                                            <catalyst::x-switchable-team :team="$team"/>
+                                            <catalyst::components.switchable-team :team="$team"/>
                                         @endforeach
                                     @endif
                                 </div>
                             </x-slot>
-                        </catalyst::x-dropdown>
+                        </catalyst::components.dropdown>
                     </div>
                 @endif
 
                 <!-- Settings Dropdown -->
                 <div class="relative flex">
-                    <catalyst::x-dropdown align="right" width="48">
+                    <catalyst::components.dropdown align="right" width="48">
 
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
@@ -113,37 +113,37 @@
                                 {{ Translate::get('Manage Account') }}
                             </div>
 
-                            <catalyst::x-dropdown-link href="{{ route('catalyst-social.profile.show', auth()->user()->handle) }}">
+                            <catalyst::components.dropdown-link href="{{ route('catalyst-social.profile.show', auth()->user()->handle) }}">
                                 {{ auth()->user()->name }}
-                            </catalyst::x-dropdown-link>
+                            </catalyst::components.dropdown-link>
 
-                            {{--                            <catalyst::x-dropdown-link href="{{ route('resources.drafts') }}">--}}
+                            {{--                            <catalyst::components.dropdown-link href="{{ route('resources.drafts') }}">--}}
                             {{--                                My Resources--}}
-                            {{--                            </catalyst::x-dropdown-link>--}}
+                            {{--                            </catalyst::components.dropdown-link>--}}
 
-                            <catalyst::x-dropdown-link href="{{ route('media.index') }}">
+                            <catalyst::components.dropdown-link href="{{ route('media.index') }}">
                                 Media Library
-                            </catalyst::x-dropdown-link>
+                            </catalyst::components.dropdown-link>
 
-                            <catalyst::x-dropdown-link href="{{ route('account') }}">
+                            <catalyst::components.dropdown-link href="{{ route('account') }}">
                                 {{ Translate::get('Account') }}
-                            </catalyst::x-dropdown-link>
+                            </catalyst::components.dropdown-link>
                             {{ Filament::renderHook('user-menu.account.after') }}
 
                             @if (\OmniaDigital\CatalystCore\Facades\Catalyst::isUsingStripe())
-                                <catalyst::x-dropdown-link href="{{ route('billing.stripe-billing') }}">
+                                <catalyst::components.dropdown-link href="{{ route('billing.stripe-billing') }}">
                                     {{ Translate::get('Billing') }}
-                                </catalyst::x-dropdown-link>
+                                </catalyst::components.dropdown-link>
                             @elseif (\OmniaDigital\CatalystCore\Facades\Catalyst::isUsingChargent() && \OmniaDigital\CatalystCore\Facades\Catalyst::isUsingUserSubscriptions())
-                                <catalyst::x-dropdown-link href="{{ route('billing.chargent-billing') }}">
+                                <catalyst::components.dropdown-link href="{{ route('billing.chargent-billing') }}">
                                     {{ Translate::get('Billing') }}
-                                </catalyst::x-dropdown-link>
+                                </catalyst::components.dropdown-link>
                             @endif
 
                             {{--                                @if (Laravel\Jetstream\Jetstream::hasApiFeatures())--}}
-                            {{--                                    <catalyst::x-dropdown-link href="{{ route('api-tokens.index') }}">--}}
+                            {{--                                    <catalyst::components.dropdown-link href="{{ route('api-tokens.index') }}">--}}
                             {{--                                        {{ \Translate::get('API Tokens') }}--}}
-                            {{--                                    </catalyst::x-dropdown-link>--}}
+                            {{--                                    </catalyst::components.dropdown-link>--}}
                             {{--                                @endif--}}
 
                             <div class="border-t border-gray-100"></div>
@@ -152,14 +152,14 @@
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
-                                <catalyst::x-dropdown-link href="{{ route('logout') }}"
+                                <catalyst::components.dropdown-link href="{{ route('logout') }}"
                                                  onclick="event.preventDefault();
                                                                             this.closest('form').submit();">
                                     {{ Translate::get('Log Out') }}
-                                </catalyst::x-dropdown-link>
+                                </catalyst::components.dropdown-link>
                             </form>
                         </x-slot>
-                    </catalyst::x-dropdown>
+                    </catalyst::components.dropdown>
                 </div>
             </div>
             <!-- Mobile Hamburger -->
@@ -175,7 +175,7 @@
             {{--                            </div>--}}
         </div>
     @else
-        <catalyst::x-dropdown align="right" width="48">
+        <catalyst::components.dropdown align="right" width="48">
             <x-slot name="trigger">
                                     <span class="inline-flex rounded-md">
                                                 <button type="button"
@@ -194,14 +194,14 @@
             </x-slot>
 
             <x-slot name="content">
-                <catalyst::x-dropdown-link href="{{ route('register') }}">
+                <catalyst::components.dropdown-link href="{{ route('register') }}">
                     {{ Translate::get('Register') }}
-                </catalyst::x-dropdown-link>
-                <catalyst::x-dropdown-link href="{{ route('login') }}">
+                </catalyst::components.dropdown-link>
+                <catalyst::components.dropdown-link href="{{ route('login') }}">
                     {{ Translate::get('Login') }}
-                </catalyst::x-dropdown-link>
+                </catalyst::components.dropdown-link>
             </x-slot>
-        </catalyst::x-dropdown>
+        </catalyst::components.dropdown>
     @endauth
 </div>
 

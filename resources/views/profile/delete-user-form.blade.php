@@ -13,9 +13,9 @@
         </div>
 
         <div class="mt-5">
-            <catalyst::x-danger-button wire:click="confirmUserDeletion" wire:loading.attr="disabled">
+            <catalyst::components.danger-button wire:click="confirmUserDeletion" wire:loading.attr="disabled">
                 {{ Translate::get('Delete Account') }}
-            </catalyst::x-danger-button>
+            </catalyst::components.danger-button>
         </div>
 
         <!-- Delete User Confirmation Modal -->
@@ -29,24 +29,24 @@
 
                 <div class="mt-4" x-data="{}"
                      x-on:confirming-delete-user.window="setTimeout(() => $refs.password.focus(), 250)">
-                    <catalyst::x-input type="password" class="mt-1 block w-3/4"
+                    <catalyst::components.input type="password" class="mt-1 block w-3/4"
                              placeholder="{{ Translate::get('Password') }}"
                              x-ref="password"
                              wire:model.live="password"
                              wire:keydown.enter="deleteUser"/>
 
-                    <catalyst::x-input-error for="password" class="mt-2"/>
+                    <catalyst::components.input-error for="password" class="mt-2"/>
                 </div>
             </x-slot>
 
             <x-slot name="footer">
-                <catalyst::x-secondary-button wire:click="$toggle('confirmingUserDeletion')" wire:loading.attr="disabled">
+                <catalyst::components.secondary-button wire:click="$toggle('confirmingUserDeletion')" wire:loading.attr="disabled">
                     {{ Translate::get('Cancel') }}
-                </catalyst::x-secondary-button>
+                </catalyst::components.secondary-button>
 
-                <catalyst::x-danger-button class="ml-2" wire:click="deleteUser" wire:loading.attr="disabled">
+                <catalyst::components.danger-button class="ml-2" wire:click="deleteUser" wire:loading.attr="disabled">
                     {{ Translate::get('Delete Account') }}
-                </catalyst::x-danger-button>
+                </catalyst::components.danger-button>
             </x-slot>
         </x-dialog-modal>
     </x-slot>

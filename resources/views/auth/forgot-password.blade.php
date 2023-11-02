@@ -1,7 +1,7 @@
-<catalyst::x-guest-layout>
-    <catalyst::x-authentication-card>
+<catalyst::components.guest-layout>
+    <catalyst::components.authentication-card>
         <x-slot name="logo">
-            <catalyst::x-authentication-card-logo/>
+            <catalyst::components.authentication-card-logo/>
         </x-slot>
 
         <div class="mb-4 text-sm text-base-text-color">
@@ -14,22 +14,22 @@
             </div>
         @endif
 
-        <catalyst::x-validation-errors class="mb-4"/>
+        <catalyst::components.validation-errors class="mb-4"/>
 
         <form method="POST" action="{{ route('password.email') }}">
             @csrf
 
             <div class="block">
-                <catalyst::x-label for="email" value="{{ Translate::get('Email') }}"/>
-                <catalyst::x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
+                <catalyst::components.label for="email" value="{{ Translate::get('Email') }}"/>
+                <catalyst::components.input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
                          autofocus/>
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <catalyst::x-button>
+                <catalyst::components.button>
                     {{ Translate::get('Email Password Reset Link') }}
-                </catalyst::x-button>
+                </catalyst::components.button>
             </div>
         </form>
-    </catalyst::x-authentication-card>
-</catalyst::x-guest-layout>
+    </catalyst::components.authentication-card>
+</catalyst::components.guest-layout>

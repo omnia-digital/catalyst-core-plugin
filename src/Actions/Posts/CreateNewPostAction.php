@@ -2,11 +2,15 @@
 
 namespace OmniaDigital\CatalystCore\Actions\Posts;
 
+use App\Models\Team;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Traits\Conditionable;
 use OmniaDigital\CatalystCore\Enums\PostType;
+use OmniaDigital\CatalystCore\Models\Mention;
+use OmniaDigital\CatalystCore\Models\Post;
+use OmniaDigital\CatalystCore\Models\Tag;
 
 class CreateNewPostAction
 {

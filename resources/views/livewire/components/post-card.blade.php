@@ -18,7 +18,7 @@
                         <a wire:click.prevent.stop="showProfile"
                            href="{{ route('catalyst-social.profile.show', $post->user->handle) }}"
                            class="">{{ '@'. $post->user->handle }}</a>
-                        <x-dot/>
+                        <x-library::icons.icon name="dot"/>
                         <a href="{{ $post->getUrl() }}" class="hover:underline">
                             <time datetime="{{ $post->published_at }}">{{ $post->published_at?->diffForHumans(short: true) }}</time>
                         </a>

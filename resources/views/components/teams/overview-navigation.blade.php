@@ -86,7 +86,7 @@
             </div>
         @endif
 
-        <catalyst::x-teams.apply-button :team="$team"/>
+        <catalyst::components.teams.apply-button :team="$team"/>
         {{-- Lists functionality not currently setup
         <div class="inline-flex items-center text-md">
             <button class="p-2 mx-[15px] inline-flex items-center text-sm rounded-full bg-secondary"><x-heroicon-s-plus class="h-4 w-4" /></button>

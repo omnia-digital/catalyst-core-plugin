@@ -1,5 +1,5 @@
-<catalyst::x-guest-layout>
-    <catalyst::x-authentication-card>
+<catalyst::components.guest-layout>
+    <catalyst::components.authentication-card>
         <x-slot name="logo">
             <img src="{{ config('app.logo_path') }}" class="h-16"/>
         </x-slot>
@@ -33,9 +33,9 @@
                 @csrf
 
                 <div>
-                    <catalyst::x-button type="submit">
+                    <catalyst::components.button type="submit">
                         {{ Translate::get('Resend Verification Email') }}
-                    </catalyst::x-button>
+                    </catalyst::components.button>
                 </div>
             </form>
 
@@ -47,5 +47,5 @@
                 </button>
             </form>
         </div>
-    </catalyst::x-authentication-card>
-</catalyst::x-guest-layout>
+    </catalyst::components.authentication-card>
+</catalyst::components.guest-layout>

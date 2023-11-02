@@ -81,7 +81,7 @@
             </div>
         </div>
         <!-- Cancel Subscriptions Confirmation Modal -->
-        <catalyst::x-confirmation-modal wire:model.live="confirmingSubscriptionCancellation">
+        <catalyst::components.confirmation-modal wire:model.live="confirmingSubscriptionCancellation">
             <x-slot name="title">
                 {{ Translate::get('Cancel Subscriptions') }}
             </x-slot>
@@ -91,16 +91,16 @@
             </x-slot>
 
             <x-slot name="footer">
-                <catalyst::x-secondary-button wire:click="$toggle('confirmingSubscriptionCancellation')"
+                <catalyst::components.secondary-button wire:click="$toggle('confirmingSubscriptionCancellation')"
                                     wire:loading.attr="disabled">
                     {{ Translate::get('Cancel') }}
-                </catalyst::x-secondary-button>
+                </catalyst::components.secondary-button>
 
-                <catalyst::x-danger-button class="ml-2" wire:click="cancelSubscription" wire:loading.attr="disabled">
+                <catalyst::components.danger-button class="ml-2" wire:click="cancelSubscription" wire:loading.attr="disabled">
                     {{ Translate::get('Confirm') }}
-                </catalyst::x-danger-button>
+                </catalyst::components.danger-button>
             </x-slot>
-        </catalyst::x-confirmation-modal>
+        </catalyst::components.confirmation-modal>
     </div>
 @endsection
 @push('modals')

@@ -153,7 +153,7 @@
                         </button>
                     </div>
                     @if ($team)
-                        <catalyst::x-teams.apply-button :team="$team"/>
+                        <catalyst::components.teams.apply-button :team="$team"/>
                     @endif
                 </div>
             </div>

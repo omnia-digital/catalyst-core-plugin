@@ -1,6 +1,6 @@
 @php use OmniaDigital\CatalystCore\Facades\Translate @endphp
-<catalyst::x-guest-layout>
-    <catalyst::x-authentication-card>
+<catalyst::components.guest-layout>
+    <catalyst::components.authentication-card>
         <x-slot name="logo">
             <img src="{{ config('app.logo_path') }}" class="h-16"/>
         </x-slot>
@@ -13,7 +13,7 @@
         <x-library::heading.2
                 class="text-center">{{ Translate::get('Login to') . ' ' . config('app.name') }}</x-library::heading.2>
 
-        <catalyst::x-validation-errors class="mb-4"/>
+        <catalyst::components.validation-errors class="mb-4"/>
 
         @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
@@ -25,29 +25,29 @@
             @csrf
 
             <div>
-                <catalyst::x-label for="email" value="{{ Translate::get('Email') }}"/>
-                <catalyst::x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
+                <catalyst::components.label for="email" value="{{ Translate::get('Email') }}"/>
+                <catalyst::components.input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
                          autofocus/>
             </div>
 
             <div class="mt-4">
-                <catalyst::x-label for="password" value="{{ Translate::get('Password') }}"/>
-                <catalyst::x-input id="password" class="block mt-1 w-full" type="password" name="password" required
+                <catalyst::components.label for="password" value="{{ Translate::get('Password') }}"/>
+                <catalyst::components.input id="password" class="block mt-1 w-full" type="password" name="password" required
                          autocomplete="current-password"/>
             </div>
 
             <div class="block mt-4">
                 <label for="remember_me" class="flex items-center">
-                    <catalyst::x-checkbox id="remember_me" name="remember"/>
+                    <catalyst::components.checkbox id="remember_me" name="remember"/>
                     <span class="ml-2 text-sm text-base-text-color">{{ Translate::get('Remember me') }}</span>
                 </label>
             </div>
 
             <div class="text-center">
                 <div class="flex items-center text-center justify-end mt-4 mb-2">
-                    <catalyst::x-button class="w-full py-2 text-lg justify-center">
+                    <catalyst::components.button class="w-full py-2 text-lg justify-center">
                         {{ Translate::get('Log In') }}
-                    </catalyst::x-button>
+                    </catalyst::components.button>
                 </div>
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-base-text-color hover:text-dark-text-color"
@@ -69,5 +69,5 @@
                 </p>
             </div>
         </x-slot>
-    </catalyst::x-authentication-card>
-</catalyst::x-guest-layout>
+    </catalyst::components.authentication-card>
+</catalyst::components.guest-layout>

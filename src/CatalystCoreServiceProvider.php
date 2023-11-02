@@ -120,7 +120,7 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
                     ->replace('\\', '/')
                     ->toString();
 
-                $this->registerComponentDirectory($_directory, $namespace);
+                $this->registerLivewireComponentClassDirectory($_directory, $namespace);
             }
         });
     }
@@ -134,7 +134,7 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
      *
      * @return void
      */
-    protected function registerComponentDirectory(string $directory, string $namespace): void
+    protected function registerLivewireComponentClassDirectory(string $directory, string $namespace): void
     {
         $filesystem = new Filesystem();
 

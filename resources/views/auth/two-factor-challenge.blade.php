@@ -1,7 +1,7 @@
-<catalyst::x-guest-layout>
-    <catalyst::x-authentication-card>
+<catalyst::components.guest-layout>
+    <catalyst::components.authentication-card>
         <x-slot name="logo">
-            <catalyst::x-authentication-card-logo/>
+            <catalyst::components.authentication-card-logo/>
         </x-slot>
 
         <div x-data="{ recovery: false }">
@@ -13,20 +13,20 @@
                 {{ Translate::get('Please confirm access to your account by entering one of your emergency recovery codes.') }}
             </div>
 
-            <catalyst::x-validation-errors class="mb-4"/>
+            <catalyst::components.validation-errors class="mb-4"/>
 
             <form method="POST" action="{{ route('two-factor.login') }}">
                 @csrf
 
                 <div class="mt-4" x-show="! recovery">
-                    <catalyst::x-label for="code" value="{{ Translate::get('Code') }}"/>
-                    <catalyst::x-input id="code" class="block mt-1 w-full" type="text" inputmode="numeric" name="code" autofocus
+                    <catalyst::components.label for="code" value="{{ Translate::get('Code') }}"/>
+                    <catalyst::components.input id="code" class="block mt-1 w-full" type="text" inputmode="numeric" name="code" autofocus
                              x-ref="code" autocomplete="one-time-code"/>
                 </div>
 
                 <div class="mt-4" x-show="recovery">
-                    <catalyst::x-label for="recovery_code" value="{{ Translate::get('Recovery Code') }}"/>
-                    <catalyst::x-input id="recovery_code" class="block mt-1 w-full" type="text" name="recovery_code"
+                    <catalyst::components.label for="recovery_code" value="{{ Translate::get('Recovery Code') }}"/>
+                    <catalyst::components.input id="recovery_code" class="block mt-1 w-full" type="text" name="recovery_code"
                              x-ref="recovery_code" autocomplete="one-time-code"/>
                 </div>
 
@@ -51,11 +51,11 @@
                         {{ Translate::get('Use an authentication code') }}
                     </button>
 
-                    <catalyst::x-button class="ml-4">
+                    <catalyst::components.button class="ml-4">
                         {{ Translate::get('Log in') }}
-                    </catalyst::x-button>
+                    </catalyst::components.button>
                 </div>
             </form>
         </div>
-    </catalyst::x-authentication-card>
-</catalyst::x-guest-layout>
+    </catalyst::components.authentication-card>
+</catalyst::components.guest-layout>

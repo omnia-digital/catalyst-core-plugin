@@ -12,21 +12,21 @@
         <x-slot name="form">
             <!-- Token Name -->
             <div class="col-span-6 sm:col-span-4">
-                <catalyst::x-label for="name" value="{{ Translate::get('Token Name') }}"/>
-                <catalyst::x-input id="name" type="text" class="mt-1 block w-full" wire:model.live="createApiTokenForm.name"
+                <catalyst::components.label for="name" value="{{ Translate::get('Token Name') }}"/>
+                <catalyst::components.input id="name" type="text" class="mt-1 block w-full" wire:model.live="createApiTokenForm.name"
                          autofocus/>
-                <catalyst::x-input-error for="name" class="mt-2"/>
+                <catalyst::components.input-error for="name" class="mt-2"/>
             </div>
 
             <!-- Token Permissions -->
             @if (Laravel\Jetstream\Jetstream::hasPermissions())
                 <div class="col-span-6">
-                    <catalyst::x-label for="permissions" value="{{ Translate::get('Permissions') }}"/>
+                    <catalyst::components.label for="permissions" value="{{ Translate::get('Permissions') }}"/>
 
                     <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
                         @foreach (Laravel\Jetstream\Jetstream::$permissions as $permission)
                             <label class="flex items-center">
-                                <catalyst::x-checkbox wire:model.live="createApiTokenForm.permissions" :value="$permission"/>
+                                <catalyst::components.checkbox wire:model.live="createApiTokenForm.permissions" :value="$permission"/>
                                 <span class="ml-2 text-sm text-base-text-color">{{ $permission }}</span>
                             </label>
                         @endforeach
@@ -40,9 +40,9 @@
                 {{ Translate::get('Created.') }}
             </x-action-message>
 
-            <catalyst::x-button>
+            <catalyst::components.button>
                 {{ Translate::get('Create') }}
-            </catalyst::x-button>
+            </catalyst::components.button>
         </x-slot>
     </x-form-section>
 
@@ -107,7 +107,7 @@
                 {{ Translate::get('Please copy your new API token. For your security, it won\'t be shown again.') }}
             </div>
 
-            <catalyst::x-input x-ref="plaintextToken" type="text" readonly :value="$plainTextToken"
+            <catalyst::components.input x-ref="plaintextToken" type="text" readonly :value="$plainTextToken"
                      class="mt-4 bg-neutral px-4 py-2 rounded font-mono text-sm text-base-text-color w-full"
                      autofocus autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
                      @showing-token-modal.window="setTimeout(() => $refs.plaintextToken.select(), 250)"
@@ -115,9 +115,9 @@
         </x-slot>
 
         <x-slot name="footer">
-            <catalyst::x-secondary-button wire:click="$set('displayingToken', false)" wire:loading.attr="disabled">
+            <catalyst::components.secondary-button wire:click="$set('displayingToken', false)" wire:loading.attr="disabled">
                 {{ Translate::get('Close') }}
-            </catalyst::x-secondary-button>
+            </catalyst::components.secondary-button>
         </x-slot>
     </x-dialog-modal>
 
@@ -131,7 +131,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 @foreach (Laravel\Jetstream\Jetstream::$permissions as $permission)
                     <label class="flex items-center">
-                        <catalyst::x-checkbox wire:model.live="updateApiTokenForm.permissions" :value="$permission"/>
+                        <catalyst::components.checkbox wire:model.live="updateApiTokenForm.permissions" :value="$permission"/>
                         <span class="ml-2 text-sm text-base-text-color">{{ $permission }}</span>
                     </label>
                 @endforeach
@@ -139,18 +139,18 @@
         </x-slot>
 
         <x-slot name="footer">
-            <catalyst::x-secondary-button wire:click="$set('managingApiTokenPermissions', false)" wire:loading.attr="disabled">
+            <catalyst::components.secondary-button wire:click="$set('managingApiTokenPermissions', false)" wire:loading.attr="disabled">
                 {{ Translate::get('Cancel') }}
-            </catalyst::x-secondary-button>
+            </catalyst::components.secondary-button>
 
-            <catalyst::x-button class="ml-2" wire:click="updateApiToken" wire:loading.attr="disabled">
+            <catalyst::components.button class="ml-2" wire:click="updateApiToken" wire:loading.attr="disabled">
                 {{ Translate::get('Save') }}
-            </catalyst::x-button>
+            </catalyst::components.button>
         </x-slot>
     </x-dialog-modal>
 
     <!-- Delete Token Confirmation Modal -->
-    <catalyst::x-confirmation-modal wire:model.live="confirmingApiTokenDeletion">
+    <catalyst::components.confirmation-modal wire:model.live="confirmingApiTokenDeletion">
         <x-slot name="title">
             {{ Translate::get('Delete API Token') }}
         </x-slot>
@@ -160,13 +160,13 @@
         </x-slot>
 
         <x-slot name="footer">
-            <catalyst::x-secondary-button wire:click="$toggle('confirmingApiTokenDeletion')" wire:loading.attr="disabled">
+            <catalyst::components.secondary-button wire:click="$toggle('confirmingApiTokenDeletion')" wire:loading.attr="disabled">
                 {{ Translate::get('Cancel') }}
-            </catalyst::x-secondary-button>
+            </catalyst::components.secondary-button>
 
-            <catalyst::x-danger-button class="ml-2" wire:click="deleteApiToken" wire:loading.attr="disabled">
+            <catalyst::components.danger-button class="ml-2" wire:click="deleteApiToken" wire:loading.attr="disabled">
                 {{ Translate::get('Delete') }}
-            </catalyst::x-danger-button>
+            </catalyst::components.danger-button>
         </x-slot>
-    </catalyst::x-confirmation-modal>
+    </catalyst::components.confirmation-modal>
 </div>

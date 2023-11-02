@@ -86,13 +86,13 @@
                     <div>Are you sure you? This action is irreversible.</div>
                 </x-slot>
                 <x-slot name="footer">
-                    <catalyst::x-secondary-button wire:click="$set('showDeleteMediaModal', false)" wire:loading.attr="disabled">
+                    <catalyst::components.secondary-button wire:click="$set('showDeleteMediaModal', false)" wire:loading.attr="disabled">
                         {{ __('Cancel') }}
-                    </catalyst::x-secondary-button>
+                    </catalyst::components.secondary-button>
 
-                    <catalyst::x-button class="ml-2" type="submit" wire:loading.attr="disabled">
+                    <catalyst::components.button class="ml-2" type="submit" wire:loading.attr="disabled">
                         {{ __('Delete') }}
-                    </catalyst::x-button>
+                    </catalyst::components.button>
                 </x-slot>
             </x-dialog-modal>
         </form>

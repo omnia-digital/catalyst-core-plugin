@@ -16,7 +16,7 @@
             </div>
         @elseif (!$team?->hasUser(auth()->user()))
             <div class="absolute -top-9 right-0 w-96">
-                <catalyst::x-input-error for="user_id" class="mt-2"/>
+                <catalyst::components.input-error for="user_id" class="mt-2"/>
             </div>
             @can('apply', $team)
                 <a

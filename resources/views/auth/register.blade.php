@@ -1,6 +1,6 @@
 @php use \OmniaDigital\CatalystForms\Models\Form; @endphp
-<catalyst::catalyst::x-guest-layout>
-    <catalyst::catalyst::x-authentication-card>
+<catalyst::catalyst::components.guest-layout>
+    <catalyst::catalyst::components.authentication-card>
         <x-slot name="logo">
             <img src="{{ config('app.logo_path') }}" class="h-16"/>
         </x-slot>
@@ -12,7 +12,7 @@
 
         <x-library::heading.2 class="text-center">{{ Translate::get('Create your account') }}</x-library::heading.2>
 
-        <catalyst::catalyst::x-validation-errors class="mb-4"/>
+        <catalyst::catalyst::components.validation-errors class="mb-4"/>
 
         @if (Form::getRegistrationForm())
             <livewire:catalyst-forms::user-registration-form
@@ -20,7 +20,7 @@
                     submitText="Sign Up"
             />
         @else
-            <catalyst::x-forms.register-default-form/>
+            <catalyst::components.forms.register-default-form/>
         @endif
 
         <x-slot name="additionalCard">
@@ -34,5 +34,5 @@
                 </p>
             </div>
         </x-slot>
-    </catalyst::catalyst::x-authentication-card>
-</catalyst::catalyst::x-guest-layout>
+    </catalyst::catalyst::components.authentication-card>
+</catalyst::catalyst::components.guest-layout>

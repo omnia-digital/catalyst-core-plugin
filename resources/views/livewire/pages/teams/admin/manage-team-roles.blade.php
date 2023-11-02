@@ -157,7 +157,7 @@
     </div>
     @once
         <!-- Delete Role Confirmation Modal -->
-        <catalyst::x-confirmation-modal wire:model.live="confirmingDeleteTeamRole">
+        <catalyst::components.confirmation-modal wire:model.live="confirmingDeleteTeamRole">
             <x-slot name="title">
                 {{ Translate::get('Delete Role') }}
             </x-slot>
@@ -167,15 +167,15 @@
             </x-slot>
 
             <x-slot name="footer">
-                <catalyst::x-secondary-button wire:click="$set('confirmingDeleteTeamRole', false)" wire:loading.attr="disabled">
+                <catalyst::components.secondary-button wire:click="$set('confirmingDeleteTeamRole', false)" wire:loading.attr="disabled">
                     {{ Translate::get('Cancel') }}
-                </catalyst::x-secondary-button>
+                </catalyst::components.secondary-button>
 
-                <catalyst::x-danger-button class="ml-2" wire:click="deleteTeamRole" wire:loading.attr="disabled">
+                <catalyst::components.danger-button class="ml-2" wire:click="deleteTeamRole" wire:loading.attr="disabled">
                     {{ Translate::get('Delete') }}
-                </catalyst::x-danger-button>
+                </catalyst::components.danger-button>
             </x-slot>
-        </catalyst::x-confirmation-modal>
+        </catalyst::components.confirmation-modal>
 
         <!-- Role Edit Modal -->
         <x-dialog-modal wire:model.live="currentlyEditingRole">
@@ -200,13 +200,13 @@
             </x-slot>
 
             <x-slot name="footer">
-                <catalyst::x-secondary-button wire:click="$set('currentlyEditingRole', false)" wire:loading.attr="disabled">
+                <catalyst::components.secondary-button wire:click="$set('currentlyEditingRole', false)" wire:loading.attr="disabled">
                     {{ Translate::get('Cancel') }}
-                </catalyst::x-secondary-button>
+                </catalyst::components.secondary-button>
 
-                <catalyst::x-button class="ml-2" wire:click="saveRole" wire:loading.attr="disabled">
+                <catalyst::components.button class="ml-2" wire:click="saveRole" wire:loading.attr="disabled">
                     {{ Translate::get('Save') }}
-                </catalyst::x-button>
+                </catalyst::components.button>
             </x-slot>
         </x-dialog-modal>
 
@@ -229,13 +229,13 @@
             </x-slot>
 
             <x-slot name="footer">
-                <catalyst::x-secondary-button wire:click="closePermissionsModal" wire:loading.attr="disabled">
+                <catalyst::components.secondary-button wire:click="closePermissionsModal" wire:loading.attr="disabled">
                     {{ Translate::get('Cancel') }}
-                </catalyst::x-secondary-button>
+                </catalyst::components.secondary-button>
 
-                <catalyst::x-button class="ml-2" wire:click="attachPermissions" wire:loading.attr="disabled">
+                <catalyst::components.button class="ml-2" wire:click="attachPermissions" wire:loading.attr="disabled">
                     {{ Translate::get('Save') }}
-                </catalyst::x-button>
+                </catalyst::components.button>
             </x-slot>
         </x-dialog-modal>
     @endonce

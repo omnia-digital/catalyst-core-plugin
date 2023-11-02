@@ -136,17 +136,17 @@
 
                                 <!-- Member Email -->
                                 <div class="col-span-6 sm:col-span-4">
-                                    <catalyst::x-label for="email" value="{{ Translate::get('Email') }}"/>
-                                    <catalyst::x-input id="email" type="email" class="mt-1 block w-full"
+                                    <catalyst::components.label for="email" value="{{ Translate::get('Email') }}"/>
+                                    <catalyst::components.input id="email" type="email" class="mt-1 block w-full"
                                              wire:model="addTeamMemberForm.email"/>
-                                    <catalyst::x-input-error for="email" class="mt-2"/>
+                                    <catalyst::components.input-error for="email" class="mt-2"/>
                                 </div>
 
                                 <!-- Role -->
                                 @if (count($this->roles) > 0)
                                     <div class="col-span-6 lg:col-span-4">
-                                        <catalyst::x-label for="role" value="{{ Translate::get('Role') }}"/>
-                                        <catalyst::x-input-error for="role" class="mt-2"/>
+                                        <catalyst::components.label for="role" value="{{ Translate::get('Role') }}"/>
+                                        <catalyst::components.input-error for="role" class="mt-2"/>
 
                                         <div class="relative z-0 mt-1 border border-neutral-light rounded-lg cursor-pointer">
                                             @foreach ($this->roles as $index => $role)
@@ -183,10 +183,10 @@
 
                                 <!-- Invitation Message -->
                                 <div class="col-span-6 sm:col-span-4">
-                                    <catalyst::x-label for="message" value="{{ Translate::get('Message') }}"/>
-                                    <catalyst::x-input id="message" type="text" class="mt-1 block w-full"
+                                    <catalyst::components.label for="message" value="{{ Translate::get('Message') }}"/>
+                                    <catalyst::components.input id="message" type="text" class="mt-1 block w-full"
                                              wire:model="addTeamMemberForm.message"/>
-                                    <catalyst::x-input-error for="message" class="mt-2"/>
+                                    <catalyst::components.input-error for="message" class="mt-2"/>
                                 </div>
                             </x-slot>
 
@@ -195,9 +195,9 @@
                                     {{ Translate::get('Added.') }}
                                 </x-action-message>
 
-                                <catalyst::x-button>
+                                <catalyst::components.button>
                                     {{ Translate::get('Add') }}
-                                </catalyst::x-button>
+                                </catalyst::components.button>
                             </x-slot>
                         </x-form-section>
                     </div>
@@ -340,18 +340,18 @@
             </x-slot>
 
             <x-slot name="footer">
-                <catalyst::x-secondary-button wire:click="stopManagingRole" wire:loading.attr="disabled">
+                <catalyst::components.secondary-button wire:click="stopManagingRole" wire:loading.attr="disabled">
                     {{ Translate::get('Cancel') }}
-                </catalyst::x-secondary-button>
+                </catalyst::components.secondary-button>
 
-                <catalyst::x-button class="ml-2" wire:click="updateUserRole" wire:loading.attr="disabled">
+                <catalyst::components.button class="ml-2" wire:click="updateUserRole" wire:loading.attr="disabled">
                     {{ Translate::get('Save') }}
-                </catalyst::x-button>
+                </catalyst::components.button>
             </x-slot>
         </x-dialog-modal>
 
         <!-- Leave Team Confirmation Modal -->
-        <catalyst::x-confirmation-modal wire:model.live="confirmingLeavingTeam">
+        <catalyst::components.confirmation-modal wire:model.live="confirmingLeavingTeam">
             <x-slot name="title">
                 {{ Translate::get('Leave Team') }}
             </x-slot>
@@ -361,18 +361,18 @@
             </x-slot>
 
             <x-slot name="footer">
-                <catalyst::x-secondary-button wire:click="$toggle('confirmingLeavingTeam')" wire:loading.attr="disabled">
+                <catalyst::components.secondary-button wire:click="$toggle('confirmingLeavingTeam')" wire:loading.attr="disabled">
                     {{ Translate::get('Cancel') }}
-                </catalyst::x-secondary-button>
+                </catalyst::components.secondary-button>
 
-                <catalyst::x-danger-button class="ml-2" wire:click="leaveTeam" wire:loading.attr="disabled">
+                <catalyst::components.danger-button class="ml-2" wire:click="leaveTeam" wire:loading.attr="disabled">
                     {{ Translate::get('Leave') }}
-                </catalyst::x-danger-button>
+                </catalyst::components.danger-button>
             </x-slot>
-        </catalyst::x-confirmation-modal>
+        </catalyst::components.confirmation-modal>
 
         <!-- Remove Team Member Confirmation Modal -->
-        <catalyst::x-confirmation-modal wire:model.live="confirmingTeamMemberRemoval">
+        <catalyst::components.confirmation-modal wire:model.live="confirmingTeamMemberRemoval">
             <x-slot name="title">
                 {{ Translate::get('Remove Team Member') }}
             </x-slot>
@@ -382,14 +382,14 @@
             </x-slot>
 
             <x-slot name="footer">
-                <catalyst::x-secondary-button wire:click="$toggle('confirmingTeamMemberRemoval')" wire:loading.attr="disabled">
+                <catalyst::components.secondary-button wire:click="$toggle('confirmingTeamMemberRemoval')" wire:loading.attr="disabled">
                     {{ Translate::get('Cancel') }}
-                </catalyst::x-secondary-button>
+                </catalyst::components.secondary-button>
 
-                <catalyst::x-danger-button class="ml-2" wire:click="removeTeamMember" wire:loading.attr="disabled">
+                <catalyst::components.danger-button class="ml-2" wire:click="removeTeamMember" wire:loading.attr="disabled">
                     {{ Translate::get('Remove') }}
-                </catalyst::x-danger-button>
+                </catalyst::components.danger-button>
             </x-slot>
-        </catalyst::x-confirmation-modal>
+        </catalyst::components.confirmation-modal>
     @endonce
 </div>
