@@ -94,7 +94,8 @@
                                         </div>
                                     </div>
 
-                                    <livewire:catalyst::delete-post-modal/>
+                                    {{-- // @NOTE - this delete-post-modal is causing a js console error 'unexpected token }'--}}
+{{--                                    <livewire:catalyst::delete-post-modal/>--}}
                                     <livewire:media-manager :handleUploadProcess="false"/>
                                     <livewire:authentication-modal/>
                                     {{--                                            @endsection--}}

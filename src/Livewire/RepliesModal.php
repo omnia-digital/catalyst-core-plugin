@@ -11,12 +11,14 @@ use OmniaDigital\CatalystCore\Enums\PostType;
 use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\CatalystCore\Notifications\NewCommentNotification;
 use OmniaDigital\CatalystCore\Support\Livewire\WithPostEditor;
+use OmniaDigital\OmniaLibrary\Livewire\WithModal;
 use Throwable;
 
 class RepliesModal extends Component
 {
     use WithGuestAccess;
     use WithPostEditor;
+    use WithModal;
 
     public int $replyCount = 0;
 

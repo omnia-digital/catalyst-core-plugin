@@ -35,9 +35,6 @@ class SocialPanelProvider extends PanelProvider
                 'success' => Color::Emerald,
                 'warning' => Color::Orange,
             ])
-            ->renderHook('panels::head.end', function () {
-                return view('catalyst::layouts.partials.head');
-            })
             ->discoverResources(
                 in: __DIR__ . '/../../Filament/Social/Resources',
                 for: 'OmniaDigital\\CatalystCore\\Filament\\Social\\Resources'
@@ -59,7 +56,20 @@ class SocialPanelProvider extends PanelProvider
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
             ])
-            ->navigationGroups([
+            // Render Hooks for Social
+            ->renderHook('panels::head.start', function () {
+                return view('catalyst::layouts.partials.head-start');
+            })
+            ->renderHook('panels::head.end', function () {
+                return view('catalyst::layouts.partials.head-end');
+            })
+            ->renderHook('panels::body.start', function () {
+                return view('catalyst::layouts.partials.body-start');
+            })
+            ->renderHook('panels::body.end', function () {
+                return view('catalyst::layouts.partials.body-end');
+            })
+//            ->navigationGroups([
 //                NavigationGroup::make()
 //                    ->label(Trans::get('Settings'))
 //                    ->icon('heroicon-s-cog')
@@ -88,7 +98,7 @@ class SocialPanelProvider extends PanelProvider
 //                    ->label(Trans::get('Games'))
 //                    ->icon('fad-gamepad-modern')
 //                    ->collapsed(),
-            ])
+//            ])
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,

@@ -1,5 +1,3 @@
-@include('catalyst::components.layouts.partials.gtags')
-@include('catalyst::components.layouts.partials.fonts')
 @libraryStyles
 @stack('styles')
 @include('catalyst::components.layouts.partials.fontawesome')
