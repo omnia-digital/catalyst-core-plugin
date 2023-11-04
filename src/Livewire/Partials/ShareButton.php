@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Partials;
 
-use Jorenvh\Share\Share;
+use Jorenvh\Share\ShareFacade;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 use OmniaDigital\CatalystCore\Models\Post;
@@ -35,7 +35,7 @@ class ShareButton extends Component
 
     public function getLinks()
     {
-        $this->links = Share::page($this->url)->facebook()->twitter()->linkedin()->whatsapp()->telegram()->reddit()->getRawLinks();
+        $this->links = ShareFacade::page($this->url)->facebook()->twitter()->linkedin()->whatsapp()->telegram()->reddit()->getRawLinks();
 
         return $this->links;
     }
