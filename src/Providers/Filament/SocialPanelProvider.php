@@ -35,6 +35,9 @@ class SocialPanelProvider extends PanelProvider
                 'success' => Color::Emerald,
                 'warning' => Color::Orange,
             ])
+            ->renderHook('panels::head.end', function () {
+                return view('catalyst::layouts.partials.header-styles');
+            })
 //            ->viteTheme('/public/css/omnia-digital/catalyst-core-plugin/catalyst-core-social-styles.css')
             ->discoverResources(
                 in: __DIR__ . '/../../Filament/Social/Resources',

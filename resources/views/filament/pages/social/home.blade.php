@@ -1,4 +1,5 @@
 <x-filament-panels::page>
+
     <div class="w-full flex flex-col">
         <div>
             <div class="min-h-screen">

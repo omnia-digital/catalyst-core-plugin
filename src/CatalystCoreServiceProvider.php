@@ -8,6 +8,7 @@ use Filament\Support\Assets\Js;
 use Filament\Support\Assets\Theme;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
+use Filament\Support\Facades\FilamentView;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Blade;
@@ -220,6 +221,10 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
 
         // Icon Registration
         FilamentIcon::register($this->getIcons());
+
+//        FilamentView::registerRenderHook('panels::head.start', function () {
+//            return view('catalyst::components.layouts.partials.omnia-library');
+//        });
 
         // Seeders
         if (app()->runningInConsole()) {

@@ -17,6 +17,8 @@ class Home extends Page
     protected static ?string $navigationIcon = 'heroicon-o-home';
 
     protected static string $view = 'catalyst::filament.pages.social.home';
+//    protected static string $layout = 'catalyst::filament.pages.social.home';
+
     public function getNewsRssFeeds()
     {
         return collect();
