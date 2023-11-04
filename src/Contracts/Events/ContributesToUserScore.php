@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Contracts\Events;
+namespace OmniaDigital\CatalystCore\Contracts\Events;
 
 interface ContributesToUserScore
 {

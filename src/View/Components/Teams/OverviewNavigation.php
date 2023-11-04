@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Teams;
+namespace OmniaDigital\CatalystCore\View\Components\Teams;
 
 use Closure;
 use Illuminate\Contracts\View\View;

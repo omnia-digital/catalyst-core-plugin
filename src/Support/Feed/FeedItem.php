@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Support\Feed;
+namespace OmniaDigital\CatalystCore\Support\Feed;
 
 use SimplePie_Item;
 

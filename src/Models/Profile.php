@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Models;
 
 use OmniaDigital\CatalystCore\Models\User;
-use App\Support\Lexer\PrettyNumber;
+use OmniaDigital\CatalystCore\Support\Lexer\PrettyNumber;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;

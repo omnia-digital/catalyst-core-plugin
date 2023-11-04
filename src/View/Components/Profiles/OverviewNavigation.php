@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Profiles;
+namespace OmniaDigital\CatalystCore\View\Components\Profiles;
 
 use Closure;
 use Illuminate\Contracts\View\View;

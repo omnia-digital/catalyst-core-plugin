@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Jetstream;
+namespace OmniaDigital\CatalystCore\Actions\Jetstream;
 
 use Closure;
 use Illuminate\Database\Query\Builder;

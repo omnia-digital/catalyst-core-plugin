@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Support\Lexer;
+namespace OmniaDigital\CatalystCore\Support\Lexer;
 
 class PrettyNumber
 {

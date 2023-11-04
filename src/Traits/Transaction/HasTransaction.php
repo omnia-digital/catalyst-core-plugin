@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Traits\Transaction;
 
-use App\Support\Transaction\Transaction;
+use OmniaDigital\CatalystCore\Support\Transaction\Transaction;
 
 trait HasTransaction
 {

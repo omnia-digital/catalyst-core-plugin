@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Traits\Team;
 
-use App\Contracts\InvitesTeamMembers;
+use OmniaDigital\CatalystCore\Contracts\InvitesTeamMembers;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Jetstream\Contracts\AddsTeamMembers;
 use Laravel\Jetstream\Contracts\RemovesTeamMembers;

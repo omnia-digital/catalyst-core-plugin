@@ -6,7 +6,7 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use OmniaDigital\CatalystCore\Models\ChargentSubscription;
 
-class NewSubscriptionPayment
+class NewSubscriptionPayment extends BaseEvent
 {
     use Dispatchable, SerializesModels;
 

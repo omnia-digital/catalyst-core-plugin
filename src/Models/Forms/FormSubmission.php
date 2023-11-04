@@ -2,8 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Models\Forms;
 
-use App\Models\Team;
-use App\Models\User;
+use OmniaDigital\CatalystCore\Models\Team;
+use OmniaDigital\CatalystCore\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use OmniaDigital\CatalystCore\Models\TeamApplication;
 use OmniaDigital\CatalystForms\Models\Form;

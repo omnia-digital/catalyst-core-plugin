@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Contracts;
+namespace OmniaDigital\CatalystCore\Contracts;
 
 interface InvitesTeamMembers
 {

@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Actions\Posts;
 
-use App\Models\Team;
+use OmniaDigital\CatalystCore\Models\Team;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User;

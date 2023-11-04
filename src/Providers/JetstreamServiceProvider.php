@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Providers;
 
-use App\Contracts\InvitesTeamMembers;
+use OmniaDigital\CatalystCore\Contracts\InvitesTeamMembers;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Jetstream\Jetstream;
 use OmniaDigital\CatalystCore\Actions\Jetstream\DeleteUser;

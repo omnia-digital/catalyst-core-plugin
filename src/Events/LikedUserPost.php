@@ -2,8 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Events;
 
-use App\Contracts\Events\ContributesToUserScore;
-use App\Events\BaseEvent;
+use OmniaDigital\CatalystCore\Contracts\Events\ContributesToUserScore;
 use OmniaDigital\CatalystCore\Models\User;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Queue\SerializesModels;

@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Components\Teams;
 
-use App\Models\ContactCategory;
+use OmniaDigital\CatalystCore\Models\ContactCategory;
 use Illuminate\Support\Arr;
 use Livewire\Component;
 use Squire\Models\Country;

@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Actions\Teams;
 
-use App\Contracts\InvitesTeamMembers;
+use OmniaDigital\CatalystCore\Contracts\InvitesTeamMembers;
 use Closure;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Mail;

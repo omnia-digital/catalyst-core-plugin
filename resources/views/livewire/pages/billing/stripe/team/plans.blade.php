@@ -1,4 +1,4 @@
-@php use App\Enums\Teams\TeamBillingPeriod; @endphp
+@php use OmniaDigital\CatalystCore\Enums\Teams\TeamBillingPeriod; @endphp
 @extends('catalyst::livewire.layouts.pages.team-profile-layout')
 
 @section('content')

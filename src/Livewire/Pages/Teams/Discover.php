@@ -2,8 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams;
 
-use App\Support\Feed\FeedItem;
-use App\Support\Feed\PolygonFeedItem;
+use OmniaDigital\CatalystCore\Support\Feed\FeedItem;
+use OmniaDigital\CatalystCore\Support\Feed\PolygonFeedItem;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Actions\Teams\GetCuratedTeamsAction;
 use OmniaDigital\CatalystCore\Actions\Teams\GetFeaturedTeamsAction;
