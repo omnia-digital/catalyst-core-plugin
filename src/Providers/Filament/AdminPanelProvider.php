@@ -17,7 +17,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use OmniaDigital\CatalystCore\Filament\Pages\Dashboard;
+use OmniaDigital\CatalystCore\Filament\Admin\Pages\Dashboard;
 use OmniaDigital\CatalystForms\CatalystFormsPlugin;
 use ShuvroRoy\FilamentSpatieLaravelBackup\FilamentSpatieLaravelBackupPlugin;
 
@@ -33,8 +33,8 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
-            ->discoverResources(in: __DIR__ .'/../../Filament/Resources', for: 'OmniaDigital\\CatalystCore\\Filament\\Resources')
-            ->discoverPages(in: __DIR__ . '/../../Filament/Pages', for: 'OmniaDigital\\CatalystCore\\Filament\\Pages')
+            ->discoverResources(in: __DIR__ .'/../../Filament/Admin/Resources', for: 'OmniaDigital\\CatalystCore\\Filament\\Admin\\Resources')
+            ->discoverPages(in: __DIR__ . '/../../Filament/Admin/Pages/', for: 'OmniaDigital\\CatalystCore\\Filament\\Admin\\Pages')
             ->pages([
                 Dashboard::class,
             ])
@@ -42,7 +42,7 @@ class AdminPanelProvider extends PanelProvider
                 FilamentShieldPlugin::make(),
                 CatalystFormsPlugin::make()
             ])
-            ->discoverWidgets(in: __DIR__.'/Filament/Widgets', for: 'OmniaDigital\\CatalystCore\\Filament\\Widgets')
+            ->discoverWidgets(in: __DIR__.'/Filament/Admin/Widgets', for: 'OmniaDigital\\CatalystCore\\Filament\\Admin\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,

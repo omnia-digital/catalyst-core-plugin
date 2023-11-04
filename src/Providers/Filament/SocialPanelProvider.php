@@ -5,6 +5,7 @@ namespace OmniaDigital\CatalystCore\Providers\Filament;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationGroup;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
@@ -16,8 +17,8 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use OmniaDigital\CatalystCore\Filament\Pages\Home;
-use Trans;
+use OmniaDigital\CatalystCore\Facades\Translate;
+use OmniaDigital\CatalystCore\Filament\Social\Pages\Home;
 
 class SocialPanelProvider extends PanelProvider
 {
@@ -29,27 +30,27 @@ class SocialPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
-//            ->discoverResources(
-//                in: __DIR__ . '/../../Filament/Resources',
-//                for: 'OmniaDigital\\CatalystSocialPlugin\\Filament\\Resources'
-//            )
-//            ->discoverPages(
-//                in: __DIR__ . '/../../Filament/Pages',
-//                for: 'OmniaDigital\\CatalystSocialPlugin\\Filament\\Pages'
-//            )
-            ->pages([
-                Home::class
-                //                Pages\Dashboard::class,
-            ])
+            ->discoverResources(
+                in: __DIR__ . '/../../Filament/Social/Resources',
+                for: 'OmniaDigital\\CatalystCore\\Filament\\Social\\Resources'
+            )
+            ->discoverPages(
+                in: __DIR__ . '/../../Filament/Social/Pages',
+                for: 'OmniaDigital\\CatalystCore\\Filament\\Social\\Pages'
+            )
+//            ->pages([
+//                Home::class
+//                //                Pages\Dashboard::class,
+//            ])
             ->discoverWidgets(
-                in: '../../Filament/Widgets',
-                for: 'OmniaDigital\\CatalystSocialPlugin\\Filament\\Widgets'
+                in: '../../Filament/Social/Widgets',
+                for: 'OmniaDigital\\CatalystCore\\Filament\\Social\\Widgets'
             )
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
             ])
-//            ->navigationGroups([
+            ->navigationGroups([
 //                NavigationGroup::make()
 //                    ->label(Trans::get('Settings'))
 //                    ->icon('heroicon-s-cog')
@@ -59,7 +60,7 @@ class SocialPanelProvider extends PanelProvider
 //                    ->icon('heroicon-o-credit-card')
 //                    ->collapsed(),
 //                NavigationGroup::make()
-//                    ->label(Trans::get('People'))
+//                    ->label(Translate::get('People'))
 //                    //                    ->icon('heroicon-s-users')
 //                    ->collapsed(),
 //                NavigationGroup::make()
@@ -78,7 +79,7 @@ class SocialPanelProvider extends PanelProvider
 //                    ->label(Trans::get('Games'))
 //                    ->icon('fad-gamepad-modern')
 //                    ->collapsed(),
-//            ])
+            ])
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
@@ -89,9 +90,9 @@ class SocialPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-            ])
-            ->authMiddleware([
-                Authenticate::class,
             ]);
+//            ->authMiddleware([
+//                Authenticate::class,
+//            ]);
     }
 }

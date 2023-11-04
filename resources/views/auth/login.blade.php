@@ -1,6 +1,7 @@
 @php use OmniaDigital\CatalystCore\Facades\Translate @endphp
-<catalyst::components.guest-layout>
-    <catalyst::components.authentication-card>
+
+<catalyst::x-guest-layout>
+<catalyst::components.authentication-card>
         <x-slot name="logo">
             <img src="{{ config('app.logo_path') }}" class="h-16"/>
         </x-slot>
@@ -70,4 +71,4 @@
             </div>
         </x-slot>
     </catalyst::components.authentication-card>
-</catalyst::components.guest-layout>
+</catalyst::x-guest-layout>
