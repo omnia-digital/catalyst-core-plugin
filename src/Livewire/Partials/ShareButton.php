@@ -2,11 +2,11 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Partials;
 
+use Jorenvh\Share\Share;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\OmniaLibrary\Livewire\WithModal;
-use Share;
 
 class ShareButton extends Component
 {
