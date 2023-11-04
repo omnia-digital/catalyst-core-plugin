@@ -1,8 +1,8 @@
 <aside class="sticky h-screen max-w-md overflow-y-scroll scrollbar-hide top-20 pb-24 {{ $class ?? '' }}">
     <div class="space-y-4">
+
         <livewire:catalyst::partials.trending-section type="{{ $type ?? '' }}"/>
         <livewire:catalyst::partials.who-to-follow-section/>
-
         @auth
             <livewire:catalyst::partials.applications/>
         @endauth

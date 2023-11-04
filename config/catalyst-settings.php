@@ -18,6 +18,8 @@ return [
         //        \Modules\Jobs\Settings\JobsSettings::class,
     ],
 
+    'login_route' => 'login',
+
     /*
      * The path where the settings classes will be created.
      */

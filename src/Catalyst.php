@@ -104,12 +104,12 @@ class Catalyst
 
     public static function isAllowingGuestAccess(): bool
     {
-        return (new GeneralSettings)->allow_guest_access;
+        return (new GeneralSettings)->allow_guest_access ?? false;
     }
 
     public static function shouldShowLoginOnGuestAccess(): bool
     {
-        return (new GeneralSettings)->should_show_login_on_guest_access;
+        return (new GeneralSettings)->should_show_login_on_guest_access ?? false;
     }
 
     public static function isSubscriptionShownInNavigation()

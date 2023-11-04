@@ -14,7 +14,7 @@ trait WithGuestAccess
     public function redirectToAuthenticationPage()
     {
         if (Catalyst::shouldShowLoginOnGuestAccess()) {
-            $this->redirectRoute('login');
+//            $this->redirectRoute(config('catalyst-settings.login_route'));
 
             return;
         }

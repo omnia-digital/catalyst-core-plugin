@@ -18,6 +18,6 @@ class GuestAccessMiddleware
             return $next($request);
         }
 
-        return redirect()->route('login');
+        return redirect()->route(config('catalyst-settings.login_route'));
     }
 }

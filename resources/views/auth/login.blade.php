@@ -1,6 +1,5 @@
 @php use OmniaDigital\CatalystCore\Facades\Translate @endphp
 
-<catalyst::x-guest-layout>
 <catalyst::components.authentication-card>
         <x-slot name="logo">
             <img src="{{ config('app.logo_path') }}" class="h-16"/>
@@ -27,14 +26,16 @@
 
             <div>
                 <catalyst::components.label for="email" value="{{ Translate::get('Email') }}"/>
-                <catalyst::components.input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
-                         autofocus/>
+                <catalyst::components.input id="email" class="block mt-1 w-full" type="email" name="email"
+                                            :value="old('email')" required
+                                            autofocus/>
             </div>
 
             <div class="mt-4">
                 <catalyst::components.label for="password" value="{{ Translate::get('Password') }}"/>
-                <catalyst::components.input id="password" class="block mt-1 w-full" type="password" name="password" required
-                         autocomplete="current-password"/>
+                <catalyst::components.input id="password" class="block mt-1 w-full" type="password" name="password"
+                                            required
+                                            autocomplete="current-password"/>
             </div>
 
             <div class="block mt-4">
@@ -71,4 +72,3 @@
             </div>
         </x-slot>
     </catalyst::components.authentication-card>
-</catalyst::x-guest-layout>

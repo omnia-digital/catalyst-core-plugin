@@ -32,7 +32,7 @@ use OmniaDigital\CatalystCore\Livewire\Pages\Teams\MyTeams;
 use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Show as ShowTeam;
 
 
-Route::name('catalyst-social.')->prefix('catalyst-social')
+Route::name('catalyst-social.')->prefix('social')
     ->group(function () {
         // Shorten URLs
         Route::get(
@@ -59,7 +59,7 @@ Route::name('catalyst-social.')->prefix('catalyst-social')
             // /{handle} for profile
             // /{handle}/status/{post_id} for any type of post, whether it's a post or reply
             // /{messages}/{message_id} for messages
-            Route::get('/home', Home::class)->name('home');
+//            Route::get('/home', Home::class)->name('home');
             Route::get('bookmarks', Index::class)->name('bookmarks');
 
             Route::get('/trending', DiscoverIndex::class)->name('discover');

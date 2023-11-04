@@ -86,9 +86,25 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
             $package->hasViews(static::$viewNamespace);
         }
 
+        // Blade Components
+//        if (file_exists($package->basePath('/View/Components'))) {
+//            $package->hasViewComponents($this->getViewComponents());
+//            $this->registerBladeComponents($package);
+//        }
+
+        // Livewire Components
         if (file_exists($package->basePath('/Livewire'))) {
             $this->registerLivewireComponents($package);
         }
+    }
+
+    public function getViewComponents()
+    {
+        $components = collect();
+        foreach (app(Filesystem::class)->files(__DIR__ . '/View/Components') as $file) {
+            $components->push($file->getBasename(suffix: '.php'));
+        }
+        return $components;
     }
 
     /**
@@ -111,6 +127,78 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
             $migrations->push($file->getBasename(suffix: '.php'));
         }
         return $migrations;
+    }
+
+    public function registerBladeComponents($package)
+    {
+        $this->callAfterResolving(BladeCompiler::class, function () use ($package) {
+            if (class_exists(\Illuminate\View\Component::class) && file_exists($package->basePath('/View/Components'))) {
+                $namespace = 'OmniaDigital\CatalystCore\View\Components';
+                $_directory = Str::of($package->basePath('/View/Components'))
+                    ->replace('\\', '/')
+                    ->toString();
+
+                $this->registerBladeComponentClassDirectory($_directory, $namespace);
+            }
+        });
+    }
+
+    /**
+     * Register component directory.
+     *
+     * @param string $directory
+     * @param string $namespace
+     * @param string $aliasPrefix
+     *
+     * @return void
+     */
+    protected function registerBladeComponentClassDirectory(string $directory, string $namespace): void
+    {
+        $filesystem = new Filesystem();
+
+        /**
+         * Directory doesn't existS.
+         */
+        if (!$filesystem->isDirectory($directory)) {
+            return;
+        }
+
+        collect($filesystem->allFiles($directory))
+            ->map(fn(SplFileInfo $file) => Str::of($namespace)
+                ->append("\\{$file->getRelativePathname()}")
+                ->replace(['/', '.php'], ['\\', ''])
+                ->toString())
+            ->filter(fn($class) => (is_subclass_of($class,
+                    \Illuminate\View\Component::class) && !(new ReflectionClass($class))->isAbstract()))
+            ->each(function ($class) use ($namespace) {
+                $this->registerSingleBladeComponent($class, $namespace);
+            });
+    }
+
+    /**
+     * Register livewire single component.
+     *
+     * @param string $class
+     * @param string $namespace
+     * @param string $aliasPrefix
+     *
+     * @return void
+     */
+    private function registerSingleBladeComponent(string $class, string $namespace): void
+    {
+        $alias = Str::of($class)
+            ->after($namespace . '\\')
+            ->replace(['/', '\\'], '.')
+            ->explode('.')
+            ->map([Str::class, 'kebab'])
+            ->implode('.');
+
+        $prefix = 'catalyst::x-';
+        $blade = Blade::component($alias, $class);
+
+        Str::endsWith($class, ['\Index', '\index'])
+            ? Blade::component($prefix . Str::beforeLast($alias, '.index'), $class)
+            : Blade::component($prefix . $alias, $class);
     }
 
     public function registerLivewireComponents($package)
@@ -164,7 +252,7 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
                     ->map([Str::class, 'kebab'])
                     ->implode('.');
                 $aliases->push($alias);
-                $this->registerSingleComponent($class, $namespace);
+                $this->registerSingleLivewireComponent($class, $namespace);
             });
     }
 
@@ -177,7 +265,7 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
      *
      * @return void
      */
-    private function registerSingleComponent(string $class, string $namespace): void
+    private function registerSingleLivewireComponent(string $class, string $namespace): void
     {
         $alias = Str::of($class)
             ->after($namespace . '\\')
