@@ -29,7 +29,13 @@ class SocialPanelProvider extends PanelProvider
             ->path('social')
             ->colors([
                 'primary' => Color::Amber,
+                'danger' => Color::Rose,
+                'gray' => Color::Gray,
+                'info' => Color::Blue,
+                'success' => Color::Emerald,
+                'warning' => Color::Orange,
             ])
+//            ->viteTheme('/public/css/omnia-digital/catalyst-core-plugin/catalyst-core-social-styles.css')
             ->discoverResources(
                 in: __DIR__ . '/../../Filament/Social/Resources',
                 for: 'OmniaDigital\\CatalystCore\\Filament\\Social\\Resources'
@@ -42,6 +48,7 @@ class SocialPanelProvider extends PanelProvider
 //                Home::class
 //                //                Pages\Dashboard::class,
 //            ])
+
             ->discoverWidgets(
                 in: '../../Filament/Social/Widgets',
                 for: 'OmniaDigital\\CatalystCore\\Filament\\Social\\Widgets'

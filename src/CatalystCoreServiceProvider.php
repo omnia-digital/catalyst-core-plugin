@@ -5,6 +5,7 @@ namespace OmniaDigital\CatalystCore;
 use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
+use Filament\Support\Assets\Theme;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
@@ -271,6 +272,7 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
     {
         return [
             // AlpineComponent::make('catalyst-core-plugin', __DIR__ . '/../resources/dist/components/catalyst-core-plugin.js'),
+            Css::make('catalyst-core-social-styles', __DIR__ . '/../resources/dist/catalyst-core-social.css')->loadedOnRequest(),
             Css::make('catalyst-core-plugin-styles', __DIR__ . '/../resources/dist/catalyst-core-plugin.css'),
             Js::make('catalyst-core-plugin-scripts', __DIR__ . '/../resources/dist/catalyst-core-plugin.js'),
         ];
