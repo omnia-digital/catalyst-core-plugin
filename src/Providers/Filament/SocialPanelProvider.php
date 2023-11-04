@@ -35,7 +35,7 @@ class SocialPanelProvider extends PanelProvider
                 'success' => Color::Emerald,
                 'warning' => Color::Orange,
             ])
-            ->renderHooks('panels::head.end', function () {
+            ->renderHook('panels::head.end', function () {
                 return view('catalyst::layouts.partials.head');
             })
             ->discoverResources(
