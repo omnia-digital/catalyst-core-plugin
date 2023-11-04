@@ -222,10 +222,6 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
         // Icon Registration
         FilamentIcon::register($this->getIcons());
 
-//        FilamentView::registerRenderHook('panels::head.start', function () {
-//            return view('catalyst::components.layouts.partials.omnia-library');
-//        });
-
         // Seeders
         if (app()->runningInConsole()) {
             foreach (app(Filesystem::class)->files(__DIR__ . '/../database/seeders/') as $file) {
