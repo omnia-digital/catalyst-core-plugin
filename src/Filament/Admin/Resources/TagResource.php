@@ -20,6 +20,8 @@ class TagResource extends Resource
 
     protected static ?string $navigationGroup = 'Settings';
 
+    protected static ?string $tenantOwnershipRelationshipName = 'teams';
+
     public static function getGloballySearchableAttributes(): array
     {
         return ['name', 'slug'];

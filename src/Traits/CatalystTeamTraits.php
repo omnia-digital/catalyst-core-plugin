@@ -22,7 +22,7 @@ use Spatie\Sluggable\SlugOptions;
 trait CatalystTeamTraits
 {
     use Awardable;
-        use HasLocation;
+    use HasLocation;
     use Followable;
     use HasAssociations;
 

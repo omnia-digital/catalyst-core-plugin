@@ -18,6 +18,7 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use OmniaDigital\CatalystCore\Filament\Admin\Pages\Dashboard;
+use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\CatalystForms\CatalystFormsPlugin;
 use ShuvroRoy\FilamentSpatieLaravelBackup\FilamentSpatieLaravelBackupPlugin;
 

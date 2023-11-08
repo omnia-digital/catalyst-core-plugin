@@ -31,6 +31,21 @@ class Catalyst
         return (new GeneralSettings)->{$setting};
     }
 
+    public static function getProjectsWordUpper()
+    {
+        return ucfirst(self::getProjectsWord());
+    }
+
+    public static function getProjectsWord()
+    {
+        return Translate::get('projects');
+    }
+
+    public static function getProjectsLetter()
+    {
+        return lcfirst(substr(self::getProjectsWord(), 0, 1));
+    }
+
     public static function getTeamsWordUpper()
     {
         return ucfirst(self::getTeamsWord());

@@ -17,6 +17,7 @@ use OmniaDigital\CatalystCore\Livewire\Pages\Profiles\Followers as ProfileFollow
 use OmniaDigital\CatalystCore\Livewire\Pages\Profiles\Media as ProfileMedia;
 use OmniaDigital\CatalystCore\Livewire\Pages\Profiles\Show as ShowProfile;
 use OmniaDigital\CatalystCore\Livewire\Pages\Profiles\Teams as ProfileTeams;
+use OmniaDigital\CatalystCore\Livewire\Pages\Projects\Show as ShowProject;
 use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Admin\ManageTeamMembers as TeamMembers;
 use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Admin\TeamAdmin as EditTeam;
 use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Apply as ApplyToTeam;
@@ -49,6 +50,11 @@ Route::name('catalyst-social.')->prefix('social')
             GuestAccessMiddleware::class,
             'verified',
         ])->name('teams.show');
+        Route::get('/' . Catalyst::getProjectsLetter() . '/{project}', ShowProject::class)->middleware([
+            GuestAccessMiddleware::class,
+            'verified',
+        ])->name('projects.show');
+
         // Auth Routes
         Route::middleware([
 //            'auth.session',
