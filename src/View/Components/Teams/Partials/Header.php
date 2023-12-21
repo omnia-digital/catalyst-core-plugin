@@ -28,6 +28,6 @@ class Header extends Component
      */
     public function render()
     {
-        return view('components.teams.partials.header');
+        return view('catalyst::components.teams.partials.header');
     }
 }

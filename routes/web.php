@@ -9,9 +9,9 @@ Route::get('r/{url?}', function ($url) {
     return redirect($url);
 })->where('url', '.*');
 
-//Route::get('login', function () {
-//    return redirect()->route(config('catalyst-settings.login_route'));
-//})->name('login');
+Route::get('login', function () {
+    return redirect()->route(config('catalyst-settings.login_route'));
+})->name('catalyst.login');
 
 //Route::get('register', function () {
 //    return view('catalyst::auth.register');

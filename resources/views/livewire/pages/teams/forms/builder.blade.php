@@ -2,7 +2,7 @@
 
 @section('content')
     <div>
-        <x-teams.partials.header :team="$team"/>
+        <catalyst::x-teams.partials.header :team="$team"/>
         <div class="p-8">
             <x-library::heading.2>{{ Translate::get('Team Admin Panel: Form Builder') }}</x-library::heading.2>
         </div>

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="">
-        <x-teams.partials.header :team="$team"/>
+        <catalyst::x-teams.partials.header :team="$team"/>
 
         <!-- Page Heading -->
         <div class="flex p-4 sticky items-center justify-between">

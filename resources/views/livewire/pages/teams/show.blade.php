@@ -181,13 +181,13 @@
                 {{--            </div>--}}
 
                 <div class="col-span-12">
-                    <livewire:reviews::review-list :model="$team"/>
+{{--                    <livewire:reviews::review-list :model="$team"/>--}}
                 </div>
             </div>
         </div>
 
         @if ($this->canViewTeamContent)
-            <livewire:reviews::create-review-modal :model="$team"/>
+{{--            <livewire:reviews::create-review-modal :model="$team"/>--}}
             <livewire:media-manager :handleUploadProcess="false"/>
         @endif
 

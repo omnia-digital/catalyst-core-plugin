@@ -6,7 +6,7 @@
             <div class="flex w-2/3 md:w-72 pl-2 lg:pl-4 pr-4 md:pr-0 space-x-4 md:space-x-1">
                 <!-- Logo -->
                 <div class="flex items-center h-14 flex-shrink-0">
-                    <a href="{{ route('catalyst-social.home') }}"
+                    <a href="/"
                        title="{{ env('APP_NAME') }}"
                        class="text-base-text-color py-2 group flex justify-left items-center text-xl space-x-2 font-medium">
                         @if (config('app.logo_path'))

@@ -2,13 +2,10 @@
 
 namespace OmniaDigital\CatalystCore\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Jetstream\Events\TeamCreated;
-use Laravel\Jetstream\Events\TeamDeleted;
-use Laravel\Jetstream\Events\TeamUpdated;
 use Laravel\Jetstream\HasProfilePhoto;
-use OmniaDigital\CatalystCore\Database\Factories\TeamFactory;
 use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Traits\Awardable;
 use OmniaDigital\CatalystCore\Traits\HasAssociations;
@@ -16,12 +13,10 @@ use OmniaDigital\CatalystCore\Traits\Likable;
 use OmniaDigital\CatalystCore\Traits\Postable;
 use OmniaDigital\CatalystLocation\Traits\Location\HasLocation;
 use Overtrue\LaravelFollow\Traits\Followable;
+use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Searchable\Searchable;
 use Spatie\Searchable\SearchResult;
-use Spatie\MediaLibrary\HasMedia;
-use OmniaDigital\CatalystCore\Traits\CatalystTeamTraits;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Spatie\Tags\HasTags;
@@ -31,23 +26,23 @@ use Spatie\Tags\HasTags;
  */
 class Project extends Model implements HasMedia, Searchable
 {
-    use HasFactory;
+//    use HasFactory;
     use Awardable;
     use HasLocation;
     use Followable;
     use HasAssociations;
     use HasProfilePhoto;
     use HasSlug;
-    use HasTags,
+    use HasTags;
     use InteractsWithMedia;
     use Likable;
     use Notifiable;
     use Postable;
 
-    protected static function newFactory()
-    {
-        return app(TeamFactory::class);
-    }
+//    protected static function newFactory()
+//    {
+//        return app(ProjectFactory::class);
+//    }
 
     /**
      * The attributes that are mass assignable.
@@ -91,10 +86,18 @@ class Project extends Model implements HasMedia, Searchable
     {
         $url = route('catalyst-social.projects.show', $this);
 
-        return (new SearchResult($this, $this->name, $url))->setType(Translate::get('Teams'));
+        return (new SearchResult($this, $this->name, $url))->setType(Translate::get('Projects'));
     }
 
-public function getSlugOptions(): SlugOptions
-{
-    // TODO: Implement getSlugOptions() method.
-}}
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name')
+            ->saveSlugsTo('handle');
+    }
+
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
+}

@@ -25,7 +25,7 @@ return new class extends Migration
             $table->integer('rating')->nullable();
             $table->string('languages')->default('English');
             $table->timestamps();
-            $table->foreignIdFor(app('team'))->nullable();
+            $table->foreignIdFor(\OmniaDigital\CatalystCore\Models\Team::class)->nullable();
             $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
         });
     }

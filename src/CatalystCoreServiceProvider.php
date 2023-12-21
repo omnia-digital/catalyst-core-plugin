@@ -74,7 +74,8 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
         $package->hasConfigFile($configFileName);
 
         if (file_exists($package->basePath('/../database/migrations'))) {
-            $package->hasMigrations($this->getMigrations());
+            $this->loadMigrationsFrom(__DIR__ . '/../database/migrations/');
+            $this->loadMigrationsFrom(__DIR__ . '/../database/settings/');
             $package->runsMigrations();
         }
 
@@ -117,17 +118,18 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
         ];
     }
 
-    /**
-     * @return array<string>
-     */
-    protected function getMigrations() : Collection
-    {
-        $migrations = collect();
-        foreach (app(Filesystem::class)->files(__DIR__ . '/../database/migrations/') as $file) {
-            $migrations->push($file->getBasename(suffix: '.php'));
-        }
-        return $migrations;
-    }
+//    /**
+//     * @return array<string>
+//     */
+//    protected function getMigrations() : Collection
+//    {
+//        $migrations = collect();
+//        foreach (app(Filesystem::class)->files(__DIR__ . '/../database/migrations/') as $file) {
+//            $migrations->push($file->getBasename(suffix: '.php'));
+//        }
+//        $this->loadMigrationsFrom(__DIR__ . '/../database/settings/');
+//        return $migrations;
+//    }
 
     public function registerBladeComponents($package)
     {

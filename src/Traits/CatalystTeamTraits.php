@@ -2,8 +2,16 @@
 
 namespace OmniaDigital\CatalystCore\Traits;
 
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\Relation;
+use Laravel\Cashier\Subscription;
+use OmniaDigital\CatalystCore\Enums\PostType;
+use OmniaDigital\CatalystCore\Models\NullMedia;
+use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\CatalystCore\Models\Role;
+use OmniaDigital\CatalystCore\Models\TeamApplication;
+use OmniaDigital\CatalystCore\Models\TeamNotification;
 use OmniaDigital\CatalystCore\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Notifications\Notifiable;
@@ -13,6 +21,7 @@ use Laravel\Jetstream\Events\TeamUpdated;
 use Laravel\Jetstream\HasProfilePhoto;
 use OmniaDigital\CatalystCore\Traits\Tag\HasTeamTags;
 use OmniaDigital\CatalystCore\Traits\Tag\HasTeamTypeTags;
+use OmniaDigital\CatalystForms\Models\FormType;
 use OmniaDigital\CatalystLocation\Traits\Location\HasLocation;
 use Overtrue\LaravelFollow\Traits\Followable;
 use Spatie\MediaLibrary\InteractsWithMedia;

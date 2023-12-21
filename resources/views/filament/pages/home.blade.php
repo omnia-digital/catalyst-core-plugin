@@ -1,4 +1,5 @@
-{{--@extends('filament.layouts.default-page-layout')--}}
+{{--@extends('catalyst::livewire.layouts.pages.default-page-layout')--}}
+{{--@section('page-layout')--}}
 
 <x-filament-panels::page>
     <div>
@@ -150,3 +151,4 @@
         @endpush
     </div>
 </x-filament-panels::page>
+{{--@endsection--}}
