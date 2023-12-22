@@ -2,8 +2,9 @@
 
 namespace OmniaDigital\CatalystCore\Database\Seeders;
 
+use Illuminate\Support\Facades\DB;
 use OmniaDigital\CatalystCore\Models\Post;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use OmniaDigital\CatalystCore\Notifications\NewCommentNotification;
 use OmniaDigital\CatalystCore\Notifications\NewFollowerNotification;
@@ -18,7 +19,7 @@ class NotificationTableSeeder extends Seeder
      */
     public function run()
     {
-        foreach (User::all() as $user) {
+        foreach (User::all()->random(10) as $user) {
             $user->notify(new NewFollowerNotification(User::inRandomOrder()->first()));
             $user->notify(new NewCommentNotification(Post::inRandomOrder()->first(), User::inRandomOrder()->first()));
             $user->notify(new PostWasRepostedNotification(Post::inRandomOrder()->first(), User::inRandomOrder()->first()));

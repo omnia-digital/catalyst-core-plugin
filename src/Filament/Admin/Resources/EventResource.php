@@ -52,8 +52,14 @@ class EventResource extends Resource
                     ->required(),
                 Forms\Components\Toggle::make('is_published')
                     ->required(),
-                Forms\Components\TextInput::make('status')
-                    ->maxLength(255),
+                Forms\Components\Select::make('status')
+                    ->options([
+                        'draft' => 'Draft',
+                        'pending' => 'Pending Approval',
+                        'approved' => 'Approved',
+                        'denied' => 'Denied',
+                        'cancelled' => 'Cancelled',
+                    ]),
             ]);
     }
 

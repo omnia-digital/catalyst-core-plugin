@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Partials;
 
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Livewire\Component;
 
 class WhoToFollowSection extends Component

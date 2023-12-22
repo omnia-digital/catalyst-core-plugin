@@ -7,7 +7,7 @@ use Livewire\Component;
 use OmniaDigital\CatalystCore\Events\TeamMemberSubscriptionCreatedEvent;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
 use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use OmniaDigital\OmniaLibrary\Livewire\WithModal;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 

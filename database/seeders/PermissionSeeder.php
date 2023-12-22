@@ -2,6 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Database\Seeders;
 
+use App\Models\User;
+use BezhanSalleh\FilamentShield\Support\Utils;
 use OmniaDigital\CatalystCore\Models\Team;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Artisan;
@@ -13,6 +15,9 @@ class PermissionSeeder extends Seeder
 {
     public function run()
     {
+        // add Omnia Admin as super admin
+        Artisan::call('shield:super-admin --user=1');
+
         $teamPermissions = [
             'create_team',
             'read_team',
@@ -138,8 +143,5 @@ class PermissionSeeder extends Seeder
 
         // Generate all remaining permissions using shield
         Artisan::call('shield:generate --option=permissions --all');
-
-        // add Omnia Admin as super admin
-        Artisan::call('shield:super-admin --user=1');
     }
 }

@@ -4,7 +4,7 @@ namespace OmniaDigital\CatalystCore\Policies;
 
 use OmniaDigital\CatalystCore\Settings\BillingSettings;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 
 class BillingSettingsPolicy
 {
@@ -47,6 +47,6 @@ class BillingSettingsPolicy
 
     private function isSuperAdmin(User $user)
     {
-        return $user->hasRole('super-admin');
+        return $user->hasRole('super_admin');
     }
 }

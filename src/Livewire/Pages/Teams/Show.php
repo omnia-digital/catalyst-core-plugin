@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams;
 
 use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;

@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Livewire\Components\Teams;
 
 use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use OmniaDigital\CatalystCore\Traits\Filter\WithSortAndFilters;
 use OmniaDigital\CatalystCore\Traits\Team\WithTeamManagement;
 use Illuminate\Contracts\Foundation\Application;

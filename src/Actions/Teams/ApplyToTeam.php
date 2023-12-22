@@ -9,7 +9,7 @@ use Laravel\Jetstream\Events\InvitedTeamMember;
 use Laravel\Jetstream\Jetstream;
 use Laravel\Jetstream\Rules\Role;
 use OmniaDigital\CatalystCore\Facades\Translate;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 
 class ApplyToTeam
 {

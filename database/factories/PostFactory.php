@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Database\Factories;
 
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use OmniaDigital\CatalystCore\Enums\PostType;
 use OmniaDigital\CatalystCore\Models\Post;

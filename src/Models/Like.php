@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Models;
 
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use OmniaDigital\CatalystCore\Facades\Translate;

@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Database\Factories;
 
 use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Laravel\Jetstream\Features;
 use OmniaDigital\CatalystCore\Models\Profile;

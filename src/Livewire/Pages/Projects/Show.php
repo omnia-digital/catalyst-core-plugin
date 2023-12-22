@@ -5,7 +5,7 @@ namespace OmniaDigital\CatalystCore\Livewire\Pages\Projects;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
 use OmniaDigital\CatalystCore\Models\Project;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 use OmniaDigital\CatalystLocation\Models\Location;
 use OmniaDigital\OmniaLibrary\Livewire\WithMap;

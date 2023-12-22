@@ -4,7 +4,7 @@ namespace OmniaDigital\CatalystCore\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Spatie\Permission\Models\Role;
 
 /**

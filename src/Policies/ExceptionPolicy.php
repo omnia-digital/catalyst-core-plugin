@@ -5,7 +5,7 @@ namespace OmniaDigital\CatalystCore\Policies;
 use BezhanSalleh\FilamentExceptions\Models\Exception;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Auth\Access\Response;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 
 class ExceptionPolicy
 {

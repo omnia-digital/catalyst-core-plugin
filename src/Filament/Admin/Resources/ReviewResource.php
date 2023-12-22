@@ -11,7 +11,7 @@ use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Filament\Resources\ReviewResource\Pages;
 use OmniaDigital\CatalystCore\Filament\Resources\ReviewResource\RelationManagers;
 use OmniaDigital\CatalystCore\Models\Review;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 
 class ReviewResource extends Resource
 {

@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Livewire\Pages\Teams;
 
 use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\App;
 use Livewire\Component;

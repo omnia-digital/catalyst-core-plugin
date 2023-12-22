@@ -12,7 +12,7 @@ return new class extends Migration
 //        Schema::create('stripe_connect_customers', function (Blueprint $table) {
         //$table->id();
         //$table->foreignIdFor(\OmniaDigital\CatalystCore\Models\Team::class);
-        //$table->foreignIdFor(\OmniaDigital\CatalystCore\Models\User::class);
+        //$table->foreignIdFor(\App\Models\User::class);
         //$table->string('stripe_customer_id');
         //$table->timestamps();
 //        });

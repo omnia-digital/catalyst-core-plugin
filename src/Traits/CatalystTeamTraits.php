@@ -12,7 +12,7 @@ use OmniaDigital\CatalystCore\Models\Post;
 use OmniaDigital\CatalystCore\Models\Role;
 use OmniaDigital\CatalystCore\Models\TeamApplication;
 use OmniaDigital\CatalystCore\Models\TeamNotification;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Jetstream\Events\TeamCreated;

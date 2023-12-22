@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Policies;
 
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use OmniaDigital\CatalystCore\Models\Profile;
 

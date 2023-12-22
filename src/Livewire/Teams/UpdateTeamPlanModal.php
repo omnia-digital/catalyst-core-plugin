@@ -6,7 +6,7 @@ use Illuminate\Validation\Rule;
 use Laravel\Cashier\Subscription;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use OmniaDigital\OmniaLibrary\Livewire\WithModal;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 

@@ -8,7 +8,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use OmniaDigital\CatalystCore\Filament\Resources\UserScoreContributionResource\Pages;
+use Illuminate\Support\Facades\Auth;
 use OmniaDigital\CatalystCore\Models\UserScoreContribution;
 
 class UserScoreContributionResource extends Resource

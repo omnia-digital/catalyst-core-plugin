@@ -5,7 +5,7 @@ namespace OmniaDigital\CatalystCore\Actions\Fortify;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\ResetsUserPasswords;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 
 class ResetUserPassword implements ResetsUserPasswords
 {

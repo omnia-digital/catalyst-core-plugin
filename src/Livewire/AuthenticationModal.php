@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire;
 
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Fortify\Rules\Password;

@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Database\Seeders;
 
 use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use OmniaDigital\CatalystCore\Models\Award;
 

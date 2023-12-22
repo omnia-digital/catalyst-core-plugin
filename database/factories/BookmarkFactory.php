@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Database\Factories;
 
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use OmniaDigital\CatalystCore\Models\Bookmark;
 use OmniaDigital\CatalystCore\Models\Post;

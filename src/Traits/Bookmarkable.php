@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Traits;
 
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use OmniaDigital\CatalystCore\Models\Bookmark;

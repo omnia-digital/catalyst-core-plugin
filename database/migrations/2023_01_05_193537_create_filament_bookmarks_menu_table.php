@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('menu_url');
             $table->string('menu_target')->default('_self')->nullable();
             $table->integer('sort_order')->default(0);
-            $table->foreignIdFor(\OmniaDigital\CatalystCore\Models\User::class, 'menu_user_id')->nullable();
+            $table->foreignIdFor(\App\Models\User::class, 'menu_user_id')->nullable();
             $table->timestamps();
         });
     }

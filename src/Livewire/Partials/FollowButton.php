@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire\Partials;
 
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Notifications\NewFollowerNotification;

@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Actions\Salesforce;
 
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Omniphx\Forrest\Providers\Laravel\Facades\Forrest;
 

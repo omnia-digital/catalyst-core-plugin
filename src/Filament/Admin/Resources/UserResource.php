@@ -18,7 +18,7 @@ use OmniaDigital\CatalystCore\Filament\Resources\Closure;
 use OmniaDigital\CatalystCore\Filament\Resources\Model;
 use OmniaDigital\CatalystCore\Filament\Resources\UserResource\Pages;
 use OmniaDigital\CatalystCore\Filament\Resources\UserResource\RelationManagers;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use STS\FilamentImpersonate\Tables\Actions\Impersonate;
 
 class UserResource extends Resource

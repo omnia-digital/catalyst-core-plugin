@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Livewire\Components\Teams;
 
 use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Omnia\LivewireCalendar\LivewireCalendar;
 use OmniaDigital\CatalystCore\Support\Livewire\InteractsWithCalendarTeams;
 

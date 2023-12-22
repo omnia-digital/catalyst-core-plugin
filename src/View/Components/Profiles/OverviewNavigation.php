@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\Component;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 
 class OverviewNavigation extends Component
 {

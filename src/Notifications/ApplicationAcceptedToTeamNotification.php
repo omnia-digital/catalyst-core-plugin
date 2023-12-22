@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Notifications;
 
 use OmniaDigital\CatalystCore\Models\Team;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use OmniaDigital\CatalystCore\Notifications\BaseNotification;
 use OmniaDigital\CatalystCore\Support\Notification\NotificationCenter;
 use OmniaDigital\CatalystCore\Facades\Translate;

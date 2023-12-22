@@ -6,8 +6,8 @@ use Filament\Facades\Filament;
 
 class Authenticate extends \Filament\Http\Middleware\Authenticate
 {
-//    protected function redirectTo($request): ?string
-//    {
-//        return Filament::getLoginUrl();
-//    }
+    protected function redirectTo($request): ?string
+    {
+        return Filament::getLoginUrl();
+    }
 }

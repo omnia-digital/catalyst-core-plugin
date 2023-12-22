@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Traits;
 
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use BezhanSalleh\FilamentShield\Traits\HasPanelShield;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -102,7 +102,7 @@ trait CatalystUserTraits
 
     public function getIsAdminAttribute()
     {
-        return $this->hasRole('super-admin');
+        return $this->hasRole('super_admin');
     }
 
     /// Routes ///

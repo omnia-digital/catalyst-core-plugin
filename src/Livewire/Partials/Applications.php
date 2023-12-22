@@ -4,7 +4,7 @@ namespace OmniaDigital\CatalystCore\Livewire\Partials;
 
 use OmniaDigital\CatalystCore\Models\TeamApplication;
 use OmniaDigital\CatalystCore\Models\TeamInvitation;
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Laravel\Jetstream\Contracts\AddsTeamMembers;
 use Livewire\Component;
 

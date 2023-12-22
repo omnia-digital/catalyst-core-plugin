@@ -2,7 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Livewire;
 
-use OmniaDigital\CatalystCore\Models\User;
+use App\Models\User;
 use Livewire\Component;
 use OmniaDigital\CatalystCore\Models\Post;
 
