@@ -47,6 +47,7 @@ class RoleResource extends ShieldRoleResource implements HasShieldPermissions
                             ->schema([
                                 Forms\Components\TextInput::make('name')
                                     ->label(__('filament-shield::filament-shield.field.name'))
+                                    ->unique(ignoreRecord: true)
                                     ->required()
                                     ->maxLength(255),
                                 Forms\Components\TextInput::make('guard_name')
@@ -79,10 +80,7 @@ class RoleResource extends ShieldRoleResource implements HasShieldPermissions
                             ->schema([
                                 Forms\Components\Grid::make()
                                     ->schema(static::getResourceEntitiesSchema())
-                                    ->columns([
-                                        'sm' => 1,
-                                        'lg' => 1,
-                                    ]),
+                                    ->columns(FilamentShieldPlugin::get()->getGridColumns()),
                             ]),
                         Forms\Components\Tabs\Tab::make(__('filament-shield::filament-shield.pages'))
                             ->visible(fn (): bool => (bool) Utils::isPageEntityEnabled() && (count(FilamentShield::getPages()) > 0 ? true : false))
@@ -119,11 +117,8 @@ class RoleResource extends ShieldRoleResource implements HasShieldPermissions
                                     ->dehydrated(fn ($state) => blank($state) ? false : true)
                                     ->bulkToggleable()
                                     ->gridDirection('row')
-                                    ->columns([
-                                        'sm' => 2,
-                                        'lg' => 4,
-                                    ])
-                                    ->columnSpanFull(),
+                                    ->columns(FilamentShieldPlugin::get()->getCheckboxListColumns())
+                                    ->columnSpan(FilamentShieldPlugin::get()->getCheckboxListColumnSpan()),
                             ]),
                         Forms\Components\Tabs\Tab::make(__('filament-shield::filament-shield.widgets'))
                             ->visible(fn (): bool => (bool) Utils::isWidgetEntityEnabled() && (count(FilamentShield::getWidgets()) > 0 ? true : false))
@@ -161,11 +156,8 @@ class RoleResource extends ShieldRoleResource implements HasShieldPermissions
                                     ->dehydrated(fn ($state) => blank($state) ? false : true)
                                     ->bulkToggleable()
                                     ->gridDirection('row')
-                                    ->columns([
-                                        'sm' => 2,
-                                        'lg' => 4,
-                                    ])
-                                    ->columnSpanFull(),
+                                    ->columns(FilamentShieldPlugin::get()->getCheckboxListColumns())
+                                    ->columnSpan(FilamentShieldPlugin::get()->getCheckboxListColumnSpan()),
                             ]),
                         Forms\Components\Tabs\Tab::make(__('filament-shield::filament-shield.custom'))
                             ->visible(fn (): bool => (bool) Utils::isCustomPermissionEntityEnabled() && (count(static::getCustomEntities()) > 0 ? true : false))
@@ -202,11 +194,8 @@ class RoleResource extends ShieldRoleResource implements HasShieldPermissions
                                     ->dehydrated(fn ($state) => blank($state) ? false : true)
                                     ->bulkToggleable()
                                     ->gridDirection('row')
-                                    ->columns([
-                                        'sm' => 2,
-                                        'lg' => 4,
-                                    ])
-                                    ->columnSpanFull(),
+                                    ->columns(FilamentShieldPlugin::get()->getCheckboxListColumns())
+                                    ->columnSpan(FilamentShieldPlugin::get()->getCheckboxListColumnSpan()),
                             ]),
                     ])
                     ->columnSpan('full'),
@@ -330,6 +319,7 @@ class RoleResource extends ShieldRoleResource implements HasShieldPermissions
         }
 
         return collect(FilamentShield::getResources())->sortKeys()->reduce(function ($entities, $entity) {
+
             $entities[] = Forms\Components\Section::make(FilamentShield::getLocalizedResourceLabel($entity['fqcn']))
                 ->description(fn () => new HtmlString('<span style="word-break: break-word;">' . Utils::showModelPath($entity['fqcn']) . '</span>'))
                 ->compact()
@@ -365,13 +355,9 @@ class RoleResource extends ShieldRoleResource implements HasShieldPermissions
                         ->dehydrated(fn ($state) => blank($state) ? false : true)
                         ->bulkToggleable()
                         ->gridDirection('row')
-                        ->columns([
-                            'default' => 2,
-                            'sm' => 3,
-                            'lg' => 4,
-                        ]),
+                        ->columns(FilamentShieldPlugin::get()->getResourceCheckboxListColumns()),
                 ])
-                ->columnSpanFull()
+                ->columnSpan(FilamentShieldPlugin::get()->getSectionColumnSpan())
                 ->collapsible();
 
             return $entities;
@@ -397,7 +383,9 @@ class RoleResource extends ShieldRoleResource implements HasShieldPermissions
 
     public static function setPermissionStateForRecordPermissions(Component $component, string $operation, array $permissions, ?Model $record): void
     {
+
         if (in_array($operation, ['edit', 'view'])) {
+
             if (blank($record)) {
                 return;
             }
@@ -476,17 +464,6 @@ class RoleResource extends ShieldRoleResource implements HasShieldPermissions
             ->toArray();
     }
 
-    public static function bulkToggleableAction(FormAction $action, Component $component, $livewire, Forms\Set $set, bool $resetState = false): void
-    {
-        $action
-            ->livewireClickHandlerEnabled(true)
-            ->action(function () use ($component, $livewire, $set, $resetState) {
-                /** @phpstan-ignore-next-line */
-                $component->state($resetState ? [] : array_keys($component->getOptions()));
-                static::toggleSelectAllViaEntities($livewire, $set);
-            });
-    }
-
     protected static function getCustomEntities(): ?Collection
     {
         $resourcePermissions = collect();
@@ -502,5 +479,16 @@ class RoleResource extends ShieldRoleResource implements HasShieldPermissions
             ->values();
 
         return static::$permissionsCollection->whereNotIn('name', $entitiesPermissions)->pluck('name');
+    }
+
+    public static function bulkToggleableAction(FormAction $action, Component $component, $livewire, Forms\Set $set, bool $resetState = false): void
+    {
+        $action
+            ->livewireClickHandlerEnabled(true)
+            ->action(function () use ($component, $livewire, $set, $resetState) {
+                /** @phpstan-ignore-next-line */
+                $component->state($resetState ? [] : array_keys($component->getOptions()));
+                static::toggleSelectAllViaEntities($livewire, $set);
+            });
     }
 }

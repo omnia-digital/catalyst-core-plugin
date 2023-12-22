@@ -136,15 +136,15 @@ class PermissionResource extends Resource implements HasShieldPermissions
             : '';
     }
 
-    public static function getNavigationLabel(): string
-    {
-        return __('filament-shield::filament-shield.nav.permission.label');
-    }
+//    public static function getNavigationLabel(): string
+//    {
+//        return __('filament-shield::filament-shield.nav.permission.label');
+//    }
 
-    public static function getNavigationIcon(): ?string
-    {
-        return __('filament-shield::filament-shield.nav.permission.icon');
-    }
+//    public static function getNavigationIcon(): ?string
+//    {
+//        return __('filament-shield::filament-shield.nav.permission.icon');
+//    }
 
     public static function getNavigationSort(): ?int
     {
