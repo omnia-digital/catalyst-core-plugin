@@ -24,6 +24,7 @@ return new class extends Migration
             $table->dateTimeTz('ends_at')->nullable();
             $table->boolean('is_all_day')->default(false);
             $table->boolean('is_recurring')->default(false);
+            $table->boolean('is_public')->default(false);
             $table->boolean('is_published')->default(false);
             $table->string('status')->nullable();
             $table->foreignIdFor(\App\Models\User::class, 'created_by');

@@ -49,7 +49,7 @@ class EventCalendarListPartial extends Component
 
     public function getRowsQueryProperty(): Builder
     {
-        $query = Event::query();
+        $query = Event::query()->where('is_published', true)->where('is_public', true);
 
         $query = $this->applyFilters($query);
         $query = $this->applySorting($query);

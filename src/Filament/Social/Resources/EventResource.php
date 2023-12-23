@@ -2,15 +2,13 @@
 
 namespace OmniaDigital\CatalystCore\Filament\Social\Resources;
 
-use OmniaDigital\CatalystCore\Filament\Social\Resources\EventResource\Pages;
-use OmniaDigital\CatalystCore\Filament\Social\Resources\EventResource\RelationManagers;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Database\Eloquent\Model;
+use OmniaDigital\CatalystCore\Filament\Social\Resources\EventResource\Pages;
 use OmniaDigital\CatalystCore\Models\Event;
 
 class EventResource extends Resource
@@ -18,12 +16,34 @@ class EventResource extends Resource
     protected static ?string $model = Event::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $label = 'My Events';
+    protected static ?int $navigationSort = 110;
+
+    public static function getEloquentQuery(): \Illuminate\Database\Eloquent\Builder
+    {
+        return parent::getEloquentQuery()->where('created_by', auth()->id());
+    }
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\Textarea::make('description')
+                    ->maxLength(65535)
+                    ->columnSpanFull(),
+                Forms\Components\Select::make('timezone')
+                    ->options(\DateTimeZone::listIdentifiers())
+                    ->required(),
+                Forms\Components\TextInput::make('url')
+                    ->maxLength(255),
+                Forms\Components\DateTimePicker::make('starts_at'),
+                Forms\Components\DateTimePicker::make('ends_at'),
+                Forms\Components\Toggle::make('is_all_day'),
+                Forms\Components\Toggle::make('is_recurring'),
+                Forms\Components\Toggle::make('is_public'),
             ]);
     }
 
@@ -31,7 +51,37 @@ class EventResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('location_id')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('timezone')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('url')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('starts_at')
+                    ->dateTime()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('ends_at')
+                    ->dateTime()
+                    ->sortable(),
+                Tables\Columns\IconColumn::make('is_all_day')
+                    ->boolean(),
+                Tables\Columns\IconColumn::make('is_recurring')
+                    ->boolean(),
+                Tables\Columns\IconColumn::make('is_published')
+                    ->boolean(),
+                Tables\Columns\TextColumn::make('status')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
