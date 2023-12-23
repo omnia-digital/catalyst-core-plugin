@@ -33,6 +33,15 @@ class Event extends Model
         'location_id',
     ];
 
+    protected $casts = [
+        'starts_at' => 'datetime',
+        'ends_at' => 'datetime',
+        'is_public' => 'boolean',
+        'is_recurring' => 'boolean',
+        'is_published' => 'boolean',
+        'is_all_day' => 'boolean',
+    ];
+
     public function createdBy(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');

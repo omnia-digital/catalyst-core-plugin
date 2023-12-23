@@ -2,18 +2,15 @@
 
 namespace OmniaDigital\CatalystCore\Filament\Admin\Resources;
 
-use Illuminate\Database\Eloquent\Model;
-use OmniaDigital\CatalystCore\Filament\Admin\Resources\EventResource\Pages;
-use OmniaDigital\CatalystCore\Filament\Admin\Resources\EventResource\RelationManagers;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Database\Eloquent\Model;
+use OmniaDigital\CatalystCore\Filament\Admin\Resources\EventResource\Pages;
+use OmniaDigital\CatalystCore\Filament\Admin\Resources\EventResource\RelationManagers;
 use OmniaDigital\CatalystCore\Models\Event;
-use Spatie\LaravelData\Attributes\Validation\Timezone;
 
 class EventResource extends Resource
 {
@@ -24,43 +21,48 @@ class EventResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([
-                Forms\Components\Select::make('created_by')
-                    ->relationship(name:'createdBy')
-                    ->getOptionLabelFromRecordUsing(fn (Model $record) => "{$record->name}")
-                    ->searchable()
-                    ->required(),
-                Forms\Components\Select::make('team_id')
-                    ->relationship(name:'team',titleAttribute: 'name')->searchable(),
+            ->schema(self::getFormFields());
+    }
+
+    public static function getFormFields()
+    {
+        return [
+            Forms\Components\Select::make('created_by')
+                ->relationship(name: 'createdBy')
+                ->getOptionLabelFromRecordUsing(fn(Model $record) => "{$record->name}")
+//                    ->searchable()
+                ->required(),
+            Forms\Components\Select::make('team_id')
+                ->relationship(name: 'team', titleAttribute: 'name')->searchable(),
 //                Forms\Components\TextInput::make('location_id'),
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('description')
-                    ->maxLength(65535)
-                    ->columnSpanFull(),
-                Forms\Components\Select::make('timezone')
-                    ->options(\DateTimeZone::listIdentifiers())
-                    ->required(),
-                Forms\Components\TextInput::make('url')
-                    ->maxLength(255),
-                Forms\Components\DateTimePicker::make('starts_at'),
-                Forms\Components\DateTimePicker::make('ends_at'),
-                Forms\Components\Toggle::make('is_all_day')
-                    ->required(),
-                Forms\Components\Toggle::make('is_recurring')
-                    ->required(),
-                Forms\Components\Toggle::make('is_published')
-                    ->required(),
-                Forms\Components\Select::make('status')
-                    ->options([
-                        'draft' => 'Draft',
-                        'pending' => 'Pending Approval',
-                        'approved' => 'Approved',
-                        'denied' => 'Denied',
-                        'cancelled' => 'Cancelled',
-                    ]),
-            ]);
+            Forms\Components\TextInput::make('name')
+                ->required()
+                ->maxLength(255),
+            Forms\Components\Textarea::make('description')
+                ->maxLength(65535)
+                ->columnSpanFull(),
+            Forms\Components\Select::make('timezone')
+                ->options(\DateTimeZone::listIdentifiers())
+                ->required(),
+            Forms\Components\TextInput::make('url')
+                ->maxLength(255),
+            Forms\Components\DateTimePicker::make('starts_at'),
+            Forms\Components\DateTimePicker::make('ends_at'),
+            Forms\Components\Toggle::make('is_all_day')
+                ->required(),
+            Forms\Components\Toggle::make('is_recurring')
+                ->required(),
+            Forms\Components\Toggle::make('is_published')
+                ->required(),
+            Forms\Components\Select::make('status')
+                ->options([
+                    'draft' => 'Draft',
+                    'pending' => 'Pending Approval',
+                    'approved' => 'Approved',
+                    'denied' => 'Denied',
+                    'cancelled' => 'Cancelled',
+                ]),
+        ];
     }
 
     public static function table(Table $table): Table
