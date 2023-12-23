@@ -30,7 +30,7 @@ trait WithSortAndFilters
     // https://omniaapp.slack.com/archives/G01LA6L3H60/p1656660776169019
     public array $members = [0, 0];
 
-    public array $tags = [];
+    public array $searchTags = [];
 
     public ?string $dateFilter = null;
 
@@ -103,7 +103,7 @@ trait WithSortAndFilters
             // members filter
             ->when(max($this->members) > 0, fn (Builder $query) => $query->havingBetween('users_count', $this->members))
             // tags
-            ->when(! empty($this->tags), fn (Builder $query) => $query->withAnyTags($this->tags))
+            ->when(! empty($this->searchTags), fn (Builder $query) => $query->withAnyTags($this->searchTags))
             // my_teams
             ->when(Arr::get($this->filters, 'my_teams'), fn (Builder $query) => $query->withUser(auth()->user()));
         //->when(Arr::get($this->filters, 'rating'), fn(Builder $query, $rating) => $query->whereIn('rating', $rating))

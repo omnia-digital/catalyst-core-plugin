@@ -32,7 +32,7 @@
     "calebporzio/sushi": "*",
     "codeat3/blade-teeny-icons": "*",
     "doctrine/dbal": "*",
-    "filament/filament": "^3.0",
+    "filament/filament": "^3.0-stable",
     "filament/spatie-laravel-media-library-plugin": "^3.0-stable",
     "filament/spatie-laravel-settings-plugin": "^3.0",
     "filament/spatie-laravel-tags-plugin": "^3.0-stable",
