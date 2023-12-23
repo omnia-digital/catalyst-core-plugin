@@ -2,6 +2,7 @@
 
 namespace OmniaDigital\CatalystCore;
 
+use BezhanSalleh\PanelSwitch\PanelSwitch;
 use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
@@ -350,6 +351,10 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
 
         Blade::if('guestAccess', function () {
             return (new GeneralSettings)->allow_guest_access;
+        });
+
+        PanelSwitch::configureUsing(function (PanelSwitch $panelSwitch) {
+            $panelSwitch->simple()->visible(fn (): bool => auth()->user()->is_admin);
         });
 
         // Testing
