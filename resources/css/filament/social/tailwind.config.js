@@ -13,7 +13,7 @@ export default {
         './vendor/laravel/jetstream/**/*.blade.php',
         './vendor/omnia-digital/library/resources/views/**/*.blade.php',
         './vendor/omnia-digital/library/resources/js/**/*.js',
-        './vendor/omnia-digitl/media-manager/resources/views/**/*.blade.php',
+        './vendor/omnia-digital/media-manager/resources/views/**/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './Modules/*/Resources/views/**/*.blade.php',
