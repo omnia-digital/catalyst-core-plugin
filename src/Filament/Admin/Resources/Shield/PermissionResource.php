@@ -17,6 +17,7 @@ class PermissionResource extends Resource implements HasShieldPermissions
     protected static ?string $recordTitleAttribute = 'name';
 
     protected static $permissionsCollection;
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
     public static function getPermissionPrefixes(): array
     {
