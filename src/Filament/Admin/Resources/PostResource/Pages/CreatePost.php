@@ -2,9 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Filament\Admin\Resources\PostResource\Pages;
 
-use OmniaDigital\CatalystCore\Filament\Admin\Resources\PostResource;
-use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
+use OmniaDigital\CatalystCore\Filament\Admin\Resources\PostResource;
 
 class CreatePost extends CreateRecord
 {

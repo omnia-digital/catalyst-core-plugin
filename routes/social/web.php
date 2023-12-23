@@ -3,13 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use OmniaDigital\CatalystCore\Catalyst;
 use OmniaDigital\CatalystCore\Facades\Translate;
-use OmniaDigital\CatalystCore\Filament\Social\Pages\Home;
+use OmniaDigital\CatalystCore\Filament\Social\Pages\Show as ShowPosts;
 use OmniaDigital\CatalystCore\Http\Middleware\GuestAccessMiddleware;
 use OmniaDigital\CatalystCore\Livewire\Pages\Bookmarks\Index;
 use OmniaDigital\CatalystCore\Livewire\Pages\Companies\Index as AllCompanies;
 use OmniaDigital\CatalystCore\Livewire\Pages\Contacts\Index as ContactsIndex;
 use OmniaDigital\CatalystCore\Livewire\Pages\Posts\Edit as EditPosts;
-use OmniaDigital\CatalystCore\Livewire\Pages\Posts\Show as ShowPosts;
 use OmniaDigital\CatalystCore\Livewire\Pages\Posts\Trending as DiscoverIndex;
 use OmniaDigital\CatalystCore\Livewire\Pages\Profiles\Awards as ProfileAwards;
 use OmniaDigital\CatalystCore\Livewire\Pages\Profiles\Edit as EditProfile;
@@ -31,6 +30,8 @@ use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Index as AllTeams;
 use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Map as TeamMap;
 use OmniaDigital\CatalystCore\Livewire\Pages\Teams\MyTeams;
 use OmniaDigital\CatalystCore\Livewire\Pages\Teams\Show as ShowTeam;
+
+//use OmniaDigital\CatalystCore\Livewire\Pages\Posts\Show as ShowPosts;
 
 
 Route::name('catalyst-social.')->prefix('social')

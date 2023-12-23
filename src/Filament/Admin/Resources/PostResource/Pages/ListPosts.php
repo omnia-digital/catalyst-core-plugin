@@ -2,9 +2,9 @@
 
 namespace OmniaDigital\CatalystCore\Filament\Admin\Resources\PostResource\Pages;
 
-use OmniaDigital\CatalystCore\Filament\Admin\Resources\PostResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
+use OmniaDigital\CatalystCore\Filament\Admin\Resources\PostResource;
 
 class ListPosts extends ListRecords
 {
