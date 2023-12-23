@@ -33,6 +33,7 @@ class SocialPanelProvider extends PanelProvider
         return $panel
             ->id('social')
             ->path('social')
+            ->login()
             ->colors([
                 'primary' => Color::Amber,
                 'danger' => Color::Rose,
@@ -88,18 +89,18 @@ class SocialPanelProvider extends PanelProvider
 //                    ->url('/resources')
 //                ->icon('fas-users')
 //            ])
-            ->userMenuItems([
-                MenuItem::make()->label('Settings'),
-                'profile' => MenuItem::make()->label('Edit profile'),
-
-            ])
-            ->tenantMenuItems([
-                MenuItem::make()
-                    ->label('Settings')
-                    ->url(fn (): string => Settings::getUrl())
-                    ->icon('heroicon-m-cog-8-tooth'),
-                // ...
-            ])
+//            ->userMenuItems([
+//                MenuItem::make()->label('Settings'),
+//                'profile' => MenuItem::make()->label('Edit profile'),
+//
+//            ])
+//            ->tenantMenuItems([
+//                MenuItem::make()
+//                    ->label('Settings')
+//                    ->url(fn (): string => Settings::getUrl())
+//                    ->icon('heroicon-m-cog-8-tooth'),
+//                // ...
+//            ])
 //            ->navigationGroups([
 //                NavigationGroup::make()
 //                    ->label('Settings')
