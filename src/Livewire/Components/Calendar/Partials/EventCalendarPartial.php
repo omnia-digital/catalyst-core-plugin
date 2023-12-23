@@ -19,7 +19,7 @@ class EventCalendarPartial extends LivewireCalendar
 
     public function events(): Collection
     {
-        return Event::query()
+        return Event::query()->publicAndPublished()
             ->whereDate('starts_at', '>=', $this->gridStartsAt)
             ->whereDate('starts_at', '<=', $this->gridEndsAt)
             ->get()

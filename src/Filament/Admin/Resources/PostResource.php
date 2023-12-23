@@ -2,7 +2,6 @@
 
 namespace OmniaDigital\CatalystCore\Filament\Admin\Resources;
 
-use App\Models\User;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -18,7 +17,8 @@ class PostResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'Social';
-protected static bool $shouldRegisterNavigation = false;
+    protected static bool $shouldRegisterNavigation = false;
+
     public static function form(Form $form): Form
     {
         return $form
@@ -26,7 +26,7 @@ protected static bool $shouldRegisterNavigation = false;
                 TextInput::make('title'),
                 TextInput::make('body'),
                 TextInput::make('title'),
-Select::make('user_id')->relationship('user','name'),
+                Select::make('user_id')->relationship('user', 'name'),
 //                'user_id',
 //                'team_id',
 //                'title',

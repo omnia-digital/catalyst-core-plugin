@@ -42,6 +42,11 @@ class Event extends Model
         'is_all_day' => 'boolean',
     ];
 
+    public function scopePublicAndPublished($query)
+    {
+        return $query->where('is_published', true)->where('is_public', true);
+    }
+
     public function createdBy(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');

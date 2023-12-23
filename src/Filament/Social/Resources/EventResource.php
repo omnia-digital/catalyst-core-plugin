@@ -8,6 +8,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use OmniaDigital\CatalystCore\Filament\Social\Resources\EventResource\Pages;
 use OmniaDigital\CatalystCore\Models\Event;
 
@@ -51,11 +52,14 @@ class EventResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('location_id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('name')
+                Tables\Columns\TextColumn::make('status')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('name')
+                    ->description(fn (Event $record) => Str::limit($record->description,50) ?? null)->limit(50)
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('location.name')
+                    ->description(fn (Event $record) => $record->location->address ?? null)
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('timezone')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('url')
@@ -72,8 +76,9 @@ class EventResource extends Resource
                     ->boolean(),
                 Tables\Columns\IconColumn::make('is_published')
                     ->boolean(),
-                Tables\Columns\TextColumn::make('status')
-                    ->searchable(),
+                Tables\Columns\IconColumn::make('is_public')
+                    ->boolean(),
+
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
