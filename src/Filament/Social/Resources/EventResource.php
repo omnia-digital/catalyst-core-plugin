@@ -3,11 +3,12 @@
 namespace OmniaDigital\CatalystCore\Filament\Social\Resources;
 
 use Filament\Forms;
+use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
 use OmniaDigital\CatalystCore\Filament\Social\Resources\EventResource\Pages;
 use OmniaDigital\CatalystCore\Models\Event;
@@ -20,6 +21,7 @@ class EventResource extends Resource
     protected static ?string $label = 'My Events';
     protected static ?int $navigationSort = 110;
 
+
     public static function getEloquentQuery(): \Illuminate\Database\Eloquent\Builder
     {
         return parent::getEloquentQuery()->where('created_by', auth()->id());
@@ -29,22 +31,39 @@ class EventResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('description')
-                    ->maxLength(65535)
+                Forms\Components\Placeholder::make('name')
+                    ->content(fn(Event $record): string => new HtmlString(ucfirst($record->name)))
+                    ->disabled()
                     ->columnSpanFull(),
-                Forms\Components\Select::make('timezone')
-                    ->options(\DateTimeZone::listIdentifiers())
-                    ->required(),
-                Forms\Components\TextInput::make('url')
-                    ->maxLength(255),
-                Forms\Components\DateTimePicker::make('starts_at'),
-                Forms\Components\DateTimePicker::make('ends_at'),
-                Forms\Components\Toggle::make('is_all_day'),
-                Forms\Components\Toggle::make('is_recurring'),
-                Forms\Components\Toggle::make('is_public'),
+                Forms\Components\Placeholder::make('status')
+                    ->content(fn(Event $record): string => new HtmlString(ucfirst($record->status)))
+                    ->disabled()
+                    ->columnSpanFull()
+                    ->formatStateUsing(fn(Event $record): string => ucfirst($record->status)),
+                Forms\Components\Tabs::make('Tabs')->tabs([
+                    Tab::make('Details')->schema([
+                        Forms\Components\TextInput::make('name')
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\Textarea::make('description')
+                            ->maxLength(65535)
+                            ->columnSpanFull(),
+                        Forms\Components\TextInput::make('url')
+                            ->maxLength(255),
+                        Forms\Components\Toggle::make('is_public'),
+                    ])->id('details')->icon('heroicon-o-information-circle'),
+                    Tab::make('Date & Time')->schema([
+                        Forms\Components\Select::make('timezone')
+                            ->options(Event::availableTimezones())
+                            ->required()->searchable(),
+                        Forms\Components\Grid::make('Grid')->columns(2)->schema([
+                            Forms\Components\DateTimePicker::make('starts_at'),
+                            Forms\Components\DateTimePicker::make('ends_at'),
+                        ]),
+                        Forms\Components\Toggle::make('is_all_day'),
+                        Forms\Components\Toggle::make('is_recurring'),
+                    ])->id('date-time')->icon('heroicon-o-calendar'),
+                ])->columnSpanFull()->persistTabInQueryString()
             ]);
     }
 
@@ -53,17 +72,36 @@ class EventResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('status')
-                    ->searchable(),
+                    ->searchable()
+                    ->badge()
+                    ->formatStateUsing(fn(Event $record): string => ucfirst($record->status))
+                    ->color(fn(string $state): string => match ($state) {
+                        'draft' => 'gray',
+                        'pending' => 'warning',
+                        'published' => 'success',
+                        'rejected' => 'danger',
+                        'cancelled' => 'danger',
+                    }),
+                Tables\Columns\IconColumn::make('is_published')
+                    ->label('Published')
+                    ->boolean(),
+                Tables\Columns\IconColumn::make('is_public')
+                    ->label('Public')
+                    ->boolean(),
                 Tables\Columns\TextColumn::make('name')
-                    ->description(fn (Event $record) => Str::limit($record->description,50) ?? null)->limit(50)
+                    ->description(fn(Event $record) => Str::limit($record->description, 50) ?? null)->limit(50)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('location.name')
-                    ->description(fn (Event $record) => $record->location->address ?? null)
+                    ->description(fn(Event $record) => $record->location->address ?? null)
                     ->sortable(),
-                Tables\Columns\TextColumn::make('timezone')
+                Tables\Columns\TextColumn::make('timezoneLabel')
+                    ->label('Timezone')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('url')
-                    ->searchable(),
+                    ->searchable()
+                    ->url(fn(Event $record): string => $record->url)
+                    ->openUrlInNewTab()
+                    ->limit(25),
                 Tables\Columns\TextColumn::make('starts_at')
                     ->dateTime()
                     ->sortable(),
@@ -74,11 +112,6 @@ class EventResource extends Resource
                     ->boolean(),
                 Tables\Columns\IconColumn::make('is_recurring')
                     ->boolean(),
-                Tables\Columns\IconColumn::make('is_published')
-                    ->boolean(),
-                Tables\Columns\IconColumn::make('is_public')
-                    ->boolean(),
-
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

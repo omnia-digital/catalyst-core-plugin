@@ -47,6 +47,16 @@ class Event extends Model
         return $query->where('is_published', true)->where('is_public', true);
     }
 
+    public static function availableTimezones()
+    {
+        return \DateTimeZone::listIdentifiers();
+    }
+
+    public function getTimezoneLabelAttribute()
+    {
+        return $this->availableTimezones()[$this->timezone];
+    }
+
     public function createdBy(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');
