@@ -31,15 +31,11 @@ class EventResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Placeholder::make('name')
-                    ->content(fn(Event $record): string => new HtmlString(ucfirst($record->name)))
-                    ->disabled()
-                    ->columnSpanFull(),
                 Forms\Components\Placeholder::make('status')
                     ->content(fn(Event $record): string => new HtmlString(ucfirst($record->status)))
                     ->disabled()
                     ->columnSpanFull()
-                    ->formatStateUsing(fn(Event $record): string => ucfirst($record->status)),
+                    ->visibleOn(['edit']),
                 Forms\Components\Tabs::make('Tabs')->tabs([
                     Tab::make('Details')->schema([
                         Forms\Components\TextInput::make('name')
@@ -48,8 +44,12 @@ class EventResource extends Resource
                         Forms\Components\Textarea::make('description')
                             ->maxLength(65535)
                             ->columnSpanFull(),
-                        Forms\Components\TextInput::make('url')
-                            ->maxLength(255),
+                        Forms\Components\TextInput::make('more_info_url'),
+                        Forms\Components\TextInput::make('vendor_registration_url'),
+                        Forms\Components\TextInput::make('buy_tickets_url'),
+                        Forms\Components\TextInput::make('sponsor_registration_url'),
+                        Forms\Components\TextInput::make('watch_live_url'),
+                        Forms\Components\TextInput::make('watch_vod_url'),
                         Forms\Components\Toggle::make('is_public'),
                     ])->id('details')->icon('heroicon-o-information-circle'),
                     Tab::make('Date & Time')->schema([
@@ -78,8 +78,8 @@ class EventResource extends Resource
                     ->color(fn(string $state): string => match ($state) {
                         'draft' => 'gray',
                         'pending' => 'warning',
-                        'published' => 'success',
-                        'rejected' => 'danger',
+                        'approved' => 'success',
+                        'denied' => 'danger',
                         'cancelled' => 'danger',
                     }),
                 Tables\Columns\IconColumn::make('is_published')

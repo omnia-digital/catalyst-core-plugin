@@ -19,7 +19,12 @@ return new class extends Migration
             $table->string('name', 255);
             $table->text('description')->nullable();
             $table->string('timezone');
-            $table->string('url')->nullable();
+            $table->text('more_info_url')->nullable();
+            $table->text('vendor_registration_url')->nullable();
+            $table->text('buy_tickets_url')->nullable();
+            $table->text('sponsor_registration_url')->nullable();
+            $table->text('watch_live_url')->nullable();
+            $table->text('watch_vod_url')->nullable();
             $table->dateTimeTz('starts_at')->nullable();
             $table->dateTimeTz('ends_at')->nullable();
             $table->boolean('is_all_day')->default(false);

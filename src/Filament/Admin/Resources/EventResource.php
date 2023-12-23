@@ -9,7 +9,6 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use OmniaDigital\CatalystCore\Filament\Admin\Resources\EventResource\Pages;
-use OmniaDigital\CatalystCore\Filament\Admin\Resources\EventResource\RelationManagers;
 use OmniaDigital\CatalystCore\Models\Event;
 
 class EventResource extends Resource
@@ -38,14 +37,19 @@ class EventResource extends Resource
             Forms\Components\TextInput::make('name')
                 ->required()
                 ->maxLength(255),
+            Forms\Components\Toggle::make('is_public'),
             Forms\Components\Textarea::make('description')
                 ->maxLength(65535)
                 ->columnSpanFull(),
             Forms\Components\Select::make('timezone')
                 ->options(\DateTimeZone::listIdentifiers())
                 ->required(),
-            Forms\Components\TextInput::make('url')
-                ->maxLength(255),
+            Forms\Components\TextInput::make('more_info_url'),
+            Forms\Components\TextInput::make('vendor_registration_url'),
+            Forms\Components\TextInput::make('buy_tickets_url'),
+            Forms\Components\TextInput::make('sponsor_registration_url'),
+            Forms\Components\TextInput::make('watch_live_url'),
+            Forms\Components\TextInput::make('watch_vod_url'),
             Forms\Components\DateTimePicker::make('starts_at'),
             Forms\Components\DateTimePicker::make('ends_at'),
             Forms\Components\Toggle::make('is_all_day')
@@ -69,35 +73,44 @@ class EventResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('created_by')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('team_id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('location_id')
-                    ->numeric()
-                    ->sortable(),
+                Tables\Columns\SelectColumn::make('status')
+                    ->options([
+                        'draft' => 'Draft',
+                        'pending' => 'Pending Approval',
+                        'approved' => 'Approved',
+                        'denied' => 'Denied',
+                        'cancelled' => 'Cancelled',
+                    ])->disablePlaceholderSelection(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('timezone')
+                Tables\Columns\TextColumn::make('created_by')
+                    ->sortable()
+                    ->formatStateUsing(fn(Model $record) => "{$record->createdBy->name}")
                     ->searchable(),
+                Tables\Columns\TextColumn::make('team.name')
+                    ->sortable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('location.name')
+                    ->description(fn(Event $record) => $record->location->address ?? null)
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('timezoneLabel')
+                    ->label('Timezone')
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('url')
-                    ->searchable(),
+                    ->url(fn(Event $record): string => $record->url ?? '')
+                    ->openUrlInNewTab()
+                    ->limit(25),
                 Tables\Columns\TextColumn::make('starts_at')
-                    ->dateTime()
+                    ->date()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('ends_at')
-                    ->dateTime()
+                    ->date()
                     ->sortable(),
-                Tables\Columns\IconColumn::make('is_all_day')
-                    ->boolean(),
-                Tables\Columns\IconColumn::make('is_recurring')
-                    ->boolean(),
-                Tables\Columns\IconColumn::make('is_published')
-                    ->boolean(),
-                Tables\Columns\TextColumn::make('status')
-                    ->searchable(),
+                Tables\Columns\ToggleColumn::make('is_all_day'),
+                Tables\Columns\ToggleColumn::make('is_recurring'),
+                Tables\Columns\ToggleColumn::make('is_published'),
+                Tables\Columns\ToggleColumn::make('is_public'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

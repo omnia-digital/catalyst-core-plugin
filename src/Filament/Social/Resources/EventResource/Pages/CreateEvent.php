@@ -2,13 +2,13 @@
 
 namespace OmniaDigital\CatalystCore\Filament\Social\Resources\EventResource\Pages;
 
-use OmniaDigital\CatalystCore\Filament\Social\Resources\EventResource;
-use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
+use OmniaDigital\CatalystCore\Filament\Social\Resources\EventResource;
 
 class CreateEvent extends CreateRecord
 {
     protected static string $resource = EventResource::class;
+    protected static ?string $title = 'Create Event';
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
