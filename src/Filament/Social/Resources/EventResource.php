@@ -99,7 +99,7 @@ class EventResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('url')
                     ->searchable()
-                    ->url(fn(Event $record): string => $record->url)
+                    ->url(fn(Event $record): string => $record->url ?? '')
                     ->openUrlInNewTab()
                     ->limit(25),
                 Tables\Columns\TextColumn::make('starts_at')

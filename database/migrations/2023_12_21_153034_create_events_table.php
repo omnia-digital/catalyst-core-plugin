@@ -23,7 +23,7 @@ return new class extends Migration
             $table->text('vendor_registration_url')->nullable();
             $table->text('buy_tickets_url')->nullable();
             $table->text('sponsor_registration_url')->nullable();
-            $table->text('watch_live_url')->nullable();
+            $table->text('meet_url')->nullable();
             $table->text('watch_vod_url')->nullable();
             $table->dateTimeTz('starts_at')->nullable();
             $table->dateTimeTz('ends_at')->nullable();
