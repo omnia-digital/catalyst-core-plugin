@@ -17,7 +17,6 @@
 
                 this.populateData(event);
             },
-
             populateData(data) {
                 this.title = data.name;
                 for (var key in this.details) {
@@ -81,8 +80,7 @@
             <!-- Show All Events -->
             <div x-show="!showDetail" class="bg-secondary space-y-2 pt-4 pb-2 flex-1 overflow-y-scroll scrollbar-hide">
                 @forelse ($events as $item)
-                    <div
-                            class="space-y-2 mx-2 p-4 bg-secondary rounded-sm border border-neutral cursor-pointer
+                    <div class="space-y-2 mx-2 p-4 bg-secondary rounded-sm border border-neutral cursor-pointer
                             {{ (!is_null($event) && ($event->handle === $item->handle)) ? 'shadow-md ring-1 ring-neutral-dark' : '' }}
                             hover:shadow-lg  hover:ring-2 hover:ring-neutral-dark active:shadow-lg active:ring-2 active:ring-neutral-dark focus:shadow-lg focus:ring-2 focus:ring-neutral-dark"
                             {{-- wire:click="selectEvent({{ $item->id }})" --}}
@@ -119,6 +117,9 @@
             <div x-cloak x-show="showDetail"
                  class="bg-secondary space-y-2 pt-4 pb-24 flex-1 overflow-y-scroll scrollbar-hide">
                 <div class="px-4 space-y-2">
+                    <script>
+                        console.log(this.details)
+                    </script>
                     <div x-show="details.start_date_string" class="flex items-center space-x-2">
                         <x-heroicon-o-calendar class="w-4 h-4"/>
                         <span class="flex-1 text-sm" x-text="details.start_date_string"></span>

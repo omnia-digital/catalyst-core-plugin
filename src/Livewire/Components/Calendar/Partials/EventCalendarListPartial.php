@@ -33,7 +33,7 @@ class EventCalendarListPartial extends Component
 
     public string $dateColumn = 'start_date';
 
-    public Event $event;
+    public Event|\Google\Service\Calendar\Event|null $event;
 
     public ?string $classes = '';
 
@@ -104,11 +104,24 @@ class EventCalendarListPartial extends Component
     public function selectEvent($eventID): void
     {
         $this->event = Event::find($eventID);
+
+        if (empty($this->event)) {
+            $this->event = new Event(
+                [
+                    'id' => rand(),
+                    'name' => 'Event not found',
+                    'description' => 'Event not found',
+                    'starts_at' => now(),
+                    'ends_at' => now(),
+                    'location' => 'Event not found',
+                ]
+            );
+        }
     }
 
     public function moreInfo(): RedirectResponse
     {
-        return redirect()->route('catalyst-social.events.show', $this->event);
+        return redirect()->route('catalyst-social.teams.show', $this->event);
     }
 
     public function toggleMapCalendar($tab): void

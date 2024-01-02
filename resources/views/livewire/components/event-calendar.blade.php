@@ -15,7 +15,7 @@
         </div>
         <div class="flex-1 mr-2 p-2">
             <livewire:catalyst::components.calendar.partials.event-calendar-partial
-                    before-calendar-view="calendar-views.header"
+                    before-calendar-view="catalyst::calendar-views.header"
                     event-view="catalyst::calendar-views.event-item"
             />
         </div>
