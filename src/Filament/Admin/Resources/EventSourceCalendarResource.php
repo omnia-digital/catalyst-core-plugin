@@ -8,6 +8,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use OmniaDigital\CatalystCore\Filament\Admin\Resources\CompanyResource\Pages\CreateCompany;
 use OmniaDigital\CatalystCore\Filament\Admin\Resources\CompanyResource\Pages\EditCompany;
 use OmniaDigital\CatalystCore\Filament\Admin\Resources\CompanyResource\Pages\ManageCompanies;
@@ -33,6 +34,8 @@ class EventSourceCalendarResource extends Resource
             Forms\Components\TextInput::make('slug'),
             Forms\Components\TextInput::make('ext_calendar_id'),
             Forms\Components\TextInput::make('calendar_url')->url(),
+            Forms\Components\Toggle::make('is_external'),
+            Forms\Components\Toggle::make('is_public'),
             Forms\Components\Select::make('event_source_calendar_type_id')
                 ->relationship(name: 'eventSourceCalendarType', titleAttribute: 'name'),
             ...Timestamps::make(),
@@ -51,9 +54,9 @@ class EventSourceCalendarResource extends Resource
             TextColumn::make('slug')
                 ->sortable()
                 ->searchable(),
-            TextColumn::make('event_source_calendar_type')
+            Tables\Columns\TextColumn::make('event_source_calendar_type_id')
                 ->sortable()
-                ->searchable(),
+                ->formatStateUsing(fn(Model $record) => "{$record->load('eventSourceCalendarType')->eventSourceCalendarType?->name}")
         ])
             ->filters([])
             ->actions([

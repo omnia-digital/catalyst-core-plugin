@@ -26,8 +26,10 @@ return new class extends Migration
                 $table->string('name');
                 $table->string('description')->nullable()->default(null);
                 $table->string('slug');
-                $table->string('ext_calendar_id');
-                $table->text('calendar_url');
+                $table->string('ext_calendar_id')->nullable();
+                $table->text('calendar_url')->nullable();
+                $table->boolean('is_external')->nullable();
+                $table->boolean('is_public')->default(false);
                 $table->foreignIdFor(\OmniaDigital\CatalystCore\Models\EventSourceCalendarType::class,
                     'event_source_calendar_type_id');
                 $table->timestamps();

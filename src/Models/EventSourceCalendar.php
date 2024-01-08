@@ -20,6 +20,10 @@ class EventSourceCalendar extends Model
         'calendar_url',
     ];
 
+    // we need the ability to pull in from external google calendars and sync with each of our calendars.
+    // something like event_source_calendar->source_calendars
+    // then have a job that runs nightly to sync the events from the external source calendars to the local source calendars.
+
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
