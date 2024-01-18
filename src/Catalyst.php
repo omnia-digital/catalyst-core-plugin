@@ -9,6 +9,7 @@ use NumberFormatter;
 use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Settings\BillingSettings;
 use OmniaDigital\CatalystCore\Settings\GeneralSettings;
+use OmniaDigital\CatalystCore\Settings\JobsSettings;
 
 //use Nwidart\Modules\Facades\Module;
 
@@ -34,6 +35,11 @@ class Catalyst
     public static function getProjectsWordUpper()
     {
         return ucfirst(self::getProjectsWord());
+    }
+
+    public static function getJobSetting($setting)
+    {
+        return (new JobsSettings())->{$setting};
     }
 
     public static function getProjectsWord()
