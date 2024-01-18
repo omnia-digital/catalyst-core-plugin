@@ -1,4 +1,4 @@
-@php use OmniaDigital\CatalystJobs\Enums\JobAddons; @endphp
+@php use OmniaDigital\CatalystCore\Enums\JobAddons; @endphp
 @props([
 'job'
 ])

@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Rules\Jobs;
 
 use Illuminate\Contracts\Validation\Rule;
-use OmniaDigital\CatalystJobs\Models\Coupon;
+use OmniaDigital\CatalystCore\Models\Coupon;
 
 class ValidCoupon implements Rule
 {

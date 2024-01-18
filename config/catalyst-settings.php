@@ -1,6 +1,8 @@
 <?php
 
+use OmniaDigital\CatalystCore\Settings\BillingSettings;
 use OmniaDigital\CatalystCore\Settings\GeneralSettings;
+use OmniaDigital\CatalystCore\Settings\JobsSettings;
 
 return [
 
@@ -13,9 +15,9 @@ return [
      * put them (manually) here.
      */
     'settings' => [
-            GeneralSettings::class,
-        //        BillingSettings::class,
-        //        \Modules\Jobs\Settings\JobsSettings::class,
+        GeneralSettings::class,
+        BillingSettings::class,
+        JobsSettings::class,
     ],
 
     'login_route' => 'login',

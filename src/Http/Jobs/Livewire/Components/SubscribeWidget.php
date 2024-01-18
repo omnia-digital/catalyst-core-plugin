@@ -1,11 +1,11 @@
 <?php
 
-namespace OmniaDigital\CatalystJobs\Http\Livewire\Components;
+namespace OmniaDigital\CatalystCore\Http\Livewire\Components;
 
 use Illuminate\Support\Facades\Http;
 use Livewire\Component;
-use OmniaDigital\CatalystJobs\Actions\Subscriber\Subscribe;
-use OmniaDigital\CatalystJobs\Support\Livewire\WithNotification;
+use OmniaDigital\CatalystCore\Actions\Subscriber\Subscribe;
+use OmniaDigital\CatalystCore\Support\Livewire\WithNotification;
 
 class SubscribeWidget extends Component
 {
