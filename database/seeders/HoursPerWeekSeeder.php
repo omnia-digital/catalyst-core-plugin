@@ -3,8 +3,7 @@
 namespace OmniaDigital\CatalystCore\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use OmniaDigital\CatalystCore\Models\HoursPerWeek;
-
+use OmniaDigital\CatalystCore\Models\Jobs\HoursPerWeek;
 class HoursPerWeekSeeder extends Seeder
 {
     /**

@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
-use OmniaDigital\CatalystCore\Models\RedeemedCoupon;
+use OmniaDigital\CatalystCore\Models\Jobs\RedeemedCoupon;
 use OmniaDigital\CatalystCore\Models\User;
 
 class RedeemedCouponPolicy

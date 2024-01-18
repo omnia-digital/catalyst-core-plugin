@@ -4,7 +4,7 @@ namespace OmniaDigital\CatalystCore\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use OmniaDigital\CatalystCore\Models\JobPositionAddon;
+use OmniaDigital\CatalystCore\Models\Jobs\JobPositionAddon;
 
 class JobAddonFactory extends Factory
 {

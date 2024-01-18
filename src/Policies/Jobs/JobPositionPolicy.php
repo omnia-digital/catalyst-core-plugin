@@ -4,7 +4,7 @@ namespace OmniaDigital\CatalystCore\Policies;
 
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use OmniaDigital\CatalystCore\Models\JobPosition;
+use OmniaDigital\CatalystCore\Models\Jobs\JobPosition;
 
 class JobPositionPolicy
 {

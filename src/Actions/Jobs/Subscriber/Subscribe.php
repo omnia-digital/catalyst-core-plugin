@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Actions\Subscriber;
 
 use Illuminate\Support\Arr;
-use OmniaDigital\CatalystCore\Models\Subscriber;
+use OmniaDigital\CatalystCore\Models\Jobs\Subscriber;
 
 class Subscribe
 {

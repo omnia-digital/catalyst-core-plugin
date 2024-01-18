@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\View\Component\Job;
 
 use Illuminate\View\Component;
-use OmniaDigital\CatalystCore\Models\JobPosition;
+use OmniaDigital\CatalystCore\Models\Jobs\JobPosition;
 
 class Item extends Component
 {

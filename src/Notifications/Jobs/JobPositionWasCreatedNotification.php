@@ -8,7 +8,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Notifications\Notification;
 use OmniaDigital\CatalystCore\LaraContract;
-use OmniaDigital\CatalystCore\Models\JobPosition;
+use OmniaDigital\CatalystCore\Models\Jobs\JobPosition;
 
 class JobPositionWasCreatedNotification extends Notification implements ShouldQueue
 {

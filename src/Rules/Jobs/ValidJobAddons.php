@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Rules\Jobs;
 
 use Illuminate\Contracts\Validation\Rule;
-use OmniaDigital\CatalystCore\Models\JobPositionAddon;
+use OmniaDigital\CatalystCore\Models\Jobs\JobPositionAddon;
 
 class ValidJobAddons implements Rule
 {

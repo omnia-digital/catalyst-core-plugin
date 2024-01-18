@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
-use OmniaDigital\CatalystCore\Models\Transaction;
+use OmniaDigital\CatalystCore\Models\Jobs\Transaction;
 use OmniaDigital\CatalystCore\Models\User;
 
 class TransactionPolicy

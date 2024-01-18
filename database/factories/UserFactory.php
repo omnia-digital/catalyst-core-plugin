@@ -2,12 +2,12 @@
 
 namespace OmniaDigital\CatalystCore\Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use Laravel\Jetstream\Features;
 use OmniaDigital\CatalystCore\Models\Profile;
 use OmniaDigital\CatalystCore\Models\Team;
-use App\Models\User;
 use Spatie\Permission\Models\Role;
 
 /**
@@ -59,7 +59,7 @@ class UserFactory extends Factory
      */
     public function withTeam()
     {
-        if (! Features::hasTeamFeatures()) {
+        if (!Features::hasTeamFeatures()) {
             return $this->state([]);
         }
 
@@ -85,7 +85,7 @@ class UserFactory extends Factory
      */
     public function withExistingTeam()
     {
-        if (! Features::hasTeamFeatures()) {
+        if (!Features::hasTeamFeatures()) {
             return $this->state([]);
         }
         $team = Team::get()->shuffle()->first();
@@ -108,7 +108,7 @@ class UserFactory extends Factory
      */
     public function withProfile($fillData = [])
     {
-        if (! class_exists(Profile::class)) {
+        if (!class_exists(Profile::class)) {
             return;
         }
 

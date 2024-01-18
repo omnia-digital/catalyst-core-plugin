@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use OmniaDigital\CatalystCore\Models\TeamSize;
+use OmniaDigital\CatalystCore\Models\Jobs\TeamSize;
 
 class ProjectSizesTableSeeder extends Seeder
 {

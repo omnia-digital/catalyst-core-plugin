@@ -46,7 +46,7 @@ trait CatalystUserTraits
     use HasHandle;
 
     use HasRoles;
-    use HasPanelShield;
+//    use HasPanelShield;
     use HasTeams, JetstreamHasTeams {
         HasTeams::teams insteadof JetstreamHasTeams;
         HasTeams::hasTeamRole insteadof JetstreamHasTeams;

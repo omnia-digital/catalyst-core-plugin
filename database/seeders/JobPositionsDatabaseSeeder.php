@@ -17,6 +17,8 @@ class JobPositionsDatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call(TagsTableSeeder::class);
+        $this->call(HoursPerWeekSeeder::class);
         $this->call(JobAddonsTableSeeder::class);
+        $this->call(ProjectSizesTableSeeder::class);
     }
 }

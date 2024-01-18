@@ -87,45 +87,35 @@ class UsersTableSeeder extends Seeder
         User::factory(10)->withProfile()->withTeam()->create();
 
 
-        // Jobs User Seeder
-        $admin = User::factory()->create([
-            'name' => 'Admin',
-            'email' => 'admin@test.com',
-            'password' => Hash::make('secret'),
-        ])->assignRole('Admin');
+        // Jobs User Seeder //
+        // Jobs admin
+        $jobsAdmin = User::factory(1)->withProfile([
+            'first_name' => 'Jobs Admin',
+            'last_name' => 'Test',
+        ])->withTeam()->create([
+            'email' => 'jobsadmin@test.com',
+            'password' => bcrypt('testing'),
+        ]);
+//        $jobsAdmin->createAsStripeCustomer();
 
-        $admin->ownedTeams()->save(Team::forceCreate([
-            'user_id' => $admin->id,
-            'name' => explode(' ', $admin->name, 2)[0]."'s Company",
-            'personal_team' => true,
-        ]));
+        // Jobs Contractor
+        $jobsContractor = User::factory(1)->withProfile([
+            'first_name' => 'Jobs Admin',
+            'last_name' => 'Test',
+        ])->withTeam()->create([
+            'email' => 'jobscontractor@test.com',
+            'password' => bcrypt('testing'),
+        ]);
+//        $jobsContractor->createAsStripeCustomer();
 
-        $admin->createAsStripeCustomer();
-
-        $contractor = User::factory()->create([
-            'name' => 'Contractor',
-            'password' => Hash::make('secret'),
-        ])->assignRole('Contractor');
-
-        $contractor->ownedTeams()->save(Team::forceCreate([
-            'user_id' => $contractor->id,
-            'name' => explode(' ', $contractor->name, 2)[0]."'s Company",
-            'personal_team' => true,
-        ]));
-
-        $contractor->createAsStripeCustomer();
-
-        $client = User::factory()->create([
-            'name' => 'Client',
-            'password' => Hash::make('secret'),
-        ])->assignRole('Client');
-
-        $client->ownedTeams()->save(Team::forceCreate([
-            'user_id' => $client->id,
-            'name' => explode(' ', $client->name, 2)[0]."'s Company",
-            'personal_team' => true,
-        ]));
-
-        $client->createAsStripeCustomer();
+        // Jobs Client
+        $jobsClient = User::factory(1)->withProfile([
+            'first_name' => 'Jobs Admin',
+            'last_name' => 'Test',
+        ])->withTeam()->create([
+            'email' => 'jobsclient@test.com',
+            'password' => bcrypt('testing'),
+        ]);
+//        $jobsClient->createAsStripeCustomer();
     }
 }

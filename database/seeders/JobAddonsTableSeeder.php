@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use OmniaDigital\CatalystCore\Models\JobPositionAddon;
+use OmniaDigital\CatalystCore\Models\Jobs\JobPositionAddon;
 
 class JobAddonsTableSeeder extends Seeder
 {
