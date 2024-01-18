@@ -3,7 +3,7 @@
 namespace OmniaDigital\CatalystCore\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use OmniaDigital\CatalystCore\Models\Jobs\TeamSize;
+use OmniaDigital\CatalystCore\Models\Jobs\ProjectSize;
 
 class ProjectSizesTableSeeder extends Seeder
 {
@@ -29,7 +29,7 @@ class ProjectSizesTableSeeder extends Seeder
         ];
 
         foreach ($teamSizes as $teamSize) {
-            TeamSize::create($teamSize);
+            ProjectSize::create($teamSize);
         }
     }
 }
