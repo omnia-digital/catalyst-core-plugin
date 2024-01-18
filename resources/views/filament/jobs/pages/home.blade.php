@@ -7,7 +7,6 @@
 
         <div>
               Subscribe widget
-{{--                <livewire:catalyst::jobs.components.subscribe-widget/>--}}
             @include('catalyst::livewire.jobs.components.subscribe-widget')
 
               Featured Jobs
@@ -38,13 +37,14 @@
                             <li class="p-20 text-lg text-gray-600 text-center">
                                 {{ Translate::get('Looking for help? Post a job and you can start getting applicants today.') }}
                                 <p>
-                                    <a href="{{ route('catalyst-jobs.job.create') }}"
+                                    <a href="{{ route('filament.jobs.pages.new-job') }}"
                                        class="my-2 inline-flex items-center px-4 py-2 border border-transparent leading-6 font-medium rounded-md text-white bg-red-600 hover:text-white-600 hover:bg-red-500
                               focus:outline-none focus:border-light-red-300 focus:shadow-outline-light-red active:bg-red-50 active:text-white-700 transition duration-150 ease-in-out">
                                         Post a job
                                     </a>
                                 </p>
                             </li>
+
                         @endforelse
                     </ul>
                 </div>

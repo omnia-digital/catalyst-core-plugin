@@ -5,7 +5,7 @@ namespace OmniaDigital\CatalystCore\Models\Jobs;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use OmniaDigital\CatalystCore\Support\HasJobs;
+use OmniaDigital\CatalystCore\Support\Jobs\HasJobs;
 
 class HoursPerWeek extends Model
 {

@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class MyJobs extends Page
 {
-    protected static string $view = 'catalyst-jobs::filament.pages.jobs.my-jobs';
+    protected static string $view = 'catalyst::filament.jobs.pages.jobs.my-jobs';
 
     public function getViewData(): array
     {

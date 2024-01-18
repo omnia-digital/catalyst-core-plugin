@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::name('catalyst-jobs.api')->prefix('jobs')
+Route::name('filament.jobs.api')->prefix('jobs')
     ->group(function () {
         Route::middleware('auth:api')->get('/jobs', function (Request $request) {
             return $request->user();

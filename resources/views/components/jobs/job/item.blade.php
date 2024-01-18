@@ -9,7 +9,7 @@
 @endphp
 
 <li {{ $attributes->merge(['class' => $class]) }}>
-    <a href="{{ $editable ? route('catalyst-jobs.job.update', $job) : route('catalyst-jobs.job.show', ['team' => $job->company->id, 'job' => $job]) }}"
+    <a href="{{ $editable ? route('filament.jobs.job.update', $job) : route('filament.jobs.job.show', ['team' => $job->company->id, 'job' => $job]) }}"
        class="block group hover:border-primary
     hover:shadow-2xl border-4 border-transparent
     focus:outline-none
@@ -17,7 +17,7 @@
         <div class="flex items-center px-4 py-4 sm:px-6">
             <div class="min-w-0 flex-1 flex items-center">
                 <div class="flex-shrink-0">
-                    <x-catalyst-jobs::job.logo :job="$job"/>
+                    <x-catalyst::jobs.job.logo :job="$job"/>
                 </div>
                 <div class="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
                     <div>
@@ -53,8 +53,8 @@
                                 @endforeach
                             </div>
 
-                            <x-catalyst-jobs::tooltip wire:key="{{ $job->id . time() }}"
-                                             trigger="posted-on-{{ $job->id }}">{{ $job->created_at->format('Y-m-d') }}</x-catalyst-jobs::tooltip>
+                            <x-catalyst::jobs.tooltip wire:key="{{ $job->id . time() }}"
+                                             trigger="posted-on-{{ $job->id }}">{{ $job->created_at->format('Y-m-d') }}</x-catalyst::jobs.tooltip>
 
                             <div class="mt-2 flex items-center text-sm leading-5 text-base-text-color">
                                 <x-heroicon-s-calendar id="posted-on-{{ $job->id }}"

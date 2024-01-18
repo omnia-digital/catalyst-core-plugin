@@ -1,13 +1,14 @@
-@extends('catalyst-jobs::livewire.layouts.pages.default-page-layout')
+@extends('catalyst::livewire.jobs.layouts.pages.default-page-layout')
 
 @section('content')
+    <div>
     <div class="mb-3 rounded-b-lg pl-4 flex items-center bg-primary">
         <div class="mr-4 hover:bg-neutral-dark p-2 rounded-full bg-secondary hover:text-secondary">
-            <a href="{{ route('catalyst-jobs.home') }}">
+            <a href="{{ route('filament.jobs.home') }}">
                 <x-heroicon-o-arrow-left class="h-6"/>
             </a>
         </div>
-        <a href="{{ route('catalyst-jobs.home') }}">
+        <a href="{{ route('filament.jobs.home') }}">
             <x-library::heading.1
                     class="py-4 hover:cursor-pointer">{{ Translate::get('Job Detail') }}</x-library::heading.1>
         </a>
@@ -55,7 +56,7 @@
                     <div class="mt-5 flex lg:mt-0 lg:ml-4">
                         @if (auth()->check() && auth()->user()->can('update', $job))
                             <span class="mr-3 shadow-sm rounded-md">
-                            <x-library::button.link href="{{ route('catalyst-jobs.job.update', $job) }}" type="button"
+                            <x-library::button.link href="{{ route('filament.jobs.job.update', $job) }}" type="button"
                                                     class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:text-gray-800 active:bg-gray-50 transition duration-150 ease-in-out">
                                 <x-heroicon-s-pencil class="-ml-1 mr-2 h-5 w-5 text-gray-500"/> {{ Translate::get('Edit') }}
                             </x-library::button.link>
@@ -90,9 +91,10 @@
         {{--    </aside>--}}
 
         {{--  Tooltips  --}}
-        <x-catalyst-jobs::tooltip trigger="company">{{ Translate::get('Company') }}</x-catalyst-jobs::tooltip>
-        <x-catalyst-jobs::tooltip trigger="location">{{ Translate::get('Location') }}</x-catalyst-jobs::tooltip>
-        <x-catalyst-jobs::tooltip trigger="payment-type-budget">{{ Translate::get('Payment Type & Budget') }}</x-catalyst-jobs::tooltip>
-        <x-catalyst-jobs::tooltip trigger="posted-on">{{ $job->created_at->format('Y-m-d') }}</x-catalyst-jobs::tooltip>
+        <x-catalyst::jobs.tooltip trigger="company">{{ Translate::get('Company') }}</x-catalyst::jobs.tooltip>
+        <x-catalyst::jobs.tooltip trigger="location">{{ Translate::get('Location') }}</x-catalyst::jobs.tooltip>
+        <x-catalyst::jobs.tooltip trigger="payment-type-budget">{{ Translate::get('Payment Type & Budget') }}</x-catalyst::jobs.tooltip>
+        <x-catalyst::jobs.tooltip trigger="posted-on">{{ $job->created_at->format('Y-m-d') }}</x-catalyst::jobs.tooltip>
+    </div>
     </div>
 @endsection

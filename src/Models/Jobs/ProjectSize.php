@@ -4,7 +4,7 @@ namespace OmniaDigital\CatalystCore\Models\Jobs;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use OmniaDigital\CatalystCore\Support\HasJobs;
+use OmniaDigital\CatalystCore\Support\Jobs\HasJobs;
 
 class ProjectSize extends Model
 {

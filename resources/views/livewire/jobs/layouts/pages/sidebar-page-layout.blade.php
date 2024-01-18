@@ -1,4 +1,4 @@
-{{--@extends('catalyst-jobs::livewire.layouts.main-layout')--}}
+{{--@extends('catalyst::livewire.jobs.layouts.main-layout')--}}
 
 
 {{--@section('page-layout')--}}

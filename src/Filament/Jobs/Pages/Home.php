@@ -2,6 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Filament\Jobs\Pages;
 
+use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Pages\Page;
 use Livewire\WithPagination;
 use OmniaDigital\CatalystCore\Facades\Catalyst;

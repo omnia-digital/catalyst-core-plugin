@@ -51,18 +51,18 @@
             </div>
         </div>
 
-        <catalyst-jobs::components.job.logo :job="$job"/>
+        <catalyst::jobs.components.job.logo :job="$job"/>
     </div>
     <div class="border-t border-gray-200">
         <div class="-mt-px flex">
             {{--            <div class="w-0 flex-1 flex border-r border-gray-200">--}}
-            {{--                <a href="{{ route('catalyst-jobs.show', $job) }}" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm leading-5 text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 transition ease-in-out duration-150">--}}
+            {{--                <a href="{{ route('filament.jobs.show', $job) }}" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm leading-5 text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 transition ease-in-out duration-150">--}}
             {{--                    <x-heroicon-s-eye class="w-5 h-5 text-gray-400"/>--}}
             {{--                    <span class="ml-3">View</span>--}}
             {{--                </a>--}}
             {{--            </div>--}}
             <div class="-ml-px w-0 flex-1 flex">
-                <a href="{{ route('catalyst-jobs.show', ['team' => $job->company, 'job' => $job]) }}"
+                <a href="{{ route('filament.jobs.show', ['team' => $job->company, 'job' => $job]) }}"
                    class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm leading-5 text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 transition ease-in-out duration-150">
                     <x-heroicon-s-cursor-click class="w-5 h-5 text-gray-400"/>
                     <span class="ml-3">Apply</span>

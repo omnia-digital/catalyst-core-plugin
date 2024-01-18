@@ -8,6 +8,6 @@ class MainLayout extends Component
 {
     public function render()
     {
-        return view('catalyst-jobs::livewire.layouts.pages.default-page-layout');
+        return view('catalyst::livewire.jobs.layouts.pages.default-page-layout');
     }
 }

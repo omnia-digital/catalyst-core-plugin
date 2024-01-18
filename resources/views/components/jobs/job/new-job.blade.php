@@ -421,7 +421,7 @@
 
                             <div class="bg-secondary shadow overflow-hidden sm:rounded-md">
                                 <ul>
-                                    <catalyst-jobs::components.job.item-preview
+                                    <catalyst::jobs.components.job.item-preview
                                             :logoUrl="$logo ? $logo->temporaryUrl() : Auth::user()->currentTeam->logoUrl"
                                             :title="$title"
                                             :companyName="Arr::first($companies, fn($company) => $company->id === $team_id)->name"

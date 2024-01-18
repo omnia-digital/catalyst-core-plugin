@@ -1,4 +1,4 @@
-@php use App\Models\Tag; @endphp
+@php use OmniaDigital\CatalystCore\Models\Tag; @endphp
 @props([
 'logoUrl',
 'title',
@@ -24,7 +24,7 @@
                     @if ($logoUrl)
                         <img class="w-16 h-16 rounded-full flex-shrink-0" src="{{ $logoUrl }}" alt="{{ $companyName }}">
                     @else
-                        <x-catalyst-jobs::icons.default-logo class="w-16 h-16 rounded-full flex-shrink-0"/>
+                        <x-catalyst::jobs.icons.default-logo class="w-16 h-16 rounded-full flex-shrink-0"/>
                     @endif
                 </div>
                 <div class="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
@@ -54,7 +54,7 @@
                         <div>
                             <div class="text-sm leading-5 text-gray-900">
                                 @foreach ($skills as $skill)
-                                    <x-tag :name="Tag::find($skill)->name"
+                                    <x-catalyst::tag :name="Tag::find($skill)->name"
                                            class="rounded-full bg-green-100 text-green-800 text-sm"/>
                                 @endforeach
                             </div>

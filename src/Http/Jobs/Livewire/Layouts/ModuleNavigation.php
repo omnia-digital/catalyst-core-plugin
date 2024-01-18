@@ -40,6 +40,6 @@ class ModuleNavigation extends Component
 
     public function render()
     {
-        return view('catalyst-jobs::livewire.layouts.module-navigation');
+        return view('catalyst::livewire.jobs.layouts.module-navigation');
     }
 }

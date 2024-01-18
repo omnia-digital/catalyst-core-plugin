@@ -4,7 +4,7 @@
 ])
 
 <li {{ $attributes }}>
-    <a href="{{ $editable ? route('catalyst-jobs.update', $job) : $job->applyLink }}"
+    <a href="{{ $editable ? route('filament.jobs.update', $job) : $job->applyLink }}"
        target="{{ $editable ? '_self' : '_blank' }}"
        class="block hover:bg-light-blue-50 hover:shadow-2xl focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out">
         <div class="px-4 py-4 sm:px-6">

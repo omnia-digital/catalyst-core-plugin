@@ -15,7 +15,7 @@ class JobsController extends Controller
      */
     public function index()
     {
-        return view('catalyst-jobs::index');
+        return view('catalyst::jobs.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class JobsController extends Controller
      */
     public function create()
     {
-        return view('catalyst-jobs::create');
+        return view('catalyst::jobs.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class JobsController extends Controller
      */
     public function show($id)
     {
-        return view('catalyst-jobs::show');
+        return view('catalyst::jobs.show');
     }
 
     /**
@@ -57,7 +57,7 @@ class JobsController extends Controller
      */
     public function edit($id)
     {
-        return view('catalyst-jobs::edit');
+        return view('catalyst::jobs.edit');
     }
 
     /**

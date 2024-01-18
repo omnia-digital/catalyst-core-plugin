@@ -28,6 +28,8 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Tags\HasTags;
 use Spatie\Sluggable\SlugOptions;
+use OmniaDigital\CatalystCore\Models\Jobs\JobPosition;
+
 trait CatalystTeamTraits
 {
     use Awardable;

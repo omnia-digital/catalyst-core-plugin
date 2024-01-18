@@ -90,10 +90,10 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
         }
 
         // Blade Components
-//        if (file_exists($package->basePath('/View/Components'))) {
-//            $package->hasViewComponents($this->getViewComponents());
-//            $this->registerBladeComponents($package);
-//        }
+        if (file_exists($package->basePath('/View/Components'))) {
+            $package->hasViewComponents($this->getViewComponents());
+            $this->registerBladeComponents($package);
+        }
 
         // Livewire Components
         if (file_exists($package->basePath('/Livewire'))) {

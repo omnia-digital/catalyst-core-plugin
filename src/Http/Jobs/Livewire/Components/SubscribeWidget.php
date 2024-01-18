@@ -47,7 +47,7 @@ class SubscribeWidget extends Component
 
     public function render()
     {
-        return view('catalyst-jobs::livewire.components.subscribe-widget', [
+        return view('catalyst::livewire.jobs.components.subscribe-widget', [
             'frequencies' => [
                 'instant' => 'Instant',
                 'weekly' => 'Weekly',

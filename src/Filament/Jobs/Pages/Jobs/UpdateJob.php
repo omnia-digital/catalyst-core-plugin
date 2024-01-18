@@ -20,7 +20,7 @@ class UpdateJob extends Page
 {
     use WithNotification;
 
-    protected static string $view = 'catalyst-jobs::livewire.pages.jobs.update-job';
+    protected static string $view = 'catalyst::livewire.jobs.pages.jobs.update-job';
 
     public JobPosition $job;
 
@@ -70,7 +70,7 @@ class UpdateJob extends Page
 
         $this->success('Update the job successfully!');
 
-        $this->redirectRoute('catalyst-jobs.job.show', [
+        $this->redirectRoute('filament.jobs.job.show', [
             'team' => $this->job->company->id,
             'job' => $this->job,
         ]);
@@ -87,7 +87,7 @@ class UpdateJob extends Page
      */
     public function getViewData(): array
     {
-        return view('catalyst-jobs::livewire.pages.jobs.update-job', [
+        return view('catalyst::livewire.jobs.pages.jobs.update-job', [
             'companies' => auth()->user()
                 ->allTeams(),
             'applyTypes' => ApplyType::pluck('name', 'code'),

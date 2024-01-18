@@ -28,6 +28,9 @@ use OmniaDigital\CatalystCore\Models\Jobs\JobPositionLength;
 use OmniaDigital\CatalystCore\Models\Jobs\PaymentType;
 use OmniaDigital\CatalystCore\Models\Jobs\ProjectSize;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
+use OmniaDigital\CatalystCore\Models\Tag;
+use OmniaDigital\CatalystCore\Rules\Jobs\ValidTags;
+use OmniaDigital\CatalystCore\Rules\Jobs\ValidJobAddons;
 
 class NewJob extends Page
 {
@@ -35,7 +38,7 @@ class NewJob extends Page
 
     use HasPageShield;
 
-    protected static string $view = 'catalyst-jobs::filament.pages.jobs.new-job';
+    protected static string $view = 'catalyst::filament.jobs.pages.jobs.new-job';
 
     public $jobTitle;
 
@@ -261,7 +264,7 @@ class NewJob extends Page
 
         event(new JobPositionWasCreated($job));
 
-        $this->redirectRoute('catalyst-jobs.job.show', [
+        $this->redirectRoute('filament.jobs.job.show', [
             'team' => $job->company->id,
             'job' => $job,
         ]);
@@ -371,7 +374,7 @@ class NewJob extends Page
     private function rules()
     {
         return [
-            'title' => 'required|max:254',
+            'jobTitle' => 'required|max:254',
             'description' => 'required|min:50',
             'team_id' => 'required|'.Rule::in(auth()->user()
                 ->allTeams()

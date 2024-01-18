@@ -1,7 +1,7 @@
 {{--<div>--}}
 {{--    <div class="flex bg-neutral">--}}
 {{--        <!-- SideMenu -->--}}
-{{--        <livewire:catalyst-jobs::layouts.module-navigation class=""/>--}}
+{{--        <livewire:catalyst::jobs.layouts.module-navigation class=""/>--}}
 {{--        @includeWhen(request()->route()->named('home'), 'layouts.partials.hero')--}}
 
 {{--        <!-- Main Content -->--}}

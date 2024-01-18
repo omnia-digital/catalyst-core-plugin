@@ -279,6 +279,11 @@ trait CatalystUserTraits
         return new CashierSubscriptionBuilder($this, $name, $prices);
     }
 
+    public function canManageSettings()
+    {
+        return $this->is_admin;
+    }
+
     /** @note We are not using this currently. Save for future when we want teams to create custom plans */
     //public function stripeConnectCustomers(): HasMany
     //{

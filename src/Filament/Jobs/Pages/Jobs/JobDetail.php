@@ -8,7 +8,7 @@ use OmniaDigital\CatalystCore\Models\JobPosition;
 
 class JobDetail extends Page
 {
-    protected static string $view = 'catalyst-jobs::filament.pages.jobs.job-detail';
+    protected static string $view = 'catalyst::jobs.filament.pages.jobs.job-detail';
 
     public $job;
 

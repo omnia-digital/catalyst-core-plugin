@@ -2,11 +2,11 @@
     <div>
         <div class="mb-3 rounded-b-lg pl-4 flex items-center bg-primary">
             <div class="mr-4 hover:bg-neutral-dark p-2 rounded-full bg-secondary hover:text-secondary">
-                <a href="{{ route('catalyst-jobs.home') }}">
+                <a href="{{ route('filament.jobs.home') }}">
                     <x-heroicon-o-arrow-left class="h-6"/>
                 </a>
             </div>
-            <a href="{{ route('catalyst-jobs.home') }}">
+            <a href="{{ route('filament.jobs.home') }}">
                 <x-library::heading.1
                         class="py-4 hover:cursor-pointer">{{ Translate::get('Jobs') }}</x-library::heading.1>
             </a>
@@ -42,9 +42,9 @@
 
                             <div class="grid grid-cols-3 gap-6">
                                 <div class="col-span-3 space-y-1 sm:col-span-2">
-                                    <x-library::input.label for="title" value="Job Title"/>
-                                    <x-library::input.text wire:model.live="title" id="title" placeholder="Job Title"/>
-                                    <x-library::input.error for="title"/>
+                                    <x-library::input.label for="jobTitle" value="Job Title"/>
+                                    <x-library::input.text wire:model.live="jobTitle" id="jobTitle" placeholder="Job Title"/>
+                                    <x-library::input.error for="jobTitle"/>
                                 </div>
 
                                 <div class="col-span-3 space-y-1">
@@ -146,7 +146,7 @@
                                     </div>
                                     @foreach ($experienceLevels as $key => $experience)
                                         <div class="flex pt-4">
-                                            <x-catalyst-jobs::input.radio wire:model="experience_level_id"
+                                            <x-catalyst::jobs.input.radio wire:model="experience_level_id"
                                                                           name="experience_level_id"
                                                                           id="{{ $experience['title'] }}"
                                                                           value="{{ $experience['id'] }}"/>
@@ -167,7 +167,7 @@
                                     </div>
                                     @foreach ($jobLengths as $key => $jobLength)
                                         <div class="flex pt-4">
-                                            <x-catalyst-jobs::input.radio wire:model="job_length_id"
+                                            <x-catalyst::jobs.input.radio wire:model="job_length_id"
                                                                           name="job_length_id"
                                                                           id="{{ $jobLength['title'] }}"
                                                                           value="{{ $jobLength['id'] }}"/>
@@ -182,7 +182,7 @@
                                     </div>
                                     @foreach ($projectSizes as $key => $project)
                                         <div class="flex pt-4">
-                                            <x-catalyst-jobs::input.radio wire:model="project_size_id"
+                                            <x-catalyst::jobs.input.radio wire:model="project_size_id"
                                                                           name="project_size_id"
                                                                           id="{{ $project['title'] }}"
                                                                           value="{{ $project['id'] }}"/>
@@ -266,10 +266,10 @@
                                     <div class="col-span-3 space-y-1">
                                         <x-library::input.label value="Company"/>
                                         <div class="inline-flex items-center">
-                                            <x-catalyst-jobs::input.file wire:model.live="logo" id="logo"
+                                            <x-catalyst::jobs.input.file wire:model.live="logo" id="logo"
                                                                          :preview="$logo ? $logo->temporaryUrl() : Auth::user()->currentTeam->logoUrl"
                                                                          class="mr-4"/>
-                                            <x-catalyst-jobs::input.company wire:model.live="team_id"
+                                            <x-catalyst::jobs.input.company wire:model.live="team_id"
                                                                             :companies="$companies"
                                                                             id="company"/>
                                         </div>
@@ -369,7 +369,7 @@
                                                         x-bind:class="{'bg-light-blue-50 border-light-blue-200 z-10': paymentMethod === 'new-card', 'border-gray-200': paymentMethod !== 'new-card'}"
                                                         class="relative border rounded-tl-md rounded-tr-md p-4 flex {{ !Auth::user()->hasDefaultPaymentMethod() ? 'border rounded-bl-md rounded-br-md' : '' }}"
                                                 >
-                                                    <x-catalyst-jobs::input.radio x-model="paymentMethod"
+                                                    <x-catalyst::jobs.input.radio x-model="paymentMethod"
                                                                                   value="new-card"
                                                                                   id="new-card"/>
                                                     <x-library::input.label for="new-card"
@@ -388,7 +388,7 @@
                                                             x-bind:class="{'bg-light-blue-50 border-light-blue-200 z-10': paymentMethod === 'previous-card', 'border-gray-200': paymentMethod !== 'previous-card'}"
                                                             class="relative border rounded-bl-md rounded-br-md p-4 flex"
                                                     >
-                                                        <x-catalyst-jobs::input.radio x-model="paymentMethod"
+                                                        <x-catalyst::jobs.input.radio x-model="paymentMethod"
                                                                                       value="previous-card"
                                                                                       id="previous-card"/>
                                                         <x-library::input.label for="previous-card"
@@ -503,9 +503,9 @@
 
                                 <div class="bg-white shadow overflow-hidden sm:rounded-md">
                                     <ul>
-                                        <x-catalyst-jobs::job.item-preview
+                                        <x-catalyst::jobs.job.item-preview
                                                 :logoUrl="$logo ? $logo->temporaryUrl() : Auth::user()->currentTeam->logoUrl"
-                                                :title="$title"
+                                                :title="$jobTitle"
                                                 :companyName="Arr::first($companies, fn($company) => $company->id === $team_id)->name"
                                                 :location="$location"
                                                 :isRemote="$is_remote"
@@ -531,7 +531,7 @@
             {{--        </aside>--}}
         </div>
 
-        <x-catalyst-jobs::dialog-modal wire:model.live="registerModalOpen">
+        <x-catalyst::jobs.dialog-modal wire:model.live="registerModalOpen">
             <x-slot name="title">Register an account</x-slot>
             <x-slot name="content">
                 <div class="space-y-2">
@@ -570,7 +570,7 @@
             <x-slot name="footer">
                 <x-library::button wire:click="register" wire:target="register">Register</x-library::button>
             </x-slot>
-        </x-catalyst-jobs::dialog-modal>
+        </x-catalyst::jobs.dialog-modal>
     </div>
 </x-filament-panels::page>
 
