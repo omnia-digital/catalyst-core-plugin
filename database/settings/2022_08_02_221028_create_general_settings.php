@@ -2,7 +2,7 @@
 
 use Spatie\LaravelSettings\Migrations\SettingsMigration;
 
-class CreateGeneralSettings extends SettingsMigration
+return new class extends SettingsMigration
 {
     public function up(): void
     {
@@ -10,4 +10,4 @@ class CreateGeneralSettings extends SettingsMigration
         $this->migrator->add('general.site_active', true, false);
         $this->migrator->add('general.teams_apply_button_text', config('teams.defaults.apply_button_text', 'Apply'), false);
     }
-}
+};

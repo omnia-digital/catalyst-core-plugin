@@ -2,7 +2,7 @@
 
 use Spatie\LaravelSettings\Migrations\SettingsMigration;
 
-class CreateBillingSettings extends SettingsMigration
+return new class extends SettingsMigration
 {
     public function up(): void
     {
@@ -12,4 +12,4 @@ class CreateBillingSettings extends SettingsMigration
         $this->migrator->add('billing.team_member_subscriptions', 0);
         $this->migrator->add('billing.user_subscription_form', 'user-subscriptions');
     }
-}
+};
