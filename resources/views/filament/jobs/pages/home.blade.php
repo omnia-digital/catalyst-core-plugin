@@ -29,10 +29,11 @@
                 <div class="bg-white shadow overflow-hidden sm:rounded-md">
                     <ul>
                         @forelse ($jobs as $job)
-                            <catalyst::jobs.components.job.item
-                                    wire:key="latest-job-{{ $job->id }}"
-                                    class="{{ $loop->first ? 'border-t border-gray-200' : '' }}"
-                                    :job="$job"/>
+                            @include('catalyst::components.jobs.job.item', [
+                                'job' => $job,
+                                'wire:key' => "latest-job-{{ $job->id }}",
+                                'class' => "{{ $loop->first ? 'border-t border-gray-200' : '' }}"
+                            ])
                         @empty
                             <li class="p-20 text-lg text-gray-600 text-center">
                                 {{ Translate::get('Looking for help? Post a job and you can start getting applicants today.') }}

@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\View\Component\Job;
+namespace OmniaDigital\CatalystCore\View\Component\Jobs\Job;
 
 use Illuminate\View\Component;
 use OmniaDigital\CatalystCore\Models\Jobs\JobPosition;
@@ -8,7 +8,6 @@ use OmniaDigital\CatalystCore\Models\Jobs\JobPosition;
 class Item extends Component
 {
     public JobPosition $job;
-
     public function __construct($job)
     {
         $this->job = $job;
@@ -16,6 +15,6 @@ class Item extends Component
 
     public function render()
     {
-        return view('catalyst-jobs::components.job.item');
+        return view('catalyst::components.jobs.job.item');
     }
 }

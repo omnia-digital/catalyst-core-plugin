@@ -1,4 +1,4 @@
-@php use OmniaDigital\CatalystCore\Enums\JobAddons; @endphp
+@php use OmniaDigital\CatalystCore\Enums\Jobs\JobAddons; @endphp
 @props([
 'job',
 'editable' => false
@@ -48,7 +48,7 @@
                         <div>
                             <div class="text-sm leading-5 text-dark-text-color">
                                 @foreach ($job->skills as $skill)
-                                    <x-tag :name="$skill->name"
+                                    <x-catalyst::tag :name="$skill->name"
                                            class="rounded-full bg-green-100 text-green-800 text-sm"/>
                                 @endforeach
                             </div>
