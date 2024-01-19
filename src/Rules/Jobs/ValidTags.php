@@ -2,8 +2,8 @@
 
 namespace OmniaDigital\CatalystCore\Rules\Jobs;
 
-use App\Models\Tag;
 use Illuminate\Contracts\Validation\Rule;
+use OmniaDigital\CatalystCore\Models\Tag;
 
 class ValidTags implements Rule
 {

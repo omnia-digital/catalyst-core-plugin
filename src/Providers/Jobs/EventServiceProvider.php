@@ -5,7 +5,7 @@ namespace OmniaDigital\CatalystCore\Providers;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use OmniaDigital\CatalystCore\Events\JobPositionWasCreated;
+use OmniaDigital\CatalystCore\Events\Jobs\JobPositionWasCreated;
 use OmniaDigital\CatalystCore\Listeners\CreateStripeCustomer;
 use OmniaDigital\CatalystCore\Listeners\NotifyAdminsWhenJobCreated;
 use OmniaDigital\CatalystCore\Listeners\NotifyContractorsWhenJobCreated;

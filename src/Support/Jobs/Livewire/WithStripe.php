@@ -8,6 +8,10 @@ trait WithStripe
 
     public function updatePaymentMethod()
     {
+        $user =  auth()->user();
+        if (!$user->hasStripeId()) {
+            $user->createAsStripeCustomer();
+        }
         $this->validate([
             'stripeToken' => 'required|string|regex:/^pm/',
         ]);

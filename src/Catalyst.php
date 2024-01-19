@@ -10,6 +10,7 @@ use OmniaDigital\CatalystCore\Facades\Translate;
 use OmniaDigital\CatalystCore\Settings\BillingSettings;
 use OmniaDigital\CatalystCore\Settings\GeneralSettings;
 use OmniaDigital\CatalystCore\Settings\JobsSettings;
+use Squire\Models\Country;
 
 //use Nwidart\Modules\Facades\Module;
 
@@ -170,11 +171,9 @@ class Catalyst
      */
     public static function countries()
     {
-        $countries = [];
-
-        //        foreach ((new ISO3166)->all() as $country) {
-        //            $countries[$country['alpha2']] = $country['name'];
-        //        }
+        foreach (Country::all() as $country) {
+            $countries[$country['id']] = $country['name'];
+        }
 
         return $countries;
     }

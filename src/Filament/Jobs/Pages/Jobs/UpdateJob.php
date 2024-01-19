@@ -70,7 +70,7 @@ class UpdateJob extends Page
 
         $this->success('Update the job successfully!');
 
-        $this->redirectRoute('filament.jobs.job.show', [
+        $this->redirectRoute('filament.jobs.pages.show', [
             'team' => $this->job->company->id,
             'job' => $this->job,
         ]);

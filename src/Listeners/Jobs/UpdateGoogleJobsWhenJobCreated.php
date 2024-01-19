@@ -4,7 +4,7 @@ namespace OmniaDigital\CatalystCore\Listeners;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
-use OmniaDigital\CatalystCore\Events\JobPositionWasCreated;
+use OmniaDigital\CatalystCore\Events\Jobs\JobPositionWasCreated;
 use OmniaDigital\CatalystCore\Google\Client;
 
 class UpdateGoogleJobsWhenJobCreated implements ShouldQueue

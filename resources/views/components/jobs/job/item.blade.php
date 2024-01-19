@@ -9,7 +9,7 @@
 @endphp
 
 <li {{ $attributes->merge(['class' => $class]) }}>
-    <a href="{{ $editable ? route('filament.jobs.job.update', $job) : route('filament.jobs.job.show', ['team' => $job->company->id, 'job' => $job]) }}"
+    <a href="{{ $editable ? route('filament.jobs.job.update', $job) : route('filament.jobs.pages.show', ['team' => $job->company->id, 'job' => $job]) }}"
        class="block group hover:border-primary
     hover:shadow-2xl border-4 border-transparent
     focus:outline-none

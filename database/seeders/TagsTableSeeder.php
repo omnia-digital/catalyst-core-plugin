@@ -26,7 +26,7 @@ class TagsTableSeeder extends Seeder
         ];
 
         foreach ($tags as $tag) {
-            Tag::create(['name' => $tag]);
+            Tag::create(['name' => $tag, 'type' => 'job_position_skill']);
         }
     }
 }

@@ -17,6 +17,7 @@ use Laravel\Jetstream\Jetstream;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use OmniaDigital\CatalystCore\Actions\Fortify\CreateNewUser;
+use OmniaDigital\CatalystCore\Events\Jobs\JobPositionWasCreated;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
 use OmniaDigital\CatalystCore\Models\Jobs\ApplyType;
 use OmniaDigital\CatalystCore\Models\Jobs\Coupon;
@@ -31,6 +32,7 @@ use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 use OmniaDigital\CatalystCore\Models\Tag;
 use OmniaDigital\CatalystCore\Rules\Jobs\ValidTags;
 use OmniaDigital\CatalystCore\Rules\Jobs\ValidJobAddons;
+use OmniaDigital\CatalystCore\Data\Jobs\Transaction;
 
 class NewJob extends Page
 {
@@ -216,8 +218,10 @@ class NewJob extends Page
             // Store logo
             $this->storeLogo();
 
+            $jobAttributes = $validated;
+            $jobAttributes['title'] = $validated['jobTitle'];
             // Save job
-            $job = JobPosition::create(collect($validated)
+            $job = JobPosition::create(collect($jobAttributes)
                 ->except('selected_skills')
                 ->all());
 
@@ -243,7 +247,7 @@ class NewJob extends Page
             // Note: Stripe accepts charges in cents
             if (! empty($price) && $price > 0) {
                 $invoice = auth()->user()
-                    ->invoiceFor('Publish job: '.$this->title, $price * 100);
+                    ->invoiceFor('Publish job: '.$this->jobTitle, $price * 100);
 
                 // Save a transaction into the database
                 $job->transactions()
@@ -257,14 +261,14 @@ class NewJob extends Page
 
             $this->error('There is an error please contact our support team. Don\'t worry, your card won\'t be charge.');
 
-            return;
+            throw $exception;
         }
 
         DB::commit();
 
         event(new JobPositionWasCreated($job));
 
-        $this->redirectRoute('filament.jobs.job.show', [
+        $this->redirectRoute('filament.jobs.pages.show', [
             'team' => $job->company->id,
             'job' => $job,
         ]);
@@ -295,16 +299,20 @@ class NewJob extends Page
      */
     public function updatePaymentMethod()
     {
+        $user =  auth()->user();
+        if (!$user->hasStripeId()) {
+            $user->createAsStripeCustomer();
+        }
+
         $this->validate([
             'payment_method' => 'required|string|regex:/^pm/',
         ]);
 
-        auth()->user()
-            ->updateDefaultPaymentMethod($this->payment_method);
+        $user->updateDefaultPaymentMethod($this->payment_method);
 
         $this->dispatch('card', [
-            'card_brand' => auth()->user()->card_brand,
-            'card_last_four' => auth()->user()->card_last_four,
+            'card_brand' => $user->card_brand,
+            'card_last_four' => $user->card_last_four,
         ]);
 
         $this->success('Your payment method was updated! You can publish your job now.');
@@ -328,7 +336,7 @@ class NewJob extends Page
      */
     public function getTotalPriceProperty()
     {
-        return CatalystJobs::getJobSetting('posting_price') + $this->addonsPrice;
+        return Catalyst::getJobSetting('posting_price') + $this->addonsPrice;
     }
 
     public function getJobPositionSkillOptionsProperty()
@@ -450,16 +458,16 @@ class NewJob extends Page
     {
         $payer = auth()->user();
 
-        return new Transaction([
-            'gateway' => 'Stripe',
-            'description' => 'Publish job: '.$this->title,
-            'transaction_id' => $invoice->asStripeInvoice()->charge,
-            'payer_id' => $invoice->asStripeInvoice()->customer,
-            'payer_name' => $invoice->asStripeInvoice()->customer_name ?? $payer->name,
-            'payer_email' => $invoice->asStripeInvoice()->customer_email ?? $payer->email,
-            'amount' => (float) ($invoice->asStripeInvoice()->amount_paid / 100),
-            'invoice_number' => $invoice->asStripeInvoice()->id,
-            'user_id' => auth()->id(),
-        ]);
+        return new Transaction(
+            gateway: 'Stripe',
+            description: 'Publish job: '.$this->jobTitle,
+            transaction_id: $invoice->asStripeInvoice()->charge,
+            payer_id: $invoice->asStripeInvoice()->customer,
+            payer_name: $invoice->asStripeInvoice()->customer_name ?? $payer->name,
+            payer_email: $invoice->asStripeInvoice()->customer_email ?? $payer->email,
+            amount: (float) ($invoice->asStripeInvoice()->amount_paid / 100),
+            invoice_number: $invoice->asStripeInvoice()->id,
+            user_id: auth()->id(),
+        );
     }
 }

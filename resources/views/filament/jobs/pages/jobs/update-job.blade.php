@@ -162,7 +162,7 @@
                     <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                     <span class="inline-flex rounded-md shadow-sm">
                         <x-library::button.link
-                                href="{{ route('filament.jobs.job.show', ['team' => $job->company->id, 'job' => $job]) }}"
+                                href="{{ route('filament.jobs.pages.show', ['team' => $job->company->id, 'job' => $job]) }}"
                                 target="_blank">{{ Translate::get('Preview Job') }}</x-library::button.link>
                     </span>
                         <span class="inline-flex rounded-md shadow-sm">
