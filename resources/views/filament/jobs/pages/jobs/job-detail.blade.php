@@ -48,7 +48,7 @@
                             </div>
                             <div class="mt-2 ml-2 flex items-center text-sm leading-5 text-gray-500">
                                 @foreach ($job->skills->pluck('name') as $skill)
-                                    <x-tag :name="$skill" class="bg-teal-100 text-teal-800 rounded-full text-sm ml-2"/>
+                                    <x-catalyst::tag :name="$skill" class="bg-teal-100 text-teal-800 rounded-full text-sm ml-2"/>
                                 @endforeach
                             </div>
                         </div>

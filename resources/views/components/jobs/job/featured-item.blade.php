@@ -14,7 +14,7 @@
             </div>
 
             @foreach ($job->tags->pluck('name') as $tag)
-                <x-tag class="bg-teal-100 text-teal-800 rounded-full text-sm">{{ $tag }}</x-tag>
+                <x-catalyst::tag class="bg-teal-100 text-teal-800 rounded-full text-sm">{{ $tag }}</x-catalyst::tag>
             @endforeach
 
             <div class="space-y-2 mt-4">
@@ -31,7 +31,7 @@
                     @endif
 
                     @if ($job->is_remote)
-                        <x-tag class="text-gray-700 bg-green-300 rounded text-xs">Remote</x-tag>
+                        <x-catalyst::tag class="text-gray-700 bg-green-300 rounded text-xs">Remote</x-catalyst::tag>
                     @endif
                 </p>
 

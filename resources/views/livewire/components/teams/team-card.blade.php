@@ -10,7 +10,7 @@
                 @if ($team->teamTypes->count() > 0)
                     <div class="flex items-center mr-2">
                         <x-library::icons.icon name="users" class="h-4 w-4 mr-2"/>
-                        <x-tag name="{{ $team->teamTypes->first()?->name }}"/>
+                        <x-catalyst::tag name="{{ $team->teamTypes->first()?->name }}"/>
                     </div>
                 @endif
                 <div class="flex items-center">

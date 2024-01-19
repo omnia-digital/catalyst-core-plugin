@@ -9,7 +9,7 @@
 @endphp
 
 <li {{ $attributes->merge(['class' => $class]) }}>
-    <a href="{{ $editable ? route('filament.jobs.job.update', $job) : route('filament.jobs.pages.show', ['team' => $job->company->id, 'job' => $job]) }}"
+    <a href="{{ $editable ? route('filament.jobs.pages.update-job', $job) : route('filament.jobs.pages.job-detail', ['team' => $job->company->id, 'job' => $job]) }}"
        class="block group hover:border-primary
     hover:shadow-2xl border-4 border-transparent
     focus:outline-none
@@ -25,7 +25,7 @@
                         <div class="mt-2 flex items-center text-sm leading-5 text-base-text-color ">
                             <div class="sm:flex-1">
                                 <div class="mr-6 flex items-center text-sm leading-5 text-base-text-color">
-                                    <x-heroicon-o-briefcase id="company"
+                                    <x-library::icon-o-briefcase id="company"
                                                             class="flex-shrink-0 mr-1.5 h-5 w-5 text-light-text-color"/>
                                     {{ $job->company->name }}
                                 </div>

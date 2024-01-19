@@ -51,7 +51,7 @@
                                     <div class="flex flex-wrap items-center gap-2">
                                         @foreach ($form->notifications as $notification)
                                             <div class="relative">
-                                                <x-tag bgColor="neutral-dark" textColor="white"
+                                                <x-catalyst::tag bgColor="neutral-dark" textColor="white"
                                                        class="text-lg px-4 py-0 rounded-full"
                                                        :name="$notification->print_send_date"/>
                                                 <button
@@ -84,7 +84,7 @@
                             <div class="flex flex-wrap items-center gap-2">
                                 @foreach ($form->notifications as $notification)
                                     <div class="relative">
-                                        <x-tag bgColor="neutral-dark" textColor="white"
+                                        <x-catalyst::tag bgColor="neutral-dark" textColor="white"
                                                class="text-lg px-4 py-0 rounded-full"
                                                :name="$notification->print_send_date"/>
                                         <button

@@ -19,7 +19,7 @@
                         @if (Catalyst::isUsingUserSubscriptions()
                             && Catalyst::isSubscriptionShownInProfileHeader()
                             && $user->chargentSubscription()->latest()->first()?->isActive)
-                            <x-tag name="{{ $user->chargentSubscription()->latest()->first()->type->name }}"/>
+                            <x-catalyst::tag name="{{ $user->chargentSubscription()->latest()->first()->type->name }}"/>
                             <x-dot class="hidden sm:block"/>
                         @endif
                         @if ($user->profile->country)
@@ -32,10 +32,10 @@
 
                         {{-- @if ($user->online_status)
                             <x-dot class="hidden sm:block" />
-                            <x-tag name="Online" class="py-0"/>
+                            <x-catalyst::tag name="Online" class="py-0"/>
                         @else
                             <x-dot class="hidden sm:block" />
-                            <x-tag name="Offline" class="py-0"/>
+                            <x-catalyst::tag name="Offline" class="py-0"/>
                         @endif --}}
 
                         <div class="!ml-auto flex items-center justify-end space-x-2">
@@ -43,7 +43,7 @@
                                 {{-- @if ($loop->first)
                                     <x-dot class="hidden sm:block" />
                                 @endif --}}
-                                <x-tag class="bg-neutral-dark" text-color="text-white-text-color" :name="$tag->name"/>
+                                <x-catalyst::tag class="bg-neutral-dark" text-color="text-white-text-color" :name="$tag->name"/>
                             @endforeach
                         </div>
                     </div>

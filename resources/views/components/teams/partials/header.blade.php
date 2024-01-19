@@ -22,7 +22,7 @@
                 @if ($team->teamTypes->count() > 0)
                     <div class="flex flex-wrap justify-start mt-1 space-x-2">
                         @foreach ($team->teamTypes as $tag)
-                            <x-tag :name="$tag->name" text-color="primary" text-size="2xs" link=""/>
+                            <x-catalyst::tag :name="$tag->name" text-color="primary" text-size="2xs" link=""/>
                         @endforeach
                     </div>
                 @endif

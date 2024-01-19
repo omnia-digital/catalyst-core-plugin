@@ -227,7 +227,7 @@
                                 <div class="flex items-center space-x-3 mt-1">
                                     @foreach ($team->teamTypes as $tag)
                                         <div class="relative">
-                                            <x-tag bgColor="neutral-dark" textColor="white" class="text-lg px-4"
+                                            <x-catalyst::tag bgColor="neutral-dark" textColor="white" class="text-lg px-4"
                                                    :name="$tag->name"/>
                                             <button
                                                     wire:click="removeTag('{{ $tag->name }}')"

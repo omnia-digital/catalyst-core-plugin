@@ -14,9 +14,9 @@
                 </div>
                 <div class="ml-2 space-x-2 flex-shrink-0 flex">
                     @foreach ($job->tags->pluck('name') as $name)
-                        <x-tag class="rounded-full bg-green-100 text-green-800 text-sm">
+                        <x-catalyst::tag class="rounded-full bg-green-100 text-green-800 text-sm">
                             {{ $name }}
-                        </x-tag>
+                        </x-catalyst::tag>
                     @endforeach
                 </div>
             </div>
