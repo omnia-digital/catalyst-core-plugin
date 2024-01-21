@@ -2,8 +2,6 @@
 
 namespace OmniaDigital\CatalystCore\Filament\Jobs\Pages;
 
-use BezhanSalleh\FilamentShield\Traits\HasPageShield;
-use Filament\Pages\Page;
 use Livewire\WithPagination;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
 use OmniaDigital\CatalystCore\Filament\Core\Pages\BasePage;
@@ -23,6 +21,8 @@ class Home extends BasePage
     protected static string $view = 'catalyst::filament.jobs.pages.home';
 
     protected static bool $shouldRegisterNavigation = true;
+//    protected static bool $showTitle = false;
+    protected static bool $showBackButton = false;
 
     public $perPage = 25;
 
@@ -40,7 +40,7 @@ class Home extends BasePage
             ->featured(Catalyst::getJobSetting('featured_days', 30))
             ->active()
             ->latest()
-            ->when(Catalyst::getJobSetting('featured_jobs_limit'), fn ($query, $limit) => $query->take($limit))
+            ->when(Catalyst::getJobSetting('featured_jobs_limit'), fn($query, $limit) => $query->take($limit))
             ->get();
 
         $jobs = JobPosition::with(['company', 'skills', 'addons'])
