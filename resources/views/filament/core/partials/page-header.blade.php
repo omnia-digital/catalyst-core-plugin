@@ -31,8 +31,9 @@
                                                class="h-8 w-8 mr-3"/>
                     @endif
                     <x-library::heading.1
-                            class="py-4 fi-header-heading text-2xl font-bold tracking-tight sm:text-3xl dark:text-white py-4 hover:cursor-pointer"
-                            textColor="text-primary">{{ Translate::get($title ?? "Page") }}</x-library::heading.1>
+                            class="py-4 fi-header-heading font-bold tracking-tight dark:text-white py-4 hover:cursor-pointer"
+                            textColor="text-primary"
+                            textSize="text-3xl sm:text-4xl lg:text-5xl">{{ Translate::get($title ?? "Page") }}</x-library::heading.1>
                 </div>
             </div>
         @endif

@@ -4,7 +4,6 @@ namespace OmniaDigital\CatalystCore\Filament\Jobs\Pages\Jobs;
 
 use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Exception;
-use Filament\Pages\Page;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Contracts\Foundation\Application;
@@ -14,9 +13,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Validator;
 use Laravel\Jetstream\Jetstream;
-use Livewire\Component;
 use Livewire\WithFileUploads;
 use OmniaDigital\CatalystCore\Actions\Fortify\CreateNewUser;
+use OmniaDigital\CatalystCore\Data\Jobs\Transaction;
 use OmniaDigital\CatalystCore\Events\Jobs\JobPositionWasCreated;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
 use OmniaDigital\CatalystCore\Filament\Core\Pages\BasePage;
@@ -29,11 +28,10 @@ use OmniaDigital\CatalystCore\Models\Jobs\JobPositionAddon;
 use OmniaDigital\CatalystCore\Models\Jobs\JobPositionLength;
 use OmniaDigital\CatalystCore\Models\Jobs\PaymentType;
 use OmniaDigital\CatalystCore\Models\Jobs\ProjectSize;
-use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 use OmniaDigital\CatalystCore\Models\Tag;
-use OmniaDigital\CatalystCore\Rules\Jobs\ValidTags;
 use OmniaDigital\CatalystCore\Rules\Jobs\ValidJobAddons;
-use OmniaDigital\CatalystCore\Data\Jobs\Transaction;
+use OmniaDigital\CatalystCore\Rules\Jobs\ValidTags;
+use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
 class NewJob extends BasePage
 {
@@ -45,7 +43,7 @@ class NewJob extends BasePage
 
     protected static bool $shouldRegisterNavigation = true;
 
-
+    protected static ?string $title = 'Post a New Job';
 
     public $jobTitle;
 
@@ -124,9 +122,50 @@ class NewJob extends BasePage
 
     }
 
+    /**
+     * Set current user's company id.
+     *
+     * @return void
+     */
+    private function setTeamId()
+    {
+        $this->team_id = auth()->guest() ? null : auth()->user()->currentTeam->id;
+    }
+
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName, $this->rules());
+    }
+
+    private function rules()
+    {
+        return [
+            'jobTitle' => 'required|max:254',
+            'description' => 'required|min:50',
+            'team_id' => 'required|' . Rule::in(auth()->user()
+                    ->allTeams()
+                    ->pluck('id')),
+            'apply_type' => 'required|' . Rule::in(['link', 'email']),
+            'apply_value' => 'required',
+            'payment_type' => 'required|' . Rule::in(['hourly', 'fixed']),
+            'budget' => 'nullable|numeric|min:0',
+            'is_remote' => 'boolean',
+            'location' => 'nullable|max:254',
+            'selected_skills' => ['required', new ValidTags],
+            'selected_addons' => [new ValidJobAddons],
+            'line1' => 'required_if:selected_payment_method,new-card|nullable|string|max:254',
+            'city' => 'required_if:selected_payment_method,new-card|nullable|string|max:254',
+            'country' => 'required_if:selected_payment_method,new-card|nullable|string|size:2',
+            'postal_code' => 'required_if:selected_payment_method,new-card|nullable|numeric',
+            'state' => 'required_if:selected_payment_method,new-card|nullable|string|max:254',
+            'card_holder_name' => 'required_if:selected_payment_method,new-card|nullable|string|max:254',
+            'payment_method' => 'required_if:selected_payment_method,new-card|nullable|string|regex:/^pm/',
+            'job_length_id' => 'required',
+            'hours_per_week_id' => 'required',
+            'project_size_id' => 'required',
+            'experience_level_id' => 'required',
+            'is_active' => 'boolean',
+        ];
     }
 
     public function updatedLogo()
@@ -136,10 +175,10 @@ class NewJob extends BasePage
 
     public function updatedCoupon($value)
     {
-        if (! empty($value)) {
+        if (!empty($value)) {
             $coupon = Coupon::findByCode($this->coupon);
 
-            if (! $coupon || ! $coupon->isValid()) {
+            if (!$coupon || !$coupon->isValid()) {
                 // Re-calculate the total
                 $this->price = $this->totalPrice;
 
@@ -162,6 +201,22 @@ class NewJob extends BasePage
     public function updatedTeamId()
     {
         $this->switchTeam();
+    }
+
+    /**
+     * Switch current team to company value.
+     */
+    private function switchTeam()
+    {
+        $team = Jetstream::newTeamModel()
+            ->find($this->team_id);
+
+        if ($team) {
+            return auth()->user()
+                ->switchTeam($team);
+        }
+
+        $this->error('notify', 'Cannot find the company.');
     }
 
     /**
@@ -210,7 +265,7 @@ class NewJob extends BasePage
             ->validate($this->rules());
 
         // Make sure users have their default payment method.
-        if (! auth()->user()
+        if (!auth()->user()
             ->hasDefaultPaymentMethod()) {
             $this->error('You have not setup your default payment method yet. Please setup one!');
 
@@ -250,9 +305,9 @@ class NewJob extends BasePage
 
             // Charge via user's default payment method
             // Note: Stripe accepts charges in cents
-            if (! empty($price) && $price > 0) {
+            if (!empty($price) && $price > 0) {
                 $invoice = auth()->user()
-                    ->invoiceFor('Publish job: '.$this->jobTitle, $price * 100);
+                    ->invoiceFor('Publish job: ' . $this->jobTitle, $price * 100);
 
                 // Save a transaction into the database
                 $job->transactions()
@@ -280,11 +335,56 @@ class NewJob extends BasePage
     }
 
     /**
+     * Upload and store logo in database.
+     */
+    private function storeLogo()
+    {
+        if ($this->logo) {
+            $filename = $this->logo->store('/logos', $this->logoDisk());
+
+            auth()->user()->currentTeam->update(['logo_path' => $filename]);
+        }
+    }
+
+    /**
+     * Get the disk that logo should be stored on.
+     *
+     * @return string
+     */
+    private function logoDisk()
+    {
+        return isset($_ENV['VAPOR_ARTIFACT_NAME']) ? 's3' : 'public';
+    }
+
+    /**
+     * Prepare transaction to save it into database.
+     *
+     *
+     * @return Transaction
+     */
+    private function prepareTransaction($invoice)
+    {
+        $payer = auth()->user();
+
+        return new Transaction(
+            gateway: 'Stripe',
+            description: 'Publish job: ' . $this->jobTitle,
+            transaction_id: $invoice->asStripeInvoice()->charge,
+            payer_id: $invoice->asStripeInvoice()->customer,
+            payer_name: $invoice->asStripeInvoice()->customer_name ?? $payer->name,
+            payer_email: $invoice->asStripeInvoice()->customer_email ?? $payer->email,
+            amount: (float)($invoice->asStripeInvoice()->amount_paid / 100),
+            invoice_number: $invoice->asStripeInvoice()->id,
+            user_id: auth()->id(),
+        );
+    }
+
+    /**
      * Add/remove addon.
      */
     public function toggleAddon($addonId)
     {
-        if (! in_array($addonId, $this->selected_addons)) {
+        if (!in_array($addonId, $this->selected_addons)) {
             array_push($this->selected_addons, $addonId);
         } else {
             $key = array_search($addonId, $this->selected_addons);
@@ -304,7 +404,7 @@ class NewJob extends BasePage
      */
     public function updatePaymentMethod()
     {
-        $user =  auth()->user();
+        $user = auth()->user();
         if (!$user->hasStripeId()) {
             $user->createAsStripeCustomer();
         }
@@ -372,107 +472,5 @@ class NewJob extends BasePage
                 ->get()
                 ->toArray(),
         ];
-    }
-
-    /**
-     * Set current user's company id.
-     *
-     * @return void
-     */
-    private function setTeamId()
-    {
-        $this->team_id = auth()->guest() ? null : auth()->user()->currentTeam->id;
-    }
-
-    private function rules()
-    {
-        return [
-            'jobTitle' => 'required|max:254',
-            'description' => 'required|min:50',
-            'team_id' => 'required|'.Rule::in(auth()->user()
-                ->allTeams()
-                ->pluck('id')),
-            'apply_type' => 'required|'.Rule::in(['link', 'email']),
-            'apply_value' => 'required',
-            'payment_type' => 'required|'.Rule::in(['hourly', 'fixed']),
-            'budget' => 'nullable|numeric|min:0',
-            'is_remote' => 'boolean',
-            'location' => 'nullable|max:254',
-            'selected_skills' => ['required', new ValidTags],
-            'selected_addons' => [new ValidJobAddons],
-            'line1' => 'required_if:selected_payment_method,new-card|nullable|string|max:254',
-            'city' => 'required_if:selected_payment_method,new-card|nullable|string|max:254',
-            'country' => 'required_if:selected_payment_method,new-card|nullable|string|size:2',
-            'postal_code' => 'required_if:selected_payment_method,new-card|nullable|numeric',
-            'state' => 'required_if:selected_payment_method,new-card|nullable|string|max:254',
-            'card_holder_name' => 'required_if:selected_payment_method,new-card|nullable|string|max:254',
-            'payment_method' => 'required_if:selected_payment_method,new-card|nullable|string|regex:/^pm/',
-            'job_length_id' => 'required',
-            'hours_per_week_id' => 'required',
-            'project_size_id' => 'required',
-            'experience_level_id' => 'required',
-            'is_active' => 'boolean',
-        ];
-    }
-
-    /**
-     * Switch current team to company value.
-     */
-    private function switchTeam()
-    {
-        $team = Jetstream::newTeamModel()
-            ->find($this->team_id);
-
-        if ($team) {
-            return auth()->user()
-                ->switchTeam($team);
-        }
-
-        $this->error('notify', 'Cannot find the company.');
-    }
-
-    /**
-     * Upload and store logo in database.
-     */
-    private function storeLogo()
-    {
-        if ($this->logo) {
-            $filename = $this->logo->store('/logos', $this->logoDisk());
-
-            auth()->user()->currentTeam->update(['logo_path' => $filename]);
-        }
-    }
-
-    /**
-     * Get the disk that logo should be stored on.
-     *
-     * @return string
-     */
-    private function logoDisk()
-    {
-        return isset($_ENV['VAPOR_ARTIFACT_NAME']) ? 's3' : 'public';
-    }
-
-    /**
-     * Prepare transaction to save it into database.
-     *
-     *
-     * @return Transaction
-     */
-    private function prepareTransaction($invoice)
-    {
-        $payer = auth()->user();
-
-        return new Transaction(
-            gateway: 'Stripe',
-            description: 'Publish job: '.$this->jobTitle,
-            transaction_id: $invoice->asStripeInvoice()->charge,
-            payer_id: $invoice->asStripeInvoice()->customer,
-            payer_name: $invoice->asStripeInvoice()->customer_name ?? $payer->name,
-            payer_email: $invoice->asStripeInvoice()->customer_email ?? $payer->email,
-            amount: (float) ($invoice->asStripeInvoice()->amount_paid / 100),
-            invoice_number: $invoice->asStripeInvoice()->id,
-            user_id: auth()->id(),
-        );
     }
 }

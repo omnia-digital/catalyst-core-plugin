@@ -1,7 +1,7 @@
 <x-filament-panels::page>
 
     <div>
-        <div class="flex bg-neutral">
+        <div class="">
             <!-- SideMenu -->
             {{--        <livewire:catalyst::layouts.module-navigation class=""/>--}}
 

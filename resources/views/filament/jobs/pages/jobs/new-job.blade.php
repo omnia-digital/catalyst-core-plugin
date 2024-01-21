@@ -1,21 +1,6 @@
 <x-filament-panels::page>
     <div>
-        <div class="mb-3 rounded-b-lg pl-4 flex items-center bg-primary">
-            <div class="mr-4 hover:bg-neutral-dark p-2 rounded-full bg-secondary hover:text-secondary">
-                <a href="{{ route('filament.jobs.home') }}">
-                    <x-heroicon-o-arrow-left class="h-6"/>
-                </a>
-            </div>
-            <a href="{{ route('filament.jobs.home') }}">
-                <x-library::heading.1
-                        class="py-4 hover:cursor-pointer">{{ Translate::get('Jobs') }}</x-library::heading.1>
-            </a>
-        </div>
-        <x-library::heading.1 text-color="text-color"
-                              class="ml-4 pt-2 pb-1 hover:cursor-pointer">{{ Translate::get('Post a Job') }}</x-library::heading.1>
-
-
-        <div class="flex justify-between my-6">
+        <div class="flex justify-between mb-6">
             <div class="w-full md:w-10/12 px-2 md:pr-6">
 
                 @guest
