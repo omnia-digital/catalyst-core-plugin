@@ -21,7 +21,7 @@ class BasePage extends Page
         return view('catalyst::filament.core.partials.page-header',
             [
                 'title' => self::getTitle(),
-                'icon' => self::getNavigationIcon(),
+                'icon' => self::getNavigationIcon() ?? null,
                 'showTitle' => self::getShowTitle(),
                 'showBackButton' => self::getShowBackButton()
             ]);
