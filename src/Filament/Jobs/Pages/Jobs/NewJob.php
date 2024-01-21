@@ -19,6 +19,7 @@ use Livewire\WithFileUploads;
 use OmniaDigital\CatalystCore\Actions\Fortify\CreateNewUser;
 use OmniaDigital\CatalystCore\Events\Jobs\JobPositionWasCreated;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
+use OmniaDigital\CatalystCore\Filament\Core\Pages\BasePage;
 use OmniaDigital\CatalystCore\Models\Jobs\ApplyType;
 use OmniaDigital\CatalystCore\Models\Jobs\Coupon;
 use OmniaDigital\CatalystCore\Models\Jobs\ExperienceLevel;
@@ -34,13 +35,17 @@ use OmniaDigital\CatalystCore\Rules\Jobs\ValidTags;
 use OmniaDigital\CatalystCore\Rules\Jobs\ValidJobAddons;
 use OmniaDigital\CatalystCore\Data\Jobs\Transaction;
 
-class NewJob extends Page
+class NewJob extends BasePage
 {
     use WithFileUploads, WithNotification;
 
     use HasPageShield;
 
     protected static string $view = 'catalyst::filament.jobs.pages.jobs.new-job';
+
+    protected static bool $shouldRegisterNavigation = true;
+
+
 
     public $jobTitle;
 

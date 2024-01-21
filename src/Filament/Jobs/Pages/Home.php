@@ -6,12 +6,13 @@ use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Pages\Page;
 use Livewire\WithPagination;
 use OmniaDigital\CatalystCore\Facades\Catalyst;
+use OmniaDigital\CatalystCore\Filament\Core\Pages\BasePage;
 use OmniaDigital\CatalystCore\Models\Jobs\JobPosition;
 use OmniaDigital\CatalystCore\Support\Auth\WithGuestAccess;
 use OmniaDigital\CatalystCore\Traits\Filter\WithSortAndFilters;
 use OmniaDigital\OmniaLibrary\Livewire\WithCachedRows;
 
-class Home extends Page
+class Home extends BasePage
 {
     use WithCachedRows,
         WithGuestAccess,
@@ -20,6 +21,8 @@ class Home extends Page
 //    use HasPageShield;
 
     protected static string $view = 'catalyst::filament.jobs.pages.home';
+
+    protected static bool $shouldRegisterNavigation = true;
 
     public $perPage = 25;
 

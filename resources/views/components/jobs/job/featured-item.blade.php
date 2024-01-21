@@ -64,7 +64,7 @@
             <div class="-ml-px w-0 flex-1 flex">
                 <a href="{{ route('filament.jobs.show', ['team' => $job->company, 'job' => $job]) }}"
                    class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm leading-5 text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 transition ease-in-out duration-150">
-                    <x-heroicon-s-cursor-click class="w-5 h-5 text-gray-400"/>
+                    <x-library::icons.icon name="heroicon-s-cursor-click" class="w-5 h-5 text-gray-400"/>
                     <span class="ml-3">Apply</span>
                 </a>
             </div>

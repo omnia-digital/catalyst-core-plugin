@@ -7,6 +7,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Livewire\Component;
+use OmniaDigital\CatalystCore\Filament\Core\Pages\BasePage;
 use OmniaDigital\CatalystCore\Models\Jobs\ApplyType;
 use OmniaDigital\CatalystCore\Models\Jobs\ExperienceLevel;
 use OmniaDigital\CatalystCore\Models\Jobs\HoursPerWeek;
@@ -16,11 +17,14 @@ use OmniaDigital\CatalystCore\Models\Jobs\PaymentType;
 use OmniaDigital\CatalystCore\Models\Jobs\ProjectSize;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
-class UpdateJob extends Page
+class UpdateJob extends BasePage
 {
     use WithNotification;
 
     protected static string $view = 'catalyst::livewire.jobs.pages.jobs.update-job';
+
+    protected static bool $shouldRegisterNavigation = false;
+
 
     public JobPosition $job;
 
