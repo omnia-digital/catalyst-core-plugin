@@ -8,6 +8,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use OmniaDigital\CatalystCore\Filament\Admin\Clusters\Jobs;
 use OmniaDigital\CatalystCore\Filament\Admin\Resources\CompanyResource\Pages\CreateCompany;
 use OmniaDigital\CatalystCore\Filament\Admin\Resources\CompanyResource\Pages\EditCompany;
 use OmniaDigital\CatalystCore\Filament\Admin\Resources\CompanyResource\Pages\ManageCompanies;
@@ -21,7 +22,7 @@ class CompanyResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
     protected static ?string $navigationGroup = 'People';
-
+protected static ?string $cluster = Jobs::class;
     //    protected $queryString = [
     //        'tableColumnSearchQueries',
     //    ];

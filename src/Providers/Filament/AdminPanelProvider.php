@@ -3,7 +3,6 @@
 namespace OmniaDigital\CatalystCore\Providers\Filament;
 
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
-use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Panel;
@@ -18,9 +17,7 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use OmniaDigital\CatalystCore\Filament\Admin\Pages\Dashboard;
-use OmniaDigital\CatalystCore\Models\Team;
 use OmniaDigital\CatalystForms\CatalystFormsPlugin;
-use ShuvroRoy\FilamentSpatieLaravelBackup\FilamentSpatieLaravelBackupPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -34,8 +31,12 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
-            ->discoverResources(in: __DIR__ .'/../../Filament/Admin/Resources', for: 'OmniaDigital\\CatalystCore\\Filament\\Admin\\Resources')
-            ->discoverPages(in: __DIR__ . '/../../Filament/Admin/Pages/', for: 'OmniaDigital\\CatalystCore\\Filament\\Admin\\Pages')
+            ->discoverResources(in: __DIR__ . '/../../Filament/Admin/Resources',
+                for: 'OmniaDigital\\CatalystCore\\Filament\\Admin\\Resources')
+            ->discoverPages(in: __DIR__ . '/../../Filament/Admin/Pages/',
+                for: 'OmniaDigital\\CatalystCore\\Filament\\Admin\\Pages')
+            ->discoverClusters(in: __DIR__ . '/../../Filament/Admin/Clusters/',
+                for: 'OmniaDigital\\CatalystCore\\Filament\\Admin\\Clusters')
             ->pages([
                 Dashboard::class,
             ])
@@ -43,11 +44,14 @@ class AdminPanelProvider extends PanelProvider
                 FilamentShieldPlugin::make(),
                 CatalystFormsPlugin::make()
             ])
-            ->discoverWidgets(in: __DIR__.'/Filament/Admin/Widgets', for: 'OmniaDigital\\CatalystCore\\Filament\\Admin\\Widgets')
+            ->discoverWidgets(in: __DIR__ . '/Filament/Admin/Widgets',
+                for: 'OmniaDigital\\CatalystCore\\Filament\\Admin\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
             ])
+//            ->topNavigation()
+            ->sidebarCollapsibleOnDesktop()
 //            ->viteTheme('css/omnia-digital/catalyst-core-plugin/catalyst-social-theme.css')
             ->middleware([
                 EncryptCookies::class,
