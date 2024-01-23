@@ -1,4 +1,5 @@
 <div>
+    <x-library::heading.2>Subscribe widget</x-library::heading.2>
     <div class="mx-2 md:mx-0 bg-white p-4 xl:py-6 xl:px-10 rounded-lg shadow-xl text-xl md:mb-10">
         <form wire:submit.prevent="subscribe" class="md:flex items-center text-black mx-auto md:justify-between">
             <div class="w-full items-center text-center md:text-left md:pr-5">

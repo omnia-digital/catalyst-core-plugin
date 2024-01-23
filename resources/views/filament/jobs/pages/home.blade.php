@@ -3,10 +3,8 @@
         @include('catalyst::livewire.jobs.components.filters', ['skipFilters' => ['has_attachment', 'members']])
 
         <div>
-              Subscribe widget
-            @include('catalyst::livewire.jobs.components.subscribe-widget')
+{{--            @include('catalyst::livewire.jobs.components.subscribe-widget')--}}
 
-              Featured Jobs
             @if (count($featuredJobs))
                 <div>
                     <h2 class="text-xl font-medium text-gray-700 py-2">Featured Jobs</h2>
@@ -19,7 +17,6 @@
                 </div>
             @endif
 
-              Latest Jobs
             <div class="mt-2">
                 <h2 class="text-xl font-medium text-gray-700 py-2">Latest Jobs</h2>
 

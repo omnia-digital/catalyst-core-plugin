@@ -50,11 +50,6 @@ class SocialPanelProvider extends PanelProvider
                 in: __DIR__ . '/../../Filament/Social/Pages',
                 for: 'OmniaDigital\\CatalystCore\\Filament\\Social\\Pages'
             )
-//            ->pages([
-//                Home::class
-//                //                Pages\Dashboard::class,
-//            ])
-
             ->discoverWidgets(
                 in: '../../Filament/Social/Widgets',
                 for: 'OmniaDigital\\CatalystCore\\Filament\\Social\\Widgets'
@@ -63,8 +58,8 @@ class SocialPanelProvider extends PanelProvider
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
             ])
-            ->topNavigation()
-            ->sidebarCollapsibleOnDesktop()
+//            ->topNavigation()
+//            ->sidebarCollapsibleOnDesktop()
             // Render Hooks for Social
             ->renderHook('panels::head.start', function () {
                 return view('catalyst::layouts.partials.head-start');

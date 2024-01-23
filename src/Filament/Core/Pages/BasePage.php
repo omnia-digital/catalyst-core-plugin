@@ -4,6 +4,7 @@ namespace OmniaDigital\CatalystCore\Filament\Core\Pages;
 
 use Filament\Actions\Concerns\InteractsWithRecord;
 use Filament\Pages\Page;
+use Filament\Support\Enums\MaxWidth;
 use Illuminate\Contracts\View\View;
 
 class BasePage extends Page
@@ -14,7 +15,7 @@ class BasePage extends Page
 
     protected static bool $shouldRegisterNavigation = false;
     protected static bool $showTitle = true;
-    protected static bool $showBackButton = true;
+    protected static bool $showBackButton = false;
 
     public function getHeader(): ?View
     {
@@ -27,10 +28,9 @@ class BasePage extends Page
             ]);
     }
 
-    public function getMaxContentWidth(): ?string
+    public function getMaxContentWidth(): MaxWidth
     {
-        return 'full';
-//        return MaxWidth::Full;
+        return MaxWidth::Full;
     }
 
     public function getShowTitle(): bool

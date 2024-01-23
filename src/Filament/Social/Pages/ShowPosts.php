@@ -4,9 +4,10 @@ namespace OmniaDigital\CatalystCore\Filament\Social\Pages;
 
 use Filament\Actions\Action;
 use Filament\Pages\Page;
+use OmniaDigital\CatalystCore\Filament\Core\Pages\BasePage;
 use OmniaDigital\CatalystCore\Models\Post;
 
-class ShowPosts extends Page
+class ShowPosts extends BasePage
 {
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 

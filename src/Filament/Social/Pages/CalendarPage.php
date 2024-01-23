@@ -25,7 +25,9 @@ class CalendarPage extends BasePage
     protected static string $view = 'catalyst::filament.pages.social.calendar';
     protected static ?string $slug = 'calendar';
     protected static ?string $navigationLabel = 'Calendar';
+    protected static ?string $title = 'Calendar';
     protected static ?int $navigationSort = 100;
+    protected static bool $shouldRegisterNavigation = true;
 
     protected function getHeaderActions(): array
     {

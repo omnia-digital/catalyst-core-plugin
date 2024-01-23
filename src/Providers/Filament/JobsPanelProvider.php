@@ -54,8 +54,8 @@ class JobsPanelProvider extends PanelProvider
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
             ])
-            ->topNavigation()
-            ->sidebarCollapsibleOnDesktop()
+//            ->topNavigation()
+//            ->sidebarCollapsibleOnDesktop()
             // Render Hooks for Jobs
             ->renderHook('panels::head.start', function () {
                 return view('catalyst::layouts.partials.head-start');

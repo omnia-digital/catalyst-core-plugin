@@ -356,7 +356,12 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
         });
 
         PanelSwitch::configureUsing(function (PanelSwitch $panelSwitch) {
-            $panelSwitch->simple()->visible(fn (): bool => auth()->user()->is_admin);
+            $panelSwitch
+                ->simple()
+                ->visible(fn (): bool => auth()->user()->is_admin)
+                ->canSwitchPanels(fn (): bool => auth()->user()->is_admin)
+//            ->excludes(['admin'])
+            ->renderHook('panels::sidebar.nav.start');
         });
 
         // Testing

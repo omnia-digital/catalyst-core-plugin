@@ -5,9 +5,10 @@ namespace OmniaDigital\CatalystCore\Filament\Social\Pages;
 use Filament\Pages\Page;
 use Filament\Resources\Pages\Concerns\InteractsWithRecord;
 use OmniaDigital\CatalystCore\Filament\Admin\Resources\PostResource;
+use OmniaDigital\CatalystCore\Filament\Core\Pages\BasePage;
 use OmniaDigital\CatalystCore\Models\Post;
 
-class Show extends Page
+class Show extends BasePage
 {
 //    use HasPageShield;
 //    use WithGuestAccess;
