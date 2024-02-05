@@ -35,7 +35,7 @@ class SocialPanelProvider extends PanelProvider
             ->path('social')
             ->login()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Orange,
                 'danger' => Color::Rose,
                 'gray' => Color::Gray,
                 'info' => Color::Blue,
@@ -76,6 +76,8 @@ class SocialPanelProvider extends PanelProvider
             ->renderHook('panels::body.end', function () {
                 return view('catalyst::layouts.partials.body-end');
             })
+//            ->theme('public/css/omnia-digital/catalyst-core-plugin/catalyst-social-styles.css')
+//            ->viteTheme('public/css/omnia-digital/catalyst-core-plugin/catalyst-social-styles.css')
 //            ->navigationItems([
 //                NavigationItem::make('Discover')
 //                    ->url('discover')

@@ -8,6 +8,7 @@ use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
 use Filament\Support\Assets\Theme;
 use Filament\Support\Facades\FilamentAsset;
+use Filament\Support\Facades\FilamentColor;
 use Filament\Support\Facades\FilamentIcon;
 use Filament\Support\Facades\FilamentView;
 use Illuminate\Filesystem\Filesystem;
@@ -375,9 +376,11 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
     {
         return [
             // AlpineComponent::make('catalyst-core-plugin', __DIR__ . '/../resources/dist/components/catalyst-core-plugin.js'),
-            Css::make('catalyst-core-social-styles', __DIR__ . '/../resources/dist/catalyst-core-social.css')->loadedOnRequest(),
-            Css::make('catalyst-core-plugin-styles', __DIR__ . '/../resources/dist/catalyst-core-admin.css'),
-            Css::make('catalyst-core-plugin-styles', __DIR__ . '/../resources/dist/catalyst-core-plugin.css'),
+//            Css::make('catalyst-core-plugin-styles', __DIR__ . '/../resources/dist/catalyst-core-plugin.css')->loadedOnRequest(),
+//            Css::make('catalyst-admin-styles', __DIR__ . '/../resources/dist/catalyst-admin.css')->loadedOnRequest(),
+//            Css::make('catalyst-social-styles', __DIR__ . '/../resources/dist/catalyst-social.css')->loadedOnRequest(),
+//            Css::make('catalyst-jobs-styles', __DIR__ . '/../resources/dist/catalyst-jobs.css')->loadedOnRequest(),
+
             Js::make('catalyst-core-plugin-scripts', __DIR__ . '/../resources/dist/catalyst-core-plugin.js'),
         ];
     }
