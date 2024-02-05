@@ -1,13 +1,14 @@
 import preset from '../../../../vendor/filament/filament/tailwind.config.preset'
+
 const plugin = require('tailwindcss/plugin');
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors')
 
 export default {
-        presets: [preset],
+    presets: [preset],
     content: [
-        './app/Filament/Social/**/*.php',
-        './resources/views/filament/social/**/*.blade.php',
+        '../../../../src/Filament/Social/**/*.php',
+        '../../../../resources/views/filament/social/**/*.blade.php',
         './vendor/filament/**/*.blade.php',
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './vendor/laravel/jetstream/**/*.blade.php',
@@ -153,7 +154,7 @@ export default {
         require('@tailwindcss/aspect-ratio'),
         require('tailwind-scrollbar-hide'),
         require('tw-elements/dist/plugin'),
-        plugin(function({ matchUtilities, theme }) {
+        plugin(function ({matchUtilities, theme}) {
             matchUtilities(
                 {
                     'h-full-minus': (value) => {
