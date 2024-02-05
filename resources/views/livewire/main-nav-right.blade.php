@@ -12,7 +12,7 @@
                 <div class="mx-3 flex items-center">
                     <a href="{{ route('notifications') }}"
                        title="Notifications"
-                       class="{{ request()->routeIs('notifications') ? 'font-semibold text-primary' : 'text-light-text-color hover:text-primary' }}
+                       class="{{ request()->routeIs('notifications') ? 'font-semibold text-primary-500' : 'text-light-text-color hover:text-primary-500' }}
                                 {{ 'relative rounded-full w-full p-1 group flex justify-left items-center text-xl space-x-2 font-medium' }}"
                        aria-current="page">
                         <x-library::icons.icon name="heroicon-o-bell"/>

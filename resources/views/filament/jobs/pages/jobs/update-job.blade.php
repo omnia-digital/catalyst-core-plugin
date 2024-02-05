@@ -1,7 +1,7 @@
 @extends('catalyst::livewire.jobs.layouts.pages.default-page-layout')
 
 @section('content')
-    <div class="mb-3 rounded-b-lg pl-4 flex items-center bg-primary">
+    <div class="mb-3 rounded-b-lg pl-4 flex items-center bg-primary-500">
         <div class="mr-4 hover:bg-neutral-dark p-2 rounded-full bg-secondary hover:text-secondary">
             <a href="{{ route('filament.jobs.my-jobs') }}">
                 <x-heroicon-o-arrow-left class="h-6"/>

@@ -48,7 +48,7 @@
     <!-- Static sidebar for desktop -->
     <div class="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0 shadow-lg">
         <!-- Sidebar component, swap this element with another sidebar if you like -->
-        <div class="flex-1 flex flex-col min-h-0 bg-primary">
+        <div class="flex-1 flex flex-col min-h-0 bg-primary-500">
             <div class="flex items-center pl-6 h-16 flex-shrink-0">
                 <!-- desktop logo -->
                 <img class="h-8 mr-2 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-primary.svg"

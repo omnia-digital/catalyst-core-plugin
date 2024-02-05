@@ -7,7 +7,7 @@
             <span class="mr-3 font-bold">Sort By</span>
             <x-library::dropdown.index :position="'left'" class="z-10 p-2 rounded-md bg-neutral"
                                        :dropdownClasses="'bg-secondary border-none shadow-md'">
-                <x-slot:trigger class=" hover:cursor-pointer text-base-text-color hover:text-primary">
+                <x-slot:trigger class=" hover:cursor-pointer text-base-text-color hover:text-primary-500">
 {{--                    {{ $sortLabels[$orderBy] }}--}}
                     <i class="fa-solid fa-caret-down ml-1"></i>
                     </x-slot>
@@ -18,11 +18,11 @@
             </x-library::dropdown.index>
             @if ($sortOrder === 'asc')
                 <x-heroicon-o-arrow-up
-                        class="w-4 ml-2 hover:cursor-pointer text-base-text-color hover:text-primary"
+                        class="w-4 ml-2 hover:cursor-pointer text-base-text-color hover:text-primary-500"
                         wire:click.prevent="toggleSortOrder()"/>
             @else
                 <x-heroicon-o-arrow-down
-                        class="w-4 ml-2 hover:cursor-pointer text-base-text-color hover:text-primary"
+                        class="w-4 ml-2 hover:cursor-pointer text-base-text-color hover:text-primary-500"
                         wire:click.prevent="toggleSortOrder()"/>
             @endif
         </div>

@@ -22,7 +22,7 @@
             </div>
 
             <div class="mt-4">
-                <a href="#" class="text-primary hover:underline" wire:click.prevent="showRegisterModal">Sign up</a>
+                <a href="#" class="text-primary-500 hover:underline" wire:click.prevent="showRegisterModal">Sign up</a>
             </div>
         </x-slot:content>
         <x-slot:actions>
@@ -43,7 +43,7 @@
                 <catalyst::components.forms.register-default-form/>
             @endif
             <div class="mt-4">
-                <a href="#" class="text-primary hover:underline" wire:click.prevent="showLoginModal">Have an
+                <a href="#" class="text-primary-500 hover:underline" wire:click.prevent="showLoginModal">Have an
                     account?</a>
             </div>
         </x-slot:content>

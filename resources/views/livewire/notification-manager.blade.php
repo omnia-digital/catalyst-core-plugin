@@ -17,7 +17,7 @@
                                         <x-library::input.toggle
                                                 id="{{ $channel }}"
                                                 wire:model.live="subscriptions.{{ $notification }}.{{ $channel }}"
-                                                trueBackgroundColor="bg-primary"
+                                                trueBackgroundColor="bg-primary-500"
                                         />
                                     </div>
                                 @endforeach

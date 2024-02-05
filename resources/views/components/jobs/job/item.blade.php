@@ -21,7 +21,7 @@
                 </div>
                 <div class="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
                     <div>
-                        <h3 class="leading-5 font-medium truncate text-primary">{{ $job->title }}</h3>
+                        <h3 class="leading-5 font-medium truncate text-primary-500">{{ $job->title }}</h3>
                         <div class="mt-2 flex items-center text-sm leading-5 text-base-text-color ">
                             <div class="sm:flex-1">
                                 <div class="mr-6 flex items-center text-sm leading-5 text-base-text-color">

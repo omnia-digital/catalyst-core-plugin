@@ -3,7 +3,7 @@
 
 @section('content')
     <div>
-        <div class="sticky top-[55px] z-40 mb-4 rounded-b-lg px-4 pl-4 flex items-center bg-primary">
+        <div class="sticky top-[55px] z-40 mb-4 rounded-b-lg px-4 pl-4 flex items-center bg-primary-500">
             <div class="flex-1 flex items-center space-x-2 -ml-1">
                 <x-library::icons.icon name="fa-solid fa-users" size="w-8 h-8" color="text-white-text-color"/>
                 <x-library::heading.1 class="py-4 text-3xl hover:cursor-pointer"
@@ -14,7 +14,7 @@
                 <x-library::button.index x-data=""
                                          x-on:click.prevent="$openModal('create-team')"
                                          bg-color="secondary"
-                                         text-color="text-primary"
+                                         text-color="text-primary-500"
                                          size="w-60 h-10" py="py-2 "
                                          class="hidden sm:block">
                     {{ Translate::get('Create Team') }}
@@ -51,7 +51,7 @@
         {{-- Create Team button --}}
         @can('create', Team::class)
             <div class="sm:hidden fixed bottom-16 right-4 h-16 mb-2 w-16 z-[999]">
-                <button class="float-right p-3 bg-primary rounded-full"
+                <button class="float-right p-3 bg-primary-500 rounded-full"
                         x-data=""
                         x-on:click.prevent="$openModal('create-team')">
                     <x-library::icons.icon name="heroicon-o-plus" color="text-secondary"/>

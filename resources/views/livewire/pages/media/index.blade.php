@@ -3,7 +3,7 @@
 
 @section('content')
     <div class=" pr-4 sm:pr-6 lg:pr-4">
-        <div class="sticky top-[55px] z-40 mb-4 rounded-b-lg px-4 pl-4 flex items-center justify-between bg-primary">
+        <div class="sticky top-[55px] z-40 mb-4 rounded-b-lg px-4 pl-4 flex items-center justify-between bg-primary-500">
             <div class="py-2 pl-2">
                 <div class="flex-1 flex items-center space-x-2 -ml-1">
                     <x-library::icons.icon name="fa-solid fa-images" size="w-8 h-8" color="text-white-text-color"/>

@@ -148,14 +148,14 @@
                                 <div class="px-6">
                                     <nav class="-mb-px flex flex-wrap justify-center -mx-4">
                                         <a wire:click="selectCategory('All')" href="#"
-                                           class="{{ 'All' === $selectedCategoryId ? 'border-primary text-primary whitespace-nowrap py-2 px-2 border-2 rounded-full font-medium text-sm' : 'border-transparent text-base-text-color hover:text-dark-text-color hover:border-gray-300 whitespace-nowrap py-2 px-2 border-2 rounded-full font-medium text-sm' }}" aria-current="page">
+                                           class="{{ 'All' === $selectedCategoryId ? 'border-primary text-primary-500 whitespace-nowrap py-2 px-2 border-2 rounded-full font-medium text-sm' : 'border-transparent text-base-text-color hover:text-dark-text-color hover:border-gray-300 whitespace-nowrap py-2 px-2 border-2 rounded-full font-medium text-sm' }}" aria-current="page">
                                             All
                                         </a>
 
                                         @foreach ($categories as $category)
                                             @if ($category->id == $selectedCategoryId)
                                                 <a wire:click="selectCategory('{{ $category->id }}')" href="#"
-                                                   class="border-primary text-primary whitespace-nowrap py-2 px-2 border-2 rounded-full font-medium text-sm" aria-current="page">
+                                                   class="border-primary text-primary-500 whitespace-nowrap py-2 px-2 border-2 rounded-full font-medium text-sm" aria-current="page">
                                                     {{ $category->name }}
                                                 </a>
                                             @else

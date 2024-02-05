@@ -6,7 +6,7 @@
     <div class="group block aspect-w-10 aspect-h-7 w-full relative overflow-hidden rounded-lg  cursor-pointer">
         <img class="object-cover w-full h-48" src="{{ $item->thumbnail }}" alt="{{ $item->title }}"/>
 
-        <div class="px-4 py-4 transition-transform ease-in-out bg-neutral-dark hover:translate-y-1 hover:scale-y-150 hover:bg-primary duration-75">
+        <div class="px-4 py-4 transition-transform ease-in-out bg-neutral-dark hover:translate-y-1 hover:scale-y-150 hover:bg-primary-500 duration-75">
             <h4 class="mb-3 text-xl font-semibold tracking-tight text-white-text-color">{{ $item->title }}</h4>
         </div>
     </div>

@@ -1,7 +1,7 @@
 @extends('catalyst::livewire.layouts.pages.default-page-layout')
 
 @section('content')
-    <div class="sticky top-[55px] z-40 mb-4 rounded-b-lg pl-4 flex items-center bg-primary items-center">
+    <div class="sticky top-[55px] z-40 mb-4 rounded-b-lg pl-4 flex items-center bg-primary-500 items-center">
         <div class="flex-1 flex items-center">
             <x-dynamic-component component="heroicon-o-bell"
                                  class="{{ 'text-secondary' }} mr-3 flex-shrink-0 h-8 w-8"

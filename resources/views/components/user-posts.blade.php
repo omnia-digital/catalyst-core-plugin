@@ -31,8 +31,8 @@
                     <nav class="-mb-px flex" aria-label="Tabs">
                         <template x-for="(tab, index) in tabs" :key="index">
                             <a type="button"
-                               class="mr-4 last:mr-0 cursor-pointer hover:text-primary hover:border-primary focus:text-primary focus:border-primary whitespace-nowrap py-4 px-1 border-b-2 font-semibold"
-                               :class="(activeTab === index) ? 'border-primary text-primary' : 'border-transparent text-light-text-color'"
+                               class="mr-4 last:mr-0 cursor-pointer hover:text-primary-500 hover:border-primary focus:text-primary-500 focus:border-primary whitespace-nowrap py-4 px-1 border-b-2 font-semibold"
+                               :class="(activeTab === index) ? 'border-primary text-primary-500' : 'border-transparent text-light-text-color'"
                                x-on:click.prevent="activeTab = index;"
                                x-text="tab"
                             ></a>

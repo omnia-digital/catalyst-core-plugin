@@ -151,7 +151,7 @@
                                                         class="rounded-lg border border-gray-300 bg-secondary px-6 py-4 hover:border-gray-400 group-focus:border-primary sm:flex sm:justify-between sm:space-x-4">
                                                     <div class="flex items-center space-x-0">
                                                         <div class="flex-shrink-0 flex items-center">
-                                                            <span class="form-radio text-primary group-focus:bg-red-500"></span>
+                                                            <span class="form-radio text-primary-500 group-focus:bg-red-500"></span>
                                                         </div>
                                                         <div class="text-sm leading-5">
                                                             <p class="block font-medium text-dark-text-color">
@@ -290,13 +290,13 @@
                                         </div>
                                         <div class="mt-2 bg-secondary rounded-md -space-y-px">
                                             <div
-                                                    x-bind:class="{'bg-primary border-primary z-10': paymentMethod === 'new-card', 'border-neutral-light': paymentMethod !== 'new-card'}"
+                                                    x-bind:class="{'bg-primary-500 border-primary z-10': paymentMethod === 'new-card', 'border-neutral-light': paymentMethod !== 'new-card'}"
                                                     class="relative border rounded-tl-md rounded-tr-md p-4 flex {{ !Auth::user()->hasDefaultPaymentMethod() ? 'border rounded-bl-md rounded-br-md' : '' }}"
                                             >
                                                 <x-input.radio x-model="paymentMethod" value="new-card" id="new-card"/>
                                                 <x-input.label for="new-card" class="ml-3 flex flex-col cursor-pointer">
                                             <span
-                                                    x-bind:class="{'text-primary': paymentMethod === 'new-card', 'text-dark-text-color': paymentMethod !== 'new-card'}"
+                                                    x-bind:class="{'text-primary-500': paymentMethod === 'new-card', 'text-dark-text-color': paymentMethod !== 'new-card'}"
                                                     class="block text-sm leading-5 font-medium"
                                             >
                                                 Add a new card
@@ -306,7 +306,7 @@
 
                                             @if (Auth::user()->hasDefaultPaymentMethod())
                                                 <div
-                                                        x-bind:class="{'bg-primary border-primary z-10': paymentMethod === 'previous-card', 'border-neutral-light': paymentMethod !== 'previous-card'}"
+                                                        x-bind:class="{'bg-primary-500 border-primary z-10': paymentMethod === 'previous-card', 'border-neutral-light': paymentMethod !== 'previous-card'}"
                                                         class="relative border rounded-bl-md rounded-br-md p-4 flex"
                                                 >
                                                     <x-input.radio x-model="paymentMethod" value="previous-card"
@@ -314,7 +314,7 @@
                                                     <x-input.label for="previous-card"
                                                                    class="ml-3 flex flex-col cursor-pointer">
                                                 <span
-                                                        x-bind:class="{'text-primary': paymentMethod === 'previous-card', 'text-dark-text-color': paymentMethod !== 'previous-card'}"
+                                                        x-bind:class="{'text-primary-500': paymentMethod === 'previous-card', 'text-dark-text-color': paymentMethod !== 'previous-card'}"
                                                         class="block text-sm leading-5 font-medium"
                                                 >
                                                     Use {{ ucfirst(Auth::user()->card_brand) }} ending with {{ Auth::user()->card_last_four }}
@@ -384,7 +384,7 @@
                                             <button
                                                     x-on:click.prevent.stop="confirmCard"
                                                     x-bind:disabled="loading"
-                                                    x-bind:class="{'bg-primary hover:bg-primary focus:bg-primary active:bg-primary': !loading, 'bg-gray-600 cursor-not-allowed': loading}"
+                                                    x-bind:class="{'bg-primary-500 hover:bg-primary-500 focus:bg-primary-500 active:bg-primary-500': !loading, 'bg-gray-600 cursor-not-allowed': loading}"
                                                     class="py-1 px-4 border border-transparent text-sm text-white-text-color font-medium rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue transition duration-150 ease-in-out">
                                                 Update payment method
                                             </button>

@@ -25,7 +25,7 @@
     <div class="flex-1 flex items-center justify-between border-t border-r border-b border-neutral-light bg-secondary rounded-r-md">
         <div class="px-4 py-4 sm:px-6 w-full">
             <div class="flex items-center justify-between">
-                <p class="font-medium text-primary truncate">
+                <p class="font-medium text-primary-500 truncate">
                     {{ Str::limit($episode->title, 40) }}
                 </p>
                 <div class="ml-2 flex-shrink-0 flex">

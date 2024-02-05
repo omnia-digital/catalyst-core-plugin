@@ -5,7 +5,7 @@
     <div class="flex items-center pr-3">
         <x-library::dropdown.index :position="'left'" class="z-10 py-2 rounded-md bg-neutral"
                                    :dropdownClasses="'bg-secondary border-none shadow-md'">
-            <x-slot:trigger class=" hover:cursor-pointer text-base-text-color hover:text-primary">
+            <x-slot:trigger class=" hover:cursor-pointer text-base-text-color hover:text-primary-500">
                 <span class="mr-3 font-bold">Sort: </span>
                 {{ $sortLabels[$orderBy] }}
                 <i class="fa-solid fa-caret-down ml-1"></i>
@@ -16,18 +16,18 @@
             @endforeach
         </x-library::dropdown.index>
         @if ($sortOrder === 'asc')
-            <x-heroicon-o-arrow-up class="w-4 ml-2 hover:cursor-pointer text-base-text-color hover:text-primary"
+            <x-heroicon-o-arrow-up class="w-4 ml-2 hover:cursor-pointer text-base-text-color hover:text-primary-500"
                                           wire:click.prevent="toggleSortOrder()"/>
         @else
             <x-heroicon-o-arrow-down
-                    class="w-4 ml-2 hover:cursor-pointer text-base-text-color hover:text-primary"
+                    class="w-4 ml-2 hover:cursor-pointer text-base-text-color hover:text-primary-500"
                     wire:click.prevent="toggleSortOrder()"/>
         @endif
     </div>
     <div class="flex items-center">
         <x-library::dropdown.index :position="'right'" class="z-10 py-2 rounded-md bg-neutral"
                                    :dropdownClasses="'bg-secondary border-none shadow-md sm:w-48'">
-            <x-slot:trigger class="flex items-center hover:cursor-pointer text-base-text-color hover:text-primary">
+            <x-slot:trigger class="flex items-center hover:cursor-pointer text-base-text-color hover:text-primary-500">
                 <x-library::icons.icon name="fa-regular fa-filter" class="w-4 h-4"/>
                 <span class="ml-2 font-semibold">Filter {{ $filterCount ? "({$filterCount})" : '' }}</span>
                 </x-slot>

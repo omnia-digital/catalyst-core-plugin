@@ -26,7 +26,7 @@
                 @foreach ($nav as $key => $item)
                     <a
                             href="{{ route('catalyst-social.teams.' . $key, $team) }}"
-                            class="md:hidden block w-full px-4 py-2 text-left text-sm disabled:text-base-text-color border-transparent bg-secondary {{ $pageView === $key ? 'bg-neutral text-primary' : '' }} hover:bg-neutral">
+                            class="md:hidden block w-full px-4 py-2 text-left text-sm disabled:text-base-text-color border-transparent bg-secondary {{ $pageView === $key ? 'bg-neutral text-primary-500' : '' }} hover:bg-neutral">
                         {{ $item }}
                         @if ($key === 'members')
                             <span class="ml-2 px-2 py-1 rounded-full bg-neutral-dark text-white-text-color text-xs font-semibold">{{ $team->users()->count() }}</span>
@@ -52,7 +52,7 @@
                         class="flex items-center hover:underline" href="{{ route('catalyst-social.teams.admin', $team) }}">
                     <p>{{ Translate::get('Pending Applications: ') }}</p>
                     <span
-                            class="ml-2 text-xs w-5 h-5 flex items-center justify-center text-white-text-color bg-primary rounded-full hover:no-underline"
+                            class="ml-2 text-xs w-5 h-5 flex items-center justify-center text-white-text-color bg-primary-500 rounded-full hover:no-underline"
                     >{{ $team->applicationsCount() }}</span>
                 </a>
             @endif

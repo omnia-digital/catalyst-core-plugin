@@ -43,7 +43,7 @@
                             <span
                                     x-show="tab.count"
                                     x-text="tab.count"
-                                    class=" ml-3 py-0.5 px-2.5 rounded-full text-xs font-bold text-white md:inline-block bg-primary"
+                                    class=" ml-3 py-0.5 px-2.5 rounded-full text-xs font-bold text-white md:inline-block bg-primary-500"
                             ></span>
                         </a>
                     </template>

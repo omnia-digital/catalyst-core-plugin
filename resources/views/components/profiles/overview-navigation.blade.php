@@ -52,7 +52,7 @@
             @foreach ($nav as $key => $item)
                 <a
                         href="{{ route('catalyst-social.profile.' . $key, $user->handle) }}"
-                        class="flex items-center border-l-4 py-2 pl-3 pr-4 text-base font-medium {{ $pageView === $key ? 'border-primary bg-neutral text-primary' : 'border-transparent text-neutral-dark hover:border-neutral-dark hover:bg-neutral-hover hover:text-dark-text-color' }}">
+                        class="flex items-center border-l-4 py-2 pl-3 pr-4 text-base font-medium {{ $pageView === $key ? 'border-primary bg-neutral text-primary-500' : 'border-transparent text-neutral-dark hover:border-neutral-dark hover:bg-neutral-hover hover:text-dark-text-color' }}">
                     {{ $item }}
                     @if ($key === 'followers')
                         <span class="ml-2 px-1 w-[21px] h-[22px] flex justify-center items-center rounded-full bg-neutral-dark text-white-text-color text-xs font-semibold">{{ $user->followers()->count() }}</span>

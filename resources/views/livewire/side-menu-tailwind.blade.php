@@ -104,7 +104,7 @@
                         <div class="mt-1 space-y-1" role="group" aria-labelledby="mobile-teams-headline">
                             <a href="#"
                                class="group flex items-center px-3 py-2 text-base-text-color leading-5 font-medium text-base-text-color rounded-md hover:text-dark-text-color hover:bg-gray-50">
-                                <span class="w-2.5 h-2.5 mr-4 bg-primary rounded-full" aria-hidden="true"></span>
+                                <span class="w-2.5 h-2.5 mr-4 bg-primary-500 rounded-full" aria-hidden="true"></span>
                                 <span class="truncate"> Engineering </span>
                             </a>
 
@@ -270,7 +270,7 @@
                     <div class="mt-1 space-y-1" role="group" aria-labelledby="desktop-teams-headline">
                         <a href="#"
                            class="group flex items-center px-3 py-2 text-sm font-medium text-dark-text-color rounded-md hover:text-dark-text-color hover:bg-gray-50">
-                            <span class="w-2.5 h-2.5 mr-4 bg-primary rounded-full" aria-hidden="true"></span>
+                            <span class="w-2.5 h-2.5 mr-4 bg-primary-500 rounded-full" aria-hidden="true"></span>
                             <span class="truncate"> Engineering </span>
                         </a>
 
@@ -545,7 +545,7 @@
                                 March 17, 2020
                             </td>
                             <td class="px-6 py-3 whitespace-nowrap text-right text-sm font-medium">
-                                <a href="#" class="text-primary hover:text-primary-dark">Edit</a>
+                                <a href="#" class="text-primary-500 hover:text-primary-500-dark">Edit</a>
                             </td>
                         </tr>
 

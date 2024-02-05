@@ -49,15 +49,15 @@
                 </div>
                 <div class="flex items-center space-x-4">
                     <a x-show="!showDetail" href="{{ route('catalyst-social.teams.map') }}" @class([
-		                    'text-light-text-color hover:text-primary active:text-primary focus:text-primary',
-		                    'text-primary' => request()->routeIs('social.teams.map')
+		                    'text-light-text-color hover:text-primary-500 active:text-primary-500 focus:text-primary-500',
+		                    'text-primary-500' => request()->routeIs('social.teams.map')
                             ])>
                         <span class="sr-only" x-text="'Map'"></span>
                         <span><x-heroicon-o-map class="h-6 w-6"/></span>
                     </a>
                     <a x-show="!showDetail" href="{{ route('catalyst-social.teams.calendar') }}" @class([
-		                    'text-light-text-color hover:text-primary active:text-primary focus:text-primary',
-		                    'text-primary' => request()->routeIs('social.teams.calendar')
+		                    'text-light-text-color hover:text-primary-500 active:text-primary-500 focus:text-primary-500',
+		                    'text-primary-500' => request()->routeIs('social.teams.calendar')
                             ])>
                         <span class="sr-only" x-text="'Calendar'"></span>
                         <span><x-heroicon-o-calendar class="h-6 w-6"/></span>
@@ -65,7 +65,7 @@
                     <a x-cloak x-show="showDetail" href="#"
                        x-on:click.prevent="showDetail = false"
                             @class([
-		                    'text-light-text-color hover:text-primary active:text-primary focus:text-primary'
+		                    'text-light-text-color hover:text-primary-500 active:text-primary-500 focus:text-primary-500'
                             ])>
                         <span class="sr-only" x-text="'Close Details'"></span>
                         <span><x-library::icons.icon name="x-mark" class="h-6 w-6"/></span>
@@ -148,7 +148,7 @@
                     <div>
                         <button
                                 wire:click.prevent="moreInfo"
-                                class="py-2 px-4 mx-2 flex-1 flex justify-center items-center text-sm rounded-full bg-transparent border-2 border-primary text-primary hover:bg-neutral-light active:bg-neutral-light focus:bg-neutral-light"
+                                class="py-2 px-4 mx-2 flex-1 flex justify-center items-center text-sm rounded-full bg-transparent border-2 border-primary text-primary-500 hover:bg-neutral-light active:bg-neutral-light focus:bg-neutral-light"
                         >More Info
                         </button>
                     </div>

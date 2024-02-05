@@ -2,7 +2,7 @@
 @extends('catalyst::livewire.layouts.pages.full-page-layout')
 
 @section('content')
-    <div class="sticky top-[55px] z-40 rounded-b-lg px-4 flex items-center bg-primary items-center justify-between">
+    <div class="sticky top-[55px] z-40 rounded-b-lg px-4 flex items-center bg-primary-500 items-center justify-between">
         <a href="{{ route('catalyst-social.companies.home', []) }}">
             <div class="flex-1 flex items-center space-x-2 -ml-1">
                 <x-library::icons.icon name="fa-regular fa-users" size="w-8 h-8" color="text-white-text-color"/>
@@ -15,7 +15,7 @@
             <x-library::button.index x-data=""
                                      x-on:click.prevent="$openModal('create-company')"
                                      bg-color="primary"
-                                     text-color="text-primary"
+                                     text-color="text-primary-500"
                                      size="w-60 h-10" py="py-2 "
                                      class="hidden sm:block">
                 {{ Translate::get('Create Company') }}

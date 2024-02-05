@@ -77,7 +77,7 @@
                             <div class="absolute inset-0 z-40 transition-colors duration-300"
                                  @dragenter="dragenter($event)"
                                  @dragleave="fileDropping = null"
-                                 :class="{'bg-primary-light bg-opacity-80': fileDropping == index && fileDragging != index}">
+                                 :class="{'bg-primary-400 bg-opacity-80': fileDropping == index && fileDragging != index}">
                             </div>
                         </div>
                     </template>

@@ -53,7 +53,7 @@
         {{--                <input type="text" class="flex-1 border-none" wire:model.live="bannerImageName" placeholder="{{ \Translate::get('Upload file for banner') }}" readonly>--}}
         {{--                <label>--}}
         {{--                    <input type="file" wire:model.live="bannerImage" hidden required />--}}
-        {{--                    <span class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-secondary bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-neutral-light focus:ring-primary">{{ \Translate::get('Browse') }}</span>--}}
+        {{--                    <span class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-secondary bg-primary-500 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-neutral-light focus:ring-primary">{{ \Translate::get('Browse') }}</span>--}}
         {{--                </label>--}}
         {{--            </div>--}}
         {{--            <x-library::input.error for="bannerImage" />--}}
@@ -74,7 +74,7 @@
         {{--                    <input type="text" class="flex-1 border-none" wire:model.live="profilePhotoName" placeholder="Upload file for profile photo" readonly>--}}
         {{--                    <label>--}}
         {{--                        <input type="file" wire:model.live="profilePhoto" hidden />--}}
-        {{--                        <span class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white-text-color bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-neutral-light focus:ring-primary">Browse</span>--}}
+        {{--                        <span class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white-text-color bg-primary-500 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-neutral-light focus:ring-primary">Browse</span>--}}
         {{--                    </label>--}}
         {{--                </div>--}}
         {{--                <x-library::input.error for="profilePhoto" />--}}
@@ -95,7 +95,7 @@
         {{--                <input type="text" class="flex-1 border-none" wire:model.live="mainImageName" placeholder="{{ \Translate::get('Upload file for banner') }}" readonly>--}}
         {{--                <label>--}}
         {{--                    <input type="file" wire:model.live="mainImage" hidden required />--}}
-        {{--                    <span class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-secondary bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-neutral-light focus:ring-primary">{{ \Translate::get('Browse') }}</span>--}}
+        {{--                    <span class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-secondary bg-primary-500 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-neutral-light focus:ring-primary">{{ \Translate::get('Browse') }}</span>--}}
         {{--                </label>--}}
         {{--            </div>--}}
         {{--            <x-library::input.error for="mainImage" />--}}
@@ -115,7 +115,7 @@
         {{--                <p class="flex-1 py-2 px-3 text-[1rem] text-base-text-color">{{ \Translate::get('Upload multiple images to show off your team') }}</p>--}}
         {{--                <label>--}}
         {{--                    <input type="file" wire:model.live="sampleMedia" hidden multiple required />--}}
-        {{--                    <span class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-secondary bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-neutral-light focus:ring-primary">{{ \Translate::get('Browse') }}</span>--}}
+        {{--                    <span class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-secondary bg-primary-500 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-neutral-light focus:ring-primary">{{ \Translate::get('Browse') }}</span>--}}
         {{--                </label>--}}
         {{--            </div>--}}
         {{--            <x-library::input.error for="sampleMedia" />--}}

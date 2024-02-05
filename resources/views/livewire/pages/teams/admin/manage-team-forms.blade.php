@@ -56,10 +56,10 @@
                                                        :name="$notification->print_send_date"/>
                                                 <button
                                                         wire:click="editFormNotification('{{ $notification->id }}')"
-                                                        class="absolute -top-2 -right-2 p-1 rounded-full bg-white group hover:bg-primary"
+                                                        class="absolute -top-2 -right-2 p-1 rounded-full bg-white group hover:bg-primary-500"
                                                 >
                                                     <x-library::icons.icon name="heroicon-s-pencil-alt"
-                                                                           color="text-primary-600 group-hover:text-white"
+                                                                           color="text-primary-500-600 group-hover:text-white"
                                                                            class="h-3 w-3"/>
                                                 </button>
                                             </div>
@@ -89,10 +89,10 @@
                                                :name="$notification->print_send_date"/>
                                         <button
                                                 wire:click="confirmFormNotificationRemoval('{{ $notification->id }}')"
-                                                class="absolute -top-2 -right-2 p-1 rounded-full bg-white group hover:bg-primary"
+                                                class="absolute -top-2 -right-2 p-1 rounded-full bg-white group hover:bg-primary-500"
                                         >
                                             <x-library::icons.icon name="x-mark"
-                                                                   color="text-primary-600 group-hover:text-white"
+                                                                   color="text-primary-500-600 group-hover:text-white"
                                                                    class="h-3 w-3"/>
                                         </button>
                                     </div>

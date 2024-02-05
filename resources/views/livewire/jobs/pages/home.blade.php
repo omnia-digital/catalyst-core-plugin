@@ -2,7 +2,7 @@
 
 @section('content')
     <div>
-        <div class="mb-3 rounded-b-lg pl-4 flex items-center bg-primary">
+        <div class="mb-3 rounded-b-lg pl-4 flex items-center bg-primary-500">
             <x-library::heading.1 class="py-4 hover:cursor-pointer">{{ Translate::get('Jobs') }}</x-library::heading.1>
         </div>
         @include('catalyst::livewire.jobs.components.filters', ['skipFilters' => ['has_attachment', 'members']])
