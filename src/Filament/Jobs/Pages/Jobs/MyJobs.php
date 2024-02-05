@@ -35,7 +35,8 @@ class MyJobs extends BasePage
         return [
             CreateAction::make('create')
                 ->url(route('filament.jobs.pages.new-job'))
-                ->color('blue')
+                ->label('Post a New Job')
+//                ->color('blue')
                 ->icon('heroicon-o-plus-circle'),
         ];
     }
