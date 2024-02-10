@@ -25,14 +25,6 @@ class JobsPanelProvider extends PanelProvider
             ->id('jobs')
             ->path('jobs')
             ->login()
-            ->colors([
-                'primary' => Color::Amber,
-                'danger' => Color::Rose,
-                'gray' => Color::Gray,
-                'info' => Color::Blue,
-                'success' => Color::Emerald,
-                'warning' => Color::Orange,
-            ])
             ->discoverResources(
                 in: __DIR__ . '/../../Filament/Jobs/Resources',
                 for: 'OmniaDigital\\CatalystCore\\Filament\\Jobs\\Resources'
@@ -41,19 +33,14 @@ class JobsPanelProvider extends PanelProvider
                 in: __DIR__ . '/../../Filament/Jobs/Pages',
                 for: 'OmniaDigital\\CatalystCore\\Filament\\Jobs\\Pages'
             )
-//            ->pages([
-//                Home::class
-//                //                Pages\Dashboard::class,
-//            ])
-
             ->discoverWidgets(
                 in: '../../Filament/Jobs/Widgets',
                 for: 'OmniaDigital\\CatalystCore\\Filament\\Jobs\\Widgets'
             )
-            ->widgets([
-                Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
-            ])
+//            ->widgets([
+//                Widgets\AccountWidget::class,
+//                Widgets\FilamentInfoWidget::class,
+//            ])
 //            ->topNavigation()
 //            ->sidebarCollapsibleOnDesktop()
             // Render Hooks for Jobs

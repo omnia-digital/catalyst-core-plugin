@@ -12,7 +12,6 @@ use Filament\Navigation\NavigationGroup;
 use Filament\Navigation\NavigationItem;
 use Filament\Panel;
 use Filament\PanelProvider;
-use Filament\Support\Colors\Color;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -34,14 +33,6 @@ class SocialPanelProvider extends PanelProvider
             ->id('social')
             ->path('social')
             ->login()
-            ->colors([
-                'primary' => Color::Orange,
-                'danger' => Color::Rose,
-                'gray' => Color::Gray,
-                'info' => Color::Blue,
-                'success' => Color::Emerald,
-                'warning' => Color::Orange,
-            ])
             ->discoverResources(
                 in: __DIR__ . '/../../Filament/Social/Resources',
                 for: 'OmniaDigital\\CatalystCore\\Filament\\Social\\Resources'
