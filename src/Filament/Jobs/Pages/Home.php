@@ -21,6 +21,7 @@ class Home extends BasePage
     protected static string $view = 'catalyst::filament.jobs.pages.home';
 
     protected static bool $shouldRegisterNavigation = true;
+    protected static ?string $title = 'Job Board';
 //    protected static bool $showTitle = false;
     protected static bool $showBackButton = false;
 

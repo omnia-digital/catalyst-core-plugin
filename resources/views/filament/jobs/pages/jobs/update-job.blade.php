@@ -1,9 +1,8 @@
-@extends('catalyst::livewire.jobs.layouts.pages.default-page-layout')
+<x-filament-panels::page>
 
-@section('content')
     <div class="mb-3 rounded-b-lg pl-4 flex items-center bg-primary-500">
         <div class="mr-4 hover:bg-neutral-dark p-2 rounded-full bg-secondary hover:text-secondary">
-            <a href="{{ route('filament.jobs.my-jobs') }}">
+            <a href="{{ route('filament.jobs.pages.my-jobs') }}">
                 <x-heroicon-o-arrow-left class="h-6"/>
             </a>
         </div>
@@ -113,8 +112,9 @@
                                 @foreach ($jobLengths as $key => $jobLength)
                                     <div class="flex pt-4">
                                         <x-catalyst::jobs.input.radio wire:model="job.job_length_id"
-                                                             name="job.job_length_id" id="{{ $jobLength['title'] }}"
-                                                             value="{{ $jobLength['id'] }}"/>
+                                                                      name="job.job_length_id"
+                                                                      id="{{ $jobLength['title'] }}"
+                                                                      value="{{ $jobLength['id'] }}"/>
                                         <x-library::input.label class="pl-4 font-bold"
                                                                 value="{{ $jobLength['description'] }}"/>
                                         <x-library::input.error for="{{ $jobLength['title'] }}"/>
@@ -129,9 +129,9 @@
                                 @foreach ($experienceLevels as $key => $experience)
                                     <div class="flex pt-4">
                                         <x-catalyst::jobs.input.radio wire:model="job.experience_level_id"
-                                                             name="job.experience_level_id"
-                                                             id="{{ $experience['title'] }}"
-                                                             value="{{ $experience['id'] }}"/>
+                                                                      name="job.experience_level_id"
+                                                                      id="{{ $experience['title'] }}"
+                                                                      value="{{ $experience['id'] }}"/>
                                         <x-library::input.label class="pl-4 font-bold"
                                                                 value="{{ $experience['title'] }}"/>
                                         <x-library::input.error for="{{ $experience['title'] }}"/>
@@ -143,8 +143,9 @@
                                 @foreach ($projectSizes as $key => $project)
                                     <div class="flex pt-4">
                                         <x-catalyst::jobs.input.radio wire:model="job.project_size_id"
-                                                             name="project_size_id" id="{{ $project['title'] }}"
-                                                             value="{{ $project['id'] }}"/>
+                                                                      name="project_size_id"
+                                                                      id="{{ $project['title'] }}"
+                                                                      value="{{ $project['id'] }}"/>
                                         <x-library::input.label class="pl-4 font-bold" value="{{ $project['title'] }}"/>
                                     </div>
                                     <div class="pl-8 pt-1">
@@ -162,7 +163,7 @@
                     <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                     <span class="inline-flex rounded-md shadow-sm">
                         <x-library::button.link
-                                href="{{ route('filament.jobs.pages.show', ['team' => $job->company->id, 'job' => $job]) }}"
+                                href="{{ route('filament.jobs.pages.job.{job}', ['job' => $job]) }}"
                                 target="_blank">{{ Translate::get('Preview Job') }}</x-library::button.link>
                     </span>
                         <span class="inline-flex rounded-md shadow-sm">
@@ -173,4 +174,4 @@
             </form>
         </div>
     </div>
-@endsection
+</x-filament-panels::page>

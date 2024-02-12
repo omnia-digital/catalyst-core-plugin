@@ -1,5 +1,6 @@
 @php use \OmniaDigital\CatalystForms\Models\Form; @endphp
-<catalyst::components.guest-layout>
+{{--<catalyst::components.guest-layout>--}}
+    <x-filament-panels::page.simple>
     <catalyst::components.authentication-card>
         <x-slot name="logo">
             <img src="{{ config('app.logo_path') }}" class="h-16"/>
@@ -35,4 +36,5 @@
             </div>
         </x-slot>
     </catalyst::components.authentication-card>
-</catalyst::components.guest-layout>
+    </x-filament-panels::page.simple>
+{{--</catalyst::components.guest-layout>--}}

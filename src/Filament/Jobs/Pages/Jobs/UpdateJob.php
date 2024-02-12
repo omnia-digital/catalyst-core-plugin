@@ -15,16 +15,16 @@ use OmniaDigital\CatalystCore\Models\Jobs\JobPosition;
 use OmniaDigital\CatalystCore\Models\Jobs\JobPositionLength;
 use OmniaDigital\CatalystCore\Models\Jobs\PaymentType;
 use OmniaDigital\CatalystCore\Models\Jobs\ProjectSize;
+use OmniaDigital\CatalystCore\Models\Tag;
 use OmniaDigital\OmniaLibrary\Livewire\WithNotification;
 
 class UpdateJob extends BasePage
 {
     use WithNotification;
 
-    protected static string $view = 'catalyst::livewire.jobs.pages.jobs.update-job';
+    protected static string $view = 'catalyst::filament.jobs.pages.jobs.update-job';
 
     protected static bool $shouldRegisterNavigation = false;
-
 
     public JobPosition $job;
 
@@ -45,12 +45,17 @@ class UpdateJob extends BasePage
         'job.is_active' => 'boolean',
     ];
 
+    public static function getSlug():string
+    {
+        return 'job/update/{job}';
+    }
+
     public function mount(JobPosition $job)
     {
         // Cannot access job of another user or company.
-        if ($job->user_id !== auth()->id() || $job->team_id !== auth()->user()->currentTeam->id) {
-            abort(403);
-        }
+//        if ($job->user_id !== auth()->id() || $job->team_id !== auth()->user()->currentTeam->id) {
+//            abort(403);
+//        }
 
         $this->job = $job;
         $this->selected_skills = $job->skills->pluck('id')
@@ -91,7 +96,7 @@ class UpdateJob extends BasePage
      */
     public function getViewData(): array
     {
-        return view('catalyst::livewire.jobs.pages.jobs.update-job', [
+        return [
             'companies' => auth()->user()
                 ->allTeams(),
             'applyTypes' => ApplyType::pluck('name', 'code'),
@@ -101,9 +106,7 @@ class UpdateJob extends BasePage
             'jobLengths' => JobPositionLength::all(),
             'hoursPerWeek' => HoursPerWeek::pluck('value', 'id'),
             'experienceLevels' => ExperienceLevel::all(),
-            'projectSizes' => ProjectSize::orderBy('order')
-                ->get()
-                ->toArray(),
-        ]);
+            'projectSizes' => ProjectSize::orderBy('order')->get()
+        ];
     }
 }

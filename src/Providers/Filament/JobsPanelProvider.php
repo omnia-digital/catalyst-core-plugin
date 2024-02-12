@@ -2,6 +2,7 @@
 
 namespace OmniaDigital\CatalystCore\Providers\Filament;
 
+use App\Models\Team;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Panel;
@@ -25,6 +26,7 @@ class JobsPanelProvider extends PanelProvider
             ->id('jobs')
             ->path('jobs')
             ->login()
+            ->registration()
             ->discoverResources(
                 in: __DIR__ . '/../../Filament/Jobs/Resources',
                 for: 'OmniaDigital\\CatalystCore\\Filament\\Jobs\\Resources'

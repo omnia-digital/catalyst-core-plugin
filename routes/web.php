@@ -1,21 +1,28 @@
 <?php
 
 use Filament\Pages\Auth\Login;
+use Filament\Pages\Auth\Register;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use OmniaDigital\CatalystCore\Livewire\UserNotifications;
 
+//Auth::routes(['verify' => true]);
 
 Route::get('r/{url?}', function ($url) {
     return redirect($url);
 })->where('url', '.*');
 
 Route::get('login', function () {
-    return redirect()->route(config('catalyst-settings.login_route'));
+    return redirect()->route('filament.jobs.auth.login');
 })->name('catalyst.login');
 
-//Route::get('register', function () {
-//    return view('catalyst::auth.register');
-//})->name('register');
+Route::get('register', function () {
+    return redirect()->route('filament.jobs.auth.register');
+})->name('catalyst.register');
+
+//Route::get('login', Login::class)->name('login');
+////
+//Route::get('register', Register::class)->name('register');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {

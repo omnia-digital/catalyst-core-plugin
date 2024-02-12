@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Providers;
+namespace OmniaDigital\CatalystCore\Providers\Jobs;
 
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;

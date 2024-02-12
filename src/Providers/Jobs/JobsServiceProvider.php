@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Providers;
+namespace OmniaDigital\CatalystCore\Providers\Jobs;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Config;

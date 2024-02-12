@@ -26,7 +26,12 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->login()
+            ->login(function () {
+                return redirect()->route('filament.jobs.auth.login');
+            })
+            ->registration(function () {
+                return redirect()->route('filament.jobs.auth.register');
+            })
             ->discoverResources(in: __DIR__ . '/../../Filament/Admin/Resources',
                 for: 'OmniaDigital\\CatalystCore\\Filament\\Admin\\Resources')
             ->discoverPages(in: __DIR__ . '/../../Filament/Admin/Pages/',

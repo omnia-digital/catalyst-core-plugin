@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Providers;
+namespace OmniaDigital\CatalystCore\Providers\Jobs;
 
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;

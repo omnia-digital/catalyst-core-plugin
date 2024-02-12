@@ -15,11 +15,16 @@ class JobDetail extends BasePage
 
     protected static string $view = 'catalyst::filament.jobs.pages.jobs.job-detail';
 
-    public $job;
+    public JobPosition $job;
 
     protected static ?string $slug = 'job';
 
     protected static bool $shouldRegisterNavigation = false;
+
+    public static function getSlug():string
+    {
+        return 'job/{job}';
+    }
 
     public function mount(JobPosition $job)
     {

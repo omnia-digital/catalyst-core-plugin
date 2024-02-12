@@ -21,7 +21,7 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ route('catalyst.login') }}">
+        <form method="POST" action="/login">
             @csrf
 
             <div>
