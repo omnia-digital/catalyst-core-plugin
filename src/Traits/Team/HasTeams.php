@@ -11,7 +11,8 @@ trait HasTeams
     public function currentTeam()
     {
         if (! $this->teams()->exists()) {
-            return false;
+            return $this->belongsTo(Jetstream::teamModel(), 'current_team_id');
+//            return false;
         }
 
         if (is_null($this->current_team_id) && $this->id) {
