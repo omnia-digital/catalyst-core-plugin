@@ -2,13 +2,15 @@
 
 namespace OmniaDigital\CatalystCore\Actions\Fortify;
 
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
 use OmniaDigital\CatalystCore\Models\Team;
-use App\Models\User;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -17,7 +19,7 @@ class CreateNewUser implements CreatesNewUsers
     /**
      * Create a newly registered user.
      *
-     * @param  array<string, string>  $input
+     * @param array<string, string> $input
      */
     public function create(array $input): User
     {
@@ -27,17 +29,31 @@ class CreateNewUser implements CreatesNewUsers
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
+//            'role' => [Rule::in(['Client', 'Contractor'])],
         ])->validate();
 
-        return DB::transaction(function () use ($input) {
-            return tap(${config('catalyst-settings.models.user')}::create([
-                'email' => $input['email'],
-                'password' => Hash::make($input['password']),
-            ]), function (User $user) use ($input) {
-                $this->createProfile($user, $input);
-                //$this->createTeam($user);
+        $json_data = '{
+          "list_ids": ["' . config('app.sendgrid_company_list_id') . '"],
+          "contacts": [
+            {
+              "email": "' . $input['email'] . '"
+            }
+          ]
+        }';
+        $response = Http::withToken(config('app.sendgrid_key'))->withBody($json_data,
+            'application/json')->put(config('app.sendgrid_url'));
+        if ($response->status() == 202) {
+            return DB::transaction(function () use ($input) {
+                return tap(${config('catalyst-settings.models.user')}::create([
+                    'email' => $input['email'],
+                    'password' => Hash::make($input['password']),
+                ]), function (User $user) use ($input) {
+                    $this->createProfile($user, $input);
+                    $this->createTeam($user);
+//                    $this->assignRole($user, $input['role'] ?? 'Client'); // Default role is Client.
+                });
             });
-        });
+        }
     }
 
     /**
@@ -61,6 +77,7 @@ class CreateNewUser implements CreatesNewUsers
         $user->ownedTeams()->save(Team::forceCreate([
             'user_id' => $user->id,
             'name' => explode(' ', $user->name, 2)[0] . "'s Team",
+            'personal_team' => true,
         ]));
     }
 }
