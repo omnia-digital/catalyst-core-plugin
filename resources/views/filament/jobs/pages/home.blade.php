@@ -1,6 +1,6 @@
 <x-filament-panels::page>
     <div>
-        @include('catalyst::livewire.jobs.components.filters', ['skipFilters' => ['has_attachment', 'members']])
+{{--        @include('catalyst::livewire.jobs.components.filters', ['skipFilters' => ['has_attachment', 'members','my_teams']])--}}
 
         <div>
 {{--            @include('catalyst::livewire.jobs.components.subscribe-widget')--}}
@@ -45,7 +45,6 @@
                 </div>
             </div>
 
-              Tooltips
             <x-catalyst::jobs.tooltip trigger="company">Company</x-catalyst::jobs.tooltip>
             <x-catalyst::jobs.tooltip trigger="location">Location</x-catalyst::jobs.tooltip>
             <x-catalyst::jobs.tooltip trigger="payment-type-budget">Payment Type & Budget</x-catalyst::jobs.tooltip>

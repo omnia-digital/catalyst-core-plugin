@@ -79,8 +79,7 @@ class UpdateJob extends BasePage
 
         $this->success('Update the job successfully!');
 
-        $this->redirectRoute('filament.jobs.pages.show', [
-            'team' => $this->job->company->id,
+        $this->redirectRoute('filament.jobs.pages.job.{job}', [
             'job' => $this->job,
         ]);
     }

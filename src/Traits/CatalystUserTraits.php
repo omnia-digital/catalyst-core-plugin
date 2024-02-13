@@ -15,6 +15,7 @@ use Laravel\Cashier\Billable;
 use Laravel\Cashier\SubscriptionBuilder;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasTeams as JetstreamHasTeams;
+use OmniaDigital\CatalystCore\Actions\Fortify\CreateNewUser;
 use OmniaDigital\CatalystForms\Models\FormSubmission;
 use OmniaDigital\CatalystCore\Models\Like;
 use OmniaDigital\CatalystCore\Models\Media;
@@ -173,7 +174,20 @@ trait CatalystUserTraits
         }
         $this->load('profile');
 
+        if (empty($this->profile)) {
+            $createNewUser = new CreateNewUser();
+            $this->profile = $createNewUser->createProfile($this, [
+                'first_name' => 'First Name',
+                'last_name' => 'Last Name',
+            ]);
+        }
+
         return $this->profile->profile_photo_url;
+    }
+
+    public function getFilamentAvatarUrl(): ?string
+    {
+        return $this->profile_photo_url;
     }
 
     public function getOnlineStatusAttribute()

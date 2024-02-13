@@ -16,10 +16,15 @@ class MyJobs extends BasePage
 
     protected static bool $shouldRegisterNavigation = true;
 
+    public static function canAccess(): bool
+    {
+        return auth()->user()->isMemberOfATeam();
+        return false;
+    }
+
     public function getViewData(): array
     {
-        $jobs = auth()->user()->currentTeam
-            ->jobs()
+        $jobs = auth()->user()->currentTeam->jobs()
             ->with(['company', 'skills', 'addons'])
             ->latest()
             ->get()
@@ -36,7 +41,6 @@ class MyJobs extends BasePage
             CreateAction::make('create')
                 ->url(route('filament.jobs.pages.new-job'))
                 ->label('Post a New Job')
-//                ->color('blue')
                 ->icon('heroicon-o-plus-circle'),
         ];
     }

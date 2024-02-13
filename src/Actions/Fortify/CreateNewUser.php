@@ -61,7 +61,7 @@ class CreateNewUser implements CreatesNewUsers
      *
      * @return void
      */
-    protected function createProfile(User $user, $input)
+    public function createProfile(User $user, $input)
     {
         $user->profile()->create([
             'first_name' => $input['first_name'],
@@ -72,7 +72,7 @@ class CreateNewUser implements CreatesNewUsers
     /**
      * Create a personal team for the user.
      */
-    protected function createTeam(User $user): void
+    public function createTeam(User $user): void
     {
         $user->ownedTeams()->save(Team::forceCreate([
             'user_id' => $user->id,
