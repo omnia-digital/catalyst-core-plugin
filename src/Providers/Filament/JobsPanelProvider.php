@@ -27,6 +27,9 @@ class JobsPanelProvider extends PanelProvider
             ->path('jobs')
             ->login()
             ->registration()
+            ->passwordReset()
+            ->emailVerification()
+            ->profile()
             ->discoverResources(
                 in: __DIR__ . '/../../Filament/Jobs/Resources',
                 for: 'OmniaDigital\\CatalystCore\\Filament\\Jobs\\Resources'
