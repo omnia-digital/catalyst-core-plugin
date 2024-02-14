@@ -1,12 +1,12 @@
-name: run-tests
+#name: run-tests
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
-jobs:
+#on:
+#  push:
+#    branches: [main]
+#  pull_request:
+#    branches: [main]
+#
+#jobs:
 #  test:
 #    runs-on: ${{ matrix.os }}
 #    strategy:
