@@ -127,20 +127,6 @@
       "php-http/discovery": false
     }
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/omnia-digital/catalyst-location-plugin"
-    },
-    {
-      "type": "path",
-      "url": "../catalyst-reviews-plugin"
-    },
-    {
-      "type": "path",
-      "url": "../catalyst-forms-plugin"
-    }
-  ],
   "extra": {
     "laravel": {
       "providers": [
