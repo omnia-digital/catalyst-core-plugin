@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Filament\Pages\Teams;
+namespace OmniaDigital\CatalystCore\Filament\Jobs\Pages\Teams;
 
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\RedirectResponse;
