@@ -1,16 +1,16 @@
 <x-filament-panels::page>
 
-    <div class="mb-3 rounded-b-lg pl-4 flex items-center bg-primary-500">
-        <div class="mr-4 hover:bg-neutral-dark p-2 rounded-full bg-secondary hover:text-secondary">
-            <a href="{{ route('filament.jobs.pages.my-jobs') }}">
-                <x-heroicon-o-arrow-left class="h-6"/>
-            </a>
-        </div>
-        <a href="{{ route('filament.jobs.home') }}">
-            <x-library::heading.1
-                    class="py-4 hover:cursor-pointer">{{ Translate::get('Update Job') }}</x-library::heading.1>
-        </a>
-    </div>
+{{--    <div class="mb-3 rounded-b-lg pl-4 flex items-center bg-primary-500">--}}
+{{--        <div class="mr-4 hover:bg-neutral-dark p-2 rounded-full bg-secondary hover:text-secondary">--}}
+{{--            <a href="{{ route('filament.jobs.pages.my-jobs') }}">--}}
+{{--                <x-heroicon-o-arrow-left class="h-6"/>--}}
+{{--            </a>--}}
+{{--        </div>--}}
+{{--        <a href="{{ route('filament.jobs.home') }}">--}}
+{{--            <x-library::heading.1--}}
+{{--                    class="py-4 hover:cursor-pointer">{{ Translate::get('Update Job') }}</x-library::heading.1>--}}
+{{--        </a>--}}
+{{--    </div>--}}
     <div class="lg:grid lg:grid-cols-12 lg:gap-x-5">
         {{--    <aside class="py-6 px-2 sm:px-6 lg:py-0 lg:px-0 lg:col-span-3">--}}
         {{--        <nav class="space-y-1 bg-white rounded-lg shadow p-4 min-h-screen">--}}

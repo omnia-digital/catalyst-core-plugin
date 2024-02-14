@@ -1,16 +1,16 @@
 <x-filament-panels::page>
     <div>
-        <div class="mb-3 rounded-b-lg pl-4 flex items-center bg-primary-500">
-            <div class="mr-4 hover:bg-neutral-dark p-2 rounded-full bg-secondary hover:text-secondary">
-                <a href="{{ route('filament.jobs.home') }}">
-                    <x-heroicon-o-arrow-left class="h-6"/>
-                </a>
-            </div>
-            <a href="{{ route('filament.jobs.home') }}">
-                <x-library::heading.1
-                        class="py-4 hover:cursor-pointer">{{ Translate::get('Job Detail') }}</x-library::heading.1>
-            </a>
-        </div>
+{{--        <div class="mb-3 rounded-b-lg pl-4 flex items-center bg-primary-500">--}}
+{{--            <div class="mr-4 hover:bg-neutral-dark p-2 rounded-full bg-secondary hover:text-secondary">--}}
+{{--                <a href="{{ route('filament.jobs.home') }}">--}}
+{{--                    <x-heroicon-o-arrow-left class="h-6"/>--}}
+{{--                </a>--}}
+{{--            </div>--}}
+{{--            <a href="{{ route('filament.jobs.home') }}">--}}
+{{--                <x-library::heading.1--}}
+{{--                        class="py-4 hover:cursor-pointer">{{ Translate::get('Job Detail') }}</x-library::heading.1>--}}
+{{--            </a>--}}
+{{--        </div>--}}
 
         <div class="">
             <div class="bg-white overflow-hidden shadow rounded-lg space-y-6 sm:px-6 lg:px-0 lg:col-span-12">
