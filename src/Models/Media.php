@@ -3,12 +3,12 @@
 namespace OmniaDigital\CatalystCore\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Modules\Livestream\Traits\Downloadable;
+//use Modules\Livestream\Traits\Downloadable;
 use Spatie\MediaLibrary\MediaCollections\Models\Media as SpatieMedia;
 
 class Media extends SpatieMedia
 {
-    use Downloadable;
+//    use Downloadable;
 
     protected static function booted()
     {

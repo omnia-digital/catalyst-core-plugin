@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\View\Component\Jobs\Job;
+namespace OmniaDigital\CatalystCore\View\Components\Jobs\Job;
 
 use Illuminate\View\Component;
 use OmniaDigital\CatalystCore\Models\Jobs\JobPosition;
