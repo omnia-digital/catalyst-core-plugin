@@ -9,13 +9,9 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
-use OmniaDigital\CatalystCore\Filament\Admin\Resources\CompanyResource\Pages\CreateCompany;
-use OmniaDigital\CatalystCore\Filament\Admin\Resources\CompanyResource\Pages\EditCompany;
-use OmniaDigital\CatalystCore\Filament\Admin\Resources\CompanyResource\Pages\ManageCompanies;
 use OmniaDigital\CatalystCore\Filament\Admin\Resources\EventSourceCalendarResource\Pages\CreateEventSourceCalendars;
 use OmniaDigital\CatalystCore\Filament\Admin\Resources\EventSourceCalendarResource\Pages\EditEventSourceCalendar;
 use OmniaDigital\CatalystCore\Filament\Admin\Resources\EventSourceCalendarResource\Pages\ManageEventSourceCalendars;
-use OmniaDigital\CatalystCore\Filament\Admin\Resources\EventSourceCalendarResource\Pages\ManageEventSourceCalendarTypes;
 use RalphJSmit\Filament\Components\Forms\Timestamps;
 
 class EventSourceCalendarResource extends Resource
