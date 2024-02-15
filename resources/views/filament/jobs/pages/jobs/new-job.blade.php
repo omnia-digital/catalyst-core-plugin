@@ -34,8 +34,7 @@
 
                                 <div class="col-span-3 space-y-1">
                                     <x-library::input.label value="Job Description"/>
-                                    <x-library::input.textarea wire:model.live="description" id="description"
-                                                               placeholder="Job Description"/>
+                                    <x-library::tiptap wire:model.live="description" id="description" placeholder="Job Description"/>
                                     <x-library::input.error for="description"/>
                                 </div>
 

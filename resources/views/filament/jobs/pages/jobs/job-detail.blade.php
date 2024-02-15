@@ -75,7 +75,7 @@
                     <h3 class="text-base font-medium leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate">
                         {{ Translate::get('Job Description') }}
                     </h3>
-                    <p class="text-base text-gray-900 mt-2">{{ $job->description }}</p>
+                    <p class="text-base text-gray-900 mt-2">{!! $job->description !!}</p>
                 </div>
                 <div class="border-t border-gray-200 px-4 py-4 sm:px-6">
                     <h3 class="text-base font-medium leading-7 text-gray-900 sm:text-xl sm:leading-9 sm:truncate">

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger('team_id')->index();
             $table->unsignedBigInteger('user_id')->index();
             $table->string('apply_type');
-            $table->string('apply_value');
+            $table->text('apply_value');
             $table->string('payment_type');
             $table->decimal('budget', 14, 2)->nullable();
             $table->boolean('is_remote')->nullable();
