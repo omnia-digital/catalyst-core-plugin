@@ -57,7 +57,7 @@ class NewJob extends BasePage
 
     public $payment_type = '';
 
-    public $budget;
+    public $budget = null;
 
     public $is_remote = false;
 
@@ -328,7 +328,7 @@ class NewJob extends BasePage
 
         event(new JobPositionWasCreated($job));
 
-        $this->redirectRoute('filament.jobs.pages.show', [
+        $this->redirectRoute('filament.jobs.pages.job.{job}', [
             'team' => $job->company->id,
             'job' => $job,
         ]);
