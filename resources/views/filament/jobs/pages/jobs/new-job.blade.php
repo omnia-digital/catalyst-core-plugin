@@ -490,7 +490,7 @@
                                         <x-catalyst::jobs.job.item-preview
                                                 :logoUrl="$logo ? $logo->temporaryUrl() : Auth::user()->currentTeam->logoUrl"
                                                 :title="$jobTitle"
-                                                :companyName="Arr::first($companies, fn($company) => $company->id === $team_id)->name"
+                                                :companyName="Arr::first($companies, fn($company) => $company->id === $team_id)?->name"
                                                 :location="$location"
                                                 :isRemote="$is_remote"
                                                 :paymentType="$payment_type"
