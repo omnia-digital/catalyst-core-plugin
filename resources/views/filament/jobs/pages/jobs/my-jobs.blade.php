@@ -40,7 +40,7 @@
                             <a href="{{ route('filament.jobs.pages.new-job') }}"
                                class="rounded shadow py-2 px-4 bg-primary-500 text-white hover:bg-primary-500 hover:shadow-2xl transition duration-200">
                                 Create your first job
-                            </a>p
+                            </a>
                         </li>
                     @endforelse
                 </ul>
