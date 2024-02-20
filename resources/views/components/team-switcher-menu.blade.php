@@ -36,7 +36,7 @@
             {{ Translate::get('Manage Account') }}
         </div>
 
-        <catalyst::components.dropdown-link href="{{ route('catalyst-social.profile.show', auth()->user()->handle) }}">
+        <catalyst::components.dropdown-link href="{{ route('catalyst-social.profile.show', ['profile' =>auth()->user()->handle]) }}">
             {{ auth()->user()->name }}
         </catalyst::components.dropdown-link>
 

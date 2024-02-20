@@ -5,7 +5,7 @@
         <div class="mb-1 mx-4 absolute bottom-0 left-0 right-0 flex justify-between items-end">
             <div class="flex flex-col md:mx-0 md:flex-row md:items-end w-full">
                 <div class="md:mr-3 z-10 md:-mb-12">
-                    <img class="h-24 w-24 rounded-full" src="{{ $user->profile->profile_photo_url }}"
+                    <img class="h-24 w-24 rounded-full" src="{{ $user->profile?->profile_photo_url }}"
                          alt="{{ $user->name }}"/>
                 </div>
                 <div class="mb-2 sm:ml-3 space-y-1 flex-1">

@@ -2,7 +2,7 @@
     <div>
         <div class="flex space-x-3">
             <div class="flex-shrink-0">
-                <img class="h-10 w-10 rounded-full" src="{{ $reply->user->profile_photo_url }}"
+                <img class="h-10 w-10 rounded-full" src="{{ $reply->user?->profile_photo_url }}"
                      alt="{{ $reply->user->name }}"/>
             </div>
             <div class="min-w-0 flex-1">

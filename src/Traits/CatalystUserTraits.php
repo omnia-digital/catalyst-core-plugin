@@ -174,15 +174,17 @@ trait CatalystUserTraits
         }
         $this->load('profile');
 
-        if (empty($this->profile)) {
-            $createNewUser = new CreateNewUser();
-            $this->profile = $createNewUser->createProfile($this, [
-                'first_name' => 'First Name',
-                'last_name' => 'Last Name',
-            ]);
-        }
+        return $this->profile?->profile_photo_url;
+    }
 
-        return $this->profile->profile_photo_url;
+    public function createProfile()
+    {
+        $createNewUser = new CreateNewUser();
+        $this->profile = $createNewUser->createProfile($this, [
+            'first_name' => 'First Name',
+            'last_name' => 'Last Name',
+        ]);
+        return $this->profile;
     }
 
     public function getFilamentAvatarUrl(): ?string
@@ -217,6 +219,10 @@ trait CatalystUserTraits
     {
         if (! class_exists(Profile::class)) {
             return;
+        }
+
+        if (empty($this->hasOne(Profile::class))) {
+            $this->createProfile();
         }
 
         return $this->hasOne(Profile::class);
