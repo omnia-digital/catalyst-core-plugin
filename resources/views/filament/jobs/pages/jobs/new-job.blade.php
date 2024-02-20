@@ -180,7 +180,7 @@
                                     @endforeach
                                     <x-library::input.error for="job.project_size_id"/>
 
-                                    <x-library::input.label value="Active"/>
+                                    <x-library::input.label value="Make Active Immediately"/>
                                     <x-library::input.toggle wire:model="is_active" id="is-active"/>
                                     <x-library::input.error for="is_active"/>
                                 </div>
@@ -241,27 +241,27 @@
 {{--                                    @endif--}}
 {{--                                </div>--}}
 
+                                @if (!empty($price))
                                 <div class="col-span-3 space-y-1 sm:col-span-2">
                                     <x-library::input.label value="Coupon"/>
                                     <x-library::input.text wire:model.blur="coupon" id="coupon" placeholder="Coupon"/>
                                     <x-library::input.error for="coupon"/>
                                 </div>
-
-                                @auth
-                                    <div class="col-span-3 space-y-1">
-                                        <x-library::input.label value="Company"/>
-                                        <div class="inline-flex items-center">
-                                            <x-catalyst::jobs.input.file wire:model.live="logo" id="logo"
-                                                                         :preview="$logo ? $logo->temporaryUrl() : Auth::user()->currentTeam->logoUrl"
-                                                                         class="mr-4"/>
-                                            <x-catalyst::jobs.input.company wire:model.live="team_id"
-                                                                            :companies="$companies"
-                                                                            id="company"/>
-                                        </div>
-                                        <x-library::input.error for="team_id"/>
-                                        <x-library::input.error for="logo"/>
-                                    </div>
                                 @endif
+
+{{--                                // @TODO [Josh] - need to come back and add team switcher here --}}
+{{--                                @auth--}}
+{{--                                    <div class="col-span-3 space-y-1">--}}
+{{--                                        <x-library::input.label value="Company"/>--}}
+{{--                                        <div class="inline-flex items-center">--}}
+{{--                                            <x-catalyst::jobs.input.company wire:model.live="team_id"--}}
+{{--                                                                            :companies="$companies"--}}
+{{--                                                                            id="company"/>--}}
+{{--                                        </div>--}}
+{{--                                        <x-library::input.error for="team_id"/>--}}
+{{--                                        <x-library::input.error for="logo"/>--}}
+{{--                                    </div>--}}
+{{--                                @endif--}}
 
                                 @if ($intent && !empty($price))
                                     <div

@@ -37,7 +37,7 @@ class NewJob extends BasePage
 {
     use WithFileUploads, WithNotification;
 
-    use HasPageShield;
+//    use HasPageShield;
 
     protected static string $view = 'catalyst::filament.jobs.pages.jobs.new-job';
 
@@ -118,7 +118,7 @@ class NewJob extends BasePage
     {
         $this->setTeamId();
         $this->price = Catalyst::getJobSetting('posting_price');
-        abort_unless(auth()->user()->canManageSettings(), 403);
+//        abort_unless(auth()->user()->canManageSettings(), 403);
 
     }
 
@@ -265,12 +265,13 @@ class NewJob extends BasePage
             ->validate($this->rules());
 
         // Make sure users have their default payment method.
-        if (!auth()->user()
-            ->hasDefaultPaymentMethod()) {
-            $this->error('You have not setup your default payment method yet. Please setup one!');
-
-            return;
-        }
+        // @NOTE - I removed payment for now so job listings are all free
+//        if (!auth()->user()
+//            ->hasDefaultPaymentMethod()) {
+//            $this->error('You have not setup your default payment method yet. Please setup one!');
+//
+//            return;
+//        }
 
         DB::beginTransaction();
 
