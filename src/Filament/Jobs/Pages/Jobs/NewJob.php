@@ -152,7 +152,7 @@ class NewJob extends BasePage
             'is_remote' => 'boolean',
             'location' => 'nullable|max:254',
             'selected_skills' => ['required', new ValidTags],
-            'selected_addons' => [new ValidJobAddons],
+//            'selected_addons' => [new ValidJobAddons],
             'line1' => 'required_if:selected_payment_method,new-card|nullable|string|max:254',
             'city' => 'required_if:selected_payment_method,new-card|nullable|string|max:254',
             'country' => 'required_if:selected_payment_method,new-card|nullable|string|size:2',
@@ -292,8 +292,8 @@ class NewJob extends BasePage
                     ->all());
 
             // Attach job addons to job
-            $job->addons()
-                ->attach($this->selected_addons);
+//            $job->addons()
+//                ->attach($this->selected_addons);
 
             // Redeem coupon
             if ($this->coupon) {
@@ -329,7 +329,6 @@ class NewJob extends BasePage
         event(new JobPositionWasCreated($job));
 
         $this->redirectRoute('filament.jobs.pages.job.{job}', [
-            'team' => $job->company->id,
             'job' => $job,
         ]);
     }
