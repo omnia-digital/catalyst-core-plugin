@@ -17,6 +17,7 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use OmniaDigital\CatalystCore\Filament\Core\Pages\Auth\Register;
 
 class JobsPanelProvider extends PanelProvider
 {
@@ -26,7 +27,7 @@ class JobsPanelProvider extends PanelProvider
             ->id('jobs')
             ->path('jobs')
             ->login()
-            ->registration()
+            ->registration(Register::class)
             ->passwordReset()
             ->emailVerification()
             ->profile()

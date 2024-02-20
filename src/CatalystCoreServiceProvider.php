@@ -284,15 +284,15 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
 
     public function packageRegistered(): void
     {
-        $this->app->register(LivewireServiceProvider::class);
-        $this->app->register(AdminPanelProvider::class);
-//        $this->app->register(SocialPanelProvider::class);
-        $this->app->register(JobsPanelProvider::class);
-        $this->app->register(StripeConnectServiceProvider::class);
-        $this->app->register(TeamLensesServiceProvider::class);
         $this->app->register(FortifyServiceProvider::class);
         $this->app->register(JetstreamServiceProvider::class);
         $this->app->register(EventServiceProvider::class);
+        $this->app->register(LivewireServiceProvider::class);
+        $this->app->register(TeamLensesServiceProvider::class);
+        $this->app->register(StripeConnectServiceProvider::class);
+        $this->app->register(AdminPanelProvider::class);
+//        $this->app->register(SocialPanelProvider::class);
+        $this->app->register(JobsPanelProvider::class);
     }
 
     public function packageBooted(): void

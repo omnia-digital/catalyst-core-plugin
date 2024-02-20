@@ -11,11 +11,14 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Validator;
 use Laravel\Cashier\Billable;
 use Laravel\Cashier\SubscriptionBuilder;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasTeams as JetstreamHasTeams;
+use Laravel\Jetstream\Jetstream;
 use OmniaDigital\CatalystCore\Actions\Fortify\CreateNewUser;
+use OmniaDigital\CatalystCore\Actions\Fortify\PasswordValidationRules;
 use OmniaDigital\CatalystForms\Models\FormSubmission;
 use OmniaDigital\CatalystCore\Models\Like;
 use OmniaDigital\CatalystCore\Models\Media;
@@ -63,6 +66,7 @@ trait CatalystUserTraits
     use SnoozeNotifiable;
     use SoftDeletes;
     use TwoFactorAuthenticatable;
+    use PasswordValidationRules;
     //    use WithChargentSubscriptions;
 
     public static function findByFullName($firstName = '', $lastName = '', $fullName = '')
@@ -174,6 +178,9 @@ trait CatalystUserTraits
         }
         $this->load('profile');
 
+        if(empty($this->profile)) {
+            $this->createProfile();
+        }
         return $this->profile?->profile_photo_url;
     }
 

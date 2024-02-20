@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
 use OmniaDigital\CatalystCore\Models\Team;
@@ -32,28 +31,31 @@ class CreateNewUser implements CreatesNewUsers
 //            'role' => [Rule::in(['Client', 'Contractor'])],
         ])->validate();
 
-        $json_data = '{
-          "list_ids": ["' . config('app.sendgrid_company_list_id') . '"],
-          "contacts": [
-            {
-              "email": "' . $input['email'] . '"
-            }
-          ]
-        }';
-        $response = Http::withToken(config('app.sendgrid_key'))->withBody($json_data,
-            'application/json')->put(config('app.sendgrid_url'));
-        if ($response->status() == 202) {
-            return DB::transaction(function () use ($input) {
-                return tap(${config('catalyst-settings.models.user')}::create([
-                    'email' => $input['email'],
-                    'password' => Hash::make($input['password']),
-                ]), function (User $user) use ($input) {
-                    $this->createProfile($user, $input);
-                    $this->createTeam($user);
+        return DB::transaction(function () use ($input) {
+            return tap(${config('catalyst-settings.models.user')}::create([
+                'email' => $input['email'],
+                'password' => Hash::make($input['password']),
+            ]), function (User $user) use ($input) {
+                $this->createProfile($user, $input);
+                $this->createTeam($user);
 //                    $this->assignRole($user, $input['role'] ?? 'Client'); // Default role is Client.
-                });
             });
-        }
+        });
+
+        // fire off this job to sendgrid on New user Event, not in here
+//        $json_data = '{
+//          "list_ids": ["' . config('app.sendgrid_company_list_id') . '"],
+//          "contacts": [
+//            {
+//              "email": "' . $input['email'] . '"
+//            }
+//          ]
+//        }';
+//        $response = Http::withToken(config('app.sendgrid_key'))->withBody($json_data,
+//            'application/json')->put(config('app.sendgrid_url'));
+//        if ($response->status() == 202) {
+//
+//        }
     }
 
     /**
