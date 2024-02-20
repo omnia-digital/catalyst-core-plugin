@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
+use OmniaDigital\CatalystCore\Actions\Teams\CreateTeam;
 use OmniaDigital\CatalystCore\Models\Team;
 
 class CreateNewUser implements CreatesNewUsers
@@ -22,17 +23,17 @@ class CreateNewUser implements CreatesNewUsers
      */
     public function create(array $input): User
     {
-        Validator::make($input, [
-            'first_name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => $this->passwordRules(),
-            'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
-//            'role' => [Rule::in(['Client', 'Contractor'])],
-        ])->validate();
+//        Validator::make($input, [
+//            'first_name' => ['required', 'string', 'max:255'],
+//            'last_name' => ['required', 'string', 'max:255'],
+//            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+//            'password' => $this->passwordRules(),
+////            'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
+////            'role' => [Rule::in(['Client', 'Contractor'])],
+//        ])->validate();
 
         return DB::transaction(function () use ($input) {
-            return tap(${config('catalyst-settings.models.user')}::create([
+            return tap(config('catalyst-settings.models.user')::create([
                 'email' => $input['email'],
                 'password' => Hash::make($input['password']),
             ]), function (User $user) use ($input) {
@@ -70,16 +71,14 @@ class CreateNewUser implements CreatesNewUsers
             'last_name' => $input['last_name'],
         ]);
     }
-
-    /**
-     * Create a personal team for the user.
-     */
     public function createTeam(User $user): void
     {
-        $user->ownedTeams()->save(Team::forceCreate([
-            'user_id' => $user->id,
+        (new CreateTeam())->create($user, [
             'name' => explode(' ', $user->name, 2)[0] . "'s Team",
-            'personal_team' => true,
-        ]));
+            'teamTypes' => [],
+        ]);
+//        $user->teams()->save(Team::forceCreate([
+//            'name' => explode(' ', $user->name, 2)[0] . "'s Team",
+//        ]));
     }
 }

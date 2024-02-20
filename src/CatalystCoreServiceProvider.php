@@ -21,9 +21,12 @@ use Livewire\Features\SupportTesting\Testable;
 use Livewire\Livewire;
 use Livewire\LivewireServiceProvider;
 use OmniaDigital\CatalystCore\Commands\CatalystCoreCommand;
+use OmniaDigital\CatalystCore\Models\Jobs\JobPosition;
 use OmniaDigital\CatalystCore\Models\Profile;
 use OmniaDigital\CatalystCore\Models\Team;
 use App\Models\User;
+use OmniaDigital\CatalystCore\Policies\Jobs\JobPositionPolicy;
+use OmniaDigital\CatalystCore\Policies\TeamPolicy;
 use OmniaDigital\CatalystCore\Providers\EventServiceProvider;
 use OmniaDigital\CatalystCore\Providers\Filament\AdminPanelProvider;
 use OmniaDigital\CatalystCore\Providers\Filament\JobsPanelProvider;
@@ -293,6 +296,9 @@ class CatalystCoreServiceProvider extends PackageServiceProvider
         $this->app->register(AdminPanelProvider::class);
 //        $this->app->register(SocialPanelProvider::class);
         $this->app->register(JobsPanelProvider::class);
+        Gate::policy(JobPosition::class, JobPositionPolicy::class);
+        Gate::policy(Team::class, TeamPolicy::class);
+        Gate::policy(\App\Models\Team::class, TeamPolicy::class);
     }
 
     public function packageBooted(): void

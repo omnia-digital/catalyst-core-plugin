@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Policies;
+namespace OmniaDigital\CatalystCore\Policies\Jobs;
 
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;

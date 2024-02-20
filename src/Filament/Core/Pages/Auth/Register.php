@@ -5,8 +5,11 @@ namespace OmniaDigital\CatalystCore\Filament\Core\Pages\Auth;
 use DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException;
 use Filament\Events\Auth\Registered;
 use Filament\Facades\Filament;
+use Filament\Forms\Components\Component;
+use Filament\Forms\Components\TextInput;
 use Filament\Http\Responses\Auth\Contracts\RegistrationResponse;
 use Filament\Notifications\Notification;
+use OmniaDigital\CatalystCore\Actions\Fortify\CreateNewUser;
 
 class Register extends \Filament\Pages\Auth\Register
 {
@@ -39,9 +42,9 @@ class Register extends \Filament\Pages\Auth\Register
 
         $data = $this->form->getState();
 
-        $user = $this->getUserModel()::create($data);
+        $user = (new CreateNewUser())->create($data); // Create a new user (and profile and team)
 
-        $user->createProfile(); // Create a profile for the user
+//        $user = $this->getUserModel()::create($data);
 
         event(new Registered($user));
 
@@ -54,8 +57,28 @@ class Register extends \Filament\Pages\Auth\Register
         return app(RegistrationResponse::class);
     }
 
-//    public function getViewData(): array
-//    {
-//        return [];
-//    }
+    protected function getForms(): array
+    {
+        return [
+            'form' => $this->form(
+                $this->makeForm()
+                    ->schema([
+                        TextInput::make('first_name')
+                            ->label('First Name')
+                            ->required()
+                            ->maxLength(255)
+                            ->autofocus(),
+                        TextInput::make('last_name')
+                            ->label('Last Name')
+                            ->required()
+                            ->maxLength(255),
+//                        $this->getNameFormComponent(),
+                        $this->getEmailFormComponent(),
+                        $this->getPasswordFormComponent(),
+                        $this->getPasswordConfirmationFormComponent(),
+                    ])
+                    ->statePath('data'),
+            ),
+        ];
+    }
 }
