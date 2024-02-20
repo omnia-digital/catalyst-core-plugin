@@ -191,54 +191,55 @@
                                 {{--                                <x-library::input.error for="show_budget"/>--}}
                                 {{--                            </div>--}}
 
-                                <div class="col-span-3 space-y-1 sm:col-span-2">
-                                    <fieldset>
-                                        <div class="mb-2">
-                                            <h2 class="text-lg leading-6 font-medium text-gray-900">Job Addons</h2>
-                                            <p class="mt-1 text-sm leading-5 text-gray-500">This information will be
-                                                displayed publicly so be careful what you share.</p>
-                                        </div>
+{{--                                Job Position Addons --}}
+{{--                                <div class="col-span-3 space-y-1 sm:col-span-2">--}}
+{{--                                    <fieldset>--}}
+{{--                                        <div class="mb-2">--}}
+{{--                                            <h2 class="text-lg leading-6 font-medium text-gray-900">Job Addons</h2>--}}
+{{--                                            <p class="mt-1 text-sm leading-5 text-gray-500">This information will be--}}
+{{--                                                displayed publicly so be careful what you share.</p>--}}
+{{--                                        </div>--}}
 
-                                        <ul class="space-y-6">
-                                            @foreach ($addons as $addon)
-                                                <li
-                                                        wire:key="addon-{{ $addon->id }}"
-                                                        wire:click="toggleAddon({{ $addon->id }})"
-                                                        class="group relative rounded-lg shadow-sm cursor-pointer focus:outline-none focus:shadow-outline-blue">
-                                                    <div
-                                                            class="rounded-lg border border-gray-300 bg-white px-6 py-4 hover:border-gray-400 group-focus:border-blue-300 sm:flex sm:justify-between sm:space-x-4">
-                                                        <div class="flex items-center space-x-0">
-                                                            <div class="flex-shrink-0 flex items-center hidden">
-                                                                <span class="form-radio text-indigo-600 group-focus:bg-red-500"></span>
-                                                            </div>
-                                                            <div class="text-sm leading-5">
-                                                                <p class="block font-medium text-gray-900">
-                                                                    {{ $addon->name }}
-                                                                </p>
-                                                                @if ($addon->description)
-                                                                    <div class="text-gray-500">
-                                                                        <span class="block sm:inline">{{ $addon->description }}</span>
-                                                                    </div>
-                                                                @endif
-                                                            </div>
-                                                        </div>
-                                                        <div class="mt-2 flex text-sm leading-5 space-x-1 sm:mt-0 sm:block sm:space-x-0 sm:text-right">
-                                                            <div class="font-medium text-gray-900">{{ Catalyst::money($addon->price) }}</div>
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                            class="{{ in_array($addon->id, $selected_addons) ? 'border-light-blue-500' : 'border-transparent"' }} absolute inset-0 rounded-lg border-2 pointer-events-none"></div>
-                                                </li>
-                                            @endforeach
-                                        </ul>
+{{--                                        <ul class="space-y-6">--}}
+{{--                                            @foreach ($addons as $addon)--}}
+{{--                                                <li--}}
+{{--                                                        wire:key="addon-{{ $addon->id }}"--}}
+{{--                                                        wire:click="toggleAddon({{ $addon->id }})"--}}
+{{--                                                        class="group relative rounded-lg shadow-sm cursor-pointer focus:outline-none focus:shadow-outline-blue">--}}
+{{--                                                    <div--}}
+{{--                                                            class="rounded-lg border border-gray-300 bg-white px-6 py-4 hover:border-gray-400 group-focus:border-blue-300 sm:flex sm:justify-between sm:space-x-4">--}}
+{{--                                                        <div class="flex items-center space-x-0">--}}
+{{--                                                            <div class="flex-shrink-0 flex items-center hidden">--}}
+{{--                                                                <span class="form-radio text-indigo-600 group-focus:bg-red-500"></span>--}}
+{{--                                                            </div>--}}
+{{--                                                            <div class="text-sm leading-5">--}}
+{{--                                                                <p class="block font-medium text-gray-900">--}}
+{{--                                                                    {{ $addon->name }}--}}
+{{--                                                                </p>--}}
+{{--                                                                @if ($addon->description)--}}
+{{--                                                                    <div class="text-gray-500">--}}
+{{--                                                                        <span class="block sm:inline">{{ $addon->description }}</span>--}}
+{{--                                                                    </div>--}}
+{{--                                                                @endif--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                        <div class="mt-2 flex text-sm leading-5 space-x-1 sm:mt-0 sm:block sm:space-x-0 sm:text-right">--}}
+{{--                                                            <div class="font-medium text-gray-900">{{ Catalyst::money($addon->price) }}</div>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                    <div--}}
+{{--                                                            class="{{ in_array($addon->id, $selected_addons) ? 'border-light-blue-500' : 'border-transparent"' }} absolute inset-0 rounded-lg border-2 pointer-events-none"></div>--}}
+{{--                                                </li>--}}
+{{--                                            @endforeach--}}
+{{--                                        </ul>--}}
 
-                                        <x-library::input.error class="mt-2" for="selected_addons"/>
-                                    </fieldset>
+{{--                                        <x-library::input.error class="mt-2" for="selected_addons"/>--}}
+{{--                                    </fieldset>--}}
 
-                                    @if (!empty($price))
-                                        <p class="font-bold text-lg pt-5">Price: {{ Catalyst::money($price ?? 0) }}</p>
-                                    @endif
-                                </div>
+{{--                                    @if (!empty($price))--}}
+{{--                                        <p class="font-bold text-lg pt-5">Price: {{ Catalyst::money($price ?? 0) }}</p>--}}
+{{--                                    @endif--}}
+{{--                                </div>--}}
 
                                 <div class="col-span-3 space-y-1 sm:col-span-2">
                                     <x-library::input.label value="Coupon"/>
