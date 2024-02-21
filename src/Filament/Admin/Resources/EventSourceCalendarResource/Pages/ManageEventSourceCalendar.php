@@ -6,7 +6,7 @@ use Filament\Pages\Actions;
 use Filament\Resources\Pages\ManageRecords;
 use OmniaDigital\CatalystCore\Filament\Admin\Resources\EventSourceCalendarResource;
 
-class ManageEventSourceCalendars extends ManageRecords
+class ManageEventSourceCalendar extends ManageRecords
 {
     protected static string $resource = EventSourceCalendarResource::class;
 

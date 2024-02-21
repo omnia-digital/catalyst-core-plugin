@@ -9,9 +9,9 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
-use OmniaDigital\CatalystCore\Filament\Admin\Resources\EventSourceCalendarResource\Pages\CreateEventSourceCalendars;
+use OmniaDigital\CatalystCore\Filament\Admin\Resources\EventSourceCalendarResource\Pages\CreateEventSourceCalendar;
 use OmniaDigital\CatalystCore\Filament\Admin\Resources\EventSourceCalendarResource\Pages\EditEventSourceCalendar;
-use OmniaDigital\CatalystCore\Filament\Admin\Resources\EventSourceCalendarResource\Pages\ManageEventSourceCalendars;
+use OmniaDigital\CatalystCore\Filament\Admin\Resources\EventSourceCalendarResource\Pages\ManageEventSourceCalendar;
 use RalphJSmit\Filament\Components\Forms\Timestamps;
 
 class EventSourceCalendarResource extends Resource
@@ -67,8 +67,8 @@ class EventSourceCalendarResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => ManageEventSourceCalendars::route('/'),
-            'create' => CreateEventSourceCalendars::route('/create'),
+            'index' => ManageEventSourceCalendar::route('/'),
+            'create' => CreateEventSourceCalendar::route('/create'),
             'edit' => EditEventSourceCalendar::route('/edit/{record}'),
         ];
     }

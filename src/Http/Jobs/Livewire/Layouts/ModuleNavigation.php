@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Http\Livewire\Layouts;
+namespace OmniaDigital\CatalystCore\Http\Jobs\Livewire\Layouts;
 
 use Livewire\Component;
 

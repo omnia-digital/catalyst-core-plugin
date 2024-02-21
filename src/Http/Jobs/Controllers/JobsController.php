@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Http\Controllers;
+namespace OmniaDigital\CatalystCore\Http\Jobs\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;

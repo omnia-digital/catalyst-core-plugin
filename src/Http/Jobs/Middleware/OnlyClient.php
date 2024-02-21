@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Http\Middleware;
+namespace OmniaDigital\CatalystCore\Http\Jobs\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
