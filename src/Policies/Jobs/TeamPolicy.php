@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Jobs\Policies;
+namespace OmniaDigital\CatalystCore\Policies\Jobs;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Modules\Jobs\Models\Team;

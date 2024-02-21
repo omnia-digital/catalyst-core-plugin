@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Policies;
+namespace OmniaDigital\CatalystCore\Policies\Jobs;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
 use OmniaDigital\CatalystCore\Models\Jobs\RedeemedCoupon;

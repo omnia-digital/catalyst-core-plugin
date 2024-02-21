@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Filament\Pages;
+namespace OmniaDigital\CatalystCore\Filament\Jobs\Pages;
 
 use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Forms\Components\TextInput;
