@@ -1,11 +1,10 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Listeners;
+namespace OmniaDigital\CatalystCore\Listeners\Jobs;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use OmniaDigital\CatalystCore\Events\Jobs\JobPositionWasCreated;
-use Thujohn\Twitter\Facades\Twitter;
 
 class TweetJob implements ShouldQueue
 {

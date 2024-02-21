@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Listeners;
+namespace OmniaDigital\CatalystCore\Listeners\Jobs;
 
 use Illuminate\Auth\Events\Registered;
 

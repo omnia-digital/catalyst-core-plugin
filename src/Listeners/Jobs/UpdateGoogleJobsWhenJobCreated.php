@@ -1,6 +1,6 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Listeners;
+namespace OmniaDigital\CatalystCore\Listeners\Jobs;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;

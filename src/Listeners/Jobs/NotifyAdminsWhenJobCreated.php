@@ -1,12 +1,12 @@
 <?php
 
-namespace OmniaDigital\CatalystCore\Listeners;
+namespace OmniaDigital\CatalystCore\Listeners\Jobs;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use OmniaDigital\CatalystCore\Events\Jobs\JobPositionWasCreated;
-use OmniaDigital\CatalystCore\Notifications\JobPositionWasCreatedNotification;
-use OmniaDigital\CatalystCore\Support\Notification\Notification;
+use OmniaDigital\CatalystCore\Notifications\Jobs\JobPositionWasCreatedNotification;
+use OmniaDigital\CatalystCore\Support\Jobs\Notification\Notification;
 
 class NotifyAdminsWhenJobCreated implements ShouldQueue
 {
