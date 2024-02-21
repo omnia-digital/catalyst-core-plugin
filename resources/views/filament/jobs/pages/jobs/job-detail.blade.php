@@ -64,7 +64,7 @@
                                 <span class="shadow-sm rounded-md">
                             <x-library::button.link href="{{ $job->applyLink }}" target="_blank"
                                                     class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-light-blue-600 hover:bg-light-blue-500 focus:outline-none focus:shadow-outline-light-blue focus:border-light-blue-700 active:bg-light-blue-700 transition duration-150 ease-in-out">
-                                <x-library::icons.icon name="heroicon-s-cursor-click" class="-ml-1 mr-2 h-5 w-5"/> {{ Translate::get('Apply') }}
+                                <x-library::icons.icon name="heroicon-s-cursor-arrow-rays" class="-ml-1 mr-2 h-5 w-5"/> {{ Translate::get('Apply') }}
                             </x-library::button.link>
                         @endif
                     </span>
