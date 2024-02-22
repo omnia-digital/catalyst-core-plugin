@@ -2,14 +2,16 @@
 
 namespace OmniaDigital\CatalystCore\Filament\Jobs\Pages;
 
+use BezhanSalleh\FilamentShield\Support\Utils;
 use BezhanSalleh\FilamentShield\Traits\HasPageShield;
+use Filament\Facades\Filament;
 use Filament\Forms\Components\TextInput;
 use Filament\Pages\SettingsPage;
 use OmniaDigital\CatalystCore\Settings\JobsSettings;
 
 class ManageJobsSettings extends SettingsPage
 {
-    //    use HasPageShield;
+        use HasPageShield;
 
     protected static ?string $title = 'Jobs Settings';
 
