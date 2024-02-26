@@ -1,4 +1,4 @@
-@props(['team', 'component' => 'dropdown-link'])
+@props(['team', 'component' => 'library::dropdown.item'])
 
 <form method="POST" action="{{ route('current-team.update') }}" x-data>
     @method('PUT')
@@ -7,7 +7,7 @@
     <!-- Hidden Team ID -->
     <input type="hidden" name="team_id" value="{{ $team->id }}">
 
-    <catalyst::x-dynamic-component :component="$component" href="#" x-on:click.prevent="$root.submit();">
+    <x-dynamic-component :component="$component" href="#" x-on:click.prevent="$root.submit();">
         <div class="flex items-center">
             @if (Auth::user()->isCurrentTeam($team))
                 <svg class="mr-2 h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -19,5 +19,5 @@
 
             <div class="truncate">{{ $team->name }}</div>
         </div>
-    </catalyst::x-dynamic-component>
+    </x-dynamic-component>
 </form>
