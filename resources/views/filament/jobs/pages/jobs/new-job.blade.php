@@ -1,7 +1,7 @@
 <x-filament-panels::page>
     <div>
         <div class="flex justify-between mb-6">
-            <div class="w-full md:w-10/12 px-2 md:pr-6">
+            <div class="w-full px-2 md:pr-6">
 
                 @guest
                     <div class="mb-4">
@@ -26,6 +26,20 @@
                         <div class="bg-white py-6 px-4 space-y-6 sm:p-6">
 
                             <div class="grid grid-cols-3 gap-6">
+
+                                @auth
+                                    <div class="col-span-3 space-y-1">
+                                        <x-library::input.label value="Company"/>
+                                        <div class="inline-flex items-center">
+                                            <x-catalyst::jobs.input.company wire:model.live="team_id"
+                                                                            :companies="$companies"
+                                                                            id="company"/>
+                                        </div>
+                                        <x-library::input.error for="team_id"/>
+                                        <x-library::input.error for="logo"/>
+                                    </div>
+                                @endif
+
                                 <div class="col-span-3 space-y-1 sm:col-span-2">
                                     <x-library::input.label for="jobTitle" value="Job Title"/>
                                     <x-library::input.text wire:model.live="jobTitle" id="jobTitle" placeholder="Job Title"/>
@@ -34,7 +48,7 @@
 
                                 <div class="col-span-3 space-y-1">
                                     <x-library::input.label value="Job Description"/>
-                                    <x-library::tiptap wire:model.live="description" id="description" placeholder="Job Description"/>
+                                    <x-library::tiptap wire:model.live="description" id="description" placeholder="Job Description" heightClass="min-h-[6rem] p-4"/>
                                     <x-library::input.error for="description"/>
                                 </div>
 
@@ -123,8 +137,8 @@
                                 </div>
                                 <div class="col-span-3 space-y-1 sm:col-span-2">
                                     <div>
-                                        <h2 class="text-lg leading-6 font-medium text-gray-900">What level of experience
-                                            will it need?</h2>
+                                        <x-library::heading.2 class="text-lg leading-6 font-medium text-gray-900">What level of experience
+                                            will it need?</x-library::heading.2>
                                         <p class="mt-1 text-sm leading-5 text-gray-500">This won't restrict any
                                             proposals, but helps match expertise to your budget.</p>
                                     </div>
@@ -146,8 +160,8 @@
 
                                 <div class="col-span-3 space-y-1 sm:col-span-2">
                                     <div>
-                                        <h2 class="text-lg leading-6 font-medium text-gray-900">How long will your work
-                                            take?</h2>
+                                        <x-library::heading.2 class="text-lg leading-6 font-medium text-gray-900">How long will your work
+                                            take?</x-library::heading.2>
                                     </div>
                                     @foreach ($jobLengths as $key => $jobLength)
                                         <div class="flex pt-4">
@@ -160,9 +174,9 @@
                                             <x-library::input.error for="{{ $jobLength['title'] }}"/>
                                         </div>
                                     @endforeach
-                                    <div>
-                                        <h2 class="text-lg leading-6 font-medium text-gray-900">What's the size of your
-                                            project?</h2>
+                                    <div >
+                                        <x-library::heading.2 class="text-lg font-medium text-gray-900">What's the size of your
+                                            project?</x-library::heading.2>
                                     </div>
                                     @foreach ($projectSizes as $key => $project)
                                         <div class="flex pt-4">
@@ -249,20 +263,6 @@
                                 </div>
                                 @endif
 
-{{--                                // @TODO [Josh] - need to come back and add team switcher here --}}
-{{--                                @auth--}}
-{{--                                    <div class="col-span-3 space-y-1">--}}
-{{--                                        <x-library::input.label value="Company"/>--}}
-{{--                                        <div class="inline-flex items-center">--}}
-{{--                                            <x-catalyst::jobs.input.company wire:model.live="team_id"--}}
-{{--                                                                            :companies="$companies"--}}
-{{--                                                                            id="company"/>--}}
-{{--                                        </div>--}}
-{{--                                        <x-library::input.error for="team_id"/>--}}
-{{--                                        <x-library::input.error for="logo"/>--}}
-{{--                                    </div>--}}
-{{--                                @endif--}}
-
                                 @if ($intent && !empty($price))
                                     <div
                                             wire:ignore.self
@@ -345,7 +345,7 @@
                                     >
                                         <fieldset>
                                             <div>
-                                                <h2 class="text-lg leading-6 font-medium text-gray-900">Payment</h2>
+                                                <x-library::heading.2 class="text-lg leading-6 font-medium text-gray-900">Payment</x-library::heading.2>
                                                 <p class="mt-1 text-sm leading-5 text-gray-500">This information will be
                                                     displayed publicly so be careful what you share.</p>
                                             </div>
@@ -480,7 +480,7 @@
                             </div>
                             {{--  Preview Job  --}}
                             <div class="rounded border-2 mt-10">
-                                <h2 class="text-xl text-center font-medium text-gray-700 py-2">Preview</h2>
+                                <x-library::heading.2 class="text-xl text-center font-medium text-gray-700 py-2">Preview</x-library::heading.2>
                                 <p class="text-center font-bold">Here's a preview of what your job post will look
                                     like</p>
                                 <p class="text-center">Don't worry if it's not perfect the first time: your job is fully
