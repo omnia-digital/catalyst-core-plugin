@@ -22,7 +22,7 @@
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ml-3 relative">
-                        <catalyst::components.dropdown align="right" width="60">
+                        <x-catalyst::dropdown align="right" width="60">
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
@@ -46,14 +46,14 @@
                                     </div>
 
                                     <!-- Team Settings -->
-                                    <catalyst::components.dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                    <x-catalyst::dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
                                         {{ __('Team Settings') }}
-                                    </catalyst::components.dropdown-link>
+                                    </x-catalyst::dropdown-link>
 
                                     @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                                        <catalyst::components.dropdown-link href="{{ route('teams.create') }}">
+                                        <x-catalyst::dropdown-link href="{{ route('teams.create') }}">
                                             {{ __('Create New Team') }}
-                                        </catalyst::components.dropdown-link>
+                                        </x-catalyst::dropdown-link>
                                     @endcan
 
                                     <!-- Team Switcher -->
@@ -65,18 +65,18 @@
                                         </div>
 
                                         @foreach (Auth::user()->allTeams() as $team)
-                                            <catalyst::components.switchable-team :team="$team"/>
+                                            <x-catalyst::switchable-team :team="$team"/>
                                         @endforeach
                                     @endif
                                 </div>
                             </x-slot>
-                        </catalyst::components.dropdown>
+                        </x-catalyst::dropdown>
                     </div>
                 @endif
 
                 <!-- Settings Dropdown -->
                 <div class="ml-3 relative">
-                    <catalyst::components.dropdown align="right" width="48">
+                    <x-catalyst::dropdown align="right" width="48">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
@@ -105,14 +105,14 @@
                                 {{ __('Manage Account') }}
                             </div>
 
-                            <catalyst::components.dropdown-link href="{{ route('profile.show') }}">
+                            <x-catalyst::dropdown-link href="{{ route('profile.show') }}">
                                 {{ __('Profile') }}
-                            </catalyst::components.dropdown-link>
+                            </x-catalyst::dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                                <catalyst::components.dropdown-link href="{{ route('api-tokens.index') }}">
+                                <x-catalyst::dropdown-link href="{{ route('api-tokens.index') }}">
                                     {{ __('API Tokens') }}
-                                </catalyst::components.dropdown-link>
+                                </x-catalyst::dropdown-link>
                             @endif
 
                             <div class="border-t border-gray-200"></div>
@@ -121,13 +121,13 @@
                             <form method="POST" action="{{ route('logout') }}" x-data>
                                 @csrf
 
-                                <catalyst::components.dropdown-link href="{{ route('logout') }}"
+                                <x-catalyst::dropdown-link href="{{ route('logout') }}"
                                                  @click.prevent="$root.submit();">
                                     {{ __('Log Out') }}
-                                </catalyst::components.dropdown-link>
+                                </x-catalyst::dropdown-link>
                             </form>
                         </x-slot>
-                    </catalyst::components.dropdown>
+                    </x-catalyst::dropdown>
                 </div>
             </div>
 
@@ -150,9 +150,9 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <catalyst::components.responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <x-catalyst::responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
-            </catalyst::components.responsive-nav-link>
+            </x-catalyst::responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
@@ -173,25 +173,25 @@
 
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
-                <catalyst::components.responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                <x-catalyst::responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                     {{ __('Profile') }}
-                </catalyst::components.responsive-nav-link>
+                </x-catalyst::responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                    <catalyst::components.responsive-nav-link href="{{ route('api-tokens.index') }}"
+                    <x-catalyst::responsive-nav-link href="{{ route('api-tokens.index') }}"
                                            :active="request()->routeIs('api-tokens.index')">
                         {{ __('API Tokens') }}
-                    </catalyst::components.responsive-nav-link>
+                    </x-catalyst::responsive-nav-link>
                 @endif
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}" x-data>
                     @csrf
 
-                    <catalyst::components.responsive-nav-link href="{{ route('logout') }}"
+                    <x-catalyst::responsive-nav-link href="{{ route('logout') }}"
                                            @click.prevent="$root.submit();">
                         {{ __('Log Out') }}
-                    </catalyst::components.responsive-nav-link>
+                    </x-catalyst::responsive-nav-link>
                 </form>
 
                 <!-- Team Management -->
@@ -203,16 +203,16 @@
                     </div>
 
                     <!-- Team Settings -->
-                    <catalyst::components.responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}"
+                    <x-catalyst::responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}"
                                            :active="request()->routeIs('teams.show')">
                         {{ __('Team Settings') }}
-                    </catalyst::components.responsive-nav-link>
+                    </x-catalyst::responsive-nav-link>
 
                     @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                        <catalyst::components.responsive-nav-link href="{{ route('teams.create') }}"
+                        <x-catalyst::responsive-nav-link href="{{ route('teams.create') }}"
                                                :active="request()->routeIs('teams.create')">
                             {{ __('Create New Team') }}
-                        </catalyst::components.responsive-nav-link>
+                        </x-catalyst::responsive-nav-link>
                     @endcan
 
                     <!-- Team Switcher -->
@@ -224,7 +224,7 @@
                         </div>
 
                         @foreach (Auth::user()->allTeams() as $team)
-                            <catalyst::components.switchable-team :team="$team" component="responsive-nav-link"/>
+                            <x-catalyst::switchable-team :team="$team" component="responsive-nav-link"/>
                         @endforeach
                     @endif
                 @endif

@@ -1,4 +1,4 @@
-<catalyst::components.confirmation-modal wire:model.live="confirmingDeletePost">
+<x-catalyst::confirmation-modal wire:model.live="confirmingDeletePost">
     <x-slot name="title">
         {{ \OmniaDigital\CatalystCore\Facades\Translate::get('Delete Post') }}
     </x-slot>
@@ -8,12 +8,12 @@
     </x-slot>
 
     <x-slot name="footer">
-        <catalyst::components.secondary-button wire:click.prevent.stop="$toggle('confirmingDeletePost')" wire:loading.attr="disabled">
+        <x-catalyst::secondary-button wire:click.prevent.stop="$toggle('confirmingDeletePost')" wire:loading.attr="disabled">
             {{ \OmniaDigital\CatalystCore\Facades\Translate::get('Cancel') }}
-        </catalyst::components.secondary-button>
+        </x-catalyst::secondary-button>
 
-        <catalyst::components.danger-button class="ml-2" wire:click.prevent.stop="deletePost" wire:loading.attr="disabled">
+        <x-catalyst::danger-button class="ml-2" wire:click.prevent.stop="deletePost" wire:loading.attr="disabled">
             {{ \OmniaDigital\CatalystCore\Facades\Translate::get('Confirm') }}
-        </catalyst::components.danger-button>
+        </x-catalyst::danger-button>
     </x-slot>
-</catalyst::components.confirmation-modal>
+</x-catalyst::confirmation-modal>

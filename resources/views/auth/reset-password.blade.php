@@ -1,10 +1,10 @@
-<catalyst::components.guest-layout>
-    <catalyst::components.authentication-card>
+<x-catalyst::guest-layout>
+    <x-catalyst::authentication-card>
         <x-slot name="logo">
-            <catalyst::components.authentication-card-logo/>
+            <x-catalyst::authentication-card-logo/>
         </x-slot>
 
-        <catalyst::components.validation-errors class="mb-4"/>
+        <x-catalyst::validation-errors class="mb-4"/>
 
         <form method="POST" action="{{ route('password.update') }}">
             @csrf
@@ -12,28 +12,28 @@
             <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
             <div class="block">
-                <catalyst::components.label for="email" value="{{ Translate::get('Email') }}"/>
-                <catalyst::components.input id="email" class="block mt-1 w-full" type="email" name="email"
+                <x-catalyst::label for="email" value="{{ Translate::get('Email') }}"/>
+                <x-catalyst::input id="email" class="block mt-1 w-full" type="email" name="email"
                          :value="old('email', $request->email)" required autofocus/>
             </div>
 
             <div class="mt-4">
-                <catalyst::components.label for="password" value="{{ Translate::get('Password') }}"/>
-                <catalyst::components.input id="password" class="block mt-1 w-full" type="password" name="password" required
+                <x-catalyst::label for="password" value="{{ Translate::get('Password') }}"/>
+                <x-catalyst::input id="password" class="block mt-1 w-full" type="password" name="password" required
                          autocomplete="new-password"/>
             </div>
 
             <div class="mt-4">
-                <catalyst::components.label for="password_confirmation" value="{{ Translate::get('Confirm Password') }}"/>
-                <catalyst::components.input id="password_confirmation" class="block mt-1 w-full" type="password"
+                <x-catalyst::label for="password_confirmation" value="{{ Translate::get('Confirm Password') }}"/>
+                <x-catalyst::input id="password_confirmation" class="block mt-1 w-full" type="password"
                          name="password_confirmation" required autocomplete="new-password"/>
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <catalyst::components.button>
+                <x-catalyst::button>
                     {{ Translate::get('Reset Password') }}
-                </catalyst::components.button>
+                </x-catalyst::button>
             </div>
         </form>
-    </catalyst::components.authentication-card>
-</catalyst::components.guest-layout>
+    </x-catalyst::authentication-card>
+</x-catalyst::guest-layout>

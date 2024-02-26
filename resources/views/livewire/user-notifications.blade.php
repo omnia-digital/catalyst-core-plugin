@@ -34,7 +34,7 @@
             <div class="flow-root mt-6">
                 <ul role="list" class="-my-5 divide-y divide-gray-200">
                     @foreach ($notifications as $notification)
-                        <catalyst::components.notifications.item
+                        <x-catalyst::notifications.item
                                 :id="$notification->id"
                                 :title="$notification->data['title']"
                                 :subtitle="$notification->data['subtitle'] ?? null"

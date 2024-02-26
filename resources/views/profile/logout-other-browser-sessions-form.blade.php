@@ -57,9 +57,9 @@
         @endif
 
         <div class="flex items-center mt-5">
-            <catalyst::components.button wire:click="confirmLogout" wire:loading.attr="disabled">
+            <x-catalyst::button wire:click="confirmLogout" wire:loading.attr="disabled">
                 {{ Translate::get('Log Out Other Browser Sessions') }}
-            </catalyst::components.button>
+            </x-catalyst::button>
 
             <x-action-message class="ml-3" on="loggedOut">
                 {{ Translate::get('Done.') }}
@@ -77,26 +77,26 @@
 
                 <div class="mt-4" x-data="{}"
                      x-on:confirming-logout-other-browser-sessions.window="setTimeout(() => $refs.password.focus(), 250)">
-                    <catalyst::components.input type="password" class="mt-1 block w-3/4"
+                    <x-catalyst::input type="password" class="mt-1 block w-3/4"
                              placeholder="{{ Translate::get('Password') }}"
                              x-ref="password"
                              wire:model.live="password"
                              wire:keydown.enter="logoutOtherBrowserSessions"/>
 
-                    <catalyst::components.input-error for="password" class="mt-2"/>
+                    <x-catalyst::input-error for="password" class="mt-2"/>
                 </div>
             </x-slot>
 
             <x-slot name="footer">
-                <catalyst::components.secondary-button wire:click="$toggle('confirmingLogout')" wire:loading.attr="disabled">
+                <x-catalyst::secondary-button wire:click="$toggle('confirmingLogout')" wire:loading.attr="disabled">
                     {{ Translate::get('Cancel') }}
-                </catalyst::components.secondary-button>
+                </x-catalyst::secondary-button>
 
-                <catalyst::components.button class="ml-2"
+                <x-catalyst::button class="ml-2"
                           wire:click="logoutOtherBrowserSessions"
                           wire:loading.attr="disabled">
                     {{ Translate::get('Log Out Other Browser Sessions') }}
-                </catalyst::components.button>
+                </x-catalyst::button>
             </x-slot>
         </x-dialog-modal>
     </x-slot>

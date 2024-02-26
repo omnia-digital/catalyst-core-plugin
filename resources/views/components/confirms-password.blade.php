@@ -25,25 +25,25 @@
 
             <div class="mt-4" x-data="{}"
                  x-on:confirming-password.window="setTimeout(() => $refs.confirmable_password.focus(), 250)">
-                <catalyst::components.input type="password" class="mt-1 block w-3/4" placeholder="{{ __('Password') }}"
+                <x-catalyst::input type="password" class="mt-1 block w-3/4" placeholder="{{ __('Password') }}"
                          autocomplete="current-password"
                          x-ref="confirmable_password"
                          wire:model.live="confirmablePassword"
                          wire:keydown.enter="confirmPassword"/>
 
-                <catalyst::components.input-error for="confirmable_password" class="mt-2"/>
+                <x-catalyst::input-error for="confirmable_password" class="mt-2"/>
             </div>
         </x-slot>
 
         <x-slot name="footer">
-            <catalyst::components.secondary-button wire:click="stopConfirmingPassword" wire:loading.attr="disabled">
+            <x-catalyst::secondary-button wire:click="stopConfirmingPassword" wire:loading.attr="disabled">
                 {{ __('Cancel') }}
-            </catalyst::components.secondary-button>
+            </x-catalyst::secondary-button>
 
-            <catalyst::components.button class="ml-3" dusk="confirm-password-button" wire:click="confirmPassword"
+            <x-catalyst::button class="ml-3" dusk="confirm-password-button" wire:click="confirmPassword"
                       wire:loading.attr="disabled">
                 {{ $button }}
-            </catalyst::components.button>
+            </x-catalyst::button>
         </x-slot>
     </x-dialog-modal>
 @endonce

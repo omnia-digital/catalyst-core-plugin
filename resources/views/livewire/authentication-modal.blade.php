@@ -15,7 +15,7 @@
             <div>
                 <div class="mt-6">
                     <label for="remember_me" class="flex items-center">
-                        <catalyst::components.checkbox id="remember_me" wire:model.live="remember"/>
+                        <x-catalyst::checkbox id="remember_me" wire:model.live="remember"/>
                         <span class="ml-2 text-sm text-base-text-color">{{ Translate::get('Remember me') }}</span>
                     </label>
                 </div>
@@ -40,7 +40,7 @@
                         submitText="Sign Up"
                 />
             @else
-                <catalyst::components.forms.register-default-form/>
+                <x-catalyst::forms.register-default-form/>
             @endif
             <div class="mt-4">
                 <a href="#" class="text-primary-500 hover:underline" wire:click.prevent="showLoginModal">Have an

@@ -25,9 +25,9 @@
 
 
 
-{{--<catalyst::components.guest-layout>--}}
+{{--<x-catalyst::guest-layout>--}}
 {{--    <x-filament-panels::page.simple>--}}
-{{--    <catalyst::components.authentication-card>--}}
+{{--    <x-catalyst::authentication-card>--}}
 {{--        <x-slot name="logo">--}}
 {{--            <img src="{{ config('app.logo_path') }}" class="h-16"/>--}}
 {{--        </x-slot>--}}
@@ -39,7 +39,7 @@
 
 {{--        <x-library::heading.2 class="text-center">{{ Translate::get('Create your account') }}</x-library::heading.2>--}}
 
-{{--        <catalyst::components.validation-errors class="mb-4"/>--}}
+{{--        <x-catalyst::validation-errors class="mb-4"/>--}}
 
 {{--        @if (Form::getRegistrationForm())--}}
 {{--            <livewire:catalyst-forms::user-registration-form--}}
@@ -47,7 +47,7 @@
 {{--                    submitText="Sign Up"--}}
 {{--            />--}}
 {{--        @else--}}
-{{--            <catalyst::components.forms.register-default-form/>--}}
+{{--            <x-catalyst::forms.register-default-form/>--}}
 {{--        @endif--}}
 
 {{--        <x-slot name="additionalCard">--}}
@@ -61,6 +61,6 @@
 {{--                </p>--}}
 {{--            </div>--}}
 {{--        </x-slot>--}}
-{{--    </catalyst::components.authentication-card>--}}
+{{--    </x-catalyst::authentication-card>--}}
 {{--    </x-filament-panels::page.simple>--}}
-{{--</catalyst::components.guest-layout>--}}
+{{--</x-catalyst::guest-layout>--}}

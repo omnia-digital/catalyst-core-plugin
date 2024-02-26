@@ -33,10 +33,10 @@
                         {{ Translate::get('Saved.') }}
                     </x-action-message>
 
-                    <catalyst::components.button wire:click="updateAccount" wire:loading.attr="disabled">
+                    <x-catalyst::button wire:click="updateAccount" wire:loading.attr="disabled">
                         <span wire:loading.remove wire:target="updateAccount">{{ Translate::get('Save') }}</span>
                         <span wire:loading wire:target="updateAccount">{{ Translate::get('Saving...') }}</span>
-                    </catalyst::components.button>
+                    </x-catalyst::button>
                 </x-slot:footer> {{-- Additional Cards --}}
                 <x-slot:additional>
                     <x-vertical-tabs.panel-section>
@@ -44,26 +44,26 @@
                         <x-slot:description>{{ Translate::get('Ensure your account is using a long, random password to stay secure.') }}</x-slot:description>
                         <div class="mt-6 grid grid-cols-4 gap-6">
                             <div class="col-span-4">
-                                <catalyst::components.label for="current_password" value="{{ Translate::get('Current Password') }}"/>
-                                <catalyst::components.input id="current_password" type="password" class="mt-1 block w-full"
+                                <x-catalyst::label for="current_password" value="{{ Translate::get('Current Password') }}"/>
+                                <x-catalyst::input id="current_password" type="password" class="mt-1 block w-full"
                                          wire:model.live="state.current_password"
                                          autocomplete="current-password"/>
-                                <catalyst::components.input-error for="current_password" class="mt-2"/>
+                                <x-catalyst::input-error for="current_password" class="mt-2"/>
                             </div>
 
                             <div class="col-span-4">
-                                <catalyst::components.label for="password" value="{{ Translate::get('New Password') }}"/>
-                                <catalyst::components.input id="password" type="password" class="mt-1 block w-full"
+                                <x-catalyst::label for="password" value="{{ Translate::get('New Password') }}"/>
+                                <x-catalyst::input id="password" type="password" class="mt-1 block w-full"
                                          wire:model.live="state.password" autocomplete="new-password"/>
-                                <catalyst::components.input-error for="password" class="mt-2"/>
+                                <x-catalyst::input-error for="password" class="mt-2"/>
                             </div>
 
                             <div class="col-span-4">
-                                <catalyst::components.label for="password_confirmation" value="{{ Translate::get('Confirm Password') }}"/>
-                                <catalyst::components.input id="password_confirmation" type="password" class="mt-1 block w-full"
+                                <x-catalyst::label for="password_confirmation" value="{{ Translate::get('Confirm Password') }}"/>
+                                <x-catalyst::input id="password_confirmation" type="password" class="mt-1 block w-full"
                                          wire:model.live="state.password_confirmation"
                                          autocomplete="new-password"/>
-                                <catalyst::components.input-error for="password_confirmation" class="mt-2"/>
+                                <x-catalyst::input-error for="password_confirmation" class="mt-2"/>
                             </div>
                         </div>
                         <x-slot:footer>
@@ -71,10 +71,10 @@
                                 {{ Translate::get('Saved.') }}
                             </x-action-message>
 
-                            <catalyst::components.button wire:click="updatePassword" wire:loading.attr="disabled">
+                            <x-catalyst::button wire:click="updatePassword" wire:loading.attr="disabled">
                                 <span wire:loading.remove wire:target="updatePassword">{{ Translate::get('Save') }}</span>
                                 <span wire:loading wire:target="updatePassword">{{ Translate::get('Saving...') }}</span>
-                            </catalyst::components.button>
+                            </x-catalyst::button>
                         </x-slot:footer>
                     </x-vertical-tabs.panel-section>
                 </x-slot:additional>
@@ -88,10 +88,10 @@
                         {{ Translate::get('Saved.') }}
                     </x-action-message>
                     <livewire:notification-manager/>
-                    <catalyst::components.button wire:click="updateAccount" wire:loading.attr="disabled">
+                    <x-catalyst::button wire:click="updateAccount" wire:loading.attr="disabled">
                         <span wire:loading.remove wire:target="updateAccount">{{ Translate::get('Save') }}</span>
                         <span wire:loading wire:target="updateAccount">{{ Translate::get('Saving...') }}</span>
-                    </catalyst::components.button>
+                    </x-catalyst::button>
                 </x-slot:footer>
             </x-vertical-tabs.panel>
         </x-slot:panels>

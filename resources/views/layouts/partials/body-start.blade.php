@@ -1,2 +1,2 @@
-<catalyst::components.banner/>
+<x-catalyst::banner/>
 {{--<livewire:catalyst::main-navigation-menu />--}}

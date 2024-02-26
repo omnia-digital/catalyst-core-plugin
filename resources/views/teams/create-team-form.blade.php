@@ -9,7 +9,7 @@
 
     <x-slot name="form">
         <div class="col-span-6">
-            <catalyst::components.label value="{{ Translate::get('Team Owner') }}"/>
+            <x-catalyst::label value="{{ Translate::get('Team Owner') }}"/>
 
             <div class="flex items-center mt-2">
                 <img class="w-12 h-12 rounded-full object-cover" src="{{ $this->user->profile_photo_url }}"
@@ -23,15 +23,15 @@
         </div>
 
         <div class="col-span-6 sm:col-span-4">
-            <catalyst::components.label for="name" value="{{ Translate::get('Team Name') }}"/>
-            <catalyst::components.input id="name" type="text" class="mt-1 block w-full" wire:model.live="state.name" autofocus/>
-            <catalyst::components.input-error for="name" class="mt-2"/>
+            <x-catalyst::label for="name" value="{{ Translate::get('Team Name') }}"/>
+            <x-catalyst::input id="name" type="text" class="mt-1 block w-full" wire:model.live="state.name" autofocus/>
+            <x-catalyst::input-error for="name" class="mt-2"/>
         </div>
     </x-slot>
 
     <x-slot name="actions">
-        <catalyst::components.button>
+        <x-catalyst::button>
             {{ Translate::get('Create') }}
-        </catalyst::components.button>
+        </x-catalyst::button>
     </x-slot>
 </x-form-section>

@@ -277,13 +277,13 @@
                         <div>Are you sure you? This action is irreversible.</div>
                     </x-slot>
                     <x-slot name="footer">
-                        <catalyst::components.secondary-button wire:click="$set('showDeleteModal', false)" wire:loading.attr="disabled">
+                        <x-catalyst::secondary-button wire:click="$set('showDeleteModal', false)" wire:loading.attr="disabled">
                             {{ __('Cancel') }}
-                        </catalyst::components.secondary-button>
+                        </x-catalyst::secondary-button>
 
-                        <catalyst::components.button class="ml-2" type="submit" wire:loading.attr="disabled">
+                        <x-catalyst::button class="ml-2" type="submit" wire:loading.attr="disabled">
                             {{ __('Delete') }}
-                        </catalyst::components.button>
+                        </x-catalyst::button>
                     </x-slot>
                 </x-dialog-modal>
             </form>
@@ -304,31 +304,31 @@
                             <x-library::input.label value="Name"/>
                             <x-library::input.text id="editingMedia.name" wire:model.live="editingMedia.name"
                                                    placeholder="Name"/>
-                            <catalyst::components.input-error for="editingMedia.name" class="mt-2"/>
+                            <x-catalyst::input-error for="editingMedia.name" class="mt-2"/>
                         </div>
                         <div class="mt-4">
                             <x-library::input.label value="Attached to Type"/>
                             <x-library::input.select class="" wire:model.live="editingMedia.model_type"
                                                      id="editingMedia.model_type" :showDefaultOption="false"
                                                      :options="$availableModelTypes"/>
-                            <catalyst::components.input-error for="editingMedia.model_type" class="mt-2"/>
+                            <x-catalyst::input-error for="editingMedia.model_type" class="mt-2"/>
                         </div>
                         <div class="mt-4">
                             <x-library::input.label value="Attached to"/>
                             <x-library::input.select class="" wire:model.live="editingMedia.model_id"
                                                      id="editingMedia.model_id" :showDefaultOption="false"
                                                      :options="$this->availableModelIds"/>
-                            <catalyst::components.input-error for="editingMedia.model_id" class="mt-2"/>
+                            <x-catalyst::input-error for="editingMedia.model_id" class="mt-2"/>
                         </div>
                     </x-slot>
                     <x-slot name="footer">
-                        <catalyst::components.secondary-button wire:click="$set('showEditModal', false)" wire:loading.attr="disabled">
+                        <x-catalyst::secondary-button wire:click="$set('showEditModal', false)" wire:loading.attr="disabled">
                             {{ __('Cancel') }}
-                        </catalyst::components.secondary-button>
+                        </x-catalyst::secondary-button>
 
-                        <catalyst::components.button class="ml-2" type="submit" wire:loading.attr="disabled">
+                        <x-catalyst::button class="ml-2" type="submit" wire:loading.attr="disabled">
                             {{ __('Submit') }}
-                        </catalyst::components.button>
+                        </x-catalyst::button>
                     </x-slot>
                 </x-dialog-modal>
             </form>
@@ -416,13 +416,13 @@
 
                     </x-slot>
                     <x-slot name="footer">
-                        <catalyst::components.secondary-button wire:click="$set('showCreateModal', false)" wire:loading.attr="disabled">
+                        <x-catalyst::secondary-button wire:click="$set('showCreateModal', false)" wire:loading.attr="disabled">
                             {{ __('Cancel') }}
-                        </catalyst::components.secondary-button>
+                        </x-catalyst::secondary-button>
 
-                        <catalyst::components.button class="ml-2" type="submit" wire:loading.attr="disabled">
+                        <x-catalyst::button class="ml-2" type="submit" wire:loading.attr="disabled">
                             {{ __('Submit') }}
-                        </catalyst::components.button>
+                        </x-catalyst::button>
                     </x-slot>
                 </x-dialog-modal>
             </form>

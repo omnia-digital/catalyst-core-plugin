@@ -24,7 +24,7 @@
                                     reader.readAsDataURL($refs.photo.files[0]);
                             "/>
 
-                <catalyst::components.label for="photo" value="{{ Translate::get('Photo') }}"/>
+                <x-catalyst::label for="photo" value="{{ Translate::get('Photo') }}"/>
 
                 <!-- Current Profile Photo -->
                 <div class="mt-2" x-show="! photoPreview">
@@ -39,32 +39,32 @@
                     </span>
                 </div>
 
-                <catalyst::components.secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent.stop="$refs.photo.click()">
+                <x-catalyst::secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent.stop="$refs.photo.click()">
                     {{ Translate::get('Select A New Photo') }}
-                </catalyst::components.secondary-button>
+                </x-catalyst::secondary-button>
 
                 @if ($this->user->profile_photo_path)
-                    <catalyst::components.secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
+                    <x-catalyst::secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
                         {{ Translate::get('Remove Photo') }}
-                    </catalyst::components.secondary-button>
+                    </x-catalyst::secondary-button>
                 @endif
 
-                <catalyst::components.input-error for="photo" class="mt-2"/>
+                <x-catalyst::input-error for="photo" class="mt-2"/>
             </div>
         @endif
 
         <!-- Name -->
         <div class="col-span-6 sm:col-span-4">
-            <catalyst::components.label for="name" value="{{ Translate::get('Name') }}"/>
-            <catalyst::components.input id="name" type="text" class="mt-1 block w-full" wire:model.live="state.name" autocomplete="name"/>
-            <catalyst::components.input-error for="name" class="mt-2"/>
+            <x-catalyst::label for="name" value="{{ Translate::get('Name') }}"/>
+            <x-catalyst::input id="name" type="text" class="mt-1 block w-full" wire:model.live="state.name" autocomplete="name"/>
+            <x-catalyst::input-error for="name" class="mt-2"/>
         </div>
 
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
-            <catalyst::components.label for="email" value="{{ Translate::get('Email') }}"/>
-            <catalyst::components.input id="email" type="email" class="mt-1 block w-full" wire:model.live="state.email"/>
-            <catalyst::components.input-error for="email" class="mt-2"/>
+            <x-catalyst::label for="email" value="{{ Translate::get('Email') }}"/>
+            <x-catalyst::input id="email" type="email" class="mt-1 block w-full" wire:model.live="state.email"/>
+            <x-catalyst::input-error for="email" class="mt-2"/>
         </div>
     </x-slot>
 
@@ -73,8 +73,8 @@
             {{ Translate::get('Saved.') }}
         </x-action-message>
 
-        <catalyst::components.button wire:loading.attr="disabled" wire:target="photo">
+        <x-catalyst::button wire:loading.attr="disabled" wire:target="photo">
             {{ Translate::get('Save') }}
-        </catalyst::components.button>
+        </x-catalyst::button>
     </x-slot>
 </x-form-section>

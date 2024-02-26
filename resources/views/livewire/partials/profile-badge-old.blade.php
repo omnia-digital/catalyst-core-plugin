@@ -41,18 +41,18 @@
                     <span class="sr-only">Open user menu</span>
                 </div>
             </x-slot>
-            <catalyst::components.responsive-nav-link href="{{ route('catalyst-social.profile.show', ['profile'=> Auth::user()->profile]) }}">
+            <x-catalyst::responsive-nav-link href="{{ route('catalyst-social.profile.show', ['profile'=> Auth::user()->profile]) }}">
                 My Profile
-            </catalyst::components.responsive-nav-link>
+            </x-catalyst::responsive-nav-link>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <catalyst::components.responsive-nav-link
+                <x-catalyst::responsive-nav-link
                         href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                     this.closest('form').submit();"
                 >
                     {{ Translate::get('Log Out') }}
-                </catalyst::components.responsive-nav-link>
+                </x-catalyst::responsive-nav-link>
             </form>
         </x-library::dropdown>
     </div>

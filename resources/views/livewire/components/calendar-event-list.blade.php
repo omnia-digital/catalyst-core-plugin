@@ -154,7 +154,7 @@
                         </button>
                     </div>
                     @if ($event)
-                        <catalyst::components.events.apply-button :event="$event"/>
+                        <x-catalyst::events.apply-button :event="$event"/>
                     @endif
                 </div>
             </div>

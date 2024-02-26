@@ -120,7 +120,7 @@
     </div>
     <livewire:media-manager/>
     <!-- Remove Media Confirmation Modal -->
-    <catalyst::components.confirmation-modal wire:model.live="confirmingMediaRemoval">
+    <x-catalyst::confirmation-modal wire:model.live="confirmingMediaRemoval">
         <x-slot name="title">
             {{ Translate::get('Remove Media') }}
         </x-slot>
@@ -130,15 +130,15 @@
         </x-slot>
 
         <x-slot name="footer">
-            <catalyst::components.secondary-button wire:click="$toggle('confirmingMediaRemoval')" wire:loading.attr="disabled">
+            <x-catalyst::secondary-button wire:click="$toggle('confirmingMediaRemoval')" wire:loading.attr="disabled">
                 {{ Translate::get('Cancel') }}
-            </catalyst::components.secondary-button>
+            </x-catalyst::secondary-button>
 
-            <catalyst::components.danger-button class="ml-2" wire:click="removeImage" wire:loading.attr="disabled">
+            <x-catalyst::danger-button class="ml-2" wire:click="removeImage" wire:loading.attr="disabled">
                 {{ Translate::get('Remove') }}
-            </catalyst::components.danger-button>
+            </x-catalyst::danger-button>
         </x-slot>
-    </catalyst::components.confirmation-modal>
+    </x-catalyst::confirmation-modal>
 @endsection
 
 @push('scripts')

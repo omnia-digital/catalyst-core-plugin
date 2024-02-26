@@ -22,17 +22,17 @@
 
                     <!-- Member Email -->
                     <div class="col-span-6 sm:col-span-4">
-                        <catalyst::components.label for="email" value="{{ Translate::get('Email') }}"/>
-                        <catalyst::components.input id="email" type="email" class="mt-1 block w-full"
+                        <x-catalyst::label for="email" value="{{ Translate::get('Email') }}"/>
+                        <x-catalyst::input id="email" type="email" class="mt-1 block w-full"
                                  wire:model.live="addTeamMemberForm.email"/>
-                        <catalyst::components.input-error for="email" class="mt-2"/>
+                        <x-catalyst::input-error for="email" class="mt-2"/>
                     </div>
 
                     <!-- Role -->
                     @if (count($this->roles) > 0)
                         <div class="col-span-6 lg:col-span-4">
-                            <catalyst::components.label for="role" value="{{ Translate::get('Role') }}"/>
-                            <catalyst::components.input-error for="role" class="mt-2"/>
+                            <x-catalyst::label for="role" value="{{ Translate::get('Role') }}"/>
+                            <x-catalyst::input-error for="role" class="mt-2"/>
 
                             <div class="relative z-0 mt-1 border border-neutral-light rounded-lg cursor-pointer">
                                 @foreach ($this->roles as $index => $role)
@@ -68,9 +68,9 @@
 
                     <!-- Invitation Message -->
                     {{-- <div class="col-span-6 sm:col-span-4">
-                        <catalyst::components.label for="message" value="{{ \Translate::get('Message') }}" />
-                        <catalyst::components.input id="message" type="text" class="mt-1 block w-full" wire:model.live="addTeamMemberForm.message" />
-                        <catalyst::components.input-error for="message" class="mt-2" />
+                        <x-catalyst::label for="message" value="{{ \Translate::get('Message') }}" />
+                        <x-catalyst::input id="message" type="text" class="mt-1 block w-full" wire:model.live="addTeamMemberForm.message" />
+                        <x-catalyst::input-error for="message" class="mt-2" />
                     </div> --}}
                 </x-slot>
 
@@ -79,9 +79,9 @@
                         {{ Translate::get('Added.') }}
                     </x-action-message>
 
-                    <catalyst::components.button>
+                    <x-catalyst::button>
                         {{ Translate::get('Add') }}
-                    </catalyst::components.button>
+                    </x-catalyst::button>
                 </x-slot>
             </x-form-section>
         </div>
@@ -224,18 +224,18 @@
         </x-slot>
 
         <x-slot name="footer">
-            <catalyst::components.secondary-button wire:click="stopManagingRole" wire:loading.attr="disabled">
+            <x-catalyst::secondary-button wire:click="stopManagingRole" wire:loading.attr="disabled">
                 {{ Translate::get('Cancel') }}
-            </catalyst::components.secondary-button>
+            </x-catalyst::secondary-button>
 
-            <catalyst::components.button class="ml-2" wire:click="updateRole" wire:loading.attr="disabled">
+            <x-catalyst::button class="ml-2" wire:click="updateRole" wire:loading.attr="disabled">
                 {{ Translate::get('Save') }}
-            </catalyst::components.button>
+            </x-catalyst::button>
         </x-slot>
     </x-dialog-modal>
 
     <!-- Leave Team Confirmation Modal -->
-    <catalyst::components.confirmation-modal wire:model.live="confirmingLeavingTeam">
+    <x-catalyst::confirmation-modal wire:model.live="confirmingLeavingTeam">
         <x-slot name="title">
             {{ Translate::get('Leave Team') }}
         </x-slot>
@@ -245,18 +245,18 @@
         </x-slot>
 
         <x-slot name="footer">
-            <catalyst::components.secondary-button wire:click="$toggle('confirmingLeavingTeam')" wire:loading.attr="disabled">
+            <x-catalyst::secondary-button wire:click="$toggle('confirmingLeavingTeam')" wire:loading.attr="disabled">
                 {{ Translate::get('Cancel') }}
-            </catalyst::components.secondary-button>
+            </x-catalyst::secondary-button>
 
-            <catalyst::components.danger-button class="ml-2" wire:click="leaveTeam" wire:loading.attr="disabled">
+            <x-catalyst::danger-button class="ml-2" wire:click="leaveTeam" wire:loading.attr="disabled">
                 {{ Translate::get('Leave') }}
-            </catalyst::components.danger-button>
+            </x-catalyst::danger-button>
         </x-slot>
-    </catalyst::components.confirmation-modal>
+    </x-catalyst::confirmation-modal>
 
     <!-- Remove Team Member Confirmation Modal -->
-    <catalyst::components.confirmation-modal wire:model.live="confirmingTeamMemberRemoval">
+    <x-catalyst::confirmation-modal wire:model.live="confirmingTeamMemberRemoval">
         <x-slot name="title">
             {{ Translate::get('Remove Team Member') }}
         </x-slot>
@@ -266,13 +266,13 @@
         </x-slot>
 
         <x-slot name="footer">
-            <catalyst::components.secondary-button wire:click="$toggle('confirmingTeamMemberRemoval')" wire:loading.attr="disabled">
+            <x-catalyst::secondary-button wire:click="$toggle('confirmingTeamMemberRemoval')" wire:loading.attr="disabled">
                 {{ Translate::get('Cancel') }}
-            </catalyst::components.secondary-button>
+            </x-catalyst::secondary-button>
 
-            <catalyst::components.danger-button class="ml-2" wire:click="removeTeamMember" wire:loading.attr="disabled">
+            <x-catalyst::danger-button class="ml-2" wire:click="removeTeamMember" wire:loading.attr="disabled">
                 {{ Translate::get('Remove') }}
-            </catalyst::components.danger-button>
+            </x-catalyst::danger-button>
         </x-slot>
-    </catalyst::components.confirmation-modal>
+    </x-catalyst::confirmation-modal>
 </div>
