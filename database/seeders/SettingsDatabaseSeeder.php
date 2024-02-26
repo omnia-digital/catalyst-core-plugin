@@ -21,7 +21,9 @@ class SettingsDatabaseSeeder extends Seeder
             'site_active' => true,
             'teams_apply_button_text' => 'Apply',
             'allow_guest_access' => true,
-            'should_show_login_on_guest_access' => true
+            'should_show_login_on_guest_access' => true,
+            'site_header_logo' => 'https://via.placeholder.com/150',
+            'site_login_logo' => 'https://via.placeholder.com/150',
         ]))->save();
 
         (new BillingSettings([

@@ -3,10 +3,12 @@
 namespace OmniaDigital\CatalystCore\Filament\Admin\Pages;
 
 use BezhanSalleh\FilamentShield\Traits\HasPageShield;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Pages\SettingsPage;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use OmniaDigital\CatalystCore\Settings\GeneralSettings;
 
 class ManageGeneralSettings extends SettingsPage
@@ -28,8 +30,8 @@ class ManageGeneralSettings extends SettingsPage
         return [
             TextInput::make('site_name')
                 ->required(),
-            SpatieMediaLibraryFileUpload::make('site_header_logo')->collection('logos')->disk('public'),
-            SpatieMediaLibraryFileUpload::make('site_login_logo')->collection('logos')->disk('public'),
+            FileUpload::make('site_header_logo')->directory('logos')->visibility('public'),
+            FileUpload::make('site_login_logo')->directory('logos')->visibility('public'),
             TextInput::make('teams_apply_button_text')
                 ->required(),
             Toggle::make('allow_guest_access')

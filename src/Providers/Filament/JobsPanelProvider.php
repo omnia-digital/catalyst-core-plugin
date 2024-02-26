@@ -2,12 +2,10 @@
 
 namespace OmniaDigital\CatalystCore\Providers\Filament;
 
-use App\Models\Team;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Panel;
 use Filament\PanelProvider;
-use Filament\Support\Colors\Color;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -18,6 +16,7 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use OmniaDigital\CatalystCore\Filament\Core\Pages\Auth\Register;
+use OmniaDigital\CatalystCore\Settings\GeneralSettings;
 
 class JobsPanelProvider extends PanelProvider
 {
@@ -32,6 +31,8 @@ class JobsPanelProvider extends PanelProvider
             ->emailVerification()
             ->profile()
             ->darkMode(false)
+            ->brandLogo($this->getDefaultLogo())
+            ->brandName($this->getSiteName())
             ->discoverResources(
                 in: __DIR__ . '/../../Filament/Jobs/Resources',
                 for: 'OmniaDigital\\CatalystCore\\Filament\\Jobs\\Resources'
@@ -61,7 +62,7 @@ class JobsPanelProvider extends PanelProvider
                 return view('catalyst::layouts.partials.body-start');
             })
             ->renderHook('panels::user-menu.before', function () {
-                return view('catalyst::components.team-switcher-menu',['team'=> Auth::user()->currentTeam]);
+                return view('catalyst::components.team-switcher-menu', ['team' => Auth::user()->currentTeam]);
             })
             ->renderHook('panels::body.end', function () {
                 return view('catalyst::layouts.partials.body-end');
@@ -80,5 +81,17 @@ class JobsPanelProvider extends PanelProvider
             ->authMiddleware([
                 \OmniaDigital\CatalystCore\Http\Middleware\Authenticate::class,
             ]);
+    }
+
+    public function getDefaultLogo(): ?string
+    {
+        $imagePath = app(GeneralSettings::class)->site_header_logo;
+
+        return ! empty($imagePath) ? '/' . $imagePath : null;
+    }
+
+    public function getSiteName(): ?string
+    {
+        return app(GeneralSettings::class)->site_name ?? null;
     }
 }
