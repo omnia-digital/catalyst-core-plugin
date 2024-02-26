@@ -20,15 +20,15 @@ class User extends Authenticatable implements FilamentUser, MustVerifyEmail
     use Follower;
     use Followable;
 
-    public function getTenants(Panel $panel): Collection
-    {
-        return $this->teams;
-    }
-
-    public function canAccessTenant(Model $tenant): bool
-    {
-        return $this->teams->contains($tenant);
-    }
+//    public function getTenants(Panel $panel): Collection
+//    {
+//        return $this->teams;
+//    }
+//
+//    public function canAccessTenant(Model $tenant): bool
+//    {
+//        return $this->teams->contains($tenant);
+//    }
 
     protected static function newFactory()
     {
