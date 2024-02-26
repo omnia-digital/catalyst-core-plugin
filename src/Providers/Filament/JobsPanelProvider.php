@@ -31,6 +31,7 @@ class JobsPanelProvider extends PanelProvider
             ->passwordReset()
             ->emailVerification()
             ->profile()
+            ->darkMode(false)
             ->discoverResources(
                 in: __DIR__ . '/../../Filament/Jobs/Resources',
                 for: 'OmniaDigital\\CatalystCore\\Filament\\Jobs\\Resources'

@@ -33,6 +33,7 @@ class SocialPanelProvider extends PanelProvider
             ->id('social')
             ->path('social')
             ->login()
+            ->darkMode(false)
             ->discoverResources(
                 in: __DIR__ . '/../../Filament/Social/Resources',
                 for: 'OmniaDigital\\CatalystCore\\Filament\\Social\\Resources'
