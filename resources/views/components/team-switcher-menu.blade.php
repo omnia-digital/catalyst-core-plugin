@@ -1,5 +1,5 @@
 @php use Filament\Facades\Filament; @endphp
-<catalyst::components.dropdown align="right" width="48">
+<x-catalyst::dropdown align="right" width="48">
     <x-slot name="trigger">
         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
             <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
@@ -36,37 +36,38 @@
             {{ Translate::get('Manage Account') }}
         </div>
 
-        <catalyst::components.dropdown-link href="{{ route('catalyst-social.profile.show', ['profile' => auth()->user()->handle]) }}">
+        <x-catalyst::dropdown-link
+                href="{{ route('catalyst-social.profile.show', ['profile' => auth()->user()->handle]) }}">
             {{ auth()->user()->name }}
-        </catalyst::components.dropdown-link>
+        </x-catalyst::dropdown-link>
 
-        {{--                            <catalyst::components.dropdown-link href="{{ route('resources.drafts') }}">--}}
+        {{--                            <x-catalyst::dropdown-link href="{{ route('resources.drafts') }}">--}}
         {{--                                My Resources--}}
-        {{--                            </catalyst::components.dropdown-link>--}}
+        {{--                            </x-catalyst::dropdown-link>--}}
 
-        <catalyst::components.dropdown-link href="{{ route('media.index') }}">
+        <x-catalyst::dropdown-link href="{{ route('media.index') }}">
             Media Library
-        </catalyst::components.dropdown-link>
+        </x-catalyst::dropdown-link>
 
-        <catalyst::components.dropdown-link href="{{ route('account') }}">
+        <x-catalyst::dropdown-link href="{{ route('account') }}">
             {{ Translate::get('Account') }}
-        </catalyst::components.dropdown-link>
+        </x-catalyst::dropdown-link>
         {{ Filament::renderHook('user-menu.account.after') }}
 
         @if (\OmniaDigital\CatalystCore\Facades\Catalyst::isUsingStripe())
-            <catalyst::components.dropdown-link href="{{ route('billing.stripe-billing') }}">
+            <x-catalyst::dropdown-link href="{{ route('billing.stripe-billing') }}">
                 {{ Translate::get('Billing') }}
-            </catalyst::components.dropdown-link>
+            </x-catalyst::dropdown-link>
         @elseif (\OmniaDigital\CatalystCore\Facades\Catalyst::isUsingChargent() && \OmniaDigital\CatalystCore\Facades\Catalyst::isUsingUserSubscriptions())
-            <catalyst::components.dropdown-link href="{{ route('billing.chargent-billing') }}">
+            <x-catalyst::dropdown-link href="{{ route('billing.chargent-billing') }}">
                 {{ Translate::get('Billing') }}
-            </catalyst::components.dropdown-link>
+            </x-catalyst::dropdown-link>
         @endif
 
         {{--                                @if (Laravel\Jetstream\Jetstream::hasApiFeatures())--}}
-        {{--                                    <catalyst::components.dropdown-link href="{{ route('api-tokens.index') }}">--}}
+        {{--                                    <x-catalyst::dropdown-link href="{{ route('api-tokens.index') }}">--}}
         {{--                                        {{ \Translate::get('API Tokens') }}--}}
-        {{--                                    </catalyst::components.dropdown-link>--}}
+        {{--                                    </x-catalyst::dropdown-link>--}}
         {{--                                @endif--}}
 
         <div class="border-t border-gray-100"></div>
@@ -75,11 +76,10 @@
         <form method="POST" action="{{ route('logout') }}">
             @csrf
 
-            <catalyst::components.dropdown-link href="{{ route('logout') }}"
-                                                onclick="event.preventDefault();
-                                                                            this.closest('form').submit();">
+            <x-catalyst::dropdown-link href="{{ route('logout') }}"
+                                       onclick="event.preventDefault(); this.closest('form').submit();">
                 {{ Translate::get('Log Out') }}
-            </catalyst::components.dropdown-link>
+            </x-catalyst::dropdown-link>
         </form>
     </x-slot>
-</catalyst::components.dropdown>
+</x-catalyst::dropdown>
