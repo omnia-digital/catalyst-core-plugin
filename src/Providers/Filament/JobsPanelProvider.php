@@ -62,7 +62,8 @@ class JobsPanelProvider extends PanelProvider
                 return view('catalyst::layouts.partials.body-start');
             })
             ->renderHook('panels::user-menu.before', function () {
-                return view('catalyst::components.team-switcher-menu', ['team' => Auth::user()->currentTeam]);
+                return view('catalyst::livewire.main-nav-right', ['team' => Auth::user()->currentTeam]);
+//                return view('catalyst::components.team-switcher-menu', ['team' => Auth::user()->currentTeam]);
             })
             ->renderHook('panels::body.end', function () {
                 return view('catalyst::layouts.partials.body-end');

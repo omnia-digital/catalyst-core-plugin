@@ -20,7 +20,7 @@ Route::get('register', function () {
     return redirect()->route('filament.jobs.auth.register');
 })->name('catalyst.register');
 
-//Route::get('login', Login::class)->name('login');
+Route::get('login', Login::class)->name('login');
 ////
 //Route::get('register', Register::class)->name('register');
 
