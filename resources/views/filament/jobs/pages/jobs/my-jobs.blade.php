@@ -23,7 +23,7 @@
 {{--            </div>--}}
 {{--        </div>--}}
         <div>
-            <h2 class="text-xl font-medium text-gray-700 py-2">{{ Auth::user()->currentTeam->name }}'s Jobs</h2>
+{{--            <h2 class="text-xl font-medium text-gray-700 py-2">{{ Auth::user()->currentTeam->name }}'s Jobs</h2>--}}
 
             <div class="bg-white shadow overflow-hidden sm:rounded-md">
                 <ul>

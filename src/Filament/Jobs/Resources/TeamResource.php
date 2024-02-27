@@ -26,6 +26,9 @@ class TeamResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
+            Forms\Components\SpatieMediaLibraryFileUpload::make('profile_photo_path')
+                ->image()
+                ->avatar(),
             Forms\Components\TextInput::make('name')
                 ->required()
                 ->maxLength(255),

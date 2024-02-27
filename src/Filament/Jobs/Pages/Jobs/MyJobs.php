@@ -19,16 +19,21 @@ class MyJobs extends BasePage
     public static function canAccess(): bool
     {
         return auth()->user()->isMemberOfATeam();
-        return false;
     }
 
     public function getViewData(): array
     {
-        $jobs = auth()->user()->currentTeam->jobs()
-            ->with(['company', 'skills', 'addons'])
-            ->latest()
-            ->get()
-            ->sortByDesc(['is_active', 'created_at']);
+        $teams = auth()->user()->teams;
+
+        $jobs = collect();
+        foreach ($teams as $team) {
+            $teamJobs = $team->jobs()
+                ->with(['company', 'skills', 'addons'])
+                ->get();
+
+            $jobs->push($teamJobs);
+        }
+        $jobs = $jobs->flatten()->sortByDesc(['is_active', 'created_at']);
 
         return [
             'jobs' => $jobs,
