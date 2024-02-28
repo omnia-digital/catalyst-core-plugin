@@ -2,6 +2,9 @@
 
 namespace OmniaDigital\CatalystCore\Filament\Jobs\Resources;
 
+use BezhanSalleh\FilamentShield\Traits\HasPageShield;
+use BezhanSalleh\FilamentShield\Traits\HasPanelShield;
+use Filament\Facades\Filament;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Support\Enums\Alignment;
@@ -22,6 +25,11 @@ class JobPositionResource extends Resource
 
     //    protected static ?string $navigationLabel = 'My Jobs';
     protected static ?string $breadcrumb = 'Jobs';
+
+    public static function canAccess(): bool
+    {
+        return Filament::auth()->user()->isAdmin;
+    }
 
     public static function form(Form $form): Form
     {
